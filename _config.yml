@@ -91,11 +91,16 @@ author:
   name: Corey
   comments: true
   picture: bio-photo.jpg
-  email: me@shanguangyu.com
   links:
-    - title:
-      url:
-      icon:
+    - title: LinkedIn
+      url: https://www.linkedin.com/in/corey-shan-6a6111a4/
+      icon: fab fa-linkedin
+    # - title: Instagram
+    #   url: https://instagram.com/mmistakes
+    #   icon: fab fa-instagram
+    - title: GitHub
+      url: https://github.com/gyshan
+      icon: fab fa-github-square
 
 # Footer Links
 
