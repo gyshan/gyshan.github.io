@@ -33,9 +33,9 @@ google_fonts:
     weights: "400,400i,700,700i"
 google_analytics: # Google Analytics id, e.g. "UA-NNNNNNNN-N"
 disqus:
-  shortname: # Disqus shortname, e.g. "my_disqus_shortname"
+  shortname: "Guangyu"
 twitter:
-  username: # site's Twitter username, e.g. "mmistakes"
+  username: "GuangyuShan"
 
 # Liquid
 liquid:
@@ -89,7 +89,7 @@ defaults:
 # Site Author
 author:
   name: Corey
-  picture: 
+  picture: bio-photo.jpg
   email: me@shanguangyu.com
   twitter:
   links:
