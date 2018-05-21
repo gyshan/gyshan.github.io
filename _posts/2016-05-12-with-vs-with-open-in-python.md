@@ -1,6 +1,6 @@
 ---
 title: "open() vs with open() in python"
-excerpt: "You should use "with" statement when performing file IO"
+excerpt: "You should use `with` statement when performing file IO"
 categories:
   - articles
 tags:
