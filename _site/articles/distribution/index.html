@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<!--
+    So Simple Jekyll Theme 3.1.1
+    Copyright 2013-2018 Michael Rose - mademistakes.com | @mmistakes
+    Free for personal and commercial use under the MIT license
+    https://github.com/mmistakes/so-simple-theme/blob/master/LICENSE
+-->
+<html lang="en-US" class="no-js">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+
+  
+    
+    <!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>正态分布与幂律分布 | Rebirth</title>
+<meta name="generator" content="Jekyll v3.8.2" />
+<meta property="og:title" content="正态分布与幂律分布" />
+<meta name="author" content="Corey" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Normal distribution and power-law distribution" />
+<meta property="og:description" content="Normal distribution and power-law distribution" />
+<link rel="canonical" href="http://localhost:4000/articles/distribution/" />
+<meta property="og:url" content="http://localhost:4000/articles/distribution/" />
+<meta property="og:site_name" content="Rebirth" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2015-05-19T00:00:00+08:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@" />
+<meta name="twitter:creator" content="@Corey" />
+<script type="application/ld+json">
+{"description":"Normal distribution and power-law distribution","author":{"@type":"Person","name":"Corey"},"@type":"BlogPosting","url":"http://localhost:4000/articles/distribution/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/images/logo.svg"},"name":"Corey"},"headline":"正态分布与幂律分布","dateModified":"2015-05-19T00:00:00+08:00","datePublished":"2015-05-19T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/articles/distribution/"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+  <script>
+    /* Cut the mustard */
+    if ( 'querySelector' in document && 'addEventListener' in window ) {
+      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
+    }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i|Lora:400,400i,700,700i">
+  <link rel="alternate" type="application/atom+xml" title="Rebirth" href="/atom.xml">
+<!-- start custom head snippets -->
+
+<!-- insert favicons. use http://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+</head>
+
+
+  <body class="layout--post  正态分布与幂律分布">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#primary-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+  <div class="navigation-wrapper">
+    <a href="#menu-toggle" id="menu-toggle">Menu</a>
+    <nav id="primary-nav" class="site-nav animated drop">
+      <ul><li><a href="/">Home</a></li></ul>
+    </nav>
+  </div><!-- /.navigation-wrapper -->
+
+
+    <header class="masthead">
+  <div class="wrap">
+    
+      <a href="/" class="site-logo" rel="home" title="Rebirth">
+        <img src="/images/logo.svg" class="site-logo-img animated fadeInDown" alt="Rebirth">
+      </a>
+    
+    
+      <h1 class="site-title animated fadeIn"><a href="/">Rebirth</a></h1>
+      <p class="site-description animated fadeIn" itemprop="description">Notes on bioinformatics and data mining by G. Corey Shan</p>
+    
+  </div>
+</header><!-- /.masthead -->
+
+
+    <main id="main" class="main-content" aria-label="Content">
+  <article class="h-entry">
+    
+
+    <div class="page-wrapper">
+      <header class="page-header">
+        
+        
+          <h1 id="page-title" class="page-title p-name">正态分布与幂律分布
+</h1>
+        
+      </header>
+
+      <div class="page-sidebar">
+        <div class="page-author h-card p-author"><div class="author-info"><div class="author-name">
+        <em>by</em> <span class="p-name">Corey</span>
+      </div><ul class="author-links"><li class="author-link">
+            <a class="u-url" rel="me" href=""><i class="fas fa-link fa-lg" title=""></i></a>
+          </li></ul>
+
+<span class="read-time">~1 min read</span>
+
+    <time class="page-date dt-published" datetime="2015-05-19T00:00:00+08:00"><a class="u-url" href="">May 19, 2015</a>
+</time>
+
+  </div>
+</div>
+
+        
+  <h3 class="page-taxonomies-title">Categories</h3>
+  <ul class="page-taxonomies"><li class="page-taxonomy">articles</li>
+  </ul>
+
+
+        
+  <h3 class="page-taxonomies-title">Tags</h3>
+  <ul class="page-taxonomies"><li class="page-taxonomy">Bioinformatics</li>
+  </ul>
+
+
+      </div>
+
+      <div class="page-content">
+        <div class="e-content">
+          <p>在我们的日常生活中，总是会被各式各样的现象所包围，小到人们的身高分布，大到国家的财富分布。久而久之，人们抽象出了两个通用的模型来解释这些现象，一个叫做<a href="http://zh.wikipedia.org/wiki/%E6%AD%A3%E6%80%81%E5%88%86%E5%B8%83">正态分布</a>，另一个叫做<a href="http://baike.baidu.com/view/1730411.htm">幂律分布</a>。</p>
+
+<p>#正态分布</p>
+<figure>
+<img src="https://dn-shanguangyu.qbox.me/normal_distribution.png" alt="image" />
+</figure>
+<p>正态分布 (normal distribution) 又叫高斯分布 (Gaussian distribution)，是重要的概率分布之一，其概率密度函数为</p>
+
+<script type="math/tex; mode=display">\varphi_{\mu,\sigma}(x)=\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma ^2}}</script>
+
+<p>由于形似钟形，又经常称之为钟形曲线。在生产与科学实验中，很多随机变量的概率分布都可以近似用正态分布描述。例如生物体的身长、体重，地区降水量等等。除此之外，还有一些常见的概率分布是由它直接导出的，例如对数正态分布、t分布、F分布等等，导致经常遇到这种情况：</p>
+
+<blockquote>
+  <p>要使用xx检验，必须满足正态分布。</p>
+</blockquote>
+
+<p>有人说过：直线属于人类，曲线属于上帝。每个人追求的曲线也许不同，男人追求不断向上的曲线，女人追求玲珑浮凸的曲线，而真正的上帝曲线应该是这个形似钟形的神秘曲线，无影无形，却又无处不在。</p>
+
+<p>#幂律分布</p>
+<figure>
+<img src="https://dn-shanguangyu.qbox.me/pareto.gif" alt="image" />
+</figure>
+<p>很早就知道二八法则的概念，最早是说社会上 20% 的人占有 80% 的社会财富，强调世界充满了重要的少数与琐碎的多数，这个法则在管理学、社会学等很多方面都有体现，再往上走一步，这种概率分布可以用一种更加科学的名词来表征，叫做幂律分布。</p>
+
+<p>幂律分布 (power law distribution) 是一种常见的统计现象，简单地说就是两个变量为幂函数的关系，而这种简单的关系却能够与很多领域的实际情况相吻合，尤其是生物学、生态学这类典型的无标度网络。与随机网络不同，这种无标度网络的度常常是集散分布，大部分节点只有较少的连接，而少数节点有大量的连接。这类无标度网络的特性是：当节点意外失效或改变时，对网络的影响一般很小，只有 hub 节点受到改变，才会让网络产生剧烈的震荡。对于目前的中国，Mr. Xi 就是一个典型的 hub 节点。</p>
+
+<hr />
+<p>Published under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">(CC) BY-NC-SA </a></p>
+
+        </div>
+
+        
+          <div class="page-share">
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Farticles%2Fdistribution%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--facebook btn--small"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i> <span>Share</span></a>
+  <a href="https://twitter.com/intent/tweet?text=%E6%AD%A3%E6%80%81%E5%88%86%E5%B8%83%E4%B8%8E%E5%B9%82%E5%BE%8B%E5%88%86%E5%B8%83%20http%3A%2F%2Flocalhost%3A4000%2Farticles%2Fdistribution%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--twitter btn--small"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i> <span>Tweet</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Farticles%2Fdistribution%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--linkedin btn--small"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> <span>LinkedIn</span></a>
+  <a href="https://reddit.com/submit?title=%E6%AD%A3%E6%80%81%E5%88%86%E5%B8%83%E4%B8%8E%E5%B9%82%E5%BE%8B%E5%88%86%E5%B8%83&url=http%3A%2F%2Flocalhost%3A4000%2Farticles%2Fdistribution%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--reddit btn--small"><i class="fab fa-fw fa-reddit" aria-hidden="true"></i> <span>Reddit</span></a>
+</div>
+
+        
+
+        
+
+        <nav class="page-pagination" role="navigation">
+  
+    <a class="page-previous" href="/articles/zen/">
+      <h4 class="page-pagination-label">Previous</h4>
+      <span class="page-pagination-title">
+        <i class="fas fa-arrow-left"></i> 禅与摩托车修理艺术
+
+      </span>
+    </a>
+  
+
+  
+    <a class="page-next" href="/articles/svm/">
+      <h4 class="page-pagination-label">Next</h4>
+      <span class="page-pagination-title">
+        支持向量机之我见
+ <i class="fas fa-arrow-right"></i>
+      </span>
+    </a>
+  
+</nav>
+
+      </div>
+    </div>
+  </article>
+</main>
+
+
+    <footer id="footer" class="site-footer">
+  <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+<div class="social-icons"><a class="social-icon" href="/atom.xml"><i class="fas fa-rss-square fa-2x" title="Feed"></i></a></div><div class="copyright">
+    
+      <p>&copy; 2018 Rebirth. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://github.com/mmistakes/so-simple-theme" rel="nofollow">So Simple</a>.</p>
+    
+  </div>
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.0.12/js/all.js"></script>
+
+
+<!-- MathJax -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  </body>
+
+</html>

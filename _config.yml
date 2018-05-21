@@ -16,11 +16,12 @@
 theme: jekyll-theme-so-simple
 # remote_theme: mmistakes/so-simple-theme
 locale: en-US
-title: "My Awesome Site"
-description: "It really is the best."
+title: "Rebirth"
+description: "Notes on bioinformatics and data mining by G. Corey Shan"
 baseurl: # the subpath of your site, e.g. "/blog"
 url: "https://gyshan.github.io"
-logo: # path of site logo, e.g. "/images/logo.png"
+#url: "http://localhost:4000"
+logo: "/images/logo.svg"
 date_format: "%B %-d, %Y"
 read_time: true
 words_per_minute: 200
@@ -87,9 +88,9 @@ defaults:
 
 # Site Author
 author:
-  name:
-  picture:
-  email:
+  name: Corey
+  picture: 
+  email: me@shanguangyu.com
   twitter:
   links:
     - title:

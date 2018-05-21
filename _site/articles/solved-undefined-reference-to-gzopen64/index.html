@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<!--
+    So Simple Jekyll Theme 3.1.1
+    Copyright 2013-2018 Michael Rose - mademistakes.com | @mmistakes
+    Free for personal and commercial use under the MIT license
+    https://github.com/mmistakes/so-simple-theme/blob/master/LICENSE
+-->
+<html lang="en-US" class="no-js">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+
+  
+    
+    <!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>Solved-undefined reference to gzopen64 | Rebirth</title>
+<meta name="generator" content="Jekyll v3.8.2" />
+<meta property="og:title" content="Solved-undefined reference to gzopen64" />
+<meta name="author" content="Corey" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Compilation error" />
+<meta property="og:description" content="Compilation error" />
+<link rel="canonical" href="http://localhost:4000/articles/solved-undefined-reference-to-gzopen64/" />
+<meta property="og:url" content="http://localhost:4000/articles/solved-undefined-reference-to-gzopen64/" />
+<meta property="og:site_name" content="Rebirth" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-01-18T00:00:00+08:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@" />
+<meta name="twitter:creator" content="@Corey" />
+<script type="application/ld+json">
+{"description":"Compilation error","author":{"@type":"Person","name":"Corey"},"@type":"BlogPosting","url":"http://localhost:4000/articles/solved-undefined-reference-to-gzopen64/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/images/logo.svg"},"name":"Corey"},"headline":"Solved-undefined reference to gzopen64","dateModified":"2018-01-18T00:00:00+08:00","datePublished":"2018-01-18T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/articles/solved-undefined-reference-to-gzopen64/"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+  <script>
+    /* Cut the mustard */
+    if ( 'querySelector' in document && 'addEventListener' in window ) {
+      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
+    }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i|Lora:400,400i,700,700i">
+  <link rel="alternate" type="application/atom+xml" title="Rebirth" href="/atom.xml">
+<!-- start custom head snippets -->
+
+<!-- insert favicons. use http://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+</head>
+
+
+  <body class="layout--post  solved-undefined-reference-to-gzopen64">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#primary-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+  <div class="navigation-wrapper">
+    <a href="#menu-toggle" id="menu-toggle">Menu</a>
+    <nav id="primary-nav" class="site-nav animated drop">
+      <ul><li><a href="/">Home</a></li></ul>
+    </nav>
+  </div><!-- /.navigation-wrapper -->
+
+
+    <header class="masthead">
+  <div class="wrap">
+    
+      <a href="/" class="site-logo" rel="home" title="Rebirth">
+        <img src="/images/logo.svg" class="site-logo-img animated fadeInDown" alt="Rebirth">
+      </a>
+    
+    
+      <h1 class="site-title animated fadeIn"><a href="/">Rebirth</a></h1>
+      <p class="site-description animated fadeIn" itemprop="description">Notes on bioinformatics and data mining by G. Corey Shan</p>
+    
+  </div>
+</header><!-- /.masthead -->
+
+
+    <main id="main" class="main-content" aria-label="Content">
+  <article class="h-entry">
+    
+
+    <div class="page-wrapper">
+      <header class="page-header">
+        
+        
+          <h1 id="page-title" class="page-title p-name">Solved-undefined reference to gzopen64
+</h1>
+        
+      </header>
+
+      <div class="page-sidebar">
+        <div class="page-author h-card p-author"><div class="author-info"><div class="author-name">
+        <em>by</em> <span class="p-name">Corey</span>
+      </div><ul class="author-links"><li class="author-link">
+            <a class="u-url" rel="me" href=""><i class="fas fa-link fa-lg" title=""></i></a>
+          </li></ul>
+
+<span class="read-time">~1 min read</span>
+
+    <time class="page-date dt-published" datetime="2018-01-18T00:00:00+08:00"><a class="u-url" href="">January 18, 2018</a>
+</time>
+
+  </div>
+</div>
+
+        
+  <h3 class="page-taxonomies-title">Categories</h3>
+  <ul class="page-taxonomies"><li class="page-taxonomy">articles</li>
+  </ul>
+
+
+        
+  <h3 class="page-taxonomies-title">Tags</h3>
+  <ul class="page-taxonomies"><li class="page-taxonomy">Bioinformatics</li>
+  </ul>
+
+
+      </div>
+
+      <div class="page-content">
+        <div class="e-content">
+          <p>Today, I tried to install a bioinformatics software called <a href="https://github.com/genome/somatic-sniper">SomaticSniper</a> under its <a href="https://github.com/genome/somatic-sniper/blob/master/gmt/install.md">instructions</a> while got stuck at the fourth step.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">mkdir </span>somatic-sniper/build  <span class="c">#succeed</span>
+<span class="nb">cd </span>somatic-sniper/build <span class="c">#succeed</span>
+cmake ../ <span class="c">#succeed</span>
+make deps <span class="c">#failed</span>
+make <span class="nt">-j</span> 
+make <span class="nb">test</span> </code></pre></figure>
+
+<p>The errors are listed below, it seems that zlib is not working well in <code class="highlighter-rouge">bam_import.c</code> file. Therefore, I modified <code class="highlighter-rouge">bam_import.c</code> file by replacing the <code class="highlighter-rouge">zlib.h</code> statement to an absolute path.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">/NAME/src/somatic-sniper/1.0.5.0/build/vendor/samtools/bam_import.c:75: undefined reference to gzopen64
+./libbam.a<span class="o">(</span>bam_import.o<span class="o">)</span>: In <span class="k">function </span>sam_open:
+/NAME/src/somatic-sniper/1.0.5.0/build/vendor/samtools/bam_import.c:502: undefined reference to gzopen64
+./libbam.a<span class="o">(</span>bam_import.o<span class="o">)</span>: In <span class="k">function </span>sam_header_read2:
+/NAME/src/somatic-sniper/1.0.5.0/build/vendor/samtools/bam_import.c:125: undefined reference to gzopen64
+collect2: ld returned 1 <span class="nb">exit </span>status
+make[1]: <span class="k">***</span> <span class="o">[</span>samtools] Error 1
+make[1]: Leaving directory /NAME/src/somatic-sniper/1.0.5.0/build/vendor/samtools
+make: <span class="k">***</span> <span class="o">[</span>all-recur] Error 1</code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$locate</span> zlib.h |head <span class="nt">-1</span> 
+/usr/include/zlib.h
+
+<span class="nv">$vi</span> /NAME/src/somatic-sniper/1.0.5.0/build/vendor/samtools/bam_import.c
+replace <span class="c">#include &lt;zlib.h&gt; </span>
+to      <span class="c">#include &lt;/usr/include/zlib.h&gt;</span></code></pre></figure>
+
+<p>Then, remake deps and everything is ok.</p>
+
+<hr />
+<p>Published under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">(CC) BY-NC-SA </a></p>
+
+        </div>
+
+        
+          <div class="page-share">
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Farticles%2Fsolved-undefined-reference-to-gzopen64%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--facebook btn--small"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i> <span>Share</span></a>
+  <a href="https://twitter.com/intent/tweet?text=Solved-undefined+reference+to+gzopen64%20http%3A%2F%2Flocalhost%3A4000%2Farticles%2Fsolved-undefined-reference-to-gzopen64%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--twitter btn--small"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i> <span>Tweet</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Farticles%2Fsolved-undefined-reference-to-gzopen64%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--linkedin btn--small"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> <span>LinkedIn</span></a>
+  <a href="https://reddit.com/submit?title=Solved-undefined+reference+to+gzopen64&url=http%3A%2F%2Flocalhost%3A4000%2Farticles%2Fsolved-undefined-reference-to-gzopen64%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--reddit btn--small"><i class="fab fa-fw fa-reddit" aria-hidden="true"></i> <span>Reddit</span></a>
+</div>
+
+        
+
+        
+
+        <nav class="page-pagination" role="navigation">
+  
+    <a class="page-previous" href="/articles/my-2017/">
+      <h4 class="page-pagination-label">Previous</h4>
+      <span class="page-pagination-title">
+        <i class="fas fa-arrow-left"></i> My 2017
+
+      </span>
+    </a>
+  
+
+  
+    <a class="page-next" href="/docs/hidden-post/">
+      <h4 class="page-pagination-label">Next</h4>
+      <span class="page-pagination-title">
+        Hidden Post
+ <i class="fas fa-arrow-right"></i>
+      </span>
+    </a>
+  
+</nav>
+
+      </div>
+    </div>
+  </article>
+</main>
+
+
+    <footer id="footer" class="site-footer">
+  <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+<div class="social-icons"><a class="social-icon" href="/atom.xml"><i class="fas fa-rss-square fa-2x" title="Feed"></i></a></div><div class="copyright">
+    
+      <p>&copy; 2018 Rebirth. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://github.com/mmistakes/so-simple-theme" rel="nofollow">So Simple</a>.</p>
+    
+  </div>
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.0.12/js/all.js"></script>
+
+
+<!-- MathJax -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  </body>
+
+</html>

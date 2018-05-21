@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<!--
+    So Simple Jekyll Theme 3.1.1
+    Copyright 2013-2018 Michael Rose - mademistakes.com | @mmistakes
+    Free for personal and commercial use under the MIT license
+    https://github.com/mmistakes/so-simple-theme/blob/master/LICENSE
+-->
+<html lang="en-US" class="no-js">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+
+  
+    
+    <!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>FDR 和 q-value | Rebirth</title>
+<meta name="generator" content="Jekyll v3.8.2" />
+<meta property="og:title" content="FDR 和 q-value" />
+<meta name="author" content="Corey" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Difference between FDR and q-value" />
+<meta property="og:description" content="Difference between FDR and q-value" />
+<link rel="canonical" href="http://localhost:4000/articles/fdr-q-value/" />
+<meta property="og:url" content="http://localhost:4000/articles/fdr-q-value/" />
+<meta property="og:site_name" content="Rebirth" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2015-03-31T00:00:00+08:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@" />
+<meta name="twitter:creator" content="@Corey" />
+<script type="application/ld+json">
+{"description":"Difference between FDR and q-value","author":{"@type":"Person","name":"Corey"},"@type":"BlogPosting","url":"http://localhost:4000/articles/fdr-q-value/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/images/logo.svg"},"name":"Corey"},"headline":"FDR 和 q-value","dateModified":"2015-03-31T00:00:00+08:00","datePublished":"2015-03-31T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/articles/fdr-q-value/"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+  <script>
+    /* Cut the mustard */
+    if ( 'querySelector' in document && 'addEventListener' in window ) {
+      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
+    }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i|Lora:400,400i,700,700i">
+  <link rel="alternate" type="application/atom+xml" title="Rebirth" href="/atom.xml">
+<!-- start custom head snippets -->
+
+<!-- insert favicons. use http://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+</head>
+
+
+  <body class="layout--post  fdr-和-q-value">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#primary-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+  <div class="navigation-wrapper">
+    <a href="#menu-toggle" id="menu-toggle">Menu</a>
+    <nav id="primary-nav" class="site-nav animated drop">
+      <ul><li><a href="/">Home</a></li></ul>
+    </nav>
+  </div><!-- /.navigation-wrapper -->
+
+
+    <header class="masthead">
+  <div class="wrap">
+    
+      <a href="/" class="site-logo" rel="home" title="Rebirth">
+        <img src="/images/logo.svg" class="site-logo-img animated fadeInDown" alt="Rebirth">
+      </a>
+    
+    
+      <h1 class="site-title animated fadeIn"><a href="/">Rebirth</a></h1>
+      <p class="site-description animated fadeIn" itemprop="description">Notes on bioinformatics and data mining by G. Corey Shan</p>
+    
+  </div>
+</header><!-- /.masthead -->
+
+
+    <main id="main" class="main-content" aria-label="Content">
+  <article class="h-entry">
+    
+
+    <div class="page-wrapper">
+      <header class="page-header">
+        
+        
+          <h1 id="page-title" class="page-title p-name">FDR 和 q-value
+</h1>
+        
+      </header>
+
+      <div class="page-sidebar">
+        <div class="page-author h-card p-author"><div class="author-info"><div class="author-name">
+        <em>by</em> <span class="p-name">Corey</span>
+      </div><ul class="author-links"><li class="author-link">
+            <a class="u-url" rel="me" href=""><i class="fas fa-link fa-lg" title=""></i></a>
+          </li></ul>
+
+<span class="read-time">~1 min read</span>
+
+    <time class="page-date dt-published" datetime="2015-03-31T00:00:00+08:00"><a class="u-url" href="">March 31, 2015</a>
+</time>
+
+  </div>
+</div>
+
+        
+  <h3 class="page-taxonomies-title">Categories</h3>
+  <ul class="page-taxonomies"><li class="page-taxonomy">articles</li>
+  </ul>
+
+
+        
+  <h3 class="page-taxonomies-title">Tags</h3>
+  <ul class="page-taxonomies"><li class="page-taxonomy">Bioinformatics</li>
+  </ul>
+
+
+      </div>
+
+      <div class="page-content">
+        <div class="e-content">
+          <p>最近在做一个肝癌预测的项目，建模使用的数据源在<a href="https://tcga-data.nci.nih.gov/tcga/tcgaHome2.jsp">The Cancer Genome Atlas (TCGA)</a>下载。</p>
+
+<p>在调研文献时，看到了许多 FDR、 q-value 等指标，于是做了个小小的调研。关于假设检验的指标，脑海中第一反应便是p-value，众多科学家做统计的主要目标常常就是为了追逐一个小于 0.05 的 p 值。一般 p &lt; 0.05 表示实验具有统计学差异，今天看到 q-value ，不太熟悉，学习并记录如下。</p>
+
+<p>先简要谈谈 p-value ，用统计方法进行决策的过程中，一般会提出两个假设：</p>
+
+<ul>
+  <li>H0: null hypothesis</li>
+  <li>H1: alternative or research hypothesis</li>
+</ul>
+
+<p>假设检验的目的就是利用统计的方式，推测 H0 是否成立。那好，先假设 H0 事实上成立，如果统计检验的结果不支持，造成「Type I error」，如果假设 H0 事实上不成立，但统计检验的结果支持，造成「Type II error」。<strong>p-value</strong> 指的是犯「Type I error」的概率，本质上是控制 FPR (False Positive Rate)。</p>
+
+<p>关于两类错误，打个简单的比方，用验孕棒检测一位女士是否怀孕。</p>
+
+<ul>
+  <li>H0: 已怀孕</li>
+  <li>H1: 未怀孕</li>
+</ul>
+
+<p>先假设孕妇事实怀孕，检测后发现没有怀孕，此乃「Type I error」（我一般理解为误诊率），再假设孕妇并未怀孕，检测后发现怀孕，此乃「Type II errror」。如果我们的 p-value &lt; 0.01「真的是相当严格的标准了」，就表示用此种验孕棒检测时，检测100次测错次数小于1次，这是个小概率事件，表示验孕棒还是相当可靠的。</p>
+
+<p>但是，一旦涉及到多重比较，这种准确性便远远不够了。小小开个脑洞，我们拿1万个验孕棒做成100*100的array，现在我们一次性可以帮一万名女士检测是否怀孕。那么对于这一万名女性，其中「10000X0.01=100」人便会得到错误的结果，可能就因为这里的错误，导致这些女性改变人生轨迹，这是不可饶恕的。所以，对于多重检验，如果不进行任何控制，犯「Type I error」的概率便会随着假设检验的个数迅速增加。为了合理控制，有必要引入一个更加严格的指标，也就是 <strong>q-value</strong>。</p>
+
+<p>在多重假设检验中，有许多方法来克服这个问题。比如对每个测试用例赋校正后的 p-value，或者将 p-value 的阈值从 5% 下降到一个更为合理的阈值。许多传统的技术例如 <a href="https://en.wikipedia.org/wiki/Bonferroni_correction">Bonferroni correction</a> 从某种意义上来说显得较为保守，他们主要是依靠减少假阳性的个数，同时也会减少 TDR (True Discovery Rate)。FDR（False Discovery Rate）方法则是一种更加新颖靠谱的方法。这个方法同样会对每个测试用例赋校正后的 p-value，但是，它还控制了错误发现的个数。在实际研究中，我们能够容忍出现少量误诊，但需要在误诊的人数和出现误诊概率两个参数间找到一个平衡。这里需要提到一个概念: FWER (familty-wise error rate)，即至少出现一次「Type I error」的概率。</p>
+
+<blockquote>
+  <p>In statistics, family-wise error rate (FWER) is the probability of making one or more false discoveries, or type I errors, among all the hypotheses when performing multiple hypothesis tests. 			—<a href="https://en.wikipedia.org/wiki/Familywise_error_rate">Wiki</a></p>
+</blockquote>
+
+<p>FDR 可以在「Type I error」~ FWER 寻找平衡。换句话说，FDR 方法在多重检验中依靠牺牲 p 值 (增长「Type I error」）来提高整体的统计效能。q-value 指的是用 FDR 方法校正后的 p 值，计算方法如下：</p>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">P.Values</span><span class="w"> </span><span class="err">​​</span><span class="o">&lt;-</span><span class="w"> </span><span class="n">runif</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="m">100</span><span class="w"> </span><span class="p">)</span><span class="w">
+</span><span class="n">Q.Values</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">p.adjust</span><span class="w"> </span><span class="p">(</span><span class="n">P.Values</span><span class="p">,</span><span class="w"> </span><span class="n">method</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"fdr"</span><span class="p">)</span></code></pre></figure>
+
+<h2 id="references">References</h2>
+<ol>
+  <li><a href="https://stat.ethz.ch/R-manual/R-devel/library/stats/html/p.adjust.html">Adjust P-values for Multiple Comparisons</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/False_discovery_rate">False discovery rate</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Familywise_error_rate">Family-wise error rate</a></li>
+  <li><a href="http://www.nature.com/nbt/journal/v27/n12/full/nbt1209-1135.html">How does multiple testing correction work?</a></li>
+</ol>
+
+<hr />
+<p>Published under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">(CC) BY-NC-SA </a></p>
+
+        </div>
+
+        
+          <div class="page-share">
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Farticles%2Ffdr-q-value%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--facebook btn--small"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i> <span>Share</span></a>
+  <a href="https://twitter.com/intent/tweet?text=FDR+%E5%92%8C+q-value%20http%3A%2F%2Flocalhost%3A4000%2Farticles%2Ffdr-q-value%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--twitter btn--small"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i> <span>Tweet</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Farticles%2Ffdr-q-value%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--linkedin btn--small"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> <span>LinkedIn</span></a>
+  <a href="https://reddit.com/submit?title=FDR+%E5%92%8C+q-value&url=http%3A%2F%2Flocalhost%3A4000%2Farticles%2Ffdr-q-value%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--reddit btn--small"><i class="fab fa-fw fa-reddit" aria-hidden="true"></i> <span>Reddit</span></a>
+</div>
+
+        
+
+        
+
+        <nav class="page-pagination" role="navigation">
+  
+    <a class="page-previous" href="/articles/why-procrastination/">
+      <h4 class="page-pagination-label">Previous</h4>
+      <span class="page-pagination-title">
+        <i class="fas fa-arrow-left"></i> 我为什么会拖延？
+
+      </span>
+    </a>
+  
+
+  
+    <a class="page-next" href="/articles/dental-floss/">
+      <h4 class="page-pagination-label">Next</h4>
+      <span class="page-pagination-title">
+        爱健康，爱牙齿
+ <i class="fas fa-arrow-right"></i>
+      </span>
+    </a>
+  
+</nav>
+
+      </div>
+    </div>
+  </article>
+</main>
+
+
+    <footer id="footer" class="site-footer">
+  <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+<div class="social-icons"><a class="social-icon" href="/atom.xml"><i class="fas fa-rss-square fa-2x" title="Feed"></i></a></div><div class="copyright">
+    
+      <p>&copy; 2018 Rebirth. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://github.com/mmistakes/so-simple-theme" rel="nofollow">So Simple</a>.</p>
+    
+  </div>
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.0.12/js/all.js"></script>
+
+
+<!-- MathJax -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  </body>
+
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<!--
+    So Simple Jekyll Theme 3.1.1
+    Copyright 2013-2018 Michael Rose - mademistakes.com | @mmistakes
+    Free for personal and commercial use under the MIT license
+    https://github.com/mmistakes/so-simple-theme/blob/master/LICENSE
+-->
+<html lang="en-US" class="no-js">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+
+  
+    
+    <!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>A genius CNV calling strategy | Rebirth</title>
+<meta name="generator" content="Jekyll v3.8.2" />
+<meta property="og:title" content="A genius CNV calling strategy" />
+<meta name="author" content="Corey" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Genius strategy, genius guy" />
+<meta property="og:description" content="Genius strategy, genius guy" />
+<link rel="canonical" href="http://localhost:4000/articles/A-genius-CNV-calling-strategy/" />
+<meta property="og:url" content="http://localhost:4000/articles/A-genius-CNV-calling-strategy/" />
+<meta property="og:site_name" content="Rebirth" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2017-04-01T00:00:00+08:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@" />
+<meta name="twitter:creator" content="@Corey" />
+<script type="application/ld+json">
+{"description":"Genius strategy, genius guy","author":{"@type":"Person","name":"Corey"},"@type":"BlogPosting","url":"http://localhost:4000/articles/A-genius-CNV-calling-strategy/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/images/logo.svg"},"name":"Corey"},"headline":"A genius CNV calling strategy","dateModified":"2017-04-01T00:00:00+08:00","datePublished":"2017-04-01T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/articles/A-genius-CNV-calling-strategy/"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+  <script>
+    /* Cut the mustard */
+    if ( 'querySelector' in document && 'addEventListener' in window ) {
+      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
+    }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i|Lora:400,400i,700,700i">
+  <link rel="alternate" type="application/atom+xml" title="Rebirth" href="/atom.xml">
+<!-- start custom head snippets -->
+
+<!-- insert favicons. use http://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+</head>
+
+
+  <body class="layout--post  a-genius-cnv-calling-strategy">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#primary-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+  <div class="navigation-wrapper">
+    <a href="#menu-toggle" id="menu-toggle">Menu</a>
+    <nav id="primary-nav" class="site-nav animated drop">
+      <ul><li><a href="/">Home</a></li></ul>
+    </nav>
+  </div><!-- /.navigation-wrapper -->
+
+
+    <header class="masthead">
+  <div class="wrap">
+    
+      <a href="/" class="site-logo" rel="home" title="Rebirth">
+        <img src="/images/logo.svg" class="site-logo-img animated fadeInDown" alt="Rebirth">
+      </a>
+    
+    
+      <h1 class="site-title animated fadeIn"><a href="/">Rebirth</a></h1>
+      <p class="site-description animated fadeIn" itemprop="description">Notes on bioinformatics and data mining by G. Corey Shan</p>
+    
+  </div>
+</header><!-- /.masthead -->
+
+
+    <main id="main" class="main-content" aria-label="Content">
+  <article class="h-entry">
+    
+
+    <div class="page-wrapper">
+      <header class="page-header">
+        
+        
+          <h1 id="page-title" class="page-title p-name">A genius CNV calling strategy
+</h1>
+        
+      </header>
+
+      <div class="page-sidebar">
+        <div class="page-author h-card p-author"><div class="author-info"><div class="author-name">
+        <em>by</em> <span class="p-name">Corey</span>
+      </div><ul class="author-links"><li class="author-link">
+            <a class="u-url" rel="me" href=""><i class="fas fa-link fa-lg" title=""></i></a>
+          </li></ul>
+
+<span class="read-time">1 min read</span>
+
+    <time class="page-date dt-published" datetime="2017-04-01T00:00:00+08:00"><a class="u-url" href="">April 1, 2017</a>
+</time>
+
+  </div>
+</div>
+
+        
+  <h3 class="page-taxonomies-title">Categories</h3>
+  <ul class="page-taxonomies"><li class="page-taxonomy">articles</li>
+  </ul>
+
+
+        
+  <h3 class="page-taxonomies-title">Tags</h3>
+  <ul class="page-taxonomies"><li class="page-taxonomy">Bioinformatics</li>
+  </ul>
+
+
+      </div>
+
+      <div class="page-content">
+        <div class="e-content">
+          <p>Several days ago, we found that one specific gene of Copy Number Variation(CNV) in Life sequencing platform is not so accurate as we expect.</p>
+
+<p>We are used to construct a baseline from several negative samples (CN=2; N&gt;10), which is employed to call CNV of every new samples in a long time. But the problem is that the CNVs of new samples become increasingly biased from FISH result (a gold-standard of CNV) along with the time going. We think that the problem is everything is changing except for this baseline, especially baseline is extremely biologically sensitive to experimental condition, pipeline and enzyme.</p>
+
+<p>One of my genius colleagues has reached out an idea, why not convert <strong>static baseline</strong> to <strong>dynamical baseline</strong>. So when we want to call a CNV of certain sample, an automatic baseline is yielded from the same batch of this sample(ignoring positive or negative). After first calling, remove the samples which possess the highest and lowest CN value and reconstruct the baseline. At last, utilize the latest baseline to call CNV of the sample.</p>
+
+<p>I am pleased to be able to work with this guy. Now he is decided to leave and I believe he has his own choice and plan. Wish him a good future.</p>
+
+<hr />
+<p>Published under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">(CC) BY-NC-SA </a></p>
+
+        </div>
+
+        
+          <div class="page-share">
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Farticles%2FA-genius-CNV-calling-strategy%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--facebook btn--small"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i> <span>Share</span></a>
+  <a href="https://twitter.com/intent/tweet?text=A+genius+CNV+calling+strategy%20http%3A%2F%2Flocalhost%3A4000%2Farticles%2FA-genius-CNV-calling-strategy%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--twitter btn--small"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i> <span>Tweet</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Farticles%2FA-genius-CNV-calling-strategy%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--linkedin btn--small"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> <span>LinkedIn</span></a>
+  <a href="https://reddit.com/submit?title=A+genius+CNV+calling+strategy&url=http%3A%2F%2Flocalhost%3A4000%2Farticles%2FA-genius-CNV-calling-strategy%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--reddit btn--small"><i class="fab fa-fw fa-reddit" aria-hidden="true"></i> <span>Reddit</span></a>
+</div>
+
+        
+
+        
+
+        <nav class="page-pagination" role="navigation">
+  
+    <a class="page-previous" href="/articles/feedback-of-manchester-by-the-sea/">
+      <h4 class="page-pagination-label">Previous</h4>
+      <span class="page-pagination-title">
+        <i class="fas fa-arrow-left"></i> Depressed « Manchester by the Sea »
+
+      </span>
+    </a>
+  
+
+  
+    <a class="page-next" href="/articles/How-to-check-IGV/">
+      <h4 class="page-pagination-label">Next</h4>
+      <span class="page-pagination-title">
+        How to check IGV
+ <i class="fas fa-arrow-right"></i>
+      </span>
+    </a>
+  
+</nav>
+
+      </div>
+    </div>
+  </article>
+</main>
+
+
+    <footer id="footer" class="site-footer">
+  <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+<div class="social-icons"><a class="social-icon" href="/atom.xml"><i class="fas fa-rss-square fa-2x" title="Feed"></i></a></div><div class="copyright">
+    
+      <p>&copy; 2018 Rebirth. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://github.com/mmistakes/so-simple-theme" rel="nofollow">So Simple</a>.</p>
+    
+  </div>
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.0.12/js/all.js"></script>
+
+
+<!-- MathJax -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  </body>
+
+</html>

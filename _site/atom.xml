@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.2">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-05-21T13:39:13+08:00</updated><id>http://localhost:4000/</id><title type="html">Rebirth</title><subtitle>Notes on bioinformatics and data mining by G. Corey Shan</subtitle><author><name>Corey</name><email>me@shanguangyu.com</email></author><entry><title type="html">Please do not use CST to denote time zone</title><link href="http://localhost:4000/articles/do-not-use-CST-to-denote-time-zone/" rel="alternate" type="text/html" title="Please do not use CST to denote time zone" /><published>2018-05-09T00:00:00+08:00</published><updated>2018-05-09T00:00:00+08:00</updated><id>http://localhost:4000/articles/do-not-use-CST-to-denote-time-zone</id><content type="html" xml:base="http://localhost:4000/articles/do-not-use-CST-to-denote-time-zone/">&lt;p&gt;Sometimes, I got emails from friends across the world. They usually kindly attach a timestamp at the end of the mail. One day, I got an email with &lt;code class=&quot;highlighter-rouge&quot;&gt;CST&lt;/code&gt; in the timastamp from a guy I did not know before. This small tag confused me a lot because there are at least four time zones using CST as an abbreviation:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Central Standard Time (USA) UTC-6:00&lt;/li&gt;
+  &lt;li&gt;Central Standard Time (Australia) UTC+9:30&lt;/li&gt;
+  &lt;li&gt;China Standard Time UTC+8:00&lt;/li&gt;
+  &lt;li&gt;Cuba Standard Time UTC-4:00&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;To precisely indicate the time zone, I strongly recommend the UTC (Coordinated Universal Time) standard, which is the basis for civil time today. UTC is the primary time standard by which the world regulates clocks and time. Here, Someone will doubt that whethe we can use GMT (Greenwich Mean Time) to replace UTC. It is necessary to bear in mind that even though GMT and UTC share the same current time in practice, we still suggest using the UTC standard to denote time zone.&lt;/p&gt;
+
+&lt;p&gt;GMT is a country based time standard, whereas UTC is an internet based time standard. UTC is the time standard used for Internet and World Wide Web standards. It is also the basis of the satellite global positioning system (GPS). UTC is used by the Network Time Protocol, created to synchronize the clocks of many computers over the Internet. &lt;em&gt;If we communicate via Internet, UTC is the best choice&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Well, back to the previous quesion. If we adopt UTC standard, we can make sure that the receiver got to know the exact time we refer to. For example, I live in Beijing, and my time zone is UTC+0800.&lt;/p&gt;
+
+&lt;p&gt;After all, using proper medium to convey precisely what you really mean is the most important task in our life.&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;Published under &lt;a rel=&quot;license&quot; href=&quot;http://creativecommons.org/licenses/by-nc-sa/3.0/&quot;&gt;(CC) BY-NC-SA &lt;/a&gt;&lt;/p&gt;</content><author><name>Corey</name><email>me@shanguangyu.com</email></author><category term="Life" /><summary type="html">Use UTC standard to denote time zone</summary></entry><entry><title type="html">Solved-SSL connect error</title><link href="http://localhost:4000/articles/solved-SSL-connect-error/" rel="alternate" type="text/html" title="Solved-SSL connect error" /><published>2018-04-16T00:00:00+08:00</published><updated>2018-04-16T00:00:00+08:00</updated><id>http://localhost:4000/articles/solved-SSL-connect-error</id><content type="html" xml:base="http://localhost:4000/articles/solved-SSL-connect-error/">&lt;p&gt;Today, I tried to install an R package: &lt;a href=&quot;https://github.com/mskcc/facets&quot;&gt;facets&lt;/a&gt;. During installation, I got stucked by SSL connect error and the error code is as follows. So I tried to install this package locally and got it done.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;c&quot;&gt;# Error code&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; library&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;devtools&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; devtools::install_github&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;mskcc/facets&quot;&lt;/span&gt;, build_vignettes &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; TRUE&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+Downloading GitHub repo mskcc/facets@master
+from URL https://api.github.com/repos/mskcc/facets/zipball/master
+Installation failed: SSL connect error
+
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; devtools::install_github&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;mskcc/pctGCdata&quot;&lt;/span&gt;, build_vignettes &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; TRUE&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+Downloading GitHub repo mskcc/pctGCdata@master
+from URL https://api.github.com/repos/mskcc/pctGCdata/zipball/master
+Installation failed: SSL connect error&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;To address this issue, I turned to download the zipball from github, unzip the zipball and install the package locally. Soon after this move, everything goes well.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;library&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;devtools&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;devtools::install_local&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;../../pctGCdata&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;devtools::install_local&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;../../facets&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;Published under &lt;a rel=&quot;license&quot; href=&quot;http://creativecommons.org/licenses/by-nc-sa/3.0/&quot;&gt;(CC) BY-NC-SA &lt;/a&gt;&lt;/p&gt;</content><author><name>Corey</name><email>me@shanguangyu.com</email></author><category term="Bioinformatics" /><summary type="html">R package installation</summary></entry><entry><title type="html">InDel left-alignment</title><link href="http://localhost:4000/articles/indel-left-alignment/" rel="alternate" type="text/html" title="InDel left-alignment" /><published>2018-03-27T00:00:00+08:00</published><updated>2018-03-27T00:00:00+08:00</updated><id>http://localhost:4000/articles/indel-left-alignment</id><content type="html" xml:base="http://localhost:4000/articles/indel-left-alignment/">&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Indel&quot;&gt;InDel&lt;/a&gt; is a common concept in molecular biology, while the representation for InDels are non-unique. There are at least two representations: left-alignment and right-alignment. Actually it does not really matter, but it good to have a convention. I would like to suggest using left-alignment with these reasons:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;ref            : CGTATGATCTA [GCGCGC] TAGCTAGCTAGC
+left-alignment : CGTATGATCTA [--GCGC] TAGCTAGCTAGC
+right-alignment: CGTATGATCTA [GCGC--] TAGCTAGCTAGC&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Standard
+Statistical genetics center of university of michigan denote that &lt;a href=&quot;https://genome.sph.umich.edu/wiki/Variant_Normalization#Left_alignment&quot;&gt;left-alignment&lt;/a&gt; is necessary.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Community
+Most famous tools are stick to left-alignment, such as &lt;a href=&quot;https://software.broadinstitute.org/gatk/documentation/tooldocs/3.8-0/org_broadinstitute_gatk_tools_walkers_indels_LeftAlignIndels.php&quot;&gt;GATK&lt;/a&gt;, &lt;a href=&quot;http://annovar.openbioinformatics.org/en/latest/articles/VCF/&quot;&gt;ANNOVAR&lt;/a&gt; and related databases:&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;avsnp138&lt;/li&gt;
+  &lt;li&gt;avsnp142&lt;/li&gt;
+  &lt;li&gt;clinvar_20150330&lt;/li&gt;
+  &lt;li&gt;1000g2014oct&lt;/li&gt;
+  &lt;li&gt;exac03&lt;/li&gt;
+  &lt;li&gt;esp6500siv2&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;The standard convention is to place an indel at the left-most position possible.   —GATK&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Since left-normalization is gaining more and more popularity, my suggestion is to just use left-normalization, and that database curators as well as users both use this practice, so that we can compare apples to apples.   —ANNOVAR&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;In the end, I would prefer to stick to the convention — &lt;strong&gt;left-alignment&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;Published under &lt;a rel=&quot;license&quot; href=&quot;http://creativecommons.org/licenses/by-nc-sa/3.0/&quot;&gt;(CC) BY-NC-SA &lt;/a&gt;&lt;/p&gt;</content><author><name>Corey</name><email>me@shanguangyu.com</email></author><category term="Bioinformatics" /><summary type="html">InDel left-alignment is recommended</summary></entry><entry><title type="html">Configure, make and make install</title><link href="http://localhost:4000/articles/configure-make-and-make-install/" rel="alternate" type="text/html" title="Configure, make and make install" /><published>2018-03-02T00:00:00+08:00</published><updated>2018-03-02T00:00:00+08:00</updated><id>http://localhost:4000/articles/configure-make-and-make-install</id><content type="html" xml:base="http://localhost:4000/articles/configure-make-and-make-install/">&lt;p&gt;Install software from source on Linux platform is an extremely common task. I’ve typed those commands a lot, but I did not understand it very well before. After reading this article&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; wrote by George, I gradually understand those magic incantation.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;./configure
+make
+make &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;In short, &lt;code class=&quot;highlighter-rouge&quot;&gt;configure&lt;/code&gt; makes sure that the system environment is ready to build the software, such as standard libraries and components are in the right place, &lt;code class=&quot;highlighter-rouge&quot;&gt;make&lt;/code&gt; read commands from &lt;em&gt;Makefile&lt;/em&gt; and compile the software, &lt;code class=&quot;highlighter-rouge&quot;&gt;make install&lt;/code&gt; also read commands from &lt;em&gt;Makefile&lt;/em&gt; and install the software to specified directory.&lt;/p&gt;
+
+&lt;p&gt;1.configure&lt;/p&gt;
+
+&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;configure&lt;/code&gt; step is aimed to produce &lt;em&gt;Makefile&lt;/em&gt; from &lt;em&gt;Makefile.in&lt;/em&gt;. At this step, user can define installation directory by &lt;code class=&quot;highlighter-rouge&quot;&gt;./configure --prefix=/mypath&lt;/code&gt;, especially when the user did not have root privilege. For more information, use &lt;code class=&quot;highlighter-rouge&quot;&gt;./configure --help&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;2.make&lt;/p&gt;
+
+&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;make&lt;/code&gt; step is aimed to use &lt;em&gt;Makefile&lt;/em&gt; to build the software.&lt;/p&gt;
+
+&lt;p&gt;3.make install&lt;/p&gt;
+
+&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;make install&lt;/code&gt; step is aimed to use &lt;em&gt;Makefile&lt;/em&gt; to install the software.&lt;/p&gt;
+
+&lt;p&gt;Hope everyone goes well with software installation!&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;https://robots.thoughtbot.com/the-magic-behind-configure-make-make-install&quot;&gt;The magic behind configure, make and make install&lt;/a&gt; &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;</content><author><name>Corey</name><email>me@shanguangyu.com</email></author><category term="Bioinformatics" /><summary type="html">Magic behind software installation</summary></entry><entry><title type="html">Hidden Post</title><link href="http://localhost:4000/example/hidden-post/" rel="alternate" type="text/html" title="Hidden Post" /><published>2018-02-25T00:00:00+08:00</published><updated>2018-02-25T00:00:00+08:00</updated><id>http://localhost:4000/example/hidden-post</id><content type="html" xml:base="http://localhost:4000/example/hidden-post/">&lt;p&gt;This post has YAML Front Matter of &lt;code class=&quot;highlighter-rouge&quot;&gt;hidden: true&lt;/code&gt; and should not appear in &lt;code class=&quot;highlighter-rouge&quot;&gt;paginator.posts&lt;/code&gt;.&lt;/p&gt;</content><author><name>Corey</name><email>me@shanguangyu.com</email></author><summary type="html">This post has YAML Front Matter of hidden: true and should not appear in paginator.posts.</summary></entry><entry><title type="html">Hidden Post</title><link href="http://localhost:4000/docs/hidden-post/" rel="alternate" type="text/html" title="Hidden Post" /><published>2018-02-25T00:00:00+08:00</published><updated>2018-02-25T00:00:00+08:00</updated><id>http://localhost:4000/docs/hidden-post</id><content type="html" xml:base="http://localhost:4000/docs/hidden-post/">&lt;p&gt;This post has YAML Front Matter of &lt;code class=&quot;highlighter-rouge&quot;&gt;hidden: true&lt;/code&gt; and should not appear in &lt;code class=&quot;highlighter-rouge&quot;&gt;paginator.posts&lt;/code&gt;.&lt;/p&gt;</content><author><name>Corey</name><email>me@shanguangyu.com</email></author><summary type="html">This post has YAML Front Matter of hidden: true and should not appear in paginator.posts.</summary></entry><entry><title type="html">Solved-undefined reference to gzopen64</title><link href="http://localhost:4000/articles/solved-undefined-reference-to-gzopen64/" rel="alternate" type="text/html" title="Solved-undefined reference to gzopen64" /><published>2018-01-18T00:00:00+08:00</published><updated>2018-01-18T00:00:00+08:00</updated><id>http://localhost:4000/articles/solved-undefined-reference-to-gzopen64</id><content type="html" xml:base="http://localhost:4000/articles/solved-undefined-reference-to-gzopen64/">&lt;p&gt;Today, I tried to install a bioinformatics software called &lt;a href=&quot;https://github.com/genome/somatic-sniper&quot;&gt;SomaticSniper&lt;/a&gt; under its &lt;a href=&quot;https://github.com/genome/somatic-sniper/blob/master/gmt/install.md&quot;&gt;instructions&lt;/a&gt; while got stuck at the fourth step.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;mkdir &lt;/span&gt;somatic-sniper/build  &lt;span class=&quot;c&quot;&gt;#succeed&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;somatic-sniper/build &lt;span class=&quot;c&quot;&gt;#succeed&lt;/span&gt;
+cmake ../ &lt;span class=&quot;c&quot;&gt;#succeed&lt;/span&gt;
+make deps &lt;span class=&quot;c&quot;&gt;#failed&lt;/span&gt;
+make &lt;span class=&quot;nt&quot;&gt;-j&lt;/span&gt; 
+make &lt;span class=&quot;nb&quot;&gt;test&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;The errors are listed below, it seems that zlib is not working well in &lt;code class=&quot;highlighter-rouge&quot;&gt;bam_import.c&lt;/code&gt; file. Therefore, I modified &lt;code class=&quot;highlighter-rouge&quot;&gt;bam_import.c&lt;/code&gt; file by replacing the &lt;code class=&quot;highlighter-rouge&quot;&gt;zlib.h&lt;/code&gt; statement to an absolute path.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;/NAME/src/somatic-sniper/1.0.5.0/build/vendor/samtools/bam_import.c:75: undefined reference to gzopen64
+./libbam.a&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;bam_import.o&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;: In &lt;span class=&quot;k&quot;&gt;function &lt;/span&gt;sam_open:
+/NAME/src/somatic-sniper/1.0.5.0/build/vendor/samtools/bam_import.c:502: undefined reference to gzopen64
+./libbam.a&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;bam_import.o&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;: In &lt;span class=&quot;k&quot;&gt;function &lt;/span&gt;sam_header_read2:
+/NAME/src/somatic-sniper/1.0.5.0/build/vendor/samtools/bam_import.c:125: undefined reference to gzopen64
+collect2: ld returned 1 &lt;span class=&quot;nb&quot;&gt;exit &lt;/span&gt;status
+make[1]: &lt;span class=&quot;k&quot;&gt;***&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;samtools] Error 1
+make[1]: Leaving directory /NAME/src/somatic-sniper/1.0.5.0/build/vendor/samtools
+make: &lt;span class=&quot;k&quot;&gt;***&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;all-recur] Error 1&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$locate&lt;/span&gt; zlib.h |head &lt;span class=&quot;nt&quot;&gt;-1&lt;/span&gt; 
+/usr/include/zlib.h
+
+&lt;span class=&quot;nv&quot;&gt;$vi&lt;/span&gt; /NAME/src/somatic-sniper/1.0.5.0/build/vendor/samtools/bam_import.c
+replace &lt;span class=&quot;c&quot;&gt;#include &amp;lt;zlib.h&amp;gt; &lt;/span&gt;
+to      &lt;span class=&quot;c&quot;&gt;#include &amp;lt;/usr/include/zlib.h&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Then, remake deps and everything is ok.&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;Published under &lt;a rel=&quot;license&quot; href=&quot;http://creativecommons.org/licenses/by-nc-sa/3.0/&quot;&gt;(CC) BY-NC-SA &lt;/a&gt;&lt;/p&gt;</content><author><name>Corey</name><email>me@shanguangyu.com</email></author><category term="Bioinformatics" /><summary type="html">Compilation error</summary></entry><entry><title type="html">My 2017</title><link href="http://localhost:4000/articles/my-2017/" rel="alternate" type="text/html" title="My 2017" /><published>2017-12-29T00:00:00+08:00</published><updated>2017-12-29T00:00:00+08:00</updated><id>http://localhost:4000/articles/my-2017</id><content type="html" xml:base="http://localhost:4000/articles/my-2017/">&lt;p&gt;Well, it is my first time to write annual self-appraisal on my blog. Here is what I have got and what I am going to do.&lt;/p&gt;
+
+&lt;h2 id=&quot;work&quot;&gt;Work&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;I have contributed three projects to Novogene: MSI algorithm, TMB algorithm and ACMG auto-interpretation pipeline.&lt;/li&gt;
+  &lt;li&gt;The first half year is for MSI and TMB, and the latter half year is for IVD project.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;coding&quot;&gt;Coding&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Wrote a project exceeding 3000-line codes, which enables me to handle relatively complex system.&lt;/li&gt;
+  &lt;li&gt;Finished reconstructing several of my old projects using python.&lt;/li&gt;
+  &lt;li&gt;Learned basic grammar of &lt;a href=&quot;https://www.scala-lang.org/&quot;&gt;Scala&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;life&quot;&gt;Life&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;My wife bought me a Macbook Pro 13-Inch(2017), which I used to write this article. It is necessary to have effective tools to do good work.&lt;/li&gt;
+  &lt;li&gt;My cooking skill improves a lot, especially Stir-fried Shredded Pork with Green Pepper.&lt;/li&gt;
+  &lt;li&gt;Have read six books, which enlightened me most is &lt;a href=&quot;https://en.wikipedia.org/wiki/Stories_about_Ming_Dynasty&quot;&gt;&lt;em&gt;Stories about Ming Dynasty&lt;/em&gt;&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Got my master diploma from &lt;a href=&quot;https://en.wikipedia.org/wiki/Academy_of_Military_Medical_Sciences&quot;&gt;AMMS&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Exercise once per week.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;2018&quot;&gt;2018&lt;/h2&gt;
+
+&lt;p&gt;In 2018, I still hold the opinion that scientific writing and coding are the most important skills for bioinformatician. Therefore, my flags for 2018 are:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Reconstruct &lt;em&gt;one&lt;/em&gt; of my projects using scala&lt;/li&gt;
+  &lt;li&gt;Finish &lt;em&gt;a&lt;/em&gt; machine learning project on Kaggle&lt;/li&gt;
+  &lt;li&gt;Study English &lt;em&gt;30&lt;/em&gt; minutes per day&lt;/li&gt;
+  &lt;li&gt;Read &lt;em&gt;10&lt;/em&gt; books&lt;/li&gt;
+  &lt;li&gt;Exercise &lt;em&gt;three&lt;/em&gt; times per week, which is twice than what I have done in 2017&lt;/li&gt;
+  &lt;li&gt;Spare average &lt;em&gt;2&lt;/em&gt; hours per day on family&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Embrace 2018!&lt;/strong&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;Published under &lt;a rel=&quot;license&quot; href=&quot;http://creativecommons.org/licenses/by-nc-sa/3.0/&quot;&gt;(CC) BY-NC-SA &lt;/a&gt;&lt;/p&gt;</content><author><name>Corey</name><email>me@shanguangyu.com</email></author><category term="Life" /><summary type="html">Embrace 2018</summary></entry><entry><title type="html">Basic folder structure for bioinformatics</title><link href="http://localhost:4000/articles/basic-folder-structure-for-bioinformatics/" rel="alternate" type="text/html" title="Basic folder structure for bioinformatics" /><published>2017-12-12T00:00:00+08:00</published><updated>2017-12-12T00:00:00+08:00</updated><id>http://localhost:4000/articles/basic-folder-structure-for-bioinformatics</id><content type="html" xml:base="http://localhost:4000/articles/basic-folder-structure-for-bioinformatics/">&lt;p&gt;Yesterday, a friend of mine asked me if there was a good way to organize folders for a bioinformatics project. That is also a good question to me. As for me, when dealing with a relatively light-weight project such as testing a script for GC content counting or performing simple BLAST, I would prefer to use flat folder.&lt;/p&gt;
+
+&lt;p&gt;However, when developing a relatively heavy-weight product such as an algorithm, like microsatellite instability determination or an auto-interpretation algorithm for NGS variants under ACMG guidelines, a flat folder structure is not well enough to support a project like this.&lt;/p&gt;
+
+&lt;p&gt;Therefore, it is necessary to organize the project folder seriously. The basic idea for organizing the folder is to guarantee the traceability and clarity. So, I strongly recommend the structure below:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;.
+├── 00.raw
+│   └── raw_fasta.fa
+├── 01.bin
+│   └── process.py
+├── 02.ref
+│   ├── 20160211_report.pptx
+│   └── material.pdf
+├── 03.rst
+│   ├── publication.png
+│   └── svm.xlsx
+├── Misc
+│   └── MWE
+│       ├── demo_input
+│       └── work.sh
+└── ReadMe&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;The project folder includes five subfolders, which are &lt;code class=&quot;highlighter-rouge&quot;&gt;raw&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;bin&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;ref&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;rst&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;Misc&lt;/code&gt;. In addition, the &lt;code class=&quot;highlighter-rouge&quot;&gt;ReadMe&lt;/code&gt; file should be contained in the project folder. &lt;code class=&quot;highlighter-rouge&quot;&gt;ReadMe&lt;/code&gt; file is a form of documentation that contains information about other files in this directory. Each subfolder has its own function in this project.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;raw&lt;/code&gt;: Save raw files, often come from Illumina machine or website&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;bin&lt;/code&gt;: Save developed scripts&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ref&lt;/code&gt;: Save reference materials&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;rst&lt;/code&gt;: Save important results&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Misc&lt;/code&gt;: Save Miscellaneous files. The most important subfolder in it is minimal working example (MWE), which is a collection of source code and other essential data files, allowing a bug or problem to be demonstrated and reproduced.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In a word, a well-organized folder can facilitate human readability and therefore be good for the project. Code is more for computers, and well-organized folder structure is for humans. It is actually often more difficult to deal with humans than computers.&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;Published under &lt;a rel=&quot;license&quot; href=&quot;http://creativecommons.org/licenses/by-nc-sa/3.0/&quot;&gt;(CC) BY-NC-SA &lt;/a&gt;&lt;/p&gt;</content><author><name>Corey</name><email>me@shanguangyu.com</email></author><category term="Bioinformatics" /><summary type="html">Organize project folder is important</summary></entry><entry><title type="html">Setup sftp plugin for sublime</title><link href="http://localhost:4000/articles/setup-sftp-plugin-for-sublime/" rel="alternate" type="text/html" title="Setup sftp plugin for sublime" /><published>2017-09-26T00:00:00+08:00</published><updated>2017-09-26T00:00:00+08:00</updated><id>http://localhost:4000/articles/setup-sftp-plugin-for-sublime</id><content type="html" xml:base="http://localhost:4000/articles/setup-sftp-plugin-for-sublime/">&lt;p&gt;I do not want to use &lt;a href=&quot;https://en.wikipedia.org/wiki/Vi&quot;&gt;vi&lt;/a&gt; in remote server, especially when dealing with large amounts of coding work. Instead, I want to write code in my laptop with &lt;a href=&quot;https://www.sublimetext.com/&quot;&gt;sublime&lt;/a&gt;, and make it simultaneously sync to a remote server.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://wbond.net/sublime_packages/sftp&quot;&gt;SFTP&lt;/a&gt;, a plugin for sublime can deal with the problem above, which can map a local folder/file to remote folder/file. Here is how I setup this plugin.&lt;/p&gt;
+
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#install-package-control-package&quot; id=&quot;markdown-toc-install-package-control-package&quot;&gt;Install Package Control Package&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#install-sftp&quot; id=&quot;markdown-toc-install-sftp&quot;&gt;Install SFTP&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#setup-config-file-in-json-format&quot; id=&quot;markdown-toc-setup-config-file-in-json-format&quot;&gt;Setup config file in json format&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#enjoy-coding&quot; id=&quot;markdown-toc-enjoy-coding&quot;&gt;Enjoy coding&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;install-package-control-package&quot;&gt;Install Package Control Package&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Open Sublime console by pressing &lt;code class=&quot;highlighter-rouge&quot;&gt;Ctrl&lt;/code&gt; +&lt;code class=&quot;highlighter-rouge&quot;&gt;~&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Copy the long command below and press &lt;code class=&quot;highlighter-rouge&quot;&gt;Enter&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Sublime Text 2&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;import urllib2,os,hashlib&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; h &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'6f4c264a24d933ce70df5dedcf1dcaee'&lt;/span&gt; + &lt;span class=&quot;s1&quot;&gt;'ebe013ee18cced0ef93d5f746d80ef60'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; pf &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Package Control.sublime-package'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; ipp &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; sublime.installed_packages_path&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; os.makedirs&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt; ipp &lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if &lt;/span&gt;not os.path.exists&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;ipp&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else &lt;/span&gt;None&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; urllib2.install_opener&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt; urllib2.build_opener&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt; urllib2.ProxyHandler&lt;span class=&quot;o&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; by &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; urllib2.urlopen&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'http://packagecontrol.io/'&lt;/span&gt; + pf.replace&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;' '&lt;/span&gt;, &lt;span class=&quot;s1&quot;&gt;'%20'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt;.read&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; dh &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; hashlib.sha256&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;by&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;.hexdigest&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; open&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt; os.path.join&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt; ipp, pf&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;, &lt;span class=&quot;s1&quot;&gt;'wb'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;.write&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;by&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if &lt;/span&gt;dh &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; h &lt;span class=&quot;k&quot;&gt;else &lt;/span&gt;None&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; print&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Error validating download (got %s instead of %s), please try manual install'&lt;/span&gt; % &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;dh, h&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if &lt;/span&gt;dh &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; h &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Please restart Sublime Text to finish installation'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Sublime Text 3&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;import urllib.request,os,hashlib&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; h &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'6f4c264a24d933ce70df5dedcf1dcaee'&lt;/span&gt; + &lt;span class=&quot;s1&quot;&gt;'ebe013ee18cced0ef93d5f746d80ef60'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; pf &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Package Control.sublime-package'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; ipp &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; sublime.installed_packages_path&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; urllib.request.install_opener&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt; urllib.request.build_opener&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt; urllib.request.ProxyHandler&lt;span class=&quot;o&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; by &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; urllib.request.urlopen&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'http://packagecontrol.io/'&lt;/span&gt; + pf.replace&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;' '&lt;/span&gt;, &lt;span class=&quot;s1&quot;&gt;'%20'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt;.read&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; dh &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; hashlib.sha256&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;by&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;.hexdigest&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; print&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Error validating download (got %s instead of %s), please try manual install'&lt;/span&gt; % &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;dh, h&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if &lt;/span&gt;dh &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; h &lt;span class=&quot;k&quot;&gt;else &lt;/span&gt;open&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;os.path.join&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt; ipp, pf&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;, &lt;span class=&quot;s1&quot;&gt;'wb'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;.write&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;by&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Restart Sublime&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;install-sftp&quot;&gt;Install SFTP&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Press &lt;code class=&quot;highlighter-rouge&quot;&gt;Command&lt;/code&gt;/&lt;code class=&quot;highlighter-rouge&quot;&gt;Control&lt;/code&gt;  + &lt;code class=&quot;highlighter-rouge&quot;&gt;Shift&lt;/code&gt; +&lt;code class=&quot;highlighter-rouge&quot;&gt;P&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Type &lt;code class=&quot;highlighter-rouge&quot;&gt;SFTP&lt;/code&gt; and install&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;setup-config-file-in-json-format&quot;&gt;Setup config file in json format&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Drag a folder to sublime and this folder will show up in the sidebar&lt;/li&gt;
+  &lt;li&gt;Right click on this folder and select &lt;code class=&quot;highlighter-rouge&quot;&gt;SFTP/FTP&lt;/code&gt;  -&amp;gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;Map to Remote...&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;A file named &lt;code class=&quot;highlighter-rouge&quot;&gt;sftp-config.json&lt;/code&gt; will show up in this folder&lt;/li&gt;
+  &lt;li&gt;Change four field with your own customization: &lt;code class=&quot;highlighter-rouge&quot;&gt;host&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;user&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;password&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;remote_path&lt;/code&gt; , save it.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;The&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;tab&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;will&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;cycle&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;through&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;the&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;settings&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;when&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;first&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;created&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;Visit&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;http&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;//wbond.net/sublime_packages/sftp/settings&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;help&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;sftp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;ftp&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;or&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;ftps&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;sftp&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+
+&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;save_before_upload&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;upload_on_save&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;sync_down_on_open&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;sync_skip_deletes&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;sync_same_age&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;confirm_downloads&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;confirm_sync&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;confirm_overwrite_newer&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+
+&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;host&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;yourip&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;lt;-&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;Here&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;is&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;where&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;you&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;want&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;to&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;change&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;user&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;yourname&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;     &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;lt;-&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;Here&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;is&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;where&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;you&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;want&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;to&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;change&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;password&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;yourpassword&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;lt;-&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;Here&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;is&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;where&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;you&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;want&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;to&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;change&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;  
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;port&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;22&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+
+&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;remote_path&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;yourpath&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;lt;-&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;Here&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;is&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;where&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;you&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;want&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;to&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;change&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;ignore_regexes&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;.sublime-(project|workspace)&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;sftp-config(-alt&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;d?)?&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;.json&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;sftp-settings&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;.json&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;/venv/&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;.svn/&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;.hg/&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;.git/&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;.bzr&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;_darcs&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;CVS&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;.DS_Store&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Thumbs&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;.db&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;desktop&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;.ini&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;file_permissions&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;664&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;dir_permissions&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;775&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;extra_list_connections&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;connect_timeout&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;30&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;keepalive&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;120&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;ftp_passive_mode&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;ftp_obey_passive_host&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;ssh_key_file&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;~/.ssh/id_rsa&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;sftp_flags&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;-F&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;/path/to/ssh_config&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;preserve_modification_times&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;remote_time_offset_in_hours&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;remote_encoding&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;utf-8&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;remote_locale&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;C&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;allow_config_upload&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;enjoy-coding&quot;&gt;Enjoy coding&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Right click your code in this folder and choose &lt;code class=&quot;highlighter-rouge&quot;&gt;SFTP/FTP&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Then you can do whatever you want to do, such as &lt;code class=&quot;highlighter-rouge&quot;&gt;Upload File&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;Download File&lt;/code&gt; …&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;Published under &lt;a rel=&quot;license&quot; href=&quot;http://creativecommons.org/licenses/by-nc-sa/3.0/&quot;&gt;(CC) BY-NC-SA &lt;/a&gt;&lt;/p&gt;</content><author><name>Corey</name><email>me@shanguangyu.com</email></author><category term="Mac" /><summary type="html">SFTP setting protocal</summary></entry></feed>

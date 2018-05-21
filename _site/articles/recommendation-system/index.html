@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<!--
+    So Simple Jekyll Theme 3.1.1
+    Copyright 2013-2018 Michael Rose - mademistakes.com | @mmistakes
+    Free for personal and commercial use under the MIT license
+    https://github.com/mmistakes/so-simple-theme/blob/master/LICENSE
+-->
+<html lang="en-US" class="no-js">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+
+  
+    
+    <!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>Recommendation System | Rebirth</title>
+<meta name="generator" content="Jekyll v3.8.2" />
+<meta property="og:title" content="Recommendation System" />
+<meta name="author" content="Corey" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Implement recommendation system by python." />
+<meta property="og:description" content="Implement recommendation system by python." />
+<link rel="canonical" href="http://localhost:4000/articles/recommendation-system/" />
+<meta property="og:url" content="http://localhost:4000/articles/recommendation-system/" />
+<meta property="og:site_name" content="Rebirth" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2015-11-12T00:00:00+08:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@" />
+<meta name="twitter:creator" content="@Corey" />
+<script type="application/ld+json">
+{"description":"Implement recommendation system by python.","author":{"@type":"Person","name":"Corey"},"@type":"BlogPosting","url":"http://localhost:4000/articles/recommendation-system/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/images/logo.svg"},"name":"Corey"},"headline":"Recommendation System","dateModified":"2015-11-12T00:00:00+08:00","datePublished":"2015-11-12T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/articles/recommendation-system/"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+  <script>
+    /* Cut the mustard */
+    if ( 'querySelector' in document && 'addEventListener' in window ) {
+      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
+    }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i|Lora:400,400i,700,700i">
+  <link rel="alternate" type="application/atom+xml" title="Rebirth" href="/atom.xml">
+<!-- start custom head snippets -->
+
+<!-- insert favicons. use http://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+</head>
+
+
+  <body class="layout--post  recommendation-system">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#primary-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+  <div class="navigation-wrapper">
+    <a href="#menu-toggle" id="menu-toggle">Menu</a>
+    <nav id="primary-nav" class="site-nav animated drop">
+      <ul><li><a href="/">Home</a></li></ul>
+    </nav>
+  </div><!-- /.navigation-wrapper -->
+
+
+    <header class="masthead">
+  <div class="wrap">
+    
+      <a href="/" class="site-logo" rel="home" title="Rebirth">
+        <img src="/images/logo.svg" class="site-logo-img animated fadeInDown" alt="Rebirth">
+      </a>
+    
+    
+      <h1 class="site-title animated fadeIn"><a href="/">Rebirth</a></h1>
+      <p class="site-description animated fadeIn" itemprop="description">Notes on bioinformatics and data mining by G. Corey Shan</p>
+    
+  </div>
+</header><!-- /.masthead -->
+
+
+    <main id="main" class="main-content" aria-label="Content">
+  <article class="h-entry">
+    
+
+    <div class="page-wrapper">
+      <header class="page-header">
+        
+        
+          <h1 id="page-title" class="page-title p-name">Recommendation System
+</h1>
+        
+      </header>
+
+      <div class="page-sidebar">
+        <div class="page-author h-card p-author"><div class="author-info"><div class="author-name">
+        <em>by</em> <span class="p-name">Corey</span>
+      </div><ul class="author-links"><li class="author-link">
+            <a class="u-url" rel="me" href=""><i class="fas fa-link fa-lg" title=""></i></a>
+          </li></ul>
+
+<span class="read-time">4 min read</span>
+
+    <time class="page-date dt-published" datetime="2015-11-12T00:00:00+08:00"><a class="u-url" href="">November 12, 2015</a>
+</time>
+
+  </div>
+</div>
+
+        
+  <h3 class="page-taxonomies-title">Categories</h3>
+  <ul class="page-taxonomies"><li class="page-taxonomy">articles</li>
+  </ul>
+
+
+        
+  <h3 class="page-taxonomies-title">Tags</h3>
+  <ul class="page-taxonomies"><li class="page-taxonomy">Python</li>
+  </ul>
+
+
+      </div>
+
+      <div class="page-content">
+        <div class="e-content">
+          <p>In this small article, I want to keep a record for my study experience in recommendation system. There are several parameters can evaluate a recommendation system, which are <strong>precision</strong>, <strong>recall</strong> and <strong>F-measure</strong>. Collaborative filtering (CF) is the most successful recommendation technique to date. There are three main categories of CF techniques: memory-based, model-based and hybrid CF algorithms (that combine CF with other recommendation techniques).</p>
+
+<figure>
+<img src="https://dn-shanguangyu.qbox.me/Overview%20of%20CF.png
+" alt="image" />
+<figcaption>Overview of collaborative filtering techniques.</figcaption>
+</figure>
+
+<p>Today, I will mainly focus on Item-based and User-based CF techniques. The basic idea of item-based CF algorithms is to calculate the similarity between different items based on the user-item rating data and then to compute the prediction score for a given item based on the calculated similarity score, while the core of user-based CF algorithms is to provide item recommendation or prediction based on the common opinion of other like-minded users.</p>
+
+<figure>
+<img src="https://dn-shanguangyu.qbox.me/CF.gif" alt="image" />
+</figure>
+
+<h3 id="evaluation-indicators-for-a-recommendation-system">Evaluation indicators for a recommendation system</h3>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th style="text-align: left">Notation</th>
+      <th style="text-align: center">Meaning</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">P</td>
+      <td style="text-align: center">is the fraction of retrieved instances that are relevant.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">R</td>
+      <td style="text-align: center">is the fraction of relevant instances that are retrieved.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">F</td>
+      <td style="text-align: center">F = (2PR/(P+R)). in fact, F-measure is a measure of test’s accuracy by coordinate Precision with Recall.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="datasets">Datasets</h3>
+
+<p>Here I want to evaluate running time of two algorithms using <a href="http://grouplens.org/datasets/movielens/">MovieLens</a> datasets.</p>
+
+<p><a href="https://dn-shanguangyu.qbox.me/u1.base">u1.base</a>
+「Total 943 person, Total 1650 movies」</p>
+
+<p><a href="https://dn-shanguangyu.qbox.me/u1.test">u1.test</a>
+「Total 459 person, Total 1410 movies」</p>
+
+<h3 id="user-based-cf--item-based-cf">User-based CF &amp; Item-based CF</h3>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c">#! /usr/bin/env python</span>
+<span class="c"># -*- coding:utf-8 -*-</span>
+<span class="c"># Author: &lt;work#shanguangyu.com&gt;</span>
+
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+
+<span class="k">class</span> <span class="nc">UserBasedCF</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">train_file</span><span class="p">,</span> <span class="n">test_file</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">train_file</span> <span class="o">=</span> <span class="n">train_file</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">test_file</span> <span class="o">=</span> <span class="n">test_file</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">readData</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">userSimilarity</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">readData</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">train</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">test</span> <span class="o">=</span> <span class="p">{},</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">train_file</span><span class="p">):</span>
+            <span class="n">user</span><span class="p">,</span> <span class="n">item</span><span class="p">,</span> <span class="n">score</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">"</span><span class="se">\t</span><span class="s">"</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="p">{})</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">train</span><span class="p">[</span><span class="n">user</span><span class="p">][</span><span class="n">item</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">score</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">test_file</span><span class="p">):</span>
+            <span class="n">user</span><span class="p">,</span> <span class="n">item</span><span class="p">,</span> <span class="n">score</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">"</span><span class="se">\t</span><span class="s">"</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">test</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="p">{})</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">test</span><span class="p">[</span><span class="n">user</span><span class="p">][</span><span class="n">item</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">score</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">userSimilarity</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c"># Build invese table for item_users</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">item_users</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">u</span><span class="p">,</span> <span class="n">items</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">iteritems</span><span class="p">():</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">items</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">item_users</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">item_users</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">item_users</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
+
+        <span class="n">C</span><span class="p">,</span> <span class="n">N</span> <span class="o">=</span> <span class="p">{},</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">users</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">item_users</span><span class="o">.</span><span class="n">iteritems</span><span class="p">():</span>
+            <span class="k">for</span> <span class="n">u</span> <span class="ow">in</span> <span class="n">users</span><span class="p">:</span>
+                <span class="n">N</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+                <span class="n">N</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="n">C</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="p">{})</span>
+                <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">users</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">u</span> <span class="o">==</span> <span class="n">v</span><span class="p">:</span>
+                        <span class="k">continue</span>
+                    <span class="n">C</span><span class="p">[</span><span class="n">u</span><span class="p">]</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+                    <span class="n">C</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">v</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">W</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="c"># Calculate finial similarity matrix W</span>
+        <span class="k">for</span> <span class="n">u</span><span class="p">,</span> <span class="n">related_users</span> <span class="ow">in</span> <span class="n">C</span><span class="o">.</span><span class="n">iteritems</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">W</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="p">{})</span>
+            <span class="k">for</span> <span class="n">v</span><span class="p">,</span> <span class="n">cuv</span> <span class="ow">in</span> <span class="n">related_users</span><span class="o">.</span><span class="n">iteritems</span><span class="p">():</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">W</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="n">cuv</span> <span class="o">/</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">N</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">*</span> <span class="n">N</span><span class="p">[</span><span class="n">v</span><span class="p">])</span>
+
+    <span class="k">def</span> <span class="nf">recommend</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user</span><span class="p">,</span> <span class="n">K</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">N</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+        <span class="n">rank</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">interacted_items</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">train</span><span class="p">[</span><span class="n">user</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">v</span><span class="p">,</span> <span class="n">wuv</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">W</span><span class="p">[</span><span class="n">user</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span>
+                             <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)[</span><span class="mi">0</span><span class="p">:</span><span class="n">K</span><span class="p">]:</span>
+            <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">rvi</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">train</span><span class="p">[</span><span class="n">v</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="k">if</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">interacted_items</span><span class="p">:</span>
+                    <span class="c"># filter items user interacted before</span>
+                    <span class="k">continue</span>
+                <span class="n">rank</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+                <span class="n">rank</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="n">wuv</span> <span class="o">*</span> <span class="n">rvi</span>
+
+        <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">rank</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span>
+                           <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)[</span><span class="mi">0</span><span class="p">:</span><span class="n">N</span><span class="p">])</span>
+
+    <span class="k">def</span> <span class="nf">evaluate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">train</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">test</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">K</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">N</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+        <span class="n">train</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">train</span>
+        <span class="n">test</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">test</span>
+        <span class="n">hit</span><span class="p">,</span> <span class="n">recall</span><span class="p">,</span> <span class="n">precision</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">user</span> <span class="ow">in</span> <span class="n">train</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="n">tu</span> <span class="o">=</span> <span class="n">test</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="p">{})</span>
+            <span class="n">rank</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">recommend</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="n">K</span><span class="o">=</span><span class="n">K</span><span class="p">,</span> <span class="n">N</span><span class="o">=</span><span class="n">N</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">rank</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="k">if</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">tu</span><span class="p">:</span>
+                    <span class="n">hit</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">recall</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">tu</span><span class="p">)</span>
+            <span class="n">precision</span> <span class="o">+=</span> <span class="n">N</span>
+        <span class="n">recall</span> <span class="o">=</span> <span class="n">hit</span> <span class="o">/</span> <span class="n">recall</span>
+        <span class="n">precision</span> <span class="o">=</span> <span class="n">hit</span> <span class="o">/</span> <span class="n">precision</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">recall</span> <span class="o">*</span> <span class="n">precision</span> <span class="o">/</span> <span class="p">(</span><span class="n">precision</span> <span class="o">+</span> <span class="n">recall</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">recall</span><span class="p">,</span> <span class="n">precision</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">ItemBasedCF</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">train_file</span><span class="p">,</span> <span class="n">test_file</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">train_file</span> <span class="o">=</span> <span class="n">train_file</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">test_file</span> <span class="o">=</span> <span class="n">test_file</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">readData</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">itemSimilarity</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">readData</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">train</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">test</span> <span class="o">=</span> <span class="p">{},</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">train_file</span><span class="p">):</span>
+            <span class="n">user</span><span class="p">,</span> <span class="n">item</span><span class="p">,</span> <span class="n">score</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">"</span><span class="se">\t</span><span class="s">"</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="p">{})</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">train</span><span class="p">[</span><span class="n">user</span><span class="p">][</span><span class="n">item</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">score</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">test_file</span><span class="p">):</span>
+            <span class="n">user</span><span class="p">,</span> <span class="n">item</span><span class="p">,</span> <span class="n">score</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">"</span><span class="se">\t</span><span class="s">"</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">test</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="p">{})</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">test</span><span class="p">[</span><span class="n">user</span><span class="p">][</span><span class="n">item</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">score</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">itemSimilarity</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">C</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>  
+        <span class="n">N</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">user</span><span class="p">,</span> <span class="n">items</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">items</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                <span class="n">N</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+                <span class="n">N</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="n">C</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="p">{})</span>
+                <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">items</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="n">j</span><span class="p">:</span>
+                        <span class="k">continue</span>
+                    <span class="n">C</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+                    <span class="n">C</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">W</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">related_items</span> <span class="ow">in</span> <span class="n">C</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">W</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="p">{})</span>
+            <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">cij</span> <span class="ow">in</span> <span class="n">related_items</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">W</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">cij</span> <span class="o">/</span> <span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="n">N</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">N</span><span class="p">[</span><span class="n">j</span><span class="p">]))</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">W</span>
+
+    <span class="k">def</span> <span class="nf">recommend</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user</span><span class="p">,</span> <span class="n">K</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">N</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+        <span class="n">rank</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+        <span class="n">interacted_items</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">train</span><span class="p">[</span><span class="n">user</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">item</span><span class="p">,</span> <span class="n">score</span> <span class="ow">in</span> <span class="n">interacted_items</span><span class="o">.</span><span class="n">iteritems</span><span class="p">():</span>
+            <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">wj</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">W</span><span class="p">[</span><span class="n">item</span><span class="p">]</span><span class="o">.</span><span class="n">iteritems</span><span class="p">(),</span>
+                                <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)[</span><span class="mi">0</span><span class="p">:</span><span class="n">K</span><span class="p">]:</span>
+                <span class="k">if</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">interacted_items</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                    <span class="k">continue</span>
+                <span class="n">rank</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+                <span class="n">rank</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">+=</span> <span class="n">score</span> <span class="o">*</span> <span class="n">wj</span>
+        <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">rank</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span>
+                           <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)[</span><span class="mi">0</span><span class="p">:</span><span class="n">N</span><span class="p">])</span>
+
+    <span class="k">def</span> <span class="nf">evaluate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">train</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">test</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">K</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">N</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+        <span class="n">train</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">train</span>
+        <span class="n">test</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">test</span>
+        <span class="n">hit</span><span class="p">,</span> <span class="n">recall</span><span class="p">,</span> <span class="n">precision</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">user</span> <span class="ow">in</span> <span class="n">train</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="n">tu</span> <span class="o">=</span> <span class="n">test</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="p">{})</span>
+            <span class="n">rank</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">recommend</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="n">K</span><span class="o">=</span><span class="n">K</span><span class="p">,</span> <span class="n">N</span><span class="o">=</span><span class="n">N</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">rank</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="k">if</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">tu</span><span class="p">:</span>
+                    <span class="n">hit</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">recall</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">tu</span><span class="p">)</span>
+            <span class="n">precision</span> <span class="o">+=</span> <span class="n">N</span>
+        <span class="n">recall</span> <span class="o">=</span> <span class="n">hit</span> <span class="o">/</span> <span class="n">recall</span>
+        <span class="n">precision</span> <span class="o">=</span> <span class="n">hit</span> <span class="o">/</span> <span class="n">precision</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">recall</span> <span class="o">*</span> <span class="n">precision</span> <span class="o">/</span> <span class="p">(</span><span class="n">precision</span> <span class="o">+</span> <span class="n">recall</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">recall</span><span class="p">,</span> <span class="n">precision</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">'__main__'</span><span class="p">:</span>
+    <span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+
+    <span class="c"># choose which method to use</span>
+    <span class="c"># model = UserBasedCF('u1.base', 'u1.test')</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">ItemBasedCF</span><span class="p">(</span><span class="s">'u1.base'</span><span class="p">,</span> <span class="s">'u1.test'</span><span class="p">)</span>
+
+    <span class="c"># The performance of model under various K</span>
+    <span class="n">klst</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">25</span><span class="p">]</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"recall"</span><span class="p">,</span> <span class="s">"precision"</span><span class="p">,</span> <span class="s">"f1"</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">klst</span><span class="p">:</span>
+        <span class="k">print</span> <span class="n">model</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">train</span><span class="o">=</span><span class="s">'u1.base'</span><span class="p">,</span> <span class="n">test</span><span class="o">=</span><span class="s">'u1.test'</span><span class="p">,</span> <span class="n">K</span><span class="o">=</span><span class="n">k</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"--- </span><span class="si">%</span><span class="s">s seconds ---"</span> <span class="o">%</span> <span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span><span class="p">))</span></code></pre></figure>
+
+<h3 id="results">Results</h3>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">User-based CF:
+('recall', 'precision', 'f1')
+(0.09855, 0.20901378579003183, 0.13394495412844035)
+(0.1054, 0.22354188759278898, 0.14325518178729188)
+(0.10725, 0.22746553552492046, 0.14576962283384304)
+(0.10875, 0.23064687168610817, 0.14780835881753313)
+(0.1087, 0.2305408271474019, 0.14774040095141014)
+--- 13.2764439583 seconds ---
+
+Item-based CF:
+('recall', 'precision', 'f1')
+(0.0974, 0.20657476139978792, 0.13238192320761127)
+(0.09955, 0.21113467656415694, 0.13530411145090046)
+(0.0997, 0.2114528101802757, 0.13550798504926945)
+(0.09905, 0.21007423117709437, 0.1346245327896704)
+(0.0981, 0.2080593849416755, 0.13333333333333336)
+--- 387.862884045 seconds ---</code></pre></figure>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>In short, user-based CF is appropriate for a situation that items increase fast with real-time demand, such as news recommendation. While in e-commerce, movie recommendation, items usually don’t change very much, so this often can be computed off line by item-based CF.</p>
+
+<h3 id="references">References</h3>
+
+<ol>
+  <li><a href="https://raw.githubusercontent.com/zacharski/pg2dm-python/master/ch2/recommender.py">A Programmer’s Guide to Data Mining</a></li>
+  <li><a href="glaros.dtc.umn.edu/gkhome/fetch/papers/www10_sarwar.pdf">Item-based Collaborative Filtering Recommendation Algorithms</a></li>
+  <li><a href="https://book.douban.com/subject/10769749/">推荐系统实践 (Practice in Recommendation system)</a></li>
+  <li><a href="http://wuchong.me/blog/2014/04/19/recsys-cf-study/">协同过滤实现 (Implementation of Collaborative Filtering)</a></li>
+</ol>
+
+<hr />
+<p>Published under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">(CC) BY-NC-SA </a></p>
+
+        </div>
+
+        
+          <div class="page-share">
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Farticles%2Frecommendation-system%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--facebook btn--small"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i> <span>Share</span></a>
+  <a href="https://twitter.com/intent/tweet?text=Recommendation+System%20http%3A%2F%2Flocalhost%3A4000%2Farticles%2Frecommendation-system%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--twitter btn--small"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i> <span>Tweet</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Farticles%2Frecommendation-system%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--linkedin btn--small"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> <span>LinkedIn</span></a>
+  <a href="https://reddit.com/submit?title=Recommendation+System&url=http%3A%2F%2Flocalhost%3A4000%2Farticles%2Frecommendation-system%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--reddit btn--small"><i class="fab fa-fw fa-reddit" aria-hidden="true"></i> <span>Reddit</span></a>
+</div>
+
+        
+
+        
+
+        <nav class="page-pagination" role="navigation">
+  
+    <a class="page-previous" href="/articles/python-decorator/">
+      <h4 class="page-pagination-label">Previous</h4>
+      <span class="page-pagination-title">
+        <i class="fas fa-arrow-left"></i> Python Decorator
+
+      </span>
+    </a>
+  
+
+  
+    <a class="page-next" href="/articles/interpreting-rf/">
+      <h4 class="page-pagination-label">Next</h4>
+      <span class="page-pagination-title">
+        解释随机森林模型 (译)
+ <i class="fas fa-arrow-right"></i>
+      </span>
+    </a>
+  
+</nav>
+
+      </div>
+    </div>
+  </article>
+</main>
+
+
+    <footer id="footer" class="site-footer">
+  <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+<div class="social-icons"><a class="social-icon" href="/atom.xml"><i class="fas fa-rss-square fa-2x" title="Feed"></i></a></div><div class="copyright">
+    
+      <p>&copy; 2018 Rebirth. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://github.com/mmistakes/so-simple-theme" rel="nofollow">So Simple</a>.</p>
+    
+  </div>
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.0.12/js/all.js"></script>
+
+
+<!-- MathJax -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  </body>
+
+</html>

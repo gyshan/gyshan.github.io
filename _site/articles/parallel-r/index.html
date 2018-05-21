@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<!--
+    So Simple Jekyll Theme 3.1.1
+    Copyright 2013-2018 Michael Rose - mademistakes.com | @mmistakes
+    Free for personal and commercial use under the MIT license
+    https://github.com/mmistakes/so-simple-theme/blob/master/LICENSE
+-->
+<html lang="en-US" class="no-js">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+
+  
+    
+    <!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>Running R with parallel under linux | Rebirth</title>
+<meta name="generator" content="Jekyll v3.8.2" />
+<meta property="og:title" content="Running R with parallel under linux" />
+<meta name="author" content="Corey" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Example code" />
+<meta property="og:description" content="Example code" />
+<link rel="canonical" href="http://localhost:4000/articles/parallel-r/" />
+<meta property="og:url" content="http://localhost:4000/articles/parallel-r/" />
+<meta property="og:site_name" content="Rebirth" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2016-01-04T00:00:00+08:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@" />
+<meta name="twitter:creator" content="@Corey" />
+<script type="application/ld+json">
+{"description":"Example code","author":{"@type":"Person","name":"Corey"},"@type":"BlogPosting","url":"http://localhost:4000/articles/parallel-r/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/images/logo.svg"},"name":"Corey"},"headline":"Running R with parallel under linux","dateModified":"2016-01-04T00:00:00+08:00","datePublished":"2016-01-04T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/articles/parallel-r/"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+  <script>
+    /* Cut the mustard */
+    if ( 'querySelector' in document && 'addEventListener' in window ) {
+      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
+    }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i|Lora:400,400i,700,700i">
+  <link rel="alternate" type="application/atom+xml" title="Rebirth" href="/atom.xml">
+<!-- start custom head snippets -->
+
+<!-- insert favicons. use http://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+</head>
+
+
+  <body class="layout--post  running-r-with-parallel-under-linux">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#primary-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+  <div class="navigation-wrapper">
+    <a href="#menu-toggle" id="menu-toggle">Menu</a>
+    <nav id="primary-nav" class="site-nav animated drop">
+      <ul><li><a href="/">Home</a></li></ul>
+    </nav>
+  </div><!-- /.navigation-wrapper -->
+
+
+    <header class="masthead">
+  <div class="wrap">
+    
+      <a href="/" class="site-logo" rel="home" title="Rebirth">
+        <img src="/images/logo.svg" class="site-logo-img animated fadeInDown" alt="Rebirth">
+      </a>
+    
+    
+      <h1 class="site-title animated fadeIn"><a href="/">Rebirth</a></h1>
+      <p class="site-description animated fadeIn" itemprop="description">Notes on bioinformatics and data mining by G. Corey Shan</p>
+    
+  </div>
+</header><!-- /.masthead -->
+
+
+    <main id="main" class="main-content" aria-label="Content">
+  <article class="h-entry">
+    
+
+    <div class="page-wrapper">
+      <header class="page-header">
+        
+        
+          <h1 id="page-title" class="page-title p-name">Running R with parallel under linux
+</h1>
+        
+      </header>
+
+      <div class="page-sidebar">
+        <div class="page-author h-card p-author"><div class="author-info"><div class="author-name">
+        <em>by</em> <span class="p-name">Corey</span>
+      </div><ul class="author-links"><li class="author-link">
+            <a class="u-url" rel="me" href=""><i class="fas fa-link fa-lg" title=""></i></a>
+          </li></ul>
+
+<span class="read-time">1 min read</span>
+
+    <time class="page-date dt-published" datetime="2016-01-04T00:00:00+08:00"><a class="u-url" href="">January 4, 2016</a>
+</time>
+
+  </div>
+</div>
+
+        
+  <h3 class="page-taxonomies-title">Categories</h3>
+  <ul class="page-taxonomies"><li class="page-taxonomy">articles</li>
+  </ul>
+
+
+        
+  <h3 class="page-taxonomies-title">Tags</h3>
+  <ul class="page-taxonomies"><li class="page-taxonomy">R</li>
+  </ul>
+
+
+      </div>
+
+      <div class="page-content">
+        <div class="e-content">
+          <p>R is a free, powerful programming language and software environment for statistical computing and graphics supported by the R Foundation.</p>
+
+<p>Recently, I’ve been dealing with parallel processing in R and have found the <a href="https://cran.r-project.org/web/packages/foreach/foreach.pdf">foreach</a> and <a href="https://cran.r-project.org/web/packages/doMC/doMC.pdf">doMC</a> packages to be useful approaches in increasing efficiency of loops.</p>
+
+<p>The doMC package is a “parallel backend” for the foreach package. It provides a mechanism needed to execute foreach loops in parallel. Usually, we’d better check the maximum number of threads(It’s 96 for me) first by using <code class="highlighter-rouge">detectCores</code>.</p>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">library</span><span class="p">(</span><span class="n">parallel</span><span class="p">)</span><span class="w">
+</span><span class="n">detectCores</span><span class="p">()</span></code></pre></figure>
+
+<p>Then configure a smaller number for subsequent parallel processing (I set 20, which means 20 threads will be reserved for my task).</p>
+
+<p><strong>In this task, I select and record good models that satisfying certain conditions (Sp &gt; 0.88, Se &gt; 0.7).</strong></p>
+
+<h3 id="without-parallel">Without parallel</h3>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">optSeeds</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="k">function</span><span class="p">(</span><span class="n">input.train</span><span class="p">){</span><span class="w">
+  </span><span class="n">seed_lst</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">list</span><span class="p">()</span><span class="w">
+  </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">0</span><span class="w">
+  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">seed</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">1000</span><span class="p">){</span><span class="w">
+    </span><span class="n">result</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">modelSelect</span><span class="p">(</span><span class="n">input.train</span><span class="p">,</span><span class="w"> </span><span class="n">seed</span><span class="p">)</span><span class="w">
+    </span><span class="n">Sens</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">result</span><span class="o">$</span><span class="n">byClass</span><span class="p">[</span><span class="s1">'Sensitivity'</span><span class="p">]</span><span class="w">
+    </span><span class="n">Spec</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">result</span><span class="o">$</span><span class="n">byClass</span><span class="p">[</span><span class="s1">'Specificity'</span><span class="p">]</span><span class="w">
+    </span><span class="n">Acc</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">result</span><span class="o">$</span><span class="n">byClass</span><span class="p">[</span><span class="s1">'Balanced Accuracy'</span><span class="p">]</span><span class="w">
+    </span><span class="n">output</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="n">seed</span><span class="p">,</span><span class="w"> </span><span class="n">Spec</span><span class="p">,</span><span class="w"> </span><span class="n">Sens</span><span class="p">,</span><span class="w"> </span><span class="n">Acc</span><span class="p">)</span><span class="w">
+    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Spec</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">0.88</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">Sens</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">0.7</span><span class="p">){</span><span class="w">
+    	</span><span class="n">i</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="m">1</span><span class="w">
+    	</span><span class="n">seed_lst</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">seed</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="n">seedLst</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">optSeeds</span><span class="p">(</span><span class="n">input.train</span><span class="p">)</span></code></pre></figure>
+
+<h3 id="with-parallel">With parallel</h3>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">library</span><span class="p">(</span><span class="n">foreach</span><span class="p">)</span><span class="w">
+</span><span class="n">library</span><span class="p">(</span><span class="n">doMC</span><span class="p">)</span><span class="w">
+</span><span class="n">registerDoMC</span><span class="p">(</span><span class="m">20</span><span class="p">)</span><span class="w">
+
+</span><span class="n">optSeeds</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="k">function</span><span class="p">(</span><span class="n">input.train</span><span class="p">){</span><span class="w">
+  </span><span class="n">foreach</span><span class="w"> </span><span class="p">(</span><span class="n">seed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">1000</span><span class="p">)</span><span class="w"> </span><span class="o">%dopar%</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">result</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">modelSelect</span><span class="p">(</span><span class="n">input.train</span><span class="p">,</span><span class="w"> </span><span class="n">seed</span><span class="p">)</span><span class="w">
+    </span><span class="n">Sens</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">result</span><span class="o">$</span><span class="n">byClass</span><span class="p">[</span><span class="s1">'Sensitivity'</span><span class="p">]</span><span class="w">
+    </span><span class="n">Spec</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">result</span><span class="o">$</span><span class="n">byClass</span><span class="p">[</span><span class="s1">'Specificity'</span><span class="p">]</span><span class="w">
+    </span><span class="n">Acc</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">result</span><span class="o">$</span><span class="n">byClass</span><span class="p">[</span><span class="s1">'Balanced Accuracy'</span><span class="p">]</span><span class="w">
+    </span><span class="n">output</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="n">seed</span><span class="p">,</span><span class="w"> </span><span class="n">Spec</span><span class="p">,</span><span class="w"> </span><span class="n">Sens</span><span class="p">,</span><span class="w"> </span><span class="n">Acc</span><span class="p">)</span><span class="w">
+    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Spec</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">0.88</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">Sens</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">0.7</span><span class="p">){</span><span class="w">
+	</span><span class="n">seed</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="n">seedLst</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">optSeeds</span><span class="p">(</span><span class="n">input.train</span><span class="p">)</span></code></pre></figure>
+
+<p>This small change shrunk my time from several hours to less than five minutes, what a lovely change.</p>
+
+<hr />
+<p>Published under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">(CC) BY-NC-SA </a></p>
+
+        </div>
+
+        
+          <div class="page-share">
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Farticles%2Fparallel-r%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--facebook btn--small"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i> <span>Share</span></a>
+  <a href="https://twitter.com/intent/tweet?text=Running+R+with+parallel+under+linux%20http%3A%2F%2Flocalhost%3A4000%2Farticles%2Fparallel-r%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--twitter btn--small"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i> <span>Tweet</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Farticles%2Fparallel-r%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--linkedin btn--small"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> <span>LinkedIn</span></a>
+  <a href="https://reddit.com/submit?title=Running+R+with+parallel+under+linux&url=http%3A%2F%2Flocalhost%3A4000%2Farticles%2Fparallel-r%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--reddit btn--small"><i class="fab fa-fw fa-reddit" aria-hidden="true"></i> <span>Reddit</span></a>
+</div>
+
+        
+
+        
+
+        <nav class="page-pagination" role="navigation">
+  
+    <a class="page-previous" href="/articles/blogs-in-bioinformatics/">
+      <h4 class="page-pagination-label">Previous</h4>
+      <span class="page-pagination-title">
+        <i class="fas fa-arrow-left"></i> 10 Best Blogs about Bioinformatics
+
+      </span>
+    </a>
+  
+
+  
+    <a class="page-next" href="/articles/comparison-of-sanger-NGS-and-SMS/">
+      <h4 class="page-pagination-label">Next</h4>
+      <span class="page-pagination-title">
+        Comparison of sanger, NGS and SMS
+ <i class="fas fa-arrow-right"></i>
+      </span>
+    </a>
+  
+</nav>
+
+      </div>
+    </div>
+  </article>
+</main>
+
+
+    <footer id="footer" class="site-footer">
+  <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+<div class="social-icons"><a class="social-icon" href="/atom.xml"><i class="fas fa-rss-square fa-2x" title="Feed"></i></a></div><div class="copyright">
+    
+      <p>&copy; 2018 Rebirth. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://github.com/mmistakes/so-simple-theme" rel="nofollow">So Simple</a>.</p>
+    
+  </div>
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.0.12/js/all.js"></script>
+
+
+<!-- MathJax -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  </body>
+
+</html>
