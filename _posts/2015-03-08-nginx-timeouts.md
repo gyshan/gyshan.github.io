@@ -2,8 +2,8 @@
 title: "解决使用 NGINX & Gunicorn 的 504 Timeouts 问题"
 excerpt: "Code for 504 timeouts."
 tags: 
-  - WeChat
   - NGINX
+  - WeChat
 last_modified_at: 2017-03-09T12:26:59-05:00
 ---
 
@@ -36,6 +36,8 @@ redirect_stderr = true
 stdout_logfile = /home/mirror/logs/supervisor.log
 {% endhighlight %}
 
+
+
 更改`nginx`配置，补充一行`proxy_read_timeout 1200`，nginx默认为60秒。故`vi /etc/nginx/sites-enabled/test`，配置完成的test文件如下：
 
 
@@ -57,15 +59,4 @@ Done!
 
 ---
 Published under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">(CC) BY-NC-SA </a>
-
-
-
-	
-	
-	
-	
-
-	
-
-
 
