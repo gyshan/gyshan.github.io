@@ -89,9 +89,12 @@ defaults:
 # Site Author
 author:
   name: Corey
+  comments: true
   picture: bio-photo.jpg
   email: me@shanguangyu.com
-  twitter:
+  twitter: GuangyuShan
+  github: gyshan
+  linkedin: corey-shan-6a6111a4
   links:
     - title:
       url:
