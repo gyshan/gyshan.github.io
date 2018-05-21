@@ -1,12 +1,10 @@
 ---
-layout: post
-title: 我的 GitHub Page 操作流
-excerpt: My workflow of GitHub Page
-modified: 2015-03-10
-categories: articles
-tags: [Mac]
-comments: true
-share: true
+title: "我的 GitHub Page 操作流"
+categories:
+  - articles
+tags:
+  - Mac
+  - GitHub
 ---
 
 
