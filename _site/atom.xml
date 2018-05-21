@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.2">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-05-21T13:39:13+08:00</updated><id>http://localhost:4000/</id><title type="html">Rebirth</title><subtitle>Notes on bioinformatics and data mining by G. Corey Shan</subtitle><author><name>Corey</name><email>me@shanguangyu.com</email></author><entry><title type="html">Please do not use CST to denote time zone</title><link href="http://localhost:4000/articles/do-not-use-CST-to-denote-time-zone/" rel="alternate" type="text/html" title="Please do not use CST to denote time zone" /><published>2018-05-09T00:00:00+08:00</published><updated>2018-05-09T00:00:00+08:00</updated><id>http://localhost:4000/articles/do-not-use-CST-to-denote-time-zone</id><content type="html" xml:base="http://localhost:4000/articles/do-not-use-CST-to-denote-time-zone/">&lt;p&gt;Sometimes, I got emails from friends across the world. They usually kindly attach a timestamp at the end of the mail. One day, I got an email with &lt;code class=&quot;highlighter-rouge&quot;&gt;CST&lt;/code&gt; in the timastamp from a guy I did not know before. This small tag confused me a lot because there are at least four time zones using CST as an abbreviation:&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.2">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-05-21T14:24:39+08:00</updated><id>http://localhost:4000/</id><title type="html">Rebirth</title><subtitle>Notes on bioinformatics and data mining by G. Corey Shan</subtitle><author><name>Corey</name><email>me@shanguangyu.com</email></author><entry><title type="html">Please do not use CST to denote time zone</title><link href="http://localhost:4000/articles/do-not-use-CST-to-denote-time-zone/" rel="alternate" type="text/html" title="Please do not use CST to denote time zone" /><published>2018-05-09T00:00:00+08:00</published><updated>2018-05-09T00:00:00+08:00</updated><id>http://localhost:4000/articles/do-not-use-CST-to-denote-time-zone</id><content type="html" xml:base="http://localhost:4000/articles/do-not-use-CST-to-denote-time-zone/">&lt;p&gt;Sometimes, I got emails from friends across the world. They usually kindly attach a timestamp at the end of the mail. One day, I got an email with &lt;code class=&quot;highlighter-rouge&quot;&gt;CST&lt;/code&gt; in the timastamp from a guy I did not know before. This small tag confused me a lot because there are at least four time zones using CST as an abbreviation:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Central Standard Time (USA) UTC-6:00&lt;/li&gt;
@@ -104,7 +104,7 @@ make &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt;&lt;/code&gt;&lt;/pre&
       &lt;p&gt;&lt;a href=&quot;https://robots.thoughtbot.com/the-magic-behind-configure-make-make-install&quot;&gt;The magic behind configure, make and make install&lt;/a&gt; &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
-&lt;/div&gt;</content><author><name>Corey</name><email>me@shanguangyu.com</email></author><category term="Bioinformatics" /><summary type="html">Magic behind software installation</summary></entry><entry><title type="html">Hidden Post</title><link href="http://localhost:4000/example/hidden-post/" rel="alternate" type="text/html" title="Hidden Post" /><published>2018-02-25T00:00:00+08:00</published><updated>2018-02-25T00:00:00+08:00</updated><id>http://localhost:4000/example/hidden-post</id><content type="html" xml:base="http://localhost:4000/example/hidden-post/">&lt;p&gt;This post has YAML Front Matter of &lt;code class=&quot;highlighter-rouge&quot;&gt;hidden: true&lt;/code&gt; and should not appear in &lt;code class=&quot;highlighter-rouge&quot;&gt;paginator.posts&lt;/code&gt;.&lt;/p&gt;</content><author><name>Corey</name><email>me@shanguangyu.com</email></author><summary type="html">This post has YAML Front Matter of hidden: true and should not appear in paginator.posts.</summary></entry><entry><title type="html">Hidden Post</title><link href="http://localhost:4000/docs/hidden-post/" rel="alternate" type="text/html" title="Hidden Post" /><published>2018-02-25T00:00:00+08:00</published><updated>2018-02-25T00:00:00+08:00</updated><id>http://localhost:4000/docs/hidden-post</id><content type="html" xml:base="http://localhost:4000/docs/hidden-post/">&lt;p&gt;This post has YAML Front Matter of &lt;code class=&quot;highlighter-rouge&quot;&gt;hidden: true&lt;/code&gt; and should not appear in &lt;code class=&quot;highlighter-rouge&quot;&gt;paginator.posts&lt;/code&gt;.&lt;/p&gt;</content><author><name>Corey</name><email>me@shanguangyu.com</email></author><summary type="html">This post has YAML Front Matter of hidden: true and should not appear in paginator.posts.</summary></entry><entry><title type="html">Solved-undefined reference to gzopen64</title><link href="http://localhost:4000/articles/solved-undefined-reference-to-gzopen64/" rel="alternate" type="text/html" title="Solved-undefined reference to gzopen64" /><published>2018-01-18T00:00:00+08:00</published><updated>2018-01-18T00:00:00+08:00</updated><id>http://localhost:4000/articles/solved-undefined-reference-to-gzopen64</id><content type="html" xml:base="http://localhost:4000/articles/solved-undefined-reference-to-gzopen64/">&lt;p&gt;Today, I tried to install a bioinformatics software called &lt;a href=&quot;https://github.com/genome/somatic-sniper&quot;&gt;SomaticSniper&lt;/a&gt; under its &lt;a href=&quot;https://github.com/genome/somatic-sniper/blob/master/gmt/install.md&quot;&gt;instructions&lt;/a&gt; while got stuck at the fourth step.&lt;/p&gt;
+&lt;/div&gt;</content><author><name>Corey</name><email>me@shanguangyu.com</email></author><category term="Bioinformatics" /><summary type="html">Magic behind software installation</summary></entry><entry><title type="html">Solved-undefined reference to gzopen64</title><link href="http://localhost:4000/articles/solved-undefined-reference-to-gzopen64/" rel="alternate" type="text/html" title="Solved-undefined reference to gzopen64" /><published>2018-01-18T00:00:00+08:00</published><updated>2018-01-18T00:00:00+08:00</updated><id>http://localhost:4000/articles/solved-undefined-reference-to-gzopen64</id><content type="html" xml:base="http://localhost:4000/articles/solved-undefined-reference-to-gzopen64/">&lt;p&gt;Today, I tried to install a bioinformatics software called &lt;a href=&quot;https://github.com/genome/somatic-sniper&quot;&gt;SomaticSniper&lt;/a&gt; under its &lt;a href=&quot;https://github.com/genome/somatic-sniper/blob/master/gmt/install.md&quot;&gt;instructions&lt;/a&gt; while got stuck at the fourth step.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;mkdir &lt;/span&gt;somatic-sniper/build  &lt;span class=&quot;c&quot;&gt;#succeed&lt;/span&gt;
 &lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;somatic-sniper/build &lt;span class=&quot;c&quot;&gt;#succeed&lt;/span&gt;
@@ -313,4 +313,66 @@ to      &lt;span class=&quot;c&quot;&gt;#include &amp;lt;/usr/include/zlib.h&amp
 &lt;/ul&gt;
 
 &lt;hr /&gt;
-&lt;p&gt;Published under &lt;a rel=&quot;license&quot; href=&quot;http://creativecommons.org/licenses/by-nc-sa/3.0/&quot;&gt;(CC) BY-NC-SA &lt;/a&gt;&lt;/p&gt;</content><author><name>Corey</name><email>me@shanguangyu.com</email></author><category term="Mac" /><summary type="html">SFTP setting protocal</summary></entry></feed>
+&lt;p&gt;Published under &lt;a rel=&quot;license&quot; href=&quot;http://creativecommons.org/licenses/by-nc-sa/3.0/&quot;&gt;(CC) BY-NC-SA &lt;/a&gt;&lt;/p&gt;</content><author><name>Corey</name><email>me@shanguangyu.com</email></author><category term="Mac" /><summary type="html">SFTP setting protocal</summary></entry><entry><title type="html">Why should you lowercase your filename</title><link href="http://localhost:4000/articles/why-should-you-lowercase-your-filename/" rel="alternate" type="text/html" title="Why should you lowercase your filename" /><published>2017-09-06T00:00:00+08:00</published><updated>2017-09-06T00:00:00+08:00</updated><id>http://localhost:4000/articles/why-should-you-lowercase-your-filename</id><content type="html" xml:base="http://localhost:4000/articles/why-should-you-lowercase-your-filename/">&lt;p&gt;Yesterday, I began to transfer my git configuration from my old machine to my new Macbook Pro. When I rename my file by doing this, an error occured to me:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git &lt;span class=&quot;nb&quot;&gt;mv &lt;/span&gt;readme Readme
+fatal: destination exists, &lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;readme, &lt;span class=&quot;nv&quot;&gt;destination&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;Readme&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;It seems like my Mac OS X cannot recognize &lt;code class=&quot;highlighter-rouge&quot;&gt;Readme&lt;/code&gt; file as same as &lt;code class=&quot;highlighter-rouge&quot;&gt;readme&lt;/code&gt; file. So I had to convert &lt;code class=&quot;highlighter-rouge&quot;&gt;readme&lt;/code&gt; file to &lt;code class=&quot;highlighter-rouge&quot;&gt;tmp_file&lt;/code&gt; and then &lt;code class=&quot;highlighter-rouge&quot;&gt;tmp_file&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;Readme&lt;/code&gt; file. In linux, this command can work very well, but in Mac OS X, failed. This is the first time that I realized case-sensitive is so important. Except for this situation, I believe it is very dangerous if keep confusing the case.&lt;/p&gt;
+
+&lt;p&gt;Different operating systems (OS) have different case-sensitive level, that is why same command upon can work well on Linux but failed on Mac OS X.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;case-sensitive OS: Linux, Solaris, BSD&lt;/li&gt;
+  &lt;li&gt;case-insensitive OS: Windows, Mac OS X&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In my working pipeline, my file often transfer between Linux and Mac OS X, so I decide to convert all my filename under &lt;strong&gt;lowercase_with_underscore&lt;/strong&gt; principle. The reasons behind this principle are:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Easy to read, UPPERCASE_WITH_UNDERSCORE is hard to read&lt;/li&gt;
+  &lt;li&gt;Easy to distinguish private file from system folder/file such as &lt;code class=&quot;highlighter-rouge&quot;&gt;Documents&lt;/code&gt; , &lt;code class=&quot;highlighter-rouge&quot;&gt;Downloads&lt;/code&gt; and so on&lt;/li&gt;
+  &lt;li&gt;Transfer file with lower risk (Every OSs can recognize your file correctly)&lt;/li&gt;
+  &lt;li&gt;I love underscore sign&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;Published under &lt;a rel=&quot;license&quot; href=&quot;http://creativecommons.org/licenses/by-nc-sa/3.0/&quot;&gt;(CC) BY-NC-SA &lt;/a&gt;&lt;/p&gt;</content><author><name>Corey</name><email>me@shanguangyu.com</email></author><category term="Mac" /><summary type="html">Lowecase filename is important</summary></entry><entry><title type="html">How to check IGV</title><link href="http://localhost:4000/articles/How-to-check-IGV/" rel="alternate" type="text/html" title="How to check IGV" /><published>2017-08-07T00:00:00+08:00</published><updated>2017-08-07T00:00:00+08:00</updated><id>http://localhost:4000/articles/How-to-check-IGV</id><content type="html" xml:base="http://localhost:4000/articles/How-to-check-IGV/">&lt;p&gt;Integrative Genomics Viewer (&lt;a href=&quot;http://software.broadinstitute.org/software/igv/&quot;&gt;IGV&lt;/a&gt;) is a high-performance visualization tool for interactive exploration of large, integrated genomics datasets.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;When I check my bam file by IGV tool, what should I focus on?&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Mostly, when I found that a variant is quite uncertain, there are three important steps that I need to finish:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Check sequencing quality control indicators such as average_depth_on_target, capture_ratio and so on;&lt;/li&gt;
+  &lt;li&gt;If all QC indicators are qualified, check bam file by IGV tool;&lt;/li&gt;
+  &lt;li&gt;If QC and IGV are both OK, check variant calling pipeline and parameters.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;IGV checking is at the heart of the troubleshooting process, when I look at the whole reads profile by IGV, here is what I will do:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Jump to questioned position;&lt;/li&gt;
+  &lt;li&gt;Check depth profile of the region;&lt;/li&gt;
+  &lt;li&gt;Sort alignments by base &lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;;&lt;/li&gt;
+  &lt;li&gt;Check depth and mapQ score of each read &lt;sup id=&quot;fnref:2&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;;&lt;/li&gt;
+  &lt;li&gt;Check if variant is at the edge of Amplicon/Target;&lt;/li&gt;
+  &lt;li&gt;Check if variant is in the region which has extremely high GC content.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;In short, most of our problems can be clarified by the IGV. If a problem can not be solved by IGV, recheck mapping procedure.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot;&gt;
+      &lt;p&gt;Make sure it is easy to view the reads that with the same property. (SNV, Softclip, …) &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:2&quot;&gt;
+      &lt;p&gt;If there are multiple SNVs in a relatively short region (&amp;lt;100bp) which supported by low mapQ reads, it is necessary to blast if the sequence of target gene is similar to other genes in reference. The similarity of the target gene with another will significantly lower the mapQ of the reads in the target region. (eg. PRSS1 and PRSS2). &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;</content><author><name>Corey</name><email>me@shanguangyu.com</email></author><category term="Bioinformatics" /><summary type="html">Memo of NGS variant checking by IGV</summary></entry></feed>

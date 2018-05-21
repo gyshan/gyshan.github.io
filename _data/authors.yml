@@ -1,16 +1,30 @@
 # Sample Authors
 # Remove file or replace with your own
 
-Billy Rick:
-  name: Billy Rick
-  picture: /images/bio-photo-2.jpg
-  twitter: "@billyrick"
-  links:
-    - title: Twitter
-      url: https://twitter.com/billyrick
-      icon: fab fa-twitter-square
+# Billy Rick:
+#   name: Billy Rick
+#   picture: /images/bio-photo-2.jpg
+#   twitter: "@billyrick"
+#   links:
+#     - title: Twitter
+#       url: https://twitter.com/billyrick
+#       icon: fab fa-twitter-square
 
-Cornelius Fiddlebone:
-  name: Cornelius Fiddlebone
-  picture: /images/bio-photo.jpg
-  twitter: corneliusfiddlebone
+# Cornelius Fiddlebone:
+#   name: Cornelius Fiddlebone
+#   picture: /images/bio-photo.jpg
+#   twitter: corneliusfiddlebone
+
+Guangyu shan:
+  name: Guangyu_shan
+  web: https://shanguangyu.com
+  email: me@shanguangyu.com
+  bio: ""
+  avatar: bio-photo.jpg
+  twitter: GuangyuShan
+
+
+
+
+author: Guangyu Shan
+share: true
