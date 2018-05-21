@@ -32,6 +32,8 @@ The `make install` step is aimed to use *Makefile* to install the software.
 
 Hope everyone goes well with software installation!
 
----
 
 [^1]: [The magic behind configure, make and make install](https://robots.thoughtbot.com/the-magic-behind-configure-make-make-install)
+
+---
+Published under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">(CC) BY-NC-SA </a>
