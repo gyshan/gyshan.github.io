@@ -92,16 +92,20 @@ author:
   comments: true
   picture: bio-photo.jpg
   email: me@shanguangyu.com
-  twitter: GuangyuShan
-  github: gyshan
-  linkedin: corey-shan-6a6111a4
   links:
     - title:
       url:
       icon:
 
 # Footer Links
+
 footer_links:
+  - title: LinkedIn
+    url:  https://www.linkedin.com/in/corey-shan-6a6111a4/
+    icon: fab fa-linkedin-square
+  - title: GitHub
+    url: https://github.com/gyshan
+    icon: fab fa-github-square
   - title: Feed
     url: atom.xml
     icon: fas fa-rss-square
