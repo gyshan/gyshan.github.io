@@ -22,12 +22,11 @@
 - title: Posts
   url: /posts/
 
-- title: Publications
-  url: /publications/
-
 - title: Tags
   url: /tags/
 
+- title: Publications
+  url: /publications/
 
 - title: Search
   url: /search/
