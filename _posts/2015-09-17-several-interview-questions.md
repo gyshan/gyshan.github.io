@@ -7,8 +7,7 @@ tags:
   - Python
 ---
 
-* Table of Contents
-{:toc}
+{% include toc %}
 
 ## 1. 字典操作
 

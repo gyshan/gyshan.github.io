@@ -7,11 +7,10 @@ tags:
   - Python
 ---
 
-* Table of Contents
-{:toc}
+{% include toc %}
 
 
-## 1. 函数
+## 函数
 在Python中，一切函数皆对象。函数作为Python中的一等公民，可以进行很多有用的操作：
 
 * 将函数赋给变量
@@ -78,7 +77,7 @@ print greet()
 {% endhighlight %}
 
 
-## 2. 装饰器
+## 装饰器
 先看一个形象的例子
 {% highlight python %}
 class entryExit(object):
@@ -108,7 +107,7 @@ func()
 总的来说，装饰器能让你的程序更加优雅。当你需要扩展某个函数，却又不想修改它，尝试下装饰器吧。
 
 
-## 3. References
+## References
 
 1. [A guide to Python's function decorators](http://thecodeship.com/patterns/guide-to-python-function-decorators/)
 2. [Decorators for Functions and Methods](https://www.python.org/dev/peps/pep-0318/)

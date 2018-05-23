@@ -7,8 +7,7 @@ tags:
   - Bioinformatics
 ---
 
-* Table of Contents
-{:toc}
+{% include toc %}
 
 ## 1. 什么是相关性
 

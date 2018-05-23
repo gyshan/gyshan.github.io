@@ -13,8 +13,7 @@ I do not want to use [vi](https://en.wikipedia.org/wiki/Vi) in remote server, es
 
 [SFTP](https://wbond.net/sublime_packages/sftp), a plugin for sublime can deal with the problem above, which can map a local folder/file to remote folder/file. Here is how I setup this plugin.
 
-* Table of Contents
-{:toc}
+{% include toc %}
 
 
 ## Install Package Control Package

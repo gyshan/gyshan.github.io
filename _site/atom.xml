@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.2">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-05-23T15:43:47+08:00</updated><id>http://localhost:4000/</id><title type="html">Rebirth</title><subtitle>Notes on bioinformatics and data mining by G. Corey Shan</subtitle><author><name>Corey</name></author><entry><title type="html">Please do not use CST to denote time zone</title><link href="http://localhost:4000/articles/do-not-use-CST-to-denote-time-zone/" rel="alternate" type="text/html" title="Please do not use CST to denote time zone" /><published>2018-05-09T00:00:00+08:00</published><updated>2018-05-09T00:00:00+08:00</updated><id>http://localhost:4000/articles/do-not-use-CST-to-denote-time-zone</id><content type="html" xml:base="http://localhost:4000/articles/do-not-use-CST-to-denote-time-zone/">&lt;p&gt;Sometimes, I got emails from friends across the world. They usually kindly attach a timestamp at the end of the mail. One day, I got an email with &lt;code class=&quot;highlighter-rouge&quot;&gt;CST&lt;/code&gt; in the timastamp from a guy I did not know before. This small tag confused me a lot because there are at least four time zones using CST as an abbreviation:&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.2">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-05-23T16:35:30+08:00</updated><id>http://localhost:4000/</id><title type="html">Guangyu Corey Shan’s Blog</title><subtitle>Notes on bioinformatics and data mining by G. Corey Shan</subtitle><author><name>Corey</name></author><entry><title type="html">Please do not use CST to denote time zone</title><link href="http://localhost:4000/articles/do-not-use-CST-to-denote-time-zone/" rel="alternate" type="text/html" title="Please do not use CST to denote time zone" /><published>2018-05-09T00:00:00+08:00</published><updated>2018-05-09T00:00:00+08:00</updated><id>http://localhost:4000/articles/do-not-use-CST-to-denote-time-zone</id><content type="html" xml:base="http://localhost:4000/articles/do-not-use-CST-to-denote-time-zone/">&lt;p&gt;Sometimes, I got emails from friends across the world. They usually kindly attach a timestamp at the end of the mail. One day, I got an email with &lt;code class=&quot;highlighter-rouge&quot;&gt;CST&lt;/code&gt; in the timastamp from a guy I did not know before. This small tag confused me a lot because there are at least four time zones using CST as an abbreviation:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Central Standard Time (USA) UTC-6:00&lt;/li&gt;
@@ -218,12 +218,18 @@ to      &lt;span class=&quot;c&quot;&gt;#include &amp;lt;/usr/include/zlib.h&amp
 
 &lt;p&gt;&lt;a href=&quot;https://wbond.net/sublime_packages/sftp&quot;&gt;SFTP&lt;/a&gt;, a plugin for sublime can deal with the problem above, which can map a local folder/file to remote folder/file. Here is how I setup this plugin.&lt;/p&gt;
 
-&lt;ul id=&quot;markdown-toc&quot;&gt;
+&lt;div id=&quot;entry-table-of-contents&quot; class=&quot;toc-wrapper&quot;&gt;
+  &lt;h2 id=&quot;toc-toggle&quot; class=&quot;no_toc&quot;&gt;
+  Table of Contents &lt;i class=&quot;toc-toggle-icon fas fa-chevron-down&quot;&gt;&lt;/i&gt;
+&lt;/h2&gt;
+&lt;ol id=&quot;markdown-toc&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;#install-package-control-package&quot; id=&quot;markdown-toc-install-package-control-package&quot;&gt;Install Package Control Package&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#install-sftp&quot; id=&quot;markdown-toc-install-sftp&quot;&gt;Install SFTP&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#setup-config-file-in-json-format&quot; id=&quot;markdown-toc-setup-config-file-in-json-format&quot;&gt;Setup config file in json format&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#enjoy-coding&quot; id=&quot;markdown-toc-enjoy-coding&quot;&gt;Enjoy coding&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;/ol&gt;
+
+&lt;/div&gt;
 
 &lt;h2 id=&quot;install-package-control-package&quot;&gt;Install Package Control Package&lt;/h2&gt;
 
