@@ -16,7 +16,7 @@
 #theme: jekyll-theme-so-simple
 remote_theme: mmistakes/so-simple-theme
 locale: en-US
-title: "Guangyu Corey Shan's Blog Site"
+title: "Guangyu Corey Shan's Blog"
 description: "Notes on bioinformatics and data mining by G. Corey Shan"
 baseurl: # the subpath of your site, e.g. "/blog"
 url: "https://gyshan.github.io"
