@@ -15,7 +15,7 @@ fatal: destination exists, source=readme, destination=Readme
 {% endhighlight %}
 
 
-It seems like my Mac OS X cannot recognize `Readme` file as same as `readme` file. So I had to convert `readme` file to `tmp_file` and then `tmp_file` to `Readme` file. In linux, this command can work very well, but in Mac OS X, failed. This is the first time that I realized case-sensitive is so important. Except for this situation, I believe it is very dangerous if keep confusing the case.
+It seems like my Mac OS X cannot recognize `Readme` file as same as `readme` file. So I had to convert `readme` file to `tmp_file` and then `tmp_file` to `Readme` file. In Linux, this command can work very well, but in Mac OS X, failed. This is the first time that I realized case-sensitive is so important. Except for this situation, I believe it is very dangerous if keep confusing the case.
 
 Different operating systems (OS) have different case-sensitive level, that is why same command upon can work well on Linux but failed on Mac OS X.
 
