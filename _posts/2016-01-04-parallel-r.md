@@ -70,5 +70,3 @@ seedLst <- optSeeds(input.train)
 
 This small change shrunk my time from several hours to less than five minutes, what a lovely change.  
 
----
-Published under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">(CC) BY-NC-SA </a>

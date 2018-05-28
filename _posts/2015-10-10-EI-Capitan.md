@@ -23,5 +23,3 @@ xcode-select --install
 
 完成后，git便可以重新使用了。
 
----
-Published under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">(CC) BY-NC-SA </a>

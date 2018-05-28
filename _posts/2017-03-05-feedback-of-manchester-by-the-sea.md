@@ -18,5 +18,3 @@ However, at the half of the movie, the movie tells us what makes Lee to this ---
 
 In our true life, please be more patient with other guys, because you have no idea what has happened to them.
 
----
-Published under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">(CC) BY-NC-SA </a>

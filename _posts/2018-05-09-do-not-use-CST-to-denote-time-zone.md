@@ -25,5 +25,3 @@ After all, using proper medium to convey precisely what you really mean is the m
 
 
 
----
-Published under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">(CC) BY-NC-SA </a>

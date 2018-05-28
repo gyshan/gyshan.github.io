@@ -254,5 +254,3 @@ In short, user-based CF is appropriate for a situation that items increase fast 
 4. [协同过滤实现 (Implementation of Collaborative Filtering)](http://wuchong.me/blog/2014/04/19/recsys-cf-study/)
 
 
----
-Published under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">(CC) BY-NC-SA </a>

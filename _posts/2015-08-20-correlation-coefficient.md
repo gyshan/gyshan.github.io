@@ -51,5 +51,3 @@ Spearman相关主要用来评价两组连续或有序变量的单调关系。一
 [Fig source](http://www.ablongman.com/graziano6e/text_site/MATERIAL/statconcepts/relationship.htm)
 
 
----
-Published under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">(CC) BY-NC-SA </a>

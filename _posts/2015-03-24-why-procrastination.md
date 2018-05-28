@@ -28,5 +28,3 @@ tags:
 终于可以把这周的博文计划T出to-do-list，你看，解决拖延，并没有那么难。
 
 
----
-Published under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">(CC) BY-NC-SA </a>

@@ -9,13 +9,12 @@ share: true
 
 Hi, I'm currently a R&D Supervisor at [Novogene](https://en.novogene.com/) Corporation located in Beijing, China. My interests are Linux, Machine Learning, NGS, Cancer Genome, Text Mining, Python, R, Scala, workout, travel, movies (comedy and action rank high),...
 
-
 The views expressed in this blog are mine and mine alone, not my clients, not my employers, not my wife, etc...
 
 
 # Me
 
- |  |  
+  |  | 
 -----------:|:------------:|:------------
  Name|<i class="fa fa-male"></i>|G. Corey Shan 单光宇
  Mail|<i class="fa fa-envelope"></i>|me [at] shanguangyu.com
@@ -27,12 +26,14 @@ The views expressed in this blog are mine and mine alone, not my clients, not my
 
 
 # Blogroll
-
 1. [糗世界](http://blog.qiubio.com:8080/about)
 2. [牛牛龙](http://yulongniu.bionutshell.org/)
 3. [Wei Shen](http://blog.shenwei.me/)
 4. [BJC 俱乐部](http://www.bio985.com/)
 5. [生物日志\|鸣一道](http://www.zilhua.com)
+
+# License
+All articles in this blog are under [(CC) BY-NC-SA](https://creativecommons.org/licenses/by-nc-sa/4.0/) license. 
 
 
 

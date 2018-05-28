@@ -57,6 +57,4 @@ Done!
 **温馨提示**: 若配置多个站点，需单独配置gunicorn.conf，然后被supervisor调用.
 {:.notice}
 
----
-Published under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">(CC) BY-NC-SA </a>
 

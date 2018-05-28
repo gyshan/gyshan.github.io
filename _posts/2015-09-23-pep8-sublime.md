@@ -49,5 +49,3 @@ Python 遵循一套`PEP8`代码规范，今天发现了一个 Sublime 下格式�
 找到写好的代码，用`ctrl+shift+r`纠正一下吧。
 
 
----
-Published under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">(CC) BY-NC-SA </a>

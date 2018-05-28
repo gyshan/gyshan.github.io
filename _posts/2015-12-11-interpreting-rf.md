@@ -64,5 +64,3 @@ $$c_{full}$$是根节点的值，$$contrib(x, k)$$ 是第 *k* 个特征在特征
 1. [Interpreting random forests](http://blog.datadive.net/interpreting-random-forests/)
 
 
----
-Published under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">(CC) BY-NC-SA </a>

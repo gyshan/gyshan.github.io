@@ -42,6 +42,3 @@ The project folder includes five subfolders, which are `raw`, `bin`, `ref`, `rst
 
 In a word, a well-organized folder can facilitate human readability and therefore be good for the project. Code is more for computers, and well-organized folder structure is for humans. It is actually often more difficult to deal with humans than computers.
 
-
----
-Published under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">(CC) BY-NC-SA </a>

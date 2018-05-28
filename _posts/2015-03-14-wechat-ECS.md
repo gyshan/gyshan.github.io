@@ -175,5 +175,3 @@ $ sudo supervisorctl restart test
 2. [VPS环境搭建详解](http://beiyuu.com/vps-config-python-vitrualenv-flask-gunicorn-supervisor-nginx/)
 3. [Flask on Ubuntu](https://realpython.com/blog/python/kickstarting-flask-on-ubuntu-setup-and-deployment/#disqus_thread)
 
----
-Published under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">(CC) BY-NC-SA </a>

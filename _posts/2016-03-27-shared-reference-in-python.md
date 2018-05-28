@@ -24,5 +24,3 @@ When next time we want to use an assignment in python, think carefully if we rea
 
 Plus, thank [Philip Guo](http://pythontutor.com/) for his visualization tool.
 
----
-Published under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">(CC) BY-NC-SA </a>

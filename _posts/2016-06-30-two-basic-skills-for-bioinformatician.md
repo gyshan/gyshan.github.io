@@ -17,5 +17,3 @@ In addition, scientific writing is just as important as coding, which I haven't 
 
 At the end of this small piece of text, I know where I want to go, do you?
 
----
-Published under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">(CC) BY-NC-SA </a>

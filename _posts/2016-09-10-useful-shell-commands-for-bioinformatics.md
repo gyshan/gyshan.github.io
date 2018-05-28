@@ -49,5 +49,3 @@ sed -n 2,4p somefile.txt
 sed '2,4!d' somefile.txt
 {% endhighlight %}
 
----
-Published under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">(CC) BY-NC-SA </a>

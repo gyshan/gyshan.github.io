@@ -75,5 +75,3 @@ But it is not. We still need sequence multiple reads and assemble them. Theoreti
 4. [The properties and applications of single-molecule DNA sequencing](http://www.genomebiology.com/2011/12/2/217)
 5. [Comparison of the two major classes of assembly algorithms: overlap–layout–consensus and de-bruijn-graph_2011](http://bfg.oxfordjournals.org/content/early/2011/12/18/bfgp.elr035)
 
----
-Published under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">(CC) BY-NC-SA </a>

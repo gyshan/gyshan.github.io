@@ -113,5 +113,3 @@ func()
 2. [Decorators for Functions and Methods](https://www.python.org/dev/peps/pep-0318/)
 3. [Understanding Python Decorators in 12 Easy Steps!](http://simeonfranklin.com/blog/2012/jul/1/python-decorators-in-12-steps/)
 
----
-Published under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">(CC) BY-NC-SA </a>

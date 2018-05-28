@@ -46,5 +46,3 @@ Q.Values <- p.adjust (P.Values, method = "fdr")
 3. [Family-wise error rate](https://en.wikipedia.org/wiki/Familywise_error_rate)
 4. [How does multiple testing correction work?](http://www.nature.com/nbt/journal/v27/n12/full/nbt1209-1135.html)
 
----
-Published under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">(CC) BY-NC-SA </a>

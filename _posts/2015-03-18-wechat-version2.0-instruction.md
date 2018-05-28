@@ -42,5 +42,3 @@ tags:
 <img src="https://dn-shanguangyu.qbox.me/imagesrobot.png" alt="image">
 </figure>
 
----
-Published under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">(CC) BY-NC-SA </a>

@@ -15,5 +15,3 @@ One of my genius colleagues has reached out an idea, why not convert **static ba
 
 I am pleased to be able to work with this guy. Now he is decided to leave and I believe he has his own choice and plan. Wish him a good future.
 
----
-Published under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">(CC) BY-NC-SA </a>

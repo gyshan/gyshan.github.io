@@ -47,5 +47,3 @@ to      #include </usr/include/zlib.h>
 Then, remake deps and everything is ok.
 
 
----
-Published under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">(CC) BY-NC-SA </a>

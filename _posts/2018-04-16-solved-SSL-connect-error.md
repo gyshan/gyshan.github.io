@@ -31,5 +31,3 @@ To address this issue, I turned to download the zipball from github, unzip the z
 >devtools::install_local("../../facets")
 {% endhighlight %}
 
----
-Published under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">(CC) BY-NC-SA </a>
