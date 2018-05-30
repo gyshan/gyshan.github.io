@@ -22,7 +22,7 @@ The views expressed in this blog are mine and mine alone, not my clients, not my
  GPG|<i class="fa fa-key"></i> |[GPG Public Key]({{ site.url }}/download/gpg_public_key.txt)
  Resume|<i class="fa fa-file"></i>|<i class="far fa-file-pdf"></i> [EN]({{ site.url }}/download/shangy_cv.pdf) <i class="fas fa-file-alt"></i> [CN]({{ site.url }}/download/resume.html)
  Edu|<i class="fa fa-graduation-cap"></i>|[AMMS](https://en.wikipedia.org/wiki/Academy_of_Military_Medical_Sciences)
- Tech|<i class="fa fa-tasks"></i>|Python, R, Linux, Scala, Shell, Maching Learning, Cancer Genome, Text Mining
+ Tech|<i class="fa fa-tasks"></i>|Python, R, Linux, Scala, Shell, Machine Learning, Cancer Genome, Text Mining
 
 
 # Blogroll
