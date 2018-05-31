@@ -28,7 +28,7 @@ tags:
 
 2015，且思且行，望好运常在。
 <figure>
-<img src="https://dn-shanguangyu.qbox.me/wutai.jpg" alt="image">
+<img src="https://shangyblog-1256840873.cos.ap-beijing.myqcloud.com/wutai.jpg?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDCs9rBTiECFuDZa1WzILYYlkjqyvBT5CC%26q-sign-time%3D1527752507%3B1527754307%26q-key-time%3D1527752507%3B1527754307%26q-header-list%3D%26q-url-param-list%3D%26q-signature%3Daf1964f420065a20141f5a6a60a37ff42d8ea1b1&token=8874e252d7112b3b76b2199d2c226562c7cf16c810001&clientIP=124.254.9.174&clientUA=4fc41b61-6874-4b06-ae7e-410080031c33" alt="image">
 <figcaption>摄于五台山</figcaption>
 </figure>
 

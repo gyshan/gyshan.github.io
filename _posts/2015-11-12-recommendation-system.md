@@ -10,7 +10,7 @@ tags:
 In this small article, I want to keep a record for my study experience in recommendation system. There are several parameters can evaluate a recommendation system, which are **precision**, **recall** and **F-measure**. Collaborative filtering (CF) is the most successful recommendation technique to date. There are three main categories of CF techniques: memory-based, model-based and hybrid CF algorithms (that combine CF with other recommendation techniques). 
 
 <figure>
-<img src="https://dn-shanguangyu.qbox.me/Overview%20of%20CF.png
+<img src="https://shangyblog-1256840873.cos.ap-beijing.myqcloud.com/Overview%20of%20CF.png?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDHKf4zkW7ZprNNZ3aLYKpm0icCbKCYNjX%26q-sign-time%3D1527753208%3B1527755008%26q-key-time%3D1527753208%3B1527755008%26q-header-list%3D%26q-url-param-list%3D%26q-signature%3D6f6cda9d6cb61d30a06bd46dbe79ef1ecbda53c5&token=69d62916ab243b22e486b51a69d13e0482fc8d3810001&clientIP=124.254.9.174&clientUA=18df6d98-44d1-467a-9a74-b7b19dd04a0c
 " alt="image">
 <figcaption>Overview of collaborative filtering techniques.</figcaption>
 </figure>
@@ -18,7 +18,7 @@ In this small article, I want to keep a record for my study experience in recomm
 Today, I will mainly focus on Item-based and User-based CF techniques. The basic idea of item-based CF algorithms is to calculate the similarity between different items based on the user-item rating data and then to compute the prediction score for a given item based on the calculated similarity score, while the core of user-based CF algorithms is to provide item recommendation or prediction based on the common opinion of other like-minded users.
 
 <figure>
-<img src="https://dn-shanguangyu.qbox.me/CF.gif" alt="image">
+<img src="https://shangyblog-1256840873.cos.ap-beijing.myqcloud.com/CF.gif?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDhooO9C46Q2rY1aWb1yW7xeA4hvWgywV1%26q-sign-time%3D1527753235%3B1527755035%26q-key-time%3D1527753235%3B1527755035%26q-header-list%3D%26q-url-param-list%3D%26q-signature%3D98c90178a8c187c53e8597ef2a2a7fa48d663a55&token=6f353ab9ebab95ba6b14d79c26095ff834c819c510001&clientIP=124.254.9.174&clientUA=c28c7344-8566-47e9-809c-3481854fdf7a" alt="image">
 </figure>
 
 ### Evaluation indicators for a recommendation system
@@ -35,10 +35,10 @@ Today, I will mainly focus on Item-based and User-based CF techniques. The basic
 
 Here I want to evaluate running time of two algorithms using [MovieLens](http://grouplens.org/datasets/movielens/) datasets.
 
-[u1.base](https://dn-shanguangyu.qbox.me/u1.base)
+[u1.base](https://shangyblog-1256840873.cos.ap-beijing.myqcloud.com/u1.base?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDwUsDy5hXefH20BnGDq40zf5Zdat6sH6n%26q-sign-time%3D1527753278%3B1527755078%26q-key-time%3D1527753278%3B1527755078%26q-header-list%3D%26q-url-param-list%3D%26q-signature%3D6d12f657e4105291129165568961e03e0e59ae6d&token=fb0507c323f2c2cda50e0055f187bc650a1c228e10001&clientIP=124.254.9.174&clientUA=e368c04e-97ba-4c5f-8367-b791c4cc47f0)
 「Total 943 person, Total 1650 movies」
 
-[u1.test](https://dn-shanguangyu.qbox.me/u1.test)
+[u1.test](https://shangyblog-1256840873.cos.ap-beijing.myqcloud.com/u1.test?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDCfB5T2O7EfAhrKDOFWyhMg5KlmIVT5Vt%26q-sign-time%3D1527753299%3B1527755099%26q-key-time%3D1527753299%3B1527755099%26q-header-list%3D%26q-url-param-list%3D%26q-signature%3D1812b190bcceb4c3b2a893cbf501e94b2b3f6768&token=e1a2f557581c98d3f2ab737c6713be46f41f764310001&clientIP=124.254.9.174&clientUA=eedf2e5f-93d1-4c8e-b46e-ef61ac6ebc3a)
 「Total 459 person, Total 1410 movies」
 
 

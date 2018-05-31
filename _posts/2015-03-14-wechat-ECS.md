@@ -161,7 +161,7 @@ $ sudo supervisorctl restart test
 
 进入微信公众平台--->开发者模式--->设置URL和Token
 <figure >
-<img src="https://dn-shanguangyu.qbox.me/wechat.png" alt="image">
+<img src="https://shangyblog-1256840873.cos.ap-beijing.myqcloud.com/wechat.png?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDIg4EhXuhkrrL0govnAP746rH0aklA2nL%26q-sign-time%3D1527753346%3B1527755146%26q-key-time%3D1527753346%3B1527755146%26q-header-list%3D%26q-url-param-list%3D%26q-signature%3Dc9024bd58f64f68442083359fa4413016893a0f8&token=fc5d3f8757078192ea999b7c3f4e0492a9c1fcd910001&clientIP=124.254.9.174&clientUA=3021f415-f989-4dbb-b30a-5b11992bfc51" alt="image">
 </figure>
 
 如果配置没有问题，顺利通过，用微信给你的公众平台发消息应该能看到'hello world!'。
