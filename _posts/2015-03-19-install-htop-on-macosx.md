@@ -13,12 +13,12 @@ tags:
 top:
 
 <figure >
-<img src="https://shangyblog-1256840873.cos.ap-beijing.myqcloud.com/top.png?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDzs92mXm1QBi0G6LrvjnQ0oAerzN9OeKT%26q-sign-time%3D1527753586%3B1527755386%26q-key-time%3D1527753586%3B1527755386%26q-header-list%3D%26q-url-param-list%3D%26q-signature%3D821eade6e6976e4f1adfd8a2dc6815bc27eb1fdb&token=da035f8311c280781579557d244ab2c7ee089f6e10001&clientIP=124.254.9.174&clientUA=11b9911a-bfda-4ef9-8b4f-6fbaac40101c" alt="image">
+<img src="https://shangyblog-1256840873.cos.ap-beijing.myqcloud.com/top.png" alt="image">
 </figure>
 
 htop:
 <figure >
-<img src="https://shangyblog-1256840873.cos.ap-beijing.myqcloud.com/htop.png?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDtfMrzO6kQY0GC2Q2beqjgl1V2L4fcKSA%26q-sign-time%3D1527753607%3B1527755407%26q-key-time%3D1527753607%3B1527755407%26q-header-list%3D%26q-url-param-list%3D%26q-signature%3Da2baa577bed9446726fab2781fbc42c5b08542a2&token=429fc3136340faae322495ab4961179b4be2518310001&clientIP=124.254.9.174&clientUA=153d3902-07e6-414b-882a-4dab109756ae" alt="image">
+<img src="https://shangyblog-1256840873.cos.ap-beijing.myqcloud.com/htop.png" alt="image">
 </figure>
 
 ---

@@ -11,7 +11,7 @@ tags:
 
 #正态分布
 <figure >
-<img src="https://shangyblog-1256840873.cos.ap-beijing.myqcloud.com/normal_distribution.png?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDWBSAXwk9LlxKyTR8vbKSnG70CYLQOPZP%26q-sign-time%3D1527753667%3B1527755467%26q-key-time%3D1527753667%3B1527755467%26q-header-list%3D%26q-url-param-list%3D%26q-signature%3Dd8a55669cba3361708e659322c500dd30d0bf9e9&token=ba1b365a20f12ac8237f9e1f515b4d85744cec5b10001&clientIP=124.254.9.174&clientUA=2210a2e3-44c9-4908-982b-05b28c726766" alt="image">
+<img src="https://shangyblog-1256840873.cos.ap-beijing.myqcloud.com/normal_distribution.png" alt="image">
 </figure>
 正态分布 (normal distribution) 又叫高斯分布 (Gaussian distribution)，是重要的概率分布之一，其概率密度函数为
 
@@ -25,7 +25,7 @@ $$\varphi_{\mu,\sigma}(x)=\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigm
 
 #幂律分布
 <figure >
-<img src="https://shangyblog-1256840873.cos.ap-beijing.myqcloud.com/pareto.gif?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKID36z027SCymE9wcZHYQHuO0k5j8qm4R5U%26q-sign-time%3D1527753688%3B1527755488%26q-key-time%3D1527753688%3B1527755488%26q-header-list%3D%26q-url-param-list%3D%26q-signature%3Db856f59e7d0d6c0256191ce36062f3b6635cf6db&token=10b4f734d76d11738b0cbd2a3e5f5109490a3ae010001&clientIP=124.254.9.174&clientUA=76f2b68f-9cad-4372-86e5-cf540ce27fb6" alt="image">
+<img src="https://shangyblog-1256840873.cos.ap-beijing.myqcloud.com/pareto.gif" alt="image">
 </figure>
 很早就知道二八法则的概念，最早是说社会上 20% 的人占有 80% 的社会财富，强调世界充满了重要的少数与琐碎的多数，这个法则在管理学、社会学等很多方面都有体现，再往上走一步，这种概率分布可以用一种更加科学的名词来表征，叫做幂律分布。
 
