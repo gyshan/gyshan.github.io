@@ -28,7 +28,6 @@ IGV checking is at the heart of the troubleshooting process, when I look at the 
 
 In short, most of our problems can be clarified by the IGV. If a problem can not be solved by IGV, recheck mapping procedure.
 
----
 
 [^1]: Make sure it is easy to view the reads that with the same property. (SNV, Softclip, ...)
 [^2]: If there are multiple SNVs in a relatively short region (<100bp) which supported by low mapQ reads, it is necessary to blast if the sequence of target gene is similar to other genes in reference. The similarity of the target gene with another will significantly lower the mapQ of the reads in the target region. (eg. PRSS1 and PRSS2).
