@@ -1,6 +1,6 @@
 ---
 title: "Setup sftp plugin for sublime"
-excerpt: "SFTP setting protocal"
+excerpt: "SFTP setting protocol"
 categories:
   - articles
 tags:
@@ -9,7 +9,7 @@ tags:
 
 
 
-I do not want to use [vi](https://en.wikipedia.org/wiki/Vi) in remote server, especially when dealing with large amounts of coding work. Instead, I want to write code in my laptop with [sublime](https://www.sublimetext.com/), and make it simultaneously sync to a remote server. 
+I do not want to use [vi](https://en.wikipedia.org/wiki/Vi) in a remote server, especially when dealing with large amounts of coding work. Instead, I want to write code on my laptop with [sublime](https://www.sublimetext.com/) and make it simultaneously sync to a remote server. 
 
 [SFTP](https://wbond.net/sublime_packages/sftp), a plugin for sublime can deal with the problem above, which can map a local folder/file to remote folder/file. Here is how I setup this plugin.
 

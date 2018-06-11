@@ -7,7 +7,7 @@ tags:
   - Bioinformatics
 ---
 
-[InDel](https://en.wikipedia.org/wiki/Indel) is a common concept in molecular biology, while the representation for InDels are non-unique. There are at least two representations: left-alignment and right-alignment. Actually it does not really matter, but it good to have a convention. I would like to suggest using left-alignment with these reasons:
+[InDel](https://en.wikipedia.org/wiki/Indel) is a common concept in molecular biology, while the representation for InDels are non-unique. There are at least two representations: left-alignment and right-alignment. Actually, it does not really matter, but it good to have a convention. I would like to suggest using left-alignment for these reasons:
 
 {% highlight text %}
 ref            : CGTATGATCTA [GCGCGC] TAGCTAGCTAGC
@@ -17,7 +17,7 @@ right-alignment: CGTATGATCTA [GCGC--] TAGCTAGCTAGC
 
 
 1. Standard
-Statistical genetics center of university of michigan denote that [left-alignment](https://genome.sph.umich.edu/wiki/Variant_Normalization#Left_alignment) is necessary.
+Statistical genetics center of the university of Michigan denotes that [left-alignment](https://genome.sph.umich.edu/wiki/Variant_Normalization#Left_alignment) is necessary.
 
 
 2. Community

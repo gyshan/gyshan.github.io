@@ -7,7 +7,7 @@ tags:
   - Bioinformatics
 ---
 
-Today, I tried to install an R package: [facets](https://github.com/mskcc/facets). During installation, I got stucked by SSL connect error and the error code is as follows. So I tried to install this package locally and got it done.
+Today, I tried to install an R package: [facets](https://github.com/mskcc/facets). During installation, I got stuck by SSL connect error and the error code is as follows. So I tried to install this package locally and got it done.
 
 {% highlight bash %}
 # Error code
@@ -23,7 +23,7 @@ from URL https://api.github.com/repos/mskcc/pctGCdata/zipball/master
 Installation failed: SSL connect error
 {% endhighlight %}
 
-To address this issue, I turned to download the zipball from github, unzip the zipball and install the package locally. Soon after this move, everything goes well.
+To address this issue, I turned to download the zipball from GitHub, unzip the zipball and install the package locally. Soon after this move, everything goes well.
 
 {% highlight bash %}
 >library(devtools)
