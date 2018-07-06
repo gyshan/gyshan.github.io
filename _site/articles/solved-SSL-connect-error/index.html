@@ -153,7 +153,7 @@
 
       <div class="page-content">
         <div class="e-content">
-          <p>Today, I tried to install an R package: <a href="https://github.com/mskcc/facets">facets</a>. During installation, I got stucked by SSL connect error and the error code is as follows. So I tried to install this package locally and got it done.</p>
+          <p>Today, I tried to install an R package: <a href="https://github.com/mskcc/facets">facets</a>. During installation, I got stuck by SSL connect error and the error code is as follows. So I tried to install this package locally and got it done.</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># Error code</span>
 <span class="o">&gt;</span> library<span class="o">(</span>devtools<span class="o">)</span>
@@ -167,7 +167,7 @@ Downloading GitHub repo mskcc/pctGCdata@master
 from URL https://api.github.com/repos/mskcc/pctGCdata/zipball/master
 Installation failed: SSL connect error</code></pre></figure>
 
-<p>To address this issue, I turned to download the zipball from github, unzip the zipball and install the package locally. Soon after this move, everything goes well.</p>
+<p>To address this issue, I turned to download the zipball from GitHub, unzip the zipball and install the package locally. Soon after this move, everything goes well.</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">&gt;</span>library<span class="o">(</span>devtools<span class="o">)</span>
 <span class="o">&gt;</span>devtools::install_local<span class="o">(</span><span class="s2">"../../pctGCdata"</span><span class="o">)</span>

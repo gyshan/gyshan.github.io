@@ -1,4 +1,17 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.2">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-05-31T16:03:13+08:00</updated><id>http://localhost:4000/</id><title type="html">Guangyu Corey Shan’s Blog</title><subtitle>Notes on bioinformatics and data mining by G. Corey Shan</subtitle><author><name>Corey</name></author><entry><title type="html">Please do not use CST to denote time zone</title><link href="http://localhost:4000/articles/do-not-use-CST-to-denote-time-zone/" rel="alternate" type="text/html" title="Please do not use CST to denote time zone" /><published>2018-05-09T00:00:00+08:00</published><updated>2018-05-09T00:00:00+08:00</updated><id>http://localhost:4000/articles/do-not-use-CST-to-denote-time-zone</id><content type="html" xml:base="http://localhost:4000/articles/do-not-use-CST-to-denote-time-zone/">&lt;p&gt;Sometimes, I got emails from friends across the world. They usually kindly attach a timestamp at the end of the mail. One day, I got an email with &lt;code class=&quot;highlighter-rouge&quot;&gt;CST&lt;/code&gt; in the timastamp from a guy I did not know before. This small tag confused me a lot because there are at least four time zones using CST as an abbreviation:&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.2">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-07-06T16:11:02+08:00</updated><id>http://localhost:4000/</id><title type="html">Guangyu Corey Shan’s Blog</title><subtitle>Notes on bioinformatics and data mining by G. Corey Shan</subtitle><author><name>Corey</name></author><entry><title type="html">Transfer files in the background between servers</title><link href="http://localhost:4000/articles/transfer-files-between-servers/" rel="alternate" type="text/html" title="Transfer files in the background between servers" /><published>2018-07-06T00:00:00+08:00</published><updated>2018-07-06T00:00:00+08:00</updated><id>http://localhost:4000/articles/transfer-files-between-servers</id><content type="html" xml:base="http://localhost:4000/articles/transfer-files-between-servers/">&lt;p&gt;Sometimes, We need to transfer files between servers in the background and it is imperative to have a password. The solution is to use screen command to emulate a screen and make it running in the background.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;screen   &lt;span class=&quot;c&quot;&gt;# [1]&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;rsync &lt;span class=&quot;nt&quot;&gt;-avz&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;hostname&lt;/span&gt;@XXX.XXX.XX.X:/data/path ./   &lt;span class=&quot;c&quot;&gt;# [2]&lt;/span&gt;
+Enter your password:   &lt;span class=&quot;c&quot;&gt;# [3]&lt;/span&gt;
+
+Press &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;control&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;+&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;A&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;   &lt;span class=&quot;c&quot;&gt;# [4]&lt;/span&gt;
+Press &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;D&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;   &lt;span class=&quot;c&quot;&gt;# [5] &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Here, your job is running in the background. If you want to check the running job, type the commands below:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;screen &lt;span class=&quot;nt&quot;&gt;-ls&lt;/span&gt;   &lt;span class=&quot;c&quot;&gt;# Show screen sessions&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;screen &lt;span class=&quot;nt&quot;&gt;-r&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;session you want to enter]   &lt;span class=&quot;c&quot;&gt;# Enter specific screen session&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;screen &lt;span class=&quot;nt&quot;&gt;-X&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-S&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;session you want to &lt;span class=&quot;nb&quot;&gt;kill&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; quit   &lt;span class=&quot;c&quot;&gt;# Kill specific screen session&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;</content><author><name>Corey</name></author><category term="Bioinformatics" /><summary type="html">Solution for file transferring</summary></entry><entry><title type="html">Please do not use CST to denote time zone</title><link href="http://localhost:4000/articles/do-not-use-CST-to-denote-time-zone/" rel="alternate" type="text/html" title="Please do not use CST to denote time zone" /><published>2018-05-09T00:00:00+08:00</published><updated>2018-05-09T00:00:00+08:00</updated><id>http://localhost:4000/articles/do-not-use-CST-to-denote-time-zone</id><content type="html" xml:base="http://localhost:4000/articles/do-not-use-CST-to-denote-time-zone/">&lt;p&gt;Sometimes, I got emails from friends across the world. They usually kindly attach a timestamp at the end of the mail. One day, I got an email with &lt;code class=&quot;highlighter-rouge&quot;&gt;CST&lt;/code&gt; in the timestamp from a guy I did not know before. This small tag confused me a lot because there are at least four time zones using CST as an abbreviation:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Central Standard Time (USA) UTC-6:00&lt;/li&gt;
@@ -7,13 +20,13 @@
   &lt;li&gt;Cuba Standard Time UTC-4:00&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;To precisely indicate the time zone, I strongly recommend the UTC (Coordinated Universal Time) standard, which is the basis for civil time today. UTC is the primary time standard by which the world regulates clocks and time. Here, Someone will doubt that whethe we can use GMT (Greenwich Mean Time) to replace UTC. It is necessary to bear in mind that even though GMT and UTC share the same current time in practice, we still suggest using the UTC standard to denote time zone.&lt;/p&gt;
+&lt;p&gt;To precisely indicate the time zone, I strongly recommend the UTC (Coordinated Universal Time) standard, which is the basis for civil time today. UTC is the primary time standard by which the world regulates clocks and time. Here, Someone will doubt that whether we can use GMT (Greenwich Mean Time) to replace UTC. It is necessary to bear in mind that even though GMT and UTC share the same current time in practice, we still suggest using the UTC standard to denote time zone.&lt;/p&gt;
 
 &lt;p&gt;GMT is a country based time standard, whereas UTC is an internet based time standard. UTC is the time standard used for Internet and World Wide Web standards. It is also the basis of the satellite global positioning system (GPS). UTC is used by the Network Time Protocol, created to synchronize the clocks of many computers over the Internet. &lt;em&gt;If we communicate via Internet, UTC is the best choice&lt;/em&gt;.&lt;/p&gt;
 
-&lt;p&gt;Well, back to the previous quesion. If we adopt UTC standard, we can make sure that the receiver got to know the exact time we refer to. For example, I live in Beijing, and my time zone is UTC+0800.&lt;/p&gt;
+&lt;p&gt;Well, back to the previous question. If we adopt UTC standard, we can make sure that the receiver got to know the exact time we refer to. For example, I live in Beijing, and my time zone is UTC+0800.&lt;/p&gt;
 
-&lt;p&gt;After all, using proper medium to convey precisely what you really mean is the most important task in our life.&lt;/p&gt;</content><author><name>Corey</name></author><category term="Life" /><summary type="html">Use UTC standard to denote time zone</summary></entry><entry><title type="html">Solved-SSL connect error</title><link href="http://localhost:4000/articles/solved-SSL-connect-error/" rel="alternate" type="text/html" title="Solved-SSL connect error" /><published>2018-04-16T00:00:00+08:00</published><updated>2018-04-16T00:00:00+08:00</updated><id>http://localhost:4000/articles/solved-SSL-connect-error</id><content type="html" xml:base="http://localhost:4000/articles/solved-SSL-connect-error/">&lt;p&gt;Today, I tried to install an R package: &lt;a href=&quot;https://github.com/mskcc/facets&quot;&gt;facets&lt;/a&gt;. During installation, I got stucked by SSL connect error and the error code is as follows. So I tried to install this package locally and got it done.&lt;/p&gt;
+&lt;p&gt;After all, using the proper medium to convey precisely what you really mean is the most important task in our life.&lt;/p&gt;</content><author><name>Corey</name></author><category term="Life" /><summary type="html">Use UTC standard to denote time zone</summary></entry><entry><title type="html">Solved-SSL connect error</title><link href="http://localhost:4000/articles/solved-SSL-connect-error/" rel="alternate" type="text/html" title="Solved-SSL connect error" /><published>2018-04-16T00:00:00+08:00</published><updated>2018-04-16T00:00:00+08:00</updated><id>http://localhost:4000/articles/solved-SSL-connect-error</id><content type="html" xml:base="http://localhost:4000/articles/solved-SSL-connect-error/">&lt;p&gt;Today, I tried to install an R package: &lt;a href=&quot;https://github.com/mskcc/facets&quot;&gt;facets&lt;/a&gt;. During installation, I got stuck by SSL connect error and the error code is as follows. So I tried to install this package locally and got it done.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;c&quot;&gt;# Error code&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; library&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;devtools&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
@@ -27,11 +40,11 @@ Downloading GitHub repo mskcc/pctGCdata@master
 from URL https://api.github.com/repos/mskcc/pctGCdata/zipball/master
 Installation failed: SSL connect error&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;To address this issue, I turned to download the zipball from github, unzip the zipball and install the package locally. Soon after this move, everything goes well.&lt;/p&gt;
+&lt;p&gt;To address this issue, I turned to download the zipball from GitHub, unzip the zipball and install the package locally. Soon after this move, everything goes well.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;library&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;devtools&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;devtools::install_local&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;../../pctGCdata&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;devtools::install_local&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;../../facets&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;</content><author><name>Corey</name></author><category term="Bioinformatics" /><summary type="html">R package installation</summary></entry><entry><title type="html">InDel left-alignment</title><link href="http://localhost:4000/articles/indel-left-alignment/" rel="alternate" type="text/html" title="InDel left-alignment" /><published>2018-03-27T00:00:00+08:00</published><updated>2018-03-27T00:00:00+08:00</updated><id>http://localhost:4000/articles/indel-left-alignment</id><content type="html" xml:base="http://localhost:4000/articles/indel-left-alignment/">&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Indel&quot;&gt;InDel&lt;/a&gt; is a common concept in molecular biology, while the representation for InDels are non-unique. There are at least two representations: left-alignment and right-alignment. Actually it does not really matter, but it good to have a convention. I would like to suggest using left-alignment with these reasons:&lt;/p&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;devtools::install_local&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;../../facets&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;</content><author><name>Corey</name></author><category term="Bioinformatics" /><summary type="html">R package installation</summary></entry><entry><title type="html">InDel left-alignment</title><link href="http://localhost:4000/articles/indel-left-alignment/" rel="alternate" type="text/html" title="InDel left-alignment" /><published>2018-03-27T00:00:00+08:00</published><updated>2018-03-27T00:00:00+08:00</updated><id>http://localhost:4000/articles/indel-left-alignment</id><content type="html" xml:base="http://localhost:4000/articles/indel-left-alignment/">&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Indel&quot;&gt;InDel&lt;/a&gt; is a common concept in molecular biology, while the representation for InDels are non-unique. There are at least two representations: left-alignment and right-alignment. Actually, it does not really matter, but it good to have a convention. I would like to suggest using left-alignment for these reasons:&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;ref            : CGTATGATCTA [GCGCGC] TAGCTAGCTAGC
 left-alignment : CGTATGATCTA [--GCGC] TAGCTAGCTAGC
@@ -40,7 +53,7 @@ right-alignment: CGTATGATCTA [GCGC--] TAGCTAGCTAGC&lt;/code&gt;&lt;/pre&gt;&lt;/
 &lt;ol&gt;
   &lt;li&gt;
     &lt;p&gt;Standard
-Statistical genetics center of university of michigan denote that &lt;a href=&quot;https://genome.sph.umich.edu/wiki/Variant_Normalization#Left_alignment&quot;&gt;left-alignment&lt;/a&gt; is necessary.&lt;/p&gt;
+Statistical genetics center of the university of Michigan denotes that &lt;a href=&quot;https://genome.sph.umich.edu/wiki/Variant_Normalization#Left_alignment&quot;&gt;left-alignment&lt;/a&gt; is necessary.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;Community
@@ -141,7 +154,7 @@ to      &lt;span class=&quot;c&quot;&gt;#include &amp;lt;/usr/include/zlib.h&amp
 &lt;h2 id=&quot;life&quot;&gt;Life&lt;/h2&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;My wife bought me a Macbook Pro 13-Inch(2017), which I used to write this article. It is necessary to have effective tools to do good work.&lt;/li&gt;
+  &lt;li&gt;My wife bought me a MacBook Pro 13-Inch(2017), which I used to write this article. It is necessary to have effective tools to do good work.&lt;/li&gt;
   &lt;li&gt;My cooking skill improves a lot, especially Stir-fried Shredded Pork with Green Pepper.&lt;/li&gt;
   &lt;li&gt;Have read six books, which enlightened me most is &lt;a href=&quot;https://en.wikipedia.org/wiki/Stories_about_Ming_Dynasty&quot;&gt;&lt;em&gt;Stories about Ming Dynasty&lt;/em&gt;&lt;/a&gt;.&lt;/li&gt;
   &lt;li&gt;Got my master diploma from &lt;a href=&quot;https://en.wikipedia.org/wiki/Academy_of_Military_Medical_Sciences&quot;&gt;AMMS&lt;/a&gt;.&lt;/li&gt;
@@ -152,7 +165,7 @@ to      &lt;span class=&quot;c&quot;&gt;#include &amp;lt;/usr/include/zlib.h&amp
 
 &lt;h2 id=&quot;2018&quot;&gt;2018&lt;/h2&gt;
 
-&lt;p&gt;In 2018, I still hold the opinion that scientific writing and coding are the most important skills for bioinformatician. Therefore, my flags for 2018 are:&lt;/p&gt;
+&lt;p&gt;In 2018, I still hold the opinion that scientific writing and coding are the most important skills for a bioinformatician. Therefore, my flags for 2018 are:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Reconstruct &lt;em&gt;one&lt;/em&gt; of my projects using scala&lt;/li&gt;
@@ -160,7 +173,7 @@ to      &lt;span class=&quot;c&quot;&gt;#include &amp;lt;/usr/include/zlib.h&amp
   &lt;li&gt;Study English &lt;em&gt;30&lt;/em&gt; minutes per day&lt;/li&gt;
   &lt;li&gt;Read &lt;em&gt;10&lt;/em&gt; books&lt;/li&gt;
   &lt;li&gt;Exercise &lt;em&gt;three&lt;/em&gt; times per week, which is twice than what I have done in 2017&lt;/li&gt;
-  &lt;li&gt;Spare average &lt;em&gt;2&lt;/em&gt; hours per day on family&lt;/li&gt;
+  &lt;li&gt;Spare average &lt;em&gt;2&lt;/em&gt; hours per day on the family&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;strong&gt;Embrace 2018!&lt;/strong&gt;&lt;/p&gt;</content><author><name>Corey</name></author><category term="Life" /><summary type="html">Embrace 2018</summary></entry><entry><title type="html">Basic folder structure for bioinformatics</title><link href="http://localhost:4000/articles/basic-folder-structure-for-bioinformatics/" rel="alternate" type="text/html" title="Basic folder structure for bioinformatics" /><published>2017-12-12T00:00:00+08:00</published><updated>2017-12-12T00:00:00+08:00</updated><id>http://localhost:4000/articles/basic-folder-structure-for-bioinformatics</id><content type="html" xml:base="http://localhost:4000/articles/basic-folder-structure-for-bioinformatics/">&lt;p&gt;Yesterday, a friend of mine asked me if there was a good way to organize folders for a bioinformatics project. That is also a good question to me. As for me, when dealing with a relatively light-weight project such as testing a script for GC content counting or performing simple BLAST, I would prefer to use flat folder.&lt;/p&gt;
@@ -196,7 +209,7 @@ to      &lt;span class=&quot;c&quot;&gt;#include &amp;lt;/usr/include/zlib.h&amp
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Misc&lt;/code&gt;: Save Miscellaneous files. The most important subfolder in it is minimal working example (MWE), which is a collection of source code and other essential data files, allowing a bug or problem to be demonstrated and reproduced.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;In a word, a well-organized folder can facilitate human readability and therefore be good for the project. Code is more for computers, and well-organized folder structure is for humans. It is actually often more difficult to deal with humans than computers.&lt;/p&gt;</content><author><name>Corey</name></author><category term="Bioinformatics" /><summary type="html">Organize project folder is important</summary></entry><entry><title type="html">Setup sftp plugin for sublime</title><link href="http://localhost:4000/articles/setup-sftp-plugin-for-sublime/" rel="alternate" type="text/html" title="Setup sftp plugin for sublime" /><published>2017-09-26T00:00:00+08:00</published><updated>2017-09-26T00:00:00+08:00</updated><id>http://localhost:4000/articles/setup-sftp-plugin-for-sublime</id><content type="html" xml:base="http://localhost:4000/articles/setup-sftp-plugin-for-sublime/">&lt;p&gt;I do not want to use &lt;a href=&quot;https://en.wikipedia.org/wiki/Vi&quot;&gt;vi&lt;/a&gt; in remote server, especially when dealing with large amounts of coding work. Instead, I want to write code in my laptop with &lt;a href=&quot;https://www.sublimetext.com/&quot;&gt;sublime&lt;/a&gt;, and make it simultaneously sync to a remote server.&lt;/p&gt;
+&lt;p&gt;In a word, a well-organized folder can facilitate human readability and therefore be good for the project. Code is more for computers, and well-organized folder structure is for humans. It is actually often more difficult to deal with humans than computers.&lt;/p&gt;</content><author><name>Corey</name></author><category term="Bioinformatics" /><summary type="html">Organize project folder is important</summary></entry><entry><title type="html">Setup sftp plugin for sublime</title><link href="http://localhost:4000/articles/setup-sftp-plugin-for-sublime/" rel="alternate" type="text/html" title="Setup sftp plugin for sublime" /><published>2017-09-26T00:00:00+08:00</published><updated>2017-09-26T00:00:00+08:00</updated><id>http://localhost:4000/articles/setup-sftp-plugin-for-sublime</id><content type="html" xml:base="http://localhost:4000/articles/setup-sftp-plugin-for-sublime/">&lt;p&gt;I do not want to use &lt;a href=&quot;https://en.wikipedia.org/wiki/Vi&quot;&gt;vi&lt;/a&gt; in a remote server, especially when dealing with large amounts of coding work. Instead, I want to write code on my laptop with &lt;a href=&quot;https://www.sublimetext.com/&quot;&gt;sublime&lt;/a&gt; and make it simultaneously sync to a remote server.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://wbond.net/sublime_packages/sftp&quot;&gt;SFTP&lt;/a&gt;, a plugin for sublime can deal with the problem above, which can map a local folder/file to remote folder/file. Here is how I setup this plugin.&lt;/p&gt;
 
@@ -296,63 +309,25 @@ to      &lt;span class=&quot;c&quot;&gt;#include &amp;lt;/usr/include/zlib.h&amp
 &lt;ul&gt;
   &lt;li&gt;Right click your code in this folder and choose &lt;code class=&quot;highlighter-rouge&quot;&gt;SFTP/FTP&lt;/code&gt;&lt;/li&gt;
   &lt;li&gt;Then you can do whatever you want to do, such as &lt;code class=&quot;highlighter-rouge&quot;&gt;Upload File&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;Download File&lt;/code&gt; …&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Corey</name></author><category term="Mac" /><summary type="html">SFTP setting protocal</summary></entry><entry><title type="html">Why should you lowercase your filename</title><link href="http://localhost:4000/articles/why-should-you-lowercase-your-filename/" rel="alternate" type="text/html" title="Why should you lowercase your filename" /><published>2017-09-06T00:00:00+08:00</published><updated>2017-09-06T00:00:00+08:00</updated><id>http://localhost:4000/articles/why-should-you-lowercase-your-filename</id><content type="html" xml:base="http://localhost:4000/articles/why-should-you-lowercase-your-filename/">&lt;p&gt;Yesterday, I began to transfer my git configuration from my old machine to my new Macbook Pro. When I rename my file by doing this, an error occured to me:&lt;/p&gt;
+&lt;/ul&gt;</content><author><name>Corey</name></author><category term="Mac" /><summary type="html">SFTP setting protocol</summary></entry><entry><title type="html">Why should you lowercase your filename</title><link href="http://localhost:4000/articles/why-should-you-lowercase-your-filename/" rel="alternate" type="text/html" title="Why should you lowercase your filename" /><published>2017-09-06T00:00:00+08:00</published><updated>2017-09-06T00:00:00+08:00</updated><id>http://localhost:4000/articles/why-should-you-lowercase-your-filename</id><content type="html" xml:base="http://localhost:4000/articles/why-should-you-lowercase-your-filename/">&lt;p&gt;Yesterday, I began to transfer my git configuration from my old machine to my new MacBook Pro. When I rename my file by doing this, an error occurred to me:&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git &lt;span class=&quot;nb&quot;&gt;mv &lt;/span&gt;readme Readme
 fatal: destination exists, &lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;readme, &lt;span class=&quot;nv&quot;&gt;destination&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;Readme&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;It seems like my Mac OS X cannot recognize &lt;code class=&quot;highlighter-rouge&quot;&gt;Readme&lt;/code&gt; file as same as &lt;code class=&quot;highlighter-rouge&quot;&gt;readme&lt;/code&gt; file. So I had to convert &lt;code class=&quot;highlighter-rouge&quot;&gt;readme&lt;/code&gt; file to &lt;code class=&quot;highlighter-rouge&quot;&gt;tmp_file&lt;/code&gt; and then &lt;code class=&quot;highlighter-rouge&quot;&gt;tmp_file&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;Readme&lt;/code&gt; file. In Linux, this command can work very well, but in Mac OS X, failed. This is the first time that I realized case-sensitive is so important. Except for this situation, I believe it is very dangerous if keep confusing the case.&lt;/p&gt;
 
-&lt;p&gt;Different operating systems (OS) have different case-sensitive level, that is why same command upon can work well on Linux but failed on Mac OS X.&lt;/p&gt;
+&lt;p&gt;Different operating systems (OS) have different case-sensitive level, that is why the same command upon can work well on Linux but fail on Mac OS X.&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;case-sensitive OS: Linux, Solaris, BSD&lt;/li&gt;
   &lt;li&gt;case-insensitive OS: Windows, Mac OS X&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;In my working pipeline, my file often transfer between Linux and Mac OS X, so I decide to convert all my filename under &lt;strong&gt;lowercase_with_underscore&lt;/strong&gt; principle. The reasons behind this principle are:&lt;/p&gt;
+&lt;p&gt;In my working pipeline, my file often transfers between Linux and Mac OS X, so I decided to convert all my filename under &lt;strong&gt;lowercase_with_underscore&lt;/strong&gt; principle. The reasons behind this principle are:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Easy to read, UPPERCASE_WITH_UNDERSCORE is hard to read&lt;/li&gt;
-  &lt;li&gt;Easy to distinguish private file from system folder/file such as &lt;code class=&quot;highlighter-rouge&quot;&gt;Documents&lt;/code&gt; , &lt;code class=&quot;highlighter-rouge&quot;&gt;Downloads&lt;/code&gt; and so on&lt;/li&gt;
+  &lt;li&gt;Easy to distinguish a private file from system folder/file such as &lt;code class=&quot;highlighter-rouge&quot;&gt;Documents&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;Downloads&lt;/code&gt; and so on&lt;/li&gt;
   &lt;li&gt;Transfer file with lower risk (Every OSs can recognize your file correctly)&lt;/li&gt;
   &lt;li&gt;I love underscore sign&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Corey</name></author><category term="Mac" /><summary type="html">Lowecase filename is important</summary></entry><entry><title type="html">How to check IGV</title><link href="http://localhost:4000/articles/How-to-check-IGV/" rel="alternate" type="text/html" title="How to check IGV" /><published>2017-08-07T00:00:00+08:00</published><updated>2017-08-07T00:00:00+08:00</updated><id>http://localhost:4000/articles/How-to-check-IGV</id><content type="html" xml:base="http://localhost:4000/articles/How-to-check-IGV/">&lt;p&gt;Integrative Genomics Viewer (&lt;a href=&quot;http://software.broadinstitute.org/software/igv/&quot;&gt;IGV&lt;/a&gt;) is a high-performance visualization tool for interactive exploration of large, integrated genomics datasets.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;When I check my bam file by IGV tool, what should I focus on?&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Mostly, when I found that a variant is quite uncertain, there are three important steps that I need to finish:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Check sequencing quality control indicators such as average_depth_on_target, capture_ratio and so on;&lt;/li&gt;
-  &lt;li&gt;If all QC indicators are qualified, check bam file by IGV tool;&lt;/li&gt;
-  &lt;li&gt;If QC and IGV are both OK, check variant calling pipeline and parameters.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;IGV checking is at the heart of the troubleshooting process, when I look at the whole reads profile by IGV, here is what I will do:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Jump to questioned position;&lt;/li&gt;
-  &lt;li&gt;Check depth profile of the region;&lt;/li&gt;
-  &lt;li&gt;Sort alignments by base &lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;;&lt;/li&gt;
-  &lt;li&gt;Check depth and mapQ score of each read &lt;sup id=&quot;fnref:2&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;;&lt;/li&gt;
-  &lt;li&gt;Check if variant is at the edge of Amplicon/Target;&lt;/li&gt;
-  &lt;li&gt;Check if variant is in the region which has extremely high GC content.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;In short, most of our problems can be clarified by the IGV. If a problem can not be solved by IGV, recheck mapping procedure.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;div class=&quot;footnotes&quot;&gt;
-  &lt;ol&gt;
-    &lt;li id=&quot;fn:1&quot;&gt;
-      &lt;p&gt;Make sure it is easy to view the reads that with the same property. (SNV, Softclip, …) &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li id=&quot;fn:2&quot;&gt;
-      &lt;p&gt;If there are multiple SNVs in a relatively short region (&amp;lt;100bp) which supported by low mapQ reads, it is necessary to blast if the sequence of target gene is similar to other genes in reference. The similarity of the target gene with another will significantly lower the mapQ of the reads in the target region. (eg. PRSS1 and PRSS2). &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/div&gt;</content><author><name>Corey</name></author><category term="Bioinformatics" /><summary type="html">Memo of NGS variant checking by IGV</summary></entry></feed>
+&lt;/ul&gt;</content><author><name>Corey</name></author><category term="Mac" /><summary type="html">Lowercase filename is important</summary></entry></feed>

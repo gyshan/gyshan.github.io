@@ -170,17 +170,17 @@ var store = [{
         "url": "http://localhost:4000/articles/A-genius-CNV-calling-strategy/"
       },{
         "title": "How to check IGV",
-        "excerpt":"Integrative Genomics Viewer (IGV) is a high-performance visualization tool for interactive exploration of large, integrated genomics datasets. When I check my bam file by IGV tool, what should I focus on? Mostly, when I found that a variant is quite uncertain, there are three important steps that I need to...","categories": ["articles"],
+        "excerpt":"Integrative Genomics Viewer (IGV) is a high-performance visualization tool for interactive exploration of large, integrated genomic datasets. When I check my bam file by IGV tool, what should I focus on? Mostly, when I found that a variant is quite uncertain, there are three important steps that I need to...","categories": ["articles"],
         "tags": ["Bioinformatics"],
         "url": "http://localhost:4000/articles/How-to-check-IGV/"
       },{
         "title": "Why should you lowercase your filename",
-        "excerpt":"Yesterday, I began to transfer my git configuration from my old machine to my new Macbook Pro. When I rename my file by doing this, an error occured to me: $ git mv readme Readmefatal: destination exists, source=readme, destination=ReadmeIt seems like my Mac OS X cannot recognize Readme file as...","categories": ["articles"],
+        "excerpt":"Yesterday, I began to transfer my git configuration from my old machine to my new MacBook Pro. When I rename my file by doing this, an error occurred to me: $ git mv readme Readmefatal: destination exists, source=readme, destination=ReadmeIt seems like my Mac OS X cannot recognize Readme file as...","categories": ["articles"],
         "tags": ["Mac"],
         "url": "http://localhost:4000/articles/why-should-you-lowercase-your-filename/"
       },{
         "title": "Setup sftp plugin for sublime",
-        "excerpt":"I do not want to use vi in remote server, especially when dealing with large amounts of coding work. Instead, I want to write code in my laptop with sublime, and make it simultaneously sync to a remote server. SFTP, a plugin for sublime can deal with the problem above,...","categories": ["articles"],
+        "excerpt":"I do not want to use vi in a remote server, especially when dealing with large amounts of coding work. Instead, I want to write code on my laptop with sublime and make it simultaneously sync to a remote server. SFTP, a plugin for sublime can deal with the problem...","categories": ["articles"],
         "tags": ["Mac"],
         "url": "http://localhost:4000/articles/setup-sftp-plugin-for-sublime/"
       },{
@@ -205,17 +205,22 @@ var store = [{
         "url": "http://localhost:4000/articles/configure-make-and-make-install/"
       },{
         "title": "InDel left-alignment",
-        "excerpt":"InDel is a common concept in molecular biology, while the representation for InDels are non-unique. There are at least two representations: left-alignment and right-alignment. Actually it does not really matter, but it good to have a convention. I would like to suggest using left-alignment with these reasons: ref : CGTATGATCTA...","categories": ["articles"],
+        "excerpt":"InDel is a common concept in molecular biology, while the representation for InDels are non-unique. There are at least two representations: left-alignment and right-alignment. Actually, it does not really matter, but it good to have a convention. I would like to suggest using left-alignment for these reasons: ref : CGTATGATCTA...","categories": ["articles"],
         "tags": ["Bioinformatics"],
         "url": "http://localhost:4000/articles/indel-left-alignment/"
       },{
         "title": "Solved-SSL connect error",
-        "excerpt":"Today, I tried to install an R package: facets. During installation, I got stucked by SSL connect error and the error code is as follows. So I tried to install this package locally and got it done. # Error code&gt; library(devtools)&gt; devtools::install_github(\"mskcc/facets\", build_vignettes = TRUE)Downloading GitHub repo mskcc/facets@masterfrom URL https://api.github.com/repos/mskcc/facets/zipball/masterInstallation...","categories": ["articles"],
+        "excerpt":"Today, I tried to install an R package: facets. During installation, I got stuck by SSL connect error and the error code is as follows. So I tried to install this package locally and got it done. # Error code&gt; library(devtools)&gt; devtools::install_github(\"mskcc/facets\", build_vignettes = TRUE)Downloading GitHub repo mskcc/facets@masterfrom URL https://api.github.com/repos/mskcc/facets/zipball/masterInstallation...","categories": ["articles"],
         "tags": ["Bioinformatics"],
         "url": "http://localhost:4000/articles/solved-SSL-connect-error/"
       },{
         "title": "Please do not use CST to denote time zone",
-        "excerpt":"Sometimes, I got emails from friends across the world. They usually kindly attach a timestamp at the end of the mail. One day, I got an email with CST in the timastamp from a guy I did not know before. This small tag confused me a lot because there are...","categories": ["articles"],
+        "excerpt":"Sometimes, I got emails from friends across the world. They usually kindly attach a timestamp at the end of the mail. One day, I got an email with CST in the timestamp from a guy I did not know before. This small tag confused me a lot because there are...","categories": ["articles"],
         "tags": ["Life"],
         "url": "http://localhost:4000/articles/do-not-use-CST-to-denote-time-zone/"
+      },{
+        "title": "Transfer files in the background between servers",
+        "excerpt":"Sometimes, We need to transfer files between servers in the background and it is imperative to have a password. The solution is to use screen command to emulate a screen and make it running in the background. $ screen # [1]$ rsync -avz hostname@XXX.XXX.XX.X:/data/path ./ # [2]Enter your password: #...","categories": ["articles"],
+        "tags": ["Bioinformatics"],
+        "url": "http://localhost:4000/articles/transfer-files-between-servers/"
       }]

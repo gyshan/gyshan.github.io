@@ -21,8 +21,8 @@
 <meta property="og:title" content="Why should you lowercase your filename" />
 <meta name="author" content="Corey" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Lowecase filename is important" />
-<meta property="og:description" content="Lowecase filename is important" />
+<meta name="description" content="Lowercase filename is important" />
+<meta property="og:description" content="Lowercase filename is important" />
 <link rel="canonical" href="http://localhost:4000/articles/why-should-you-lowercase-your-filename/" />
 <meta property="og:url" content="http://localhost:4000/articles/why-should-you-lowercase-your-filename/" />
 <meta property="og:site_name" content="Guangyu Corey Shan’s Blog" />
@@ -32,7 +32,7 @@
 <meta name="twitter:site" content="@GuangyuShan" />
 <meta name="twitter:creator" content="@Corey" />
 <script type="application/ld+json">
-{"description":"Lowecase filename is important","author":{"@type":"Person","name":"Corey"},"@type":"BlogPosting","url":"http://localhost:4000/articles/why-should-you-lowercase-your-filename/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/images/logo.svg"},"name":"Corey"},"headline":"Why should you lowercase your filename","dateModified":"2017-09-06T00:00:00+08:00","datePublished":"2017-09-06T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/articles/why-should-you-lowercase-your-filename/"},"@context":"http://schema.org"}</script>
+{"description":"Lowercase filename is important","author":{"@type":"Person","name":"Corey"},"@type":"BlogPosting","url":"http://localhost:4000/articles/why-should-you-lowercase-your-filename/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/images/logo.svg"},"name":"Corey"},"headline":"Why should you lowercase your filename","dateModified":"2017-09-06T00:00:00+08:00","datePublished":"2017-09-06T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/articles/why-should-you-lowercase-your-filename/"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -153,25 +153,25 @@
 
       <div class="page-content">
         <div class="e-content">
-          <p>Yesterday, I began to transfer my git configuration from my old machine to my new Macbook Pro. When I rename my file by doing this, an error occured to me:</p>
+          <p>Yesterday, I began to transfer my git configuration from my old machine to my new MacBook Pro. When I rename my file by doing this, an error occurred to me:</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>git <span class="nb">mv </span>readme Readme
 fatal: destination exists, <span class="nb">source</span><span class="o">=</span>readme, <span class="nv">destination</span><span class="o">=</span>Readme</code></pre></figure>
 
 <p>It seems like my Mac OS X cannot recognize <code class="highlighter-rouge">Readme</code> file as same as <code class="highlighter-rouge">readme</code> file. So I had to convert <code class="highlighter-rouge">readme</code> file to <code class="highlighter-rouge">tmp_file</code> and then <code class="highlighter-rouge">tmp_file</code> to <code class="highlighter-rouge">Readme</code> file. In Linux, this command can work very well, but in Mac OS X, failed. This is the first time that I realized case-sensitive is so important. Except for this situation, I believe it is very dangerous if keep confusing the case.</p>
 
-<p>Different operating systems (OS) have different case-sensitive level, that is why same command upon can work well on Linux but failed on Mac OS X.</p>
+<p>Different operating systems (OS) have different case-sensitive level, that is why the same command upon can work well on Linux but fail on Mac OS X.</p>
 
 <ul>
   <li>case-sensitive OS: Linux, Solaris, BSD</li>
   <li>case-insensitive OS: Windows, Mac OS X</li>
 </ul>
 
-<p>In my working pipeline, my file often transfer between Linux and Mac OS X, so I decide to convert all my filename under <strong>lowercase_with_underscore</strong> principle. The reasons behind this principle are:</p>
+<p>In my working pipeline, my file often transfers between Linux and Mac OS X, so I decided to convert all my filename under <strong>lowercase_with_underscore</strong> principle. The reasons behind this principle are:</p>
 
 <ul>
   <li>Easy to read, UPPERCASE_WITH_UNDERSCORE is hard to read</li>
-  <li>Easy to distinguish private file from system folder/file such as <code class="highlighter-rouge">Documents</code> , <code class="highlighter-rouge">Downloads</code> and so on</li>
+  <li>Easy to distinguish a private file from system folder/file such as <code class="highlighter-rouge">Documents</code>, <code class="highlighter-rouge">Downloads</code> and so on</li>
   <li>Transfer file with lower risk (Every OSs can recognize your file correctly)</li>
   <li>I love underscore sign</li>
 </ul>
