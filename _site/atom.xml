@@ -1,4 +1,42 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.2">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-07-06T16:11:02+08:00</updated><id>http://localhost:4000/</id><title type="html">Guangyu Corey Shan’s Blog</title><subtitle>Notes on bioinformatics and data mining by G. Corey Shan</subtitle><author><name>Corey</name></author><entry><title type="html">Transfer files in the background between servers</title><link href="http://localhost:4000/articles/transfer-files-between-servers/" rel="alternate" type="text/html" title="Transfer files in the background between servers" /><published>2018-07-06T00:00:00+08:00</published><updated>2018-07-06T00:00:00+08:00</updated><id>http://localhost:4000/articles/transfer-files-between-servers</id><content type="html" xml:base="http://localhost:4000/articles/transfer-files-between-servers/">&lt;p&gt;Sometimes, We need to transfer files between servers in the background and it is imperative to have a password. The solution is to use screen command to emulate a screen and make it running in the background.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.2">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-07-13T17:41:59+08:00</updated><id>http://localhost:4000/</id><title type="html">Guangyu Corey Shan’s Blog</title><subtitle>Notes on bioinformatics and data mining by G. Corey Shan</subtitle><author><name>Corey</name></author><entry><title type="html">Redundancy is important for robust system</title><link href="http://localhost:4000/articles/redundancy-is-important-for-robust/" rel="alternate" type="text/html" title="Redundancy is important for robust system" /><published>2018-07-13T00:00:00+08:00</published><updated>2018-07-13T00:00:00+08:00</updated><id>http://localhost:4000/articles/redundancy-is-important-for-robust</id><content type="html" xml:base="http://localhost:4000/articles/redundancy-is-important-for-robust/">&lt;p&gt;In computer science, robustness is the ability of a computer system to cope with errors during execution and cope with erroneous input. Robustness can encompass many areas of computer science, such as robust programming, robust machine learning, and Robust Security Network.&lt;/p&gt;
+
+&lt;p&gt;A robust system is dreamed of by every designer, including me. A robust system can guarantee the system to cope with errors during execution and cope with erroneous input. A large amount of areas are related with robust systems, such as life science, computer science, architecture and so on. In this part, we would like to focus on software development.&lt;/p&gt;
+
+&lt;p&gt;Of course, we can not deny that there are too many factors are correlated with building a robust system:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Evolution&lt;/p&gt;
+
+    &lt;p&gt;Like buying software, I will not buy a software if it is not keep updating. A good software should keep evolved with the environment, and function well.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Regeneration&lt;/p&gt;
+
+    &lt;p&gt;A good software should easy to transplant, in regardless of platform or operating system.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Versatile&lt;/p&gt;
+
+    &lt;p&gt;A good software should take the future application scenarios into consideration and developed suitable interfaces.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Redundancy&lt;/p&gt;
+
+    &lt;p&gt;Redundancy can save the world when the disaster happens.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;…&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Let me count the importance of those factors to the consequences without them and it reminds me that the redundancy is the most important part among them. Life is the typical redundancy system, organs such as the liver and kidney are highly redundant: there is vastly more capacity than is necessary to do the job, so a person with a missing kidney suffers no obvious incapacity. If a finger is damaged, there are ways that the other fingers may be configured to pick up an object. I think only god can create this kind of robust system. We should learn from this design philosophy when building our own systems.&lt;/p&gt;
+
+&lt;p&gt;It occurres to me that when I design the MSI algoithm, the pipeline is only allowed the &lt;a href=&quot;https://genome.sph.umich.edu/wiki/BAM&quot;&gt;bam&lt;/a&gt; file with a chromosome tag “Chr”. When the pipeline is deployed in production environment, many errors emerged, including that some one using bam without a chromosome tag “Chr”. As the &lt;a href=&quot;https://en.wikipedia.org/wiki/Murphy%27s_law&quot;&gt;murphy’s law&lt;/a&gt; indicated: Anything that can go wrong, will go wrong. As long as the time is long enough and the sample size is sufficient large.&lt;/p&gt;
+
+&lt;p&gt;In order to tackle this problem, I only makes this system a little redundancy and allowed it to accept a bam in regardless of have of have not a chromosome tag “Chr” and the error rate is dropping down from about 20% to 5%.&lt;/p&gt;
+
+&lt;p&gt;In order to tackle this problem&lt;/p&gt;</content><author><name>Corey</name></author><category term="Bioinformatics" /><summary type="html">Embrace redundancy, embrace robust</summary></entry><entry><title type="html">Transfer files in the background between servers</title><link href="http://localhost:4000/articles/transfer-files-between-servers/" rel="alternate" type="text/html" title="Transfer files in the background between servers" /><published>2018-07-06T00:00:00+08:00</published><updated>2018-07-06T00:00:00+08:00</updated><id>http://localhost:4000/articles/transfer-files-between-servers</id><content type="html" xml:base="http://localhost:4000/articles/transfer-files-between-servers/">&lt;p&gt;Sometimes, We need to transfer files between servers in the background and it is imperative to have a password. The solution is to use screen command to emulate a screen and make it running in the background.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;screen   &lt;span class=&quot;c&quot;&gt;# [1]&lt;/span&gt;
 &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;rsync &lt;span class=&quot;nt&quot;&gt;-avz&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;hostname&lt;/span&gt;@XXX.XXX.XX.X:/data/path ./   &lt;span class=&quot;c&quot;&gt;# [2]&lt;/span&gt;
@@ -309,25 +347,4 @@ to      &lt;span class=&quot;c&quot;&gt;#include &amp;lt;/usr/include/zlib.h&amp
 &lt;ul&gt;
   &lt;li&gt;Right click your code in this folder and choose &lt;code class=&quot;highlighter-rouge&quot;&gt;SFTP/FTP&lt;/code&gt;&lt;/li&gt;
   &lt;li&gt;Then you can do whatever you want to do, such as &lt;code class=&quot;highlighter-rouge&quot;&gt;Upload File&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;Download File&lt;/code&gt; …&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Corey</name></author><category term="Mac" /><summary type="html">SFTP setting protocol</summary></entry><entry><title type="html">Why should you lowercase your filename</title><link href="http://localhost:4000/articles/why-should-you-lowercase-your-filename/" rel="alternate" type="text/html" title="Why should you lowercase your filename" /><published>2017-09-06T00:00:00+08:00</published><updated>2017-09-06T00:00:00+08:00</updated><id>http://localhost:4000/articles/why-should-you-lowercase-your-filename</id><content type="html" xml:base="http://localhost:4000/articles/why-should-you-lowercase-your-filename/">&lt;p&gt;Yesterday, I began to transfer my git configuration from my old machine to my new MacBook Pro. When I rename my file by doing this, an error occurred to me:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git &lt;span class=&quot;nb&quot;&gt;mv &lt;/span&gt;readme Readme
-fatal: destination exists, &lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;readme, &lt;span class=&quot;nv&quot;&gt;destination&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;Readme&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;It seems like my Mac OS X cannot recognize &lt;code class=&quot;highlighter-rouge&quot;&gt;Readme&lt;/code&gt; file as same as &lt;code class=&quot;highlighter-rouge&quot;&gt;readme&lt;/code&gt; file. So I had to convert &lt;code class=&quot;highlighter-rouge&quot;&gt;readme&lt;/code&gt; file to &lt;code class=&quot;highlighter-rouge&quot;&gt;tmp_file&lt;/code&gt; and then &lt;code class=&quot;highlighter-rouge&quot;&gt;tmp_file&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;Readme&lt;/code&gt; file. In Linux, this command can work very well, but in Mac OS X, failed. This is the first time that I realized case-sensitive is so important. Except for this situation, I believe it is very dangerous if keep confusing the case.&lt;/p&gt;
-
-&lt;p&gt;Different operating systems (OS) have different case-sensitive level, that is why the same command upon can work well on Linux but fail on Mac OS X.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;case-sensitive OS: Linux, Solaris, BSD&lt;/li&gt;
-  &lt;li&gt;case-insensitive OS: Windows, Mac OS X&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;In my working pipeline, my file often transfers between Linux and Mac OS X, so I decided to convert all my filename under &lt;strong&gt;lowercase_with_underscore&lt;/strong&gt; principle. The reasons behind this principle are:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Easy to read, UPPERCASE_WITH_UNDERSCORE is hard to read&lt;/li&gt;
-  &lt;li&gt;Easy to distinguish a private file from system folder/file such as &lt;code class=&quot;highlighter-rouge&quot;&gt;Documents&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;Downloads&lt;/code&gt; and so on&lt;/li&gt;
-  &lt;li&gt;Transfer file with lower risk (Every OSs can recognize your file correctly)&lt;/li&gt;
-  &lt;li&gt;I love underscore sign&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Corey</name></author><category term="Mac" /><summary type="html">Lowercase filename is important</summary></entry></feed>
+&lt;/ul&gt;</content><author><name>Corey</name></author><category term="Mac" /><summary type="html">SFTP setting protocol</summary></entry></feed>

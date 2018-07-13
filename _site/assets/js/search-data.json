@@ -223,4 +223,9 @@ var store = [{
         "excerpt":"Sometimes, We need to transfer files between servers in the background and it is imperative to have a password. The solution is to use screen command to emulate a screen and make it running in the background. $ screen # [1]$ rsync -avz hostname@XXX.XXX.XX.X:/data/path ./ # [2]Enter your password: #...","categories": ["articles"],
         "tags": ["Bioinformatics"],
         "url": "http://localhost:4000/articles/transfer-files-between-servers/"
+      },{
+        "title": "Redundancy is important for robust system",
+        "excerpt":"In computer science, robustness is the ability of a computer system to cope with errors during execution and cope with erroneous input. Robustness can encompass many areas of computer science, such as robust programming, robust machine learning, and Robust Security Network. A robust system is dreamed of by every designer,...","categories": ["articles"],
+        "tags": ["Bioinformatics"],
+        "url": "http://localhost:4000/articles/redundancy-is-important-for-robust/"
       }]
