@@ -16,9 +16,9 @@
   
     
     <!-- Begin Jekyll SEO tag v2.4.0 -->
-<title>Redundancy is important for robust system | Guangyu Corey Shan’s Blog</title>
+<title>Redundancy is important for a robust system | Guangyu Corey Shan’s Blog</title>
 <meta name="generator" content="Jekyll v3.8.2" />
-<meta property="og:title" content="Redundancy is important for robust system" />
+<meta property="og:title" content="Redundancy is important for a robust system" />
 <meta name="author" content="Corey" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Embrace redundancy, embrace robust" />
@@ -32,7 +32,7 @@
 <meta name="twitter:site" content="@GuangyuShan" />
 <meta name="twitter:creator" content="@Corey" />
 <script type="application/ld+json">
-{"description":"Embrace redundancy, embrace robust","author":{"@type":"Person","name":"Corey"},"@type":"BlogPosting","url":"http://localhost:4000/articles/redundancy-is-important-for-robust/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/images/logo.svg"},"name":"Corey"},"headline":"Redundancy is important for robust system","dateModified":"2018-07-13T00:00:00+08:00","datePublished":"2018-07-13T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/articles/redundancy-is-important-for-robust/"},"@context":"http://schema.org"}</script>
+{"description":"Embrace redundancy, embrace robust","author":{"@type":"Person","name":"Corey"},"@type":"BlogPosting","url":"http://localhost:4000/articles/redundancy-is-important-for-robust/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/images/logo.svg"},"name":"Corey"},"headline":"Redundancy is important for a robust system","dateModified":"2018-07-13T00:00:00+08:00","datePublished":"2018-07-13T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/articles/redundancy-is-important-for-robust/"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -73,7 +73,7 @@
 </head>
 
 
-  <body class="layout--post  redundancy-is-important-for-robust-system">
+  <body class="layout--post  redundancy-is-important-for-a-robust-system">
     <nav class="skip-links">
   <h2 class="screen-reader-text">Skip links</h2>
   <ul>
@@ -115,7 +115,7 @@
       <header class="page-header">
         
         
-          <h1 id="page-title" class="page-title p-name">Redundancy is important for robust system
+          <h1 id="page-title" class="page-title p-name">Redundancy is important for a robust system
 </h1>
         
       </header>
@@ -153,9 +153,7 @@
 
       <div class="page-content">
         <div class="e-content">
-          <p>In computer science, robustness is the ability of a computer system to cope with errors during execution and cope with erroneous input. Robustness can encompass many areas of computer science, such as robust programming, robust machine learning, and Robust Security Network.</p>
-
-<p>A robust system is dreamed of by every designer, including me. A robust system can guarantee the system to cope with errors during execution and cope with erroneous input. A large amount of areas are related with robust systems, such as life science, computer science, architecture and so on. In this part, we would like to focus on software development.</p>
+          <p>A robust system is dreamed of by every system designer, including me. A robust system can guarantee the system to cope with errors during execution and cope with erroneous input. A large number of areas are related to robust systems, such as life science, computer science, architecture and so on. In this part, we would like to focus on software development.</p>
 
 <p>Of course, we can not deny that there are too many factors are correlated with building a robust system:</p>
 
@@ -163,7 +161,7 @@
   <li>
     <p>Evolution</p>
 
-    <p>Like buying software, I will not buy a software if it is not keep updating. A good software should keep evolved with the environment, and function well.</p>
+    <p>Like buying software, I will not buy a software if it does not keep updating. A good software should keep evolving with the environment, and function well.</p>
   </li>
   <li>
     <p>Regeneration</p>
@@ -185,13 +183,14 @@
   </li>
 </ol>
 
-<p>Let me count the importance of those factors to the consequences without them and it reminds me that the redundancy is the most important part among them. Life is the typical redundancy system, organs such as the liver and kidney are highly redundant: there is vastly more capacity than is necessary to do the job, so a person with a missing kidney suffers no obvious incapacity. If a finger is damaged, there are ways that the other fingers may be configured to pick up an object. I think only god can create this kind of robust system. We should learn from this design philosophy when building our own systems.</p>
+<p>Let me count the importance of those factors to the consequences without them and it reminds me that the redundancy is the most important part among them. Life is the typical redundancy system, organs such as the liver and kidney are highly redundant: there is vastly more capacity than is necessary to do the job, so a person with a missing kidney suffers no obvious incapacity. If a finger is damaged, there are ways that the other fingers may be configured to pick up an object. I think only God can create this kind of robust system. We should learn from this design philosophy when building our own systems.</p>
 
-<p>It occurres to me that when I design the MSI algoithm, the pipeline is only allowed the <a href="https://genome.sph.umich.edu/wiki/BAM">bam</a> file with a chromosome tag “Chr”. When the pipeline is deployed in production environment, many errors emerged, including that some one using bam without a chromosome tag “Chr”. As the <a href="https://en.wikipedia.org/wiki/Murphy%27s_law">murphy’s law</a> indicated: Anything that can go wrong, will go wrong. As long as the time is long enough and the sample size is sufficient large.</p>
+<p>It occurs to me that when I design the MSI algorithm, the pipeline is only allowed the <a href="https://genome.sph.umich.edu/wiki/BAM">bam</a> file with a chromosome tag “Chr”. When the pipeline is deployed in the production environment, many errors emerged, including that someone using bam without a chromosome tag “Chr”. As the <a href="https://en.wikipedia.org/wiki/Murphy%27s_law">murphy’s law</a> indicated: Anything that can go wrong, will go wrong. As long as the time is long enough and the sample size is sufficiently large.</p>
 
-<p>In order to tackle this problem, I only makes this system a little redundancy and allowed it to accept a bam in regardless of have of have not a chromosome tag “Chr” and the error rate is dropping down from about 20% to 5%.</p>
+<p>In order to tackle this problem, what I have done is only making this system a little redundancy and got it solved. Now, the 
+system is allowed to accept a bam in regardless of have or have not a chromosome tag “Chr” and the error rate is almost dropping down from 20% to 5%.</p>
 
-<p>In order to tackle this problem</p>
+<p>What I would like to emphasis on here is to build a concept that to consider more on redundancy when developing a robust system. Even though creating a system with extremely robustness is hard to achieve due to program budget and deadline, but we still need to do it as a kind of pursuit of life, just like the real life tells us.</p>
 
 
         </div>
@@ -199,9 +198,9 @@
         
           <div class="page-share">
   <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Farticles%2Fredundancy-is-important-for-robust%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--facebook btn--small"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i> <span>Share</span></a>
-  <a href="https://twitter.com/intent/tweet?text=Redundancy+is+important+for+robust+system%20http%3A%2F%2Flocalhost%3A4000%2Farticles%2Fredundancy-is-important-for-robust%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--twitter btn--small"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i> <span>Tweet</span></a>
+  <a href="https://twitter.com/intent/tweet?text=Redundancy+is+important+for+a+robust+system%20http%3A%2F%2Flocalhost%3A4000%2Farticles%2Fredundancy-is-important-for-robust%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--twitter btn--small"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i> <span>Tweet</span></a>
   <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Farticles%2Fredundancy-is-important-for-robust%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--linkedin btn--small"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> <span>LinkedIn</span></a>
-  <a href="https://reddit.com/submit?title=Redundancy+is+important+for+robust+system&url=http%3A%2F%2Flocalhost%3A4000%2Farticles%2Fredundancy-is-important-for-robust%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--reddit btn--small"><i class="fab fa-fw fa-reddit" aria-hidden="true"></i> <span>Reddit</span></a>
+  <a href="https://reddit.com/submit?title=Redundancy+is+important+for+a+robust+system&url=http%3A%2F%2Flocalhost%3A4000%2Farticles%2Fredundancy-is-important-for-robust%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--reddit btn--small"><i class="fab fa-fw fa-reddit" aria-hidden="true"></i> <span>Reddit</span></a>
 </div>
 
         
