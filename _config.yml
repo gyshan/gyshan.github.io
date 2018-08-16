@@ -14,13 +14,13 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 #theme: jekyll-theme-so-simple
-remote_theme: mmistakes/so-simple-theme
+#remote_theme: mmistakes/so-simple-theme
 locale: en-US
 title: "Guangyu Corey Shan's Blog"
 description: "Notes on bioinformatics and data mining by G. Corey Shan"
 baseurl: # the subpath of your site, e.g. "/blog"
-#url: "https://gyshan.github.io"
-url: "https://shanguangyu.com"
+url: "https://gyshan.github.io"
+#url: "https://shanguangyu.com"
 #url: "http://localhost:4000"
 logo: "https://shangyblog-1256840873.cos.ap-beijing.myqcloud.com/logo.svg"
 date_format: "%B %-d, %Y"
