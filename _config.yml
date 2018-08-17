@@ -19,7 +19,7 @@ locale: en-US
 title: "Guangyu Corey Shan's Blog"
 description: "Notes on bioinformatics and data mining by G. Corey Shan"
 baseurl: # the subpath of your site, e.g. "/blog"
-url: "https://gyshan.github.io"
+url: "http://gyshan.github.io"
 #url: "https://shanguangyu.com"
 #url: "http://localhost:4000"
 logo: "https://shangyblog-1256840873.cos.ap-beijing.myqcloud.com/logo.svg"
