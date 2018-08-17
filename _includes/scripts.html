@@ -9,7 +9,7 @@
   {%- endfor -%}
 {%- else -%}
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-  <script src="{{ '/assets/js/main.min.js' | relative_url }}"></script>
+  <script src="https://shangyblog-1256840873.cos.ap-beijing.myqcloud.com/main.min.js"></script>
   <script src="https://use.fontawesome.com/releases/v5.0.12/js/all.js"></script>
 {%- endif -%}
 
@@ -28,7 +28,10 @@
 
 {% if site.mathjax == true %}
 <!-- MathJax -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
 {% endif %}
 
 {%- if page.layout == "search" -%}
