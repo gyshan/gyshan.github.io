@@ -1,6 +1,6 @@
 ---
 title: "Merge columns by shared string"
-excerpt: "Split and merge"
+excerpt: "Flexibility is a design philosophy"
 categories:
   - articles
 tags:
