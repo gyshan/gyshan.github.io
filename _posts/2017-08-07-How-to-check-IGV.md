@@ -19,7 +19,7 @@ Mostly, when I found that a variant is quite uncertain, there are three importan
 
 IGV checking is at the heart of the troubleshooting process when I look at the whole reads profile by IGV, here is what I will do:
 
-1. Jump to the questioned position;
+1. Jump to the target genomic position;
 2. Check depth profile of the region;
 3. Sort alignments by base [^1];
 4. Check depth and the mapQ score of each read [^2];

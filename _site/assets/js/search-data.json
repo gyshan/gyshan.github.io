@@ -228,4 +228,9 @@ var store = [{
         "excerpt":"A robust system is dreamed of by every system designer, including me. A robust system can guarantee the system to cope with errors during execution and cope with erroneous input. A large number of areas are related to robust systems, such as life science, computer science, architecture and so on....","categories": ["articles"],
         "tags": ["Bioinformatics"],
         "url": "http://localhost:4000/articles/redundancy-is-important-for-robust/"
+      },{
+        "title": "Merge columns by shared string",
+        "excerpt":"Imagine there is a data frame demo looked like this and we need to combine columns which hold the same tag. What should we do? ### binary_var_dat EGFR_T790M KRAS_K201S BRAF_K220Q NOTCH_N22K EGFR_V600E EGFR_Q333S EGFR_F222Q KRAS_F22XS1 0 0 1 0 1 0 0 1S1_xxxxxx 0 0 0 0 1 0 1...","categories": ["articles"],
+        "tags": ["Bioinformatics","R"],
+        "url": "http://localhost:4000/articles/merge-columns-by-shared-string/"
       }]
