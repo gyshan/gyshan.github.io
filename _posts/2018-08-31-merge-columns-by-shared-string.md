@@ -28,6 +28,24 @@ S6_xxxxxx          0          0          1          0          1          0     
 {% endhighlight %}
 
 {% highlight text %}
+### pre_gene_mat
+          EGFR KRAS BRAF NOTCH EGFR EGFR EGFR KRAS
+S1           0    0    1     0    1    0    0    1
+S1_xxxxxx    0    0    0     0    1    0    1    1
+S2           0    0    1     0    0    0    0    0
+S2_xxxxxx    1    0    1     0    1    0    1    0
+S3           0    1    1     0    0    0    0    1
+S3_xxxxxx    0    0    1     0    1    0    1    0
+S4           0    0    0     1    1    0    0    1
+S4_xxxxxx    0    1    1     0    0    0    1    1
+S5           0    0    1     0    1    0    0    0
+S5_xxxxxx    1    0    0     0    1    1    1    1
+S6           0    0    1     0    0    0    0    1
+S6_xxxxxx    0    0    1     0    1    0    1    1
+{% endhighlight %}
+
+
+{% highlight text %}
 ### gene_mat
           EGFR KRAS BRAF NOTCH
 S1           1    1    1     0
