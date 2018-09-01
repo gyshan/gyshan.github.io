@@ -8,7 +8,7 @@ tags:
   - R
 ---
 
-Imagine there is a data frame demo looked like this and we need to combine columns which hold the same tag. What should we do?
+Imagine there is a data frame demo as follows and we need to combine columns which hold the same tag. What should we do?
 
 {% highlight text %}
 ### binary_var_dat
@@ -65,8 +65,8 @@ S6_xxxxxx    2    1    1     0
 
 More specifically, if we want to convert `binary_var_dat` to `gene_mat`, what procedures can we take?
 Here is my solution:
-1. Split each column names by its delimiter;
-2. Replace column names by its splited string;
+1. Split each column name by its delimiter;
+2. Replace column names with their splited string;
 3. Merge columns with the same column name.
 
 
@@ -79,7 +79,7 @@ gene_mat <- pre_gene_mat %*% sapply(unique(coln),"==", coln)
 
 {% endhighlight %}
 
-To be honest, I spend almost half an hour effort on this problem. The reason I took so much time is that I have been suspected that `data frame` in R should only possess unique row names and column names. Surprisingly, the `data frame` naming criterion is very flexible --- unique row names and flexible column names. 
+To be honest, it almost cost me half an hour on this problem. The reason I spent so much time is that I have been suspecting that `data frame` in R should only possess unique row names and column names. Surprisingly, the `data frame` naming criterion is very flexible --- unique row names and flexible column names. 
 
 In specific circumstances, if you want duplicated row names, just transpose the data frame and do whatever you want. I like this design philosophy.
 
