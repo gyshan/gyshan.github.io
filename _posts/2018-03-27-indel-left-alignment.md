@@ -1,6 +1,6 @@
 ---
 title: "InDel left-alignment"
-excerpt: "InDel left-alignment is recommended"
+excerpt: "InDel left-alignment recommended"
 categories:
   - articles
 tags:
