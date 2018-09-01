@@ -82,6 +82,3 @@ gene_mat <- pre_gene_mat %*% sapply(unique(coln),"==", coln)
 To be honest, it almost cost me half an hour on this problem. The reason I spent so much time is that I have been suspecting that `data frame` in R should only possess unique row names and column names. Surprisingly, the `data frame` naming criterion is very flexible --- unique row names and flexible column names. 
 
 In specific circumstances, if you want duplicated row names, just transpose the data frame and do whatever you want. I like this design philosophy.
-
----
-Published under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">(CC) BY-NC-SA </a>
