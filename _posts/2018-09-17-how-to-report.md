@@ -1,6 +1,6 @@
 ---
 title: "How to report"
-excerpt: "It is a virtue to save others' time"
+excerpt: "It is a virtue to save others time"
 categories:
   - articles
 tags:
