@@ -230,7 +230,12 @@ var store = [{
         "url": "http://localhost:4000/articles/redundancy-is-important-for-robust/"
       },{
         "title": "Merge columns by shared string",
-        "excerpt":"Imagine there is a data frame demo looked like this and we need to combine columns which hold the same tag. What should we do? ### binary_var_dat EGFR_T790M KRAS_K201S BRAF_K220Q NOTCH_N22K EGFR_V600E EGFR_Q333S EGFR_F222Q KRAS_F22XS1 0 0 1 0 1 0 0 1S1_xxxxxx 0 0 0 0 1 0 1...","categories": ["articles"],
+        "excerpt":"Imagine there is a data frame demo as follows and we need to combine columns which hold the same tag. What should we do? ### binary_var_dat EGFR_T790M KRAS_K201S BRAF_K220Q NOTCH_N22K EGFR_V600E EGFR_Q333S EGFR_F222Q KRAS_F22XS1 0 0 1 0 1 0 0 1S1_xxxxxx 0 0 0 0 1 0 1 1S2...","categories": ["articles"],
         "tags": ["Bioinformatics","R"],
         "url": "http://localhost:4000/articles/merge-columns-by-shared-string/"
+      },{
+        "title": "How to report",
+        "excerpt":"In our daily life, we inevitably need to report to others, maybe your boss or a client, even your wife. Reporting is not such a type of work that just grabs what you have and through it to the receiver. To be honest, 70% reports I received is coming to...","categories": ["articles"],
+        "tags": ["Life"],
+        "url": "http://localhost:4000/articles/how-to-report/"
       }]
