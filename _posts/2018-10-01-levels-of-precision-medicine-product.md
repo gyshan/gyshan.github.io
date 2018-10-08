@@ -1,6 +1,6 @@
 ---
 title: "Levels of precision medicine product"
-excerpt: "IVD approval is the key to next round competing"
+excerpt: "IVD approval is the key to next round NGS competition"
 categories:
   - articles
 tags:
