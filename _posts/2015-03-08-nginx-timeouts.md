@@ -1,6 +1,6 @@
 ---
 title: "解决使用 NGINX & Gunicorn 的 504 Timeouts 问题"
-excerpt: "Code for 504 timeouts."
+excerpt: "Solution for 504 timeouts."
 tags: 
   - NGINX
   - WeChat
