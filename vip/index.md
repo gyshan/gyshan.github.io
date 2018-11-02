@@ -31,7 +31,9 @@ function startTime() {
 
   var seconds = delta % 60;  // in theory the modulus is not required
 
-  document.getElementById('time').innerHTML = "I have fallen in love with Xin for " + days+" days "+hours+" hours "+minutes + " minutes " + seconds + " seconds."
+  var update_days = days+30
+
+  document.getElementById('time').innerHTML = "I have fallen in love with Xin for " + update_days + " days " + hours + " hours " + minutes + " minutes " + seconds + " seconds."
 
   t = setTimeout(function() {
     startTime()
