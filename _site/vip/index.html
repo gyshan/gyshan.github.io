@@ -139,7 +139,9 @@ function startTime() {
 
   var seconds = delta % 60;  // in theory the modulus is not required
 
-  document.getElementById('time').innerHTML = "I have fallen in love with Xin for " + days+" days "+hours+" hours "+minutes + " minutes " + seconds + " seconds."
+  var update_days = days+30
+
+  document.getElementById('time').innerHTML = "I have fallen in love with Xin for " + update_days + " days " + hours + " hours " + minutes + " minutes " + seconds + " seconds."
 
   t = setTimeout(function() {
     startTime()
@@ -156,7 +158,14 @@ startTime();
 
 <body onload="startTime();">
 
-<div id="time"></div>
+<div align="center">
+<iframe src="http://free.timeanddate.com/clock/i6hh640b/n33/szw210/szh210/hoc000/hbw0/hfc09f/cf100/hnc07c/hwc000/facfff/fnu2/fdi76/mqcfff/mqs4/mql18/mqw4/mqd60/mhcfff/mhs4/mhl5/mhw4/mhd62/mmv0/hhcfff/hhs1/hhb10/hmcfff/hms1/hmb10/hscfff/hsw3" frameborder="0" width="210" height="210" style="text-align:center"></iframe>
+</div>
+
+
+<div id="time" align="center">
+
+</div>
 
 </body>
 
