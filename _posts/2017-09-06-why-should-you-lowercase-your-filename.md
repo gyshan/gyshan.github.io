@@ -7,7 +7,7 @@ tags:
   - Mac
 ---
 
-Yesterday, I began to transfer my git configuration from my old machine to my new MacBook Pro. When I rename my file by doing this, an error occurred to me:
+Yesterday, I began to transfer my git configuration from my old machine to my new MacBook Pro. When I renamed my file by doing this, an error has occurred to me:
 
 {% highlight bash %}
 $ git mv readme Readme
