@@ -7,7 +7,7 @@ tags:
   - Bioinformatics
 ---
 
-Blat is a bioinformatics software tool for sequence alignment. When I googled `install blat on mac`, what came to my screen are numerous trouble shooting posts. Here, I want to present a one-liner command solution:
+Blat is a bioinformatics software tool for sequence alignment. When I googled `install blat on mac`, what came to my screen are numerous troubleshooting posts. Here, I want to present a one-liner command solution:
 
 {% highlight bash %}
 conda install -c bioconda blat  # Imagine you already have conda installed
