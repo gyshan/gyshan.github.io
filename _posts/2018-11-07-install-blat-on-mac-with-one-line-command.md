@@ -1,6 +1,6 @@
 ---
 title: "Install Blat on mac with one-line command"
-excerpt: ""
+excerpt: "Quick answer"
 categories:
   - articles
 tags:
