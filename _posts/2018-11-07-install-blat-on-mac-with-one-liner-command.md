@@ -1,5 +1,5 @@
 ---
-title: "Install Blat on mac with one-line command"
+title: "Install Blat on mac with one-liner command"
 excerpt: "Quick answer"
 categories:
   - articles
@@ -7,7 +7,7 @@ tags:
   - Bioinformatics
 ---
 
-Blat is a bioinformatics software tool for sequence alignment. When I googled `install blat on mac`, what came to my screen are numerous trouble shooting posts. Here, I want to present a one-line command solution:
+Blat is a bioinformatics software tool for sequence alignment. When I googled `install blat on mac`, what came to my screen are numerous trouble shooting posts. Here, I want to present a one-liner command solution:
 
 {% highlight bash %}
 conda install -c bioconda blat  # Imagine you already have conda installed
