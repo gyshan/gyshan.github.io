@@ -40,11 +40,13 @@ find . -name "\*.bam"
 awk '{ sum += $4 }; END { print sum }' [mpileup] > [out.file]
 #6. Sum the coverage of bed file
 awk -F'\t' 'BEGIN{SUM=0}{ SUM+=$3-$2 }END{print SUM}'
-#7. Remove chr fro bed file
+#7. Remove chr from bed file
 sed 's/^chr//'
-#8. Replace \s to \t in file
+#8. Remove chr from bam file
+samtools view -h demo.bam | sed 's/chr//g' | samtools view -Shb - -o demo_new.bam
+#9. Replace \s to \t in file
 awk -v OFS="\t" '$1=$1'
-#9. Get lines from file
+#10. Get lines from file
 sed -n 2,4p somefile.txt
 sed '2,4!d' somefile.txt
 {% endhighlight %}
