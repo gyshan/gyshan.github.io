@@ -55,5 +55,5 @@ Congratulations! The genotype of fetus is A**a** (carrier), the mother will yiel
 At the end of this small article, I would like to say that the accuracy of `fetal concentration` and `plasma frequency` is crucial for fetal genotype inference. Therefore, it can not be too hard to improve those two metrics.
 
 
-**a**: disease-causing allel
+**a**: disease-causing allele
 {: .notice}
