@@ -1,4 +1,111 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.2">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-11-02T17:50:42+08:00</updated><id>http://localhost:4000/</id><title type="html">Guangyu Corey Shan’s Blog</title><subtitle>Notes on bioinformatics and data mining by G. Corey Shan</subtitle><author><name>Corey</name></author><entry><title type="html">Customized color key for pheatmap</title><link href="http://localhost:4000/articles/customized-color-key-for-pheatmap/" rel="alternate" type="text/html" title="Customized color key for pheatmap" /><published>2018-10-31T00:00:00+08:00</published><updated>2018-10-31T00:00:00+08:00</updated><id>http://localhost:4000/articles/customized-color-key-for-pheatmap</id><content type="html" xml:base="http://localhost:4000/articles/customized-color-key-for-pheatmap/">&lt;p&gt;&lt;a href=&quot;https://cran.r-project.org/web/packages/pheatmap/pheatmap.pdf&quot;&gt;Pheatmap&lt;/a&gt; is an R package, which is famous for its heatmap annotation function. Standard color key profile is well-proportioned based on the value of related data frame. If we want to set different split point or uneven color range, what should we do? Here is the code:&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.2">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-11-15T15:15:56+08:00</updated><id>http://localhost:4000/</id><title type="html">Guangyu Corey Shan’s Blog</title><subtitle>Notes on bioinformatics and data mining by G. Corey Shan</subtitle><author><name>Corey</name></author><entry><title type="html">Deduce fetus genotype in NIPD</title><link href="http://localhost:4000/articles/deduce-fetus-genotype-in-NIPD/" rel="alternate" type="text/html" title="Deduce fetus genotype in NIPD" /><published>2018-11-15T00:00:00+08:00</published><updated>2018-11-15T00:00:00+08:00</updated><id>http://localhost:4000/articles/deduce-fetus-genotype-in-NIPD</id><content type="html" xml:base="http://localhost:4000/articles/deduce-fetus-genotype-in-NIPD/">&lt;p&gt;Non-invasive prenatal diagnosis (NIPD) is based on the analysis of cell-free fetal DNA (cffDNA) in maternal plasma is now available in clinical practice for a small number of single gene disorders. A key challenge for the development of NIPD is the low level of cffDNA present alongside the high background of maternal cfDNA in maternal plasma. Determine fetus genotype accurately from cffDNA is of great important for family’s choice.&lt;/p&gt;
+
+&lt;p&gt;Imagine we have determined the target variant (&lt;strong&gt;aa&lt;/strong&gt;) from a proband patient with autosomal recessive conditions and his/her mother decide to have a second pregnancy. How can we deduce fetus genotype of this target variant from a maternal peripheral blood diagnosis. Here is the thing:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Draw maternal peripheral blood from pregnant mom&lt;/li&gt;
+  &lt;li&gt;Isolate white blood cell (WBC) and plasma from maternal blood&lt;/li&gt;
+  &lt;li&gt;Analysis two types of samples by NGS methods&lt;/li&gt;
+  &lt;li&gt;Achieve target attributes: frequency in WBC, frequency in plasma and the concentration of cffDNA&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Now, start fetus genotype deducing. The reason behind our deducing method is to compare different plasma theoretical frequencies of three genotypes (AA, A&lt;strong&gt;a&lt;/strong&gt;, &lt;strong&gt;aa&lt;/strong&gt;) to the actual frequency and find the best match. Let’s do this:&lt;/p&gt;
+
+&lt;p&gt;Theoretical scheme:&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Maternal genotype&lt;/th&gt;
+      &lt;th&gt;Fetus genotype&lt;/th&gt;
+      &lt;th&gt;plasma frequency (fetus_conc: c)&lt;/th&gt;
+      &lt;th&gt;plasma frequency (fetus_conc: 5%)&lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;AA&lt;/td&gt;
+      &lt;td&gt;AA&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;AA&lt;/td&gt;
+      &lt;td&gt;Aa&lt;/td&gt;
+      &lt;td&gt;c/2&lt;/td&gt;
+      &lt;td&gt;2.5%&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Aa&lt;/td&gt;
+      &lt;td&gt;AA&lt;/td&gt;
+      &lt;td&gt;(1-c)/2&lt;/td&gt;
+      &lt;td&gt;47.5%&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Aa&lt;/td&gt;
+      &lt;td&gt;Aa&lt;/td&gt;
+      &lt;td&gt;50%&lt;/td&gt;
+      &lt;td&gt;50%&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Aa&lt;/td&gt;
+      &lt;td&gt;aa&lt;/td&gt;
+      &lt;td&gt;(1+c)/2&lt;/td&gt;
+      &lt;td&gt;52.5%&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;aa&lt;/td&gt;
+      &lt;td&gt;Aa&lt;/td&gt;
+      &lt;td&gt;1-c/2&lt;/td&gt;
+      &lt;td&gt;97.5%&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;aa&lt;/td&gt;
+      &lt;td&gt;aa&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Assuming parameters:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Frequency in WBC: 47% (A&lt;strong&gt;a&lt;/strong&gt;)&lt;/li&gt;
+  &lt;li&gt;Concentration of cffDNA: 10%&lt;/li&gt;
+  &lt;li&gt;Frequency in plasma: 53% (A&lt;strong&gt;a&lt;/strong&gt;)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Deducing:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;WBC: a=47 units, A=53 units
+Plasma: 
+1. Maternal: a=47 units, WBC-frq=47/100=47%
+2. If fetus-AA: plasma-a=47*0.9, plasma-frq=42.3/100=42.3%
+3. If fetus-Aa: plasma-a=47*0.9+50*0.1, plasma-frq=47.3/100=47.3%
+4. If fetus-aa: plasma-a=47*0.9+100*0.1, plasma-frq=52.3/100=52.3%&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Conclusion:&lt;/p&gt;
+
+&lt;p&gt;Congratulations! The genotype of fetus is A&lt;strong&gt;a&lt;/strong&gt; (carrier), the mother will yield a health baby.&lt;/p&gt;
+
+&lt;p&gt;At the end of this small article, I would like to say that the accuracy of &lt;code class=&quot;highlighter-rouge&quot;&gt;fetal concentration&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;plasma frequency&lt;/code&gt; is crucial for fetal genotype inference. Therefore, it can not be too hard to improve those two metrics.&lt;/p&gt;
+
+&lt;p class=&quot;notice&quot;&gt;&lt;strong&gt;a&lt;/strong&gt;: disease-causing allel&lt;/p&gt;</content><author><name>Corey</name></author><category term="Bioinformatics" /><summary type="html">Explore cffDNA in maternal blood</summary></entry><entry><title type="html">Install Blat on mac with one-liner command</title><link href="http://localhost:4000/articles/install-blat-on-mac-with-one-liner-command/" rel="alternate" type="text/html" title="Install Blat on mac with one-liner command" /><published>2018-11-07T00:00:00+08:00</published><updated>2018-11-07T00:00:00+08:00</updated><id>http://localhost:4000/articles/install-blat-on-mac-with-one-liner-command</id><content type="html" xml:base="http://localhost:4000/articles/install-blat-on-mac-with-one-liner-command/">&lt;p&gt;Blat is a bioinformatics software tool for sequence alignment. When I googled &lt;code class=&quot;highlighter-rouge&quot;&gt;install blat on mac&lt;/code&gt;, what came to my screen are numerous troubleshooting posts. Here, I want to present a one-liner command solution:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;conda &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-c&lt;/span&gt; bioconda blat  &lt;span class=&quot;c&quot;&gt;# Imagine you already have conda installed&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;If do not have conda installed on your Mac, install it with following commands:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;wget https://repo.continuum.io/miniconda/Miniconda2-latest-MacOSX-x86_64.sh
+sh Miniconda2-latest-MacOSX-x86_64.sh&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;</content><author><name>Corey</name></author><category term="Bioinformatics" /><summary type="html">Quick answer</summary></entry><entry><title type="html">Customized color key for pheatmap</title><link href="http://localhost:4000/articles/customized-color-key-for-pheatmap/" rel="alternate" type="text/html" title="Customized color key for pheatmap" /><published>2018-10-31T00:00:00+08:00</published><updated>2018-10-31T00:00:00+08:00</updated><id>http://localhost:4000/articles/customized-color-key-for-pheatmap</id><content type="html" xml:base="http://localhost:4000/articles/customized-color-key-for-pheatmap/">&lt;p&gt;&lt;a href=&quot;https://cran.r-project.org/web/packages/pheatmap/pheatmap.pdf&quot;&gt;Pheatmap&lt;/a&gt; is an R package, which is famous for its heatmap annotation function. Standard color key profile is well-proportioned based on the value of related data frame. If we want to set different split point or uneven color range, what should we do? Here is the code:&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;n&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pheatmap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
 &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;set.seed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;9527&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
@@ -40,7 +147,7 @@
       &lt;p&gt;Jennings L J, Arcila M E, Corless C, et al. Guidelines for validation of next-generation sequencing–based oncology panels: a joint consensus recommendation of the Association for Molecular Pathology and College of American Pathologists[J]. The Journal of Molecular Diagnostics, 2017, 19(3): 341-365. &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
-&lt;/div&gt;</content><author><name>Corey</name></author><category term="Bioinformatics" /><summary type="html">IVD approval is the key to next round NGS competition</summary></entry><entry><title type="html">How to report</title><link href="http://localhost:4000/articles/how-to-report/" rel="alternate" type="text/html" title="How to report" /><published>2018-09-17T00:00:00+08:00</published><updated>2018-09-17T00:00:00+08:00</updated><id>http://localhost:4000/articles/how-to-report</id><content type="html" xml:base="http://localhost:4000/articles/how-to-report/">&lt;p&gt;In our daily life, we inevitably need to report to others, maybe your boss or a client, even your wife. Reporting is not such a type of work that just grabs what you have and throw it to the receiver. To be honest, 70% reports I received are coming to me in this way and it is very rude. Here, I want to present some practical skills to present a ‘not-too-rude’ report. Even though the report described here will be restricted to sending information to others, not giving a presentation, I think they share the same core value: respect.&lt;/p&gt;
+&lt;/div&gt;</content><author><name>Corey</name></author><category term="Bioinformatics" /><summary type="html">IVD approval is the key to next round NGS competition</summary></entry><entry><title type="html">How to report</title><link href="http://localhost:4000/articles/how-to-report/" rel="alternate" type="text/html" title="How to report" /><published>2018-09-17T00:00:00+08:00</published><updated>2018-09-17T00:00:00+08:00</updated><id>http://localhost:4000/articles/how-to-report</id><content type="html" xml:base="http://localhost:4000/articles/how-to-report/">&lt;p&gt;In our daily life, we inevitably need to report to others, maybe your boss or a client, even your wife. Reporting is not such a type of work that just grabs what you have and throw it to the receiver. To be honest, 70% reports I received are coming to me in this way and it is very rude. Here, I want to present some practical skills to present a “not-too-rude” report. Even though the report described here will be restricted to sending information to others, not giving a presentation, I think they share the same core value: respect.&lt;/p&gt;
 
 &lt;p&gt;I have been not only reported to my boss but also got reported by my subordinates. According to what I have received, I insist that a good report should follow a “principle of altruism”. In other words, imagine you are the report-receiver, what exactly do you want?&lt;/p&gt;
 
@@ -206,66 +313,4 @@ Installation failed: SSL connect error&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;library&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;devtools&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;devtools::install_local&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;../../pctGCdata&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;devtools::install_local&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;../../facets&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;</content><author><name>Corey</name></author><category term="Bioinformatics" /><summary type="html">R package installation</summary></entry><entry><title type="html">InDel left-alignment</title><link href="http://localhost:4000/articles/indel-left-alignment/" rel="alternate" type="text/html" title="InDel left-alignment" /><published>2018-03-27T00:00:00+08:00</published><updated>2018-03-27T00:00:00+08:00</updated><id>http://localhost:4000/articles/indel-left-alignment</id><content type="html" xml:base="http://localhost:4000/articles/indel-left-alignment/">&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Indel&quot;&gt;InDel&lt;/a&gt; is a common concept in molecular biology, while the representation for InDels are non-unique. There are at least two representations: left-alignment and right-alignment. Actually, it does not really matter, but it good to have a convention. I would like to suggest using left-alignment for these reasons:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;ref            : CGTATGATCTA [GCGCGC] TAGCTAGCTAGC
-left-alignment : CGTATGATCTA [--GCGC] TAGCTAGCTAGC
-right-alignment: CGTATGATCTA [GCGC--] TAGCTAGCTAGC&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;Standard
-Statistical genetics center of the university of Michigan denotes that &lt;a href=&quot;https://genome.sph.umich.edu/wiki/Variant_Normalization#Left_alignment&quot;&gt;left-alignment&lt;/a&gt; is necessary.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Community
-Most famous tools are stick to left-alignment, such as &lt;a href=&quot;https://software.broadinstitute.org/gatk/documentation/tooldocs/3.8-0/org_broadinstitute_gatk_tools_walkers_indels_LeftAlignIndels.php&quot;&gt;GATK&lt;/a&gt;, &lt;a href=&quot;http://annovar.openbioinformatics.org/en/latest/articles/VCF/&quot;&gt;ANNOVAR&lt;/a&gt; and related databases:&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;avsnp138&lt;/li&gt;
-  &lt;li&gt;avsnp142&lt;/li&gt;
-  &lt;li&gt;clinvar_20150330&lt;/li&gt;
-  &lt;li&gt;1000g2014oct&lt;/li&gt;
-  &lt;li&gt;exac03&lt;/li&gt;
-  &lt;li&gt;esp6500siv2&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;The standard convention is to place an indel at the left-most position possible.   —GATK&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Since left-normalization is gaining more and more popularity, my suggestion is to just use left-normalization, and that database curators as well as users both use this practice, so that we can compare apples to apples.   —ANNOVAR&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;In the end, I would prefer to stick to the convention — &lt;strong&gt;left-alignment&lt;/strong&gt;.&lt;/p&gt;</content><author><name>Corey</name></author><category term="Bioinformatics" /><summary type="html">InDel left-alignment recommended</summary></entry><entry><title type="html">Configure, make and make install</title><link href="http://localhost:4000/articles/configure-make-and-make-install/" rel="alternate" type="text/html" title="Configure, make and make install" /><published>2018-03-02T00:00:00+08:00</published><updated>2018-03-02T00:00:00+08:00</updated><id>http://localhost:4000/articles/configure-make-and-make-install</id><content type="html" xml:base="http://localhost:4000/articles/configure-make-and-make-install/">&lt;p&gt;Install software from source on Linux platform is an extremely common task. I’ve typed those commands a lot, but I did not understand it very well before. After reading this article&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; wrote by George, I gradually understand those magic incantation.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;./configure
-make
-make &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;In short, &lt;code class=&quot;highlighter-rouge&quot;&gt;configure&lt;/code&gt; makes sure that the system environment is ready to build the software, such as standard libraries and components are in the right place, &lt;code class=&quot;highlighter-rouge&quot;&gt;make&lt;/code&gt; read commands from &lt;em&gt;Makefile&lt;/em&gt; and compile the software, &lt;code class=&quot;highlighter-rouge&quot;&gt;make install&lt;/code&gt; also read commands from &lt;em&gt;Makefile&lt;/em&gt; and install the software to specified directory.&lt;/p&gt;
-
-&lt;p&gt;1.configure&lt;/p&gt;
-
-&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;configure&lt;/code&gt; step is aimed to produce &lt;em&gt;Makefile&lt;/em&gt; from &lt;em&gt;Makefile.in&lt;/em&gt;. At this step, user can define installation directory by &lt;code class=&quot;highlighter-rouge&quot;&gt;./configure --prefix=/mypath&lt;/code&gt;, especially when the user did not have root privilege. For more information, use &lt;code class=&quot;highlighter-rouge&quot;&gt;./configure --help&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;2.make&lt;/p&gt;
-
-&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;make&lt;/code&gt; step is aimed to use &lt;em&gt;Makefile&lt;/em&gt; to build the software.&lt;/p&gt;
-
-&lt;p&gt;3.make install&lt;/p&gt;
-
-&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;make install&lt;/code&gt; step is aimed to use &lt;em&gt;Makefile&lt;/em&gt; to install the software.&lt;/p&gt;
-
-&lt;p&gt;Hope everyone goes well with software installation!&lt;/p&gt;
-
-&lt;div class=&quot;footnotes&quot;&gt;
-  &lt;ol&gt;
-    &lt;li id=&quot;fn:1&quot;&gt;
-      &lt;p&gt;&lt;a href=&quot;https://robots.thoughtbot.com/the-magic-behind-configure-make-make-install&quot;&gt;The magic behind configure, make and make install&lt;/a&gt; &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/div&gt;</content><author><name>Corey</name></author><category term="Bioinformatics" /><summary type="html">Magic behind software installation</summary></entry></feed>
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;devtools::install_local&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;../../facets&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;</content><author><name>Corey</name></author><category term="Bioinformatics" /><summary type="html">R package installation</summary></entry></feed>

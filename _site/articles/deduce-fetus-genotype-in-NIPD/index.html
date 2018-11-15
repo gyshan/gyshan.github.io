@@ -16,23 +16,23 @@
   
     
     <!-- Begin Jekyll SEO tag v2.4.0 -->
-<title>How to report | Guangyu Corey Shan’s Blog</title>
+<title>Deduce fetus genotype in NIPD | Guangyu Corey Shan’s Blog</title>
 <meta name="generator" content="Jekyll v3.8.2" />
-<meta property="og:title" content="How to report" />
+<meta property="og:title" content="Deduce fetus genotype in NIPD" />
 <meta name="author" content="Corey" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="It is a virtue to save others time" />
-<meta property="og:description" content="It is a virtue to save others time" />
-<link rel="canonical" href="http://localhost:4000/articles/how-to-report/" />
-<meta property="og:url" content="http://localhost:4000/articles/how-to-report/" />
+<meta name="description" content="Explore cffDNA in maternal blood" />
+<meta property="og:description" content="Explore cffDNA in maternal blood" />
+<link rel="canonical" href="http://localhost:4000/articles/deduce-fetus-genotype-in-NIPD/" />
+<meta property="og:url" content="http://localhost:4000/articles/deduce-fetus-genotype-in-NIPD/" />
 <meta property="og:site_name" content="Guangyu Corey Shan’s Blog" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2018-09-17T00:00:00+08:00" />
+<meta property="article:published_time" content="2018-11-15T00:00:00+08:00" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:site" content="@GuangyuShan" />
 <meta name="twitter:creator" content="@Corey" />
 <script type="application/ld+json">
-{"description":"It is a virtue to save others time","author":{"@type":"Person","name":"Corey"},"@type":"BlogPosting","url":"http://localhost:4000/articles/how-to-report/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://shangyblog-1256840873.cos.ap-beijing.myqcloud.com/logo.svg"},"name":"Corey"},"headline":"How to report","dateModified":"2018-09-17T00:00:00+08:00","datePublished":"2018-09-17T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/articles/how-to-report/"},"@context":"http://schema.org"}</script>
+{"description":"Explore cffDNA in maternal blood","author":{"@type":"Person","name":"Corey"},"@type":"BlogPosting","url":"http://localhost:4000/articles/deduce-fetus-genotype-in-NIPD/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://shangyblog-1256840873.cos.ap-beijing.myqcloud.com/logo.svg"},"name":"Corey"},"headline":"Deduce fetus genotype in NIPD","dateModified":"2018-11-15T00:00:00+08:00","datePublished":"2018-11-15T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/articles/deduce-fetus-genotype-in-NIPD/"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -71,7 +71,7 @@
 </head>
 
 
-  <body class="layout--post  how-to-report">
+  <body class="layout--post  deduce-fetus-genotype-in-nipd">
     <nav class="skip-links">
   <h2 class="screen-reader-text">Skip links</h2>
   <ul>
@@ -113,7 +113,7 @@
       <header class="page-header">
         
         
-          <h1 id="page-title" class="page-title p-name">How to report
+          <h1 id="page-title" class="page-title p-name">Deduce fetus genotype in NIPD
 </h1>
         
       </header>
@@ -129,7 +129,7 @@
 
 <span class="read-time">1 min read</span>
 
-    <time class="page-date dt-published" datetime="2018-09-17T00:00:00+08:00"><a class="u-url" href="">September 17, 2018</a>
+    <time class="page-date dt-published" datetime="2018-11-15T00:00:00+08:00"><a class="u-url" href="">November 15, 2018</a>
 </time>
 
   </div>
@@ -143,7 +143,7 @@
 
         
   <h3 class="page-taxonomies-title">Tags</h3>
-  <ul class="page-taxonomies"><li class="page-taxonomy">Life</li>
+  <ul class="page-taxonomies"><li class="page-taxonomy">Bioinformatics</li>
   </ul>
 
 
@@ -151,36 +151,116 @@
 
       <div class="page-content">
         <div class="e-content">
-          <p>In our daily life, we inevitably need to report to others, maybe your boss or a client, even your wife. Reporting is not such a type of work that just grabs what you have and throw it to the receiver. To be honest, 70% reports I received are coming to me in this way and it is very rude. Here, I want to present some practical skills to present a “not-too-rude” report. Even though the report described here will be restricted to sending information to others, not giving a presentation, I think they share the same core value: respect.</p>
+          <p>Non-invasive prenatal diagnosis (NIPD) is based on the analysis of cell-free fetal DNA (cffDNA) in maternal plasma is now available in clinical practice for a small number of single gene disorders. A key challenge for the development of NIPD is the low level of cffDNA present alongside the high background of maternal cfDNA in maternal plasma. Determine fetus genotype accurately from cffDNA is of great important for family’s choice.</p>
 
-<p>I have been not only reported to my boss but also got reported by my subordinates. According to what I have received, I insist that a good report should follow a “principle of altruism”. In other words, imagine you are the report-receiver, what exactly do you want?</p>
-
+<p>Imagine we have determined the target variant (<strong>aa</strong>) from a proband patient with autosomal recessive conditions and his/her mother decide to have a second pregnancy. How can we deduce fetus genotype of this target variant from a maternal peripheral blood diagnosis. Here is the thing:</p>
 <ol>
-  <li>Send it through Email, not any IM (Instant Message) software.</li>
-  <li>Write a precise and concrete title.</li>
-  <li>Give your conclusion first.</li>
-  <li>Extract solid evidence to support the conclusion.</li>
-  <li>Make the evidence traceable.</li>
+  <li>Draw maternal peripheral blood from pregnant mom</li>
+  <li>Isolate white blood cell (WBC) and plasma from maternal blood</li>
+  <li>Analysis two types of samples by NGS methods</li>
+  <li>Achieve target attributes: frequency in WBC, frequency in plasma and the concentration of cffDNA</li>
 </ol>
 
-<p>In fact, I agree that the project manager can trade between the constraints of <a href="https://en.wikipedia.org/wiki/Project_management_triangle">project management triangle</a>. If deadline/budget decreases, we can sacrifice our product quality to some extent to complete our task. But if there is any opportunity to improve the task, including delivering a better report, we should keep it.</p>
+<p>Now, start fetus genotype deducing. The reason behind our deducing method is to compare different plasma theoretical frequencies of three genotypes (AA, A<strong>a</strong>, <strong>aa</strong>) to the actual frequency and find the best match. Let’s do this:</p>
 
-<blockquote>
-  <p>The quality of work is constrained by the project’s budget, deadlines and scope (features).</p>
-</blockquote>
+<p>Theoretical scheme:</p>
 
-<p>Delivering a report resembles serving cakes. Somebody just throws them at your desk, regardless of whether you have proper tools to eat them. Somebody slices them up and put the slices in a dish. The better way is to slice them up as well as to tell the gourmet what is the chef recommendation and why it is the best choice.</p>
+<table>
+  <thead>
+    <tr>
+      <th>Maternal genotype</th>
+      <th>Fetus genotype</th>
+      <th>plasma frequency (fetus_conc: c)</th>
+      <th>plasma frequency (fetus_conc: 5%)</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>AA</td>
+      <td>AA</td>
+      <td>0</td>
+      <td>0</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>AA</td>
+      <td>Aa</td>
+      <td>c/2</td>
+      <td>2.5%</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Aa</td>
+      <td>AA</td>
+      <td>(1-c)/2</td>
+      <td>47.5%</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Aa</td>
+      <td>Aa</td>
+      <td>50%</td>
+      <td>50%</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Aa</td>
+      <td>aa</td>
+      <td>(1+c)/2</td>
+      <td>52.5%</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>aa</td>
+      <td>Aa</td>
+      <td>1-c/2</td>
+      <td>97.5%</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>aa</td>
+      <td>aa</td>
+      <td>1</td>
+      <td>1</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
 
-<p>Everyone is busy, hope we can think more before we send our report.</p>
+<p>Assuming parameters:</p>
+
+<ol>
+  <li>Frequency in WBC: 47% (A<strong>a</strong>)</li>
+  <li>Concentration of cffDNA: 10%</li>
+  <li>Frequency in plasma: 53% (A<strong>a</strong>)</li>
+</ol>
+
+<p>Deducing:</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">WBC: a=47 units, A=53 units
+Plasma: 
+1. Maternal: a=47 units, WBC-frq=47/100=47%
+2. If fetus-AA: plasma-a=47*0.9, plasma-frq=42.3/100=42.3%
+3. If fetus-Aa: plasma-a=47*0.9+50*0.1, plasma-frq=47.3/100=47.3%
+4. If fetus-aa: plasma-a=47*0.9+100*0.1, plasma-frq=52.3/100=52.3%</code></pre></figure>
+
+<p>Conclusion:</p>
+
+<p>Congratulations! The genotype of fetus is A<strong>a</strong> (carrier), the mother will yield a health baby.</p>
+
+<p>At the end of this small article, I would like to say that the accuracy of <code class="highlighter-rouge">fetal concentration</code> and <code class="highlighter-rouge">plasma frequency</code> is crucial for fetal genotype inference. Therefore, it can not be too hard to improve those two metrics.</p>
+
+<p class="notice"><strong>a</strong>: disease-causing allel</p>
 
         </div>
 
         
           <div class="page-share">
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Farticles%2Fhow-to-report%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--facebook btn--small"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i> <span>Share</span></a>
-  <a href="https://twitter.com/intent/tweet?text=How+to+report%20http%3A%2F%2Flocalhost%3A4000%2Farticles%2Fhow-to-report%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--twitter btn--small"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i> <span>Tweet</span></a>
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Farticles%2Fhow-to-report%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--linkedin btn--small"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> <span>LinkedIn</span></a>
-  <a href="https://reddit.com/submit?title=How+to+report&url=http%3A%2F%2Flocalhost%3A4000%2Farticles%2Fhow-to-report%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--reddit btn--small"><i class="fab fa-fw fa-reddit" aria-hidden="true"></i> <span>Reddit</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Farticles%2Fdeduce-fetus-genotype-in-NIPD%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--facebook btn--small"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i> <span>Share</span></a>
+  <a href="https://twitter.com/intent/tweet?text=Deduce+fetus+genotype+in+NIPD%20http%3A%2F%2Flocalhost%3A4000%2Farticles%2Fdeduce-fetus-genotype-in-NIPD%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--twitter btn--small"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i> <span>Tweet</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Farticles%2Fdeduce-fetus-genotype-in-NIPD%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--linkedin btn--small"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> <span>LinkedIn</span></a>
+  <a href="https://reddit.com/submit?title=Deduce+fetus+genotype+in+NIPD&url=http%3A%2F%2Flocalhost%3A4000%2Farticles%2Fdeduce-fetus-genotype-in-NIPD%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--reddit btn--small"><i class="fab fa-fw fa-reddit" aria-hidden="true"></i> <span>Reddit</span></a>
 </div>
 
         
@@ -192,23 +272,15 @@
 
         <nav class="page-pagination" role="navigation">
   
-    <a class="page-previous" href="/articles/merge-columns-by-shared-string/">
+    <a class="page-previous" href="/articles/install-blat-on-mac-with-one-liner-command/">
       <h4 class="page-pagination-label">Previous</h4>
       <span class="page-pagination-title">
-        <i class="fas fa-arrow-left"></i> Merge columns by shared string
+        <i class="fas fa-arrow-left"></i> Install Blat on mac with one-liner command
 
       </span>
     </a>
   
 
-  
-    <a class="page-next" href="/articles/levels-of-precision-medicine-product/">
-      <h4 class="page-pagination-label">Next</h4>
-      <span class="page-pagination-title">
-        Levels of precision medicine product
- <i class="fas fa-arrow-right"></i>
-      </span>
-    </a>
   
 </nav>
 

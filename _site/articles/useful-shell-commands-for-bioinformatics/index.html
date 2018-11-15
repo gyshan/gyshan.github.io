@@ -122,7 +122,7 @@
         <div class="page-author h-card p-author"><img src="/bio-photo.jpg" class="author-avatar u-photo" alt="Corey"><div class="author-info"><div class="author-name">
         <em>by</em> <span class="p-name">Corey</span>
       </div><ul class="author-links"><li class="author-link">
-            <a class="u-url" rel="me" href="https://www.linkedin.com/in/corey-shan-6a6111a4/"><i class="fab fa-linkedin fa-lg" title="LinkedIn"></i></a>
+            <a class="u-url" rel="me" href="https://www.linkedin.com/in/guangyu-corey-shan-6a6111a4/"><i class="fab fa-linkedin fa-lg" title="LinkedIn"></i></a>
           </li><li class="author-link">
             <a class="u-url" rel="me" href="https://github.com/gyshan"><i class="fab fa-github-square fa-lg" title="GitHub"></i></a>
           </li></ul>
@@ -183,11 +183,13 @@ find <span class="nb">.</span> <span class="nt">-name</span> <span class="s2">"<
 <span class="nb">awk</span> <span class="s1">'{ sum += $4 }; END { print sum }'</span> <span class="o">[</span>mpileup] <span class="o">&gt;</span> <span class="o">[</span>out.file]
 <span class="c">#6. Sum the coverage of bed file</span>
 <span class="nb">awk</span> <span class="nt">-F</span><span class="s1">'\t'</span> <span class="s1">'BEGIN{SUM=0}{ SUM+=$3-$2 }END{print SUM}'</span>
-<span class="c">#7. Remove chr fro bed file</span>
+<span class="c">#7. Remove chr from bed file</span>
 <span class="nb">sed</span> <span class="s1">'s/^chr//'</span>
-<span class="c">#8. Replace \s to \t in file</span>
+<span class="c">#8. Remove chr from bam file</span>
+samtools view <span class="nt">-h</span> demo.bam | <span class="nb">sed</span> <span class="s1">'s/chr//g'</span> | samtools view <span class="nt">-Shb</span> - <span class="nt">-o</span> demo_new.bam
+<span class="c">#9. Replace \s to \t in file</span>
 <span class="nb">awk</span> <span class="nt">-v</span> <span class="nv">OFS</span><span class="o">=</span><span class="s2">"</span><span class="se">\t</span><span class="s2">"</span> <span class="s1">'$1=$1'</span>
-<span class="c">#9. Get lines from file</span>
+<span class="c">#10. Get lines from file</span>
 <span class="nb">sed</span> <span class="nt">-n</span> 2,4p somefile.txt
 <span class="nb">sed</span> <span class="s1">'2,4!d'</span> somefile.txt</code></pre></figure>
 
@@ -241,7 +243,7 @@ find <span class="nb">.</span> <span class="nt">-name</span> <span class="s2">"<
   <!-- start custom footer snippets -->
 
 <!-- end custom footer snippets -->
-<div class="social-icons"><a class="social-icon" href="https://www.linkedin.com/in/corey-shan-6a6111a4/"><i class="fab fa-linkedin fa-2x" title="LinkedIn"></i></a><a class="social-icon" href="https://github.com/gyshan"><i class="fab fa-github-square fa-2x" title="GitHub"></i></a><a class="social-icon" href="/atom.xml"><i class="fas fa-rss-square fa-2x" title="Feed"></i></a></div><div class="copyright">
+<div class="social-icons"><a class="social-icon" href="https://www.linkedin.com/in/guangyu-corey-shan-6a6111a4/"><i class="fab fa-linkedin fa-2x" title="LinkedIn"></i></a><a class="social-icon" href="https://github.com/gyshan"><i class="fab fa-github-square fa-2x" title="GitHub"></i></a><a class="social-icon" href="/atom.xml"><i class="fas fa-rss-square fa-2x" title="Feed"></i></a></div><div class="copyright">
     
       <!-- <p>&copy; 2018 Guangyu Corey Shan's Blog. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://github.com/mmistakes/so-simple-theme" rel="nofollow">So Simple</a>.</p> -->
       <span>&copy; 2015-2018 Corey. 

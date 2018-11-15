@@ -180,7 +180,7 @@ var store = [{
         "url": "http://localhost:4000/articles/How-to-check-IGV/"
       },{
         "title": "Why should you lowercase your filename",
-        "excerpt":"Yesterday, I began to transfer my git configuration from my old machine to my new MacBook Pro. When I rename my file by doing this, an error occurred to me: $ git mv readme Readmefatal: destination exists, source=readme, destination=ReadmeIt seems like my Mac OS X cannot recognize Readme file as...","categories": ["articles"],
+        "excerpt":"Yesterday, I began to transfer my git configuration from my old machine to my new MacBook Pro. When I renamed my file by doing this, an error has occurred to me: $ git mv readme Readmefatal: destination exists, source=readme, destination=ReadmeIt seems like my Mac OS X cannot recognize Readme file...","categories": ["articles"],
         "tags": ["Mac"],
         "url": "http://localhost:4000/articles/why-should-you-lowercase-your-filename/"
       },{
@@ -253,4 +253,14 @@ var store = [{
         "excerpt":"Pheatmap is an R package, which is famous for its heatmap annotation function. Standard color key profile is well-proportioned based on the value of related data frame. If we want to set different split point or uneven color range, what should we do? Here is the code: library(pheatmap)set.seed(9527)dat &lt;- cbind(matrix(rnorm(120),...","categories": ["articles"],
         "tags": ["Bioinformatics","R"],
         "url": "http://localhost:4000/articles/customized-color-key-for-pheatmap/"
+      },{
+        "title": "Install Blat on mac with one-liner command",
+        "excerpt":"Blat is a bioinformatics software tool for sequence alignment. When I googled install blat on mac, what came to my screen are numerous troubleshooting posts. Here, I want to present a one-liner command solution: conda install -c bioconda blat # Imagine you already have conda installedIf do not have conda...","categories": ["articles"],
+        "tags": ["Bioinformatics"],
+        "url": "http://localhost:4000/articles/install-blat-on-mac-with-one-liner-command/"
+      },{
+        "title": "Deduce fetus genotype in NIPD",
+        "excerpt":"Non-invasive prenatal diagnosis (NIPD) is based on the analysis of cell-free fetal DNA (cffDNA) in maternal plasma is now available in clinical practice for a small number of single gene disorders. A key challenge for the development of NIPD is the low level of cffDNA present alongside the high background...","categories": ["articles"],
+        "tags": ["Bioinformatics"],
+        "url": "http://localhost:4000/articles/deduce-fetus-genotype-in-NIPD/"
       }]
