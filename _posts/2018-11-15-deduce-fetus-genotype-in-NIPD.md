@@ -34,7 +34,7 @@ Assuming parameters:
 
 1. Frequency in WBC: 47% (A**a**)
 2. Concentration of cffDNA: 10%
-3. Frequency in plasma: 53% (A**a**)
+3. Frequency in plasma: 41% (A**a**)
 
 
 Deducing:
@@ -50,7 +50,7 @@ Plasma:
 
 Conclusion:
 
-Congratulations! The genotype of fetus is A**a** (carrier), the mother will yield a health baby.
+Congratulations! The genotype of fetus is AA, the mother will yield a health baby.
 
 At the end of this small article, I would like to say that the accuracy of `fetal concentration` and `plasma frequency` is crucial for fetal genotype inference. Therefore, it can not be too hard to improve those two metrics.
 
