@@ -7,7 +7,7 @@ tags:
   - Bioinformatics
 ---
 
-Sometimes, We need to transfer files between servers in the background and it is imperative to have a password. The solution is to use screen command to emulate a screen and make it running in the background.
+Sometimes, We need to transfer files between servers in the background, and it is imperative to have a password. The solution is to use screen command to emulate a screen and make it running in the background.
 
 
 {% highlight bash %}
