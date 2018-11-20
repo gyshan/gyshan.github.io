@@ -7,9 +7,9 @@ tags:
   - Bioinformatics
 ---
 
-Non-invasive prenatal diagnosis (NIPD) is based on the analysis of cell-free fetal DNA (cffDNA) in maternal plasma is now available in clinical practice for a small number of single gene disorders. A key challenge for the development of NIPD is the low level of cffDNA present alongside the high background of maternal cfDNA in maternal plasma. Determine fetus genotype accurately from cffDNA is of great important for family's choice.
+Non-invasive prenatal diagnosis (NIPD) based on the analysis of cell-free fetal DNA (cffDNA) in maternal plasma is now available in clinical practice for a small number of single gene disorders. A key challenge for the development of NIPD is the low level of cffDNA present alongside the high background of maternal cfDNA in maternal plasma. Determine fetus genotype accurately from cffDNA is of great importance for the family's choice.
 
-Imagine we have determined the target variant (**aa**) from a proband patient with autosomal recessive conditions and his/her mother decide to have a second pregnancy. How can we deduce fetus genotype of this target variant from a maternal peripheral blood diagnosis. Here is the thing:
+Imagine we have determined the target variant (**aa**) from a proband patient with autosomal recessive conditions and his/her mother decide to have a second pregnancy. How can we deduce fetus genotype of this target variant from a maternal peripheral blood diagnosis? Here is the thing:
 1. Draw maternal peripheral blood from pregnant mom
 2. Isolate white blood cell (WBC) and plasma from maternal blood
 3. Analysis two types of samples by NGS methods
@@ -50,7 +50,7 @@ Plasma:
 
 Conclusion:
 
-Congratulations! The genotype of fetus is AA, the mother will yield a health baby.
+Congratulations! The genotype of the fetus is AA, and the mother will yield a healthy baby.
 
 At the end of this small article, I would like to say that the accuracy of `fetal concentration` and `plasma frequency` is crucial for fetal genotype inference. Therefore, it can not be too hard to improve those two metrics.
 
