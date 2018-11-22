@@ -15,11 +15,11 @@ At this part, I am trying to answer this question:
 
 1.Increase TMB value unproperly
 
-Immunotherapy is a complement choice compared with target therapy. Tumors harboring known drivers (ALK, ROS1, EGFR, BRAF V600E, MET splice) had low TMB (median: 2.5, 3.6, 3.8, 3.8, 4.5)[^1] and should not receive immunotherapy. There is a study suggest that immunotherapy is not useful for EGFR-mutant lung cancer[^2], The benefit in OS was realized in patients with EGFR wild-type tumors (HR: 0.67; P < 0.001), but not in patients with EGFR-mutated NSCLC (HR: 1.11; P=0.54). If we take driver mutations into account, it will increase the TMB score and potential direct to immunotherapy by mistake. To avoid the accident, we should remove drivers.
+Immunotherapy is a complement choice compared with target therapy. Tumors harboring known drivers (ALK, ROS1, EGFR, BRAF V600E, MET splice) had low TMB (median: 2.5, 3.6, 3.8, 3.8, 4.5)[^1] and should not receive immunotherapy. There is a study suggest that immunotherapy is not useful for EGFR-mutant lung cancer[^2]. The benefit in OS was realized in patients with EGFR wild-type tumors (HR: 0.67; P < 0.001), but not in patients with EGFR-mutated NSCLC (HR: 1.11; P=0.54). If we take driver mutations into account, it will increase the TMB score and potential direct to immunotherapy by mistake. To avoid the accident, we should remove drivers.
 
 2.Increase bias
 
-NGS companies design panels for target hotspots on driver genes, and the TMB score is a by-product from this angle. Therefore, keeping drivers will yield bias while fitting the concordance curve between WES-TMB and Panel-TMB. Regularly, we design a panel for target therapy and including a large number of driver mutations, keep them when counting TMB will lead to a lower concordance score comparing with removing them.
+NGS companies design panels for target hotspots on driver genes, and the TMB score is a by-product from this angle. Therefore, keeping drivers will yield bias while fitting the concordance curve between WES-TMB and Panel-TMB. Regularly, we design a panel for target therapy and including a large number of driver mutations, keeping them when counting TMB will lead to a lower concordance score comparing with removing them.
 
 By and large, we should remove drivers when counting TMB. I think the reasons I have posted above is of course not the best version, if someone has a better explanation, please leave a comment.
 
