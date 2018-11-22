@@ -15,7 +15,7 @@ fatal: destination exists, source=readme, destination=Readme
 {% endhighlight %}
 
 
-It seems like my Mac OS X cannot recognize `Readme` file as same as `readme` file. So I had to convert `readme` file to `tmp_file` and then `tmp_file` to `Readme` file. In Linux, this command can work very well, but in Mac OS X, failed. This is the first time that I realized case-sensitive is so important. Except for this situation, I believe it is very dangerous if keep confusing the case.
+It seems like my Mac OS X cannot recognize `Readme` file as same as `readme` file. So I had to convert `readme` file to `tmp_file` and then `tmp_file` to `Readme` file. In Linux, this command can work very well, but in Mac OS X, failed. This is the first time that I realized case-sensitive is so important. Except for this situation, I believe it is hazardous when keep confusing the case.
 
 Different operating systems (OS) have different case-sensitive level, that is why the same command upon can work well on Linux but fail on Mac OS X.
 
@@ -24,9 +24,7 @@ Different operating systems (OS) have different case-sensitive level, that is wh
 
 In my working pipeline, my file often transfers between Linux and Mac OS X, so I decided to convert all my filename under **lowercase_with_underscore** principle. The reasons behind this principle are:
 
-* Easy to read, UPPERCASE_WITH_UNDERSCORE is hard to read 
+* Easy to read, UPPERCASE_WITH_UNDERSCORE is hard to understand
 * Easy to distinguish a private file from system folder/file such as `Documents`, `Downloads` and so on
 * Transfer file with lower risk (Every OSs can recognize your file correctly)
-* I love underscore sign
-
-
+* I love the underscore sign
