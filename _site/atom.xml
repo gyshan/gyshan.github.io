@@ -1,6 +1,34 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.2">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-11-15T15:15:56+08:00</updated><id>http://localhost:4000/</id><title type="html">Guangyu Corey Shan’s Blog</title><subtitle>Notes on bioinformatics and data mining by G. Corey Shan</subtitle><author><name>Corey</name></author><entry><title type="html">Deduce fetus genotype in NIPD</title><link href="http://localhost:4000/articles/deduce-fetus-genotype-in-NIPD/" rel="alternate" type="text/html" title="Deduce fetus genotype in NIPD" /><published>2018-11-15T00:00:00+08:00</published><updated>2018-11-15T00:00:00+08:00</updated><id>http://localhost:4000/articles/deduce-fetus-genotype-in-NIPD</id><content type="html" xml:base="http://localhost:4000/articles/deduce-fetus-genotype-in-NIPD/">&lt;p&gt;Non-invasive prenatal diagnosis (NIPD) is based on the analysis of cell-free fetal DNA (cffDNA) in maternal plasma is now available in clinical practice for a small number of single gene disorders. A key challenge for the development of NIPD is the low level of cffDNA present alongside the high background of maternal cfDNA in maternal plasma. Determine fetus genotype accurately from cffDNA is of great important for family’s choice.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.2">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-11-22T16:18:43+08:00</updated><id>http://localhost:4000/</id><title type="html">Guangyu Corey Shan’s Blog</title><subtitle>Notes on bioinformatics and data mining by G. Corey Shan</subtitle><author><name>Corey</name></author><entry><title type="html">Why remove driver mutation while calculating TMB</title><link href="http://localhost:4000/articles/why-remove-driver-mutation-while-calculating-TMB/" rel="alternate" type="text/html" title="Why remove driver mutation while calculating TMB" /><published>2018-11-22T00:00:00+08:00</published><updated>2018-11-22T00:00:00+08:00</updated><id>http://localhost:4000/articles/why-remove-driver-mutation-while-calculating-TMB</id><content type="html" xml:base="http://localhost:4000/articles/why-remove-driver-mutation-while-calculating-TMB/">&lt;p&gt;Tumor mutational burden (TMB) is a measurement of mutations carried by tumor cells and is a predictive biomarker being studied to evaluate its association with response to Immuno-Oncology (I-O) therapy, such as nivolumab, pembrolizumab, and atezolizumab. We should know that TMB is a measurement of the numbers of mutations carried by tumor cells and the real “secret sauce” in TMB is neoantigen, which is a fraction of the mutations present in the tumor cells will code for proteins that presented on the surface of those cells. These make the immune system more likely to recognize the tumor as foreign.&lt;/p&gt;
 
-&lt;p&gt;Imagine we have determined the target variant (&lt;strong&gt;aa&lt;/strong&gt;) from a proband patient with autosomal recessive conditions and his/her mother decide to have a second pregnancy. How can we deduce fetus genotype of this target variant from a maternal peripheral blood diagnosis. Here is the thing:&lt;/p&gt;
+&lt;p&gt;To precisely calculate TMB, &lt;a href=&quot;http://www.dslieber.com/&quot;&gt;Daniel Lieber&lt;/a&gt; from FMI has put forward a &lt;a href=&quot;https://cdn2.hubspot.net/hubfs/174278/Corporate%20Landing%20Pages/042017%20-%20AACR%20Landing%20Page/Lieber,%20D%20AACR%202017%20Tumor%20Mutational%20Burden%20Val_.pdf?t=1493408183691&quot;&gt;method&lt;/a&gt;: include removing &lt;code class=&quot;highlighter-rouge&quot;&gt;polymorphisms&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;predicted drivers&lt;/code&gt;, which has almost become the gold standard across NGS industry when counting TMB. The reason for eliminating polymorphisms is because germline variants contribute little to the neoantigen, but there is no doubt that drivers will produce neoantigens, why it is still necessary to remove them?&lt;/p&gt;
+
+&lt;p&gt;At this part, I am trying to answer this question:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Increase TMB value unproperly 
+Immunotherapy is a complement choice compared with target therapy. Tumors harboring known drivers (ALK, ROS1, EGFR, BRAF V600E, MET splice) had low TMB (median: 2.5, 3.6, 3.8, 3.8, 4.5)&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; and should not receive immunotherapy. There is a study suggest that immunotherapy is not useful for EGFR-mutant lung cancer&lt;sup id=&quot;fnref:2&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;, The benefit in OS was realized in patients with EGFR wild-type tumors (HR: 0.67; P &amp;lt; 0.001), but not in patients with EGFR-mutated NSCLC (HR: 1.11; P=0.54). If we take driver mutations into account, it will increase the TMB score and potential direct to immunotherapy by mistake. To avoid the accident, we should remove drivers.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Increase bias
+NGS companies design panels for target hotspots on driver genes, and the TMB score is a by-product from this angle. Therefore, keeping drivers will yield bias while fitting the concordance curve between WES-TMB and Panel-TMB. Regularly, we design a panel for target therapy and including a large number of driver mutations, keep them when counting TMB will lead to a lower concordance score comparing with removing them.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;By and large, we should remove drivers when counting TMB. I think the reasons I have posted above is of course not the best version, if someone has a better explanation, please leave a comment.&lt;/p&gt;
+
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot;&gt;
+      &lt;p&gt;Schrock A, Sharma N, Peled N, et al. MA14. 01 Updated Dataset Assessing Tumor Mutation Burden (TMB) as a Biomarker for Response to PD-1/PD-L1 Targeted Therapies in Lung Cancer (LC)[J]. Journal of Thoracic Oncology, 2017, 12(1): S422. &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:2&quot;&gt;
+      &lt;p&gt;Lee C K, Man J, Lord S, et al. Clinical and molecular characteristics associated with survival among patients treated with checkpoint inhibitors for advanced non–small cell lung carcinoma: a systematic review and meta-analysis[J]. JAMA oncology, 2018, 4(2): 210-216. &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;</content><author><name>Corey</name></author><category term="Bioinformatics" /><summary type="html">Secret in TMB algorithm</summary></entry><entry><title type="html">Deduce fetus genotype in NIPD</title><link href="http://localhost:4000/articles/deduce-fetus-genotype-in-NIPD/" rel="alternate" type="text/html" title="Deduce fetus genotype in NIPD" /><published>2018-11-15T00:00:00+08:00</published><updated>2018-11-15T00:00:00+08:00</updated><id>http://localhost:4000/articles/deduce-fetus-genotype-in-NIPD</id><content type="html" xml:base="http://localhost:4000/articles/deduce-fetus-genotype-in-NIPD/">&lt;p&gt;Non-invasive prenatal diagnosis (NIPD) based on the analysis of cell-free fetal DNA (cffDNA) in maternal plasma is now available in clinical practice for a small number of single gene disorders. A key challenge for the development of NIPD is the low level of cffDNA present alongside the high background of maternal cfDNA in maternal plasma. Determine fetus genotype accurately from cffDNA is of great importance for the family’s choice.&lt;/p&gt;
+
+&lt;p&gt;Imagine we have determined the target variant (&lt;strong&gt;aa&lt;/strong&gt;) from a proband patient with autosomal recessive conditions and his/her mother decide to have a second pregnancy. How can we deduce fetus genotype of this target variant from a maternal peripheral blood diagnosis? Here is the thing:&lt;/p&gt;
 &lt;ol&gt;
   &lt;li&gt;Draw maternal peripheral blood from pregnant mom&lt;/li&gt;
   &lt;li&gt;Isolate white blood cell (WBC) and plasma from maternal blood&lt;/li&gt;
@@ -80,7 +108,7 @@
 &lt;ol&gt;
   &lt;li&gt;Frequency in WBC: 47% (A&lt;strong&gt;a&lt;/strong&gt;)&lt;/li&gt;
   &lt;li&gt;Concentration of cffDNA: 10%&lt;/li&gt;
-  &lt;li&gt;Frequency in plasma: 53% (A&lt;strong&gt;a&lt;/strong&gt;)&lt;/li&gt;
+  &lt;li&gt;Frequency in plasma: 41% (A&lt;strong&gt;a&lt;/strong&gt;)&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;Deducing:&lt;/p&gt;
@@ -94,11 +122,11 @@ Plasma:
 
 &lt;p&gt;Conclusion:&lt;/p&gt;
 
-&lt;p&gt;Congratulations! The genotype of fetus is A&lt;strong&gt;a&lt;/strong&gt; (carrier), the mother will yield a health baby.&lt;/p&gt;
+&lt;p&gt;Congratulations! The genotype of the fetus is AA, and the mother will yield a healthy baby.&lt;/p&gt;
 
 &lt;p&gt;At the end of this small article, I would like to say that the accuracy of &lt;code class=&quot;highlighter-rouge&quot;&gt;fetal concentration&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;plasma frequency&lt;/code&gt; is crucial for fetal genotype inference. Therefore, it can not be too hard to improve those two metrics.&lt;/p&gt;
 
-&lt;p class=&quot;notice&quot;&gt;&lt;strong&gt;a&lt;/strong&gt;: disease-causing allel&lt;/p&gt;</content><author><name>Corey</name></author><category term="Bioinformatics" /><summary type="html">Explore cffDNA in maternal blood</summary></entry><entry><title type="html">Install Blat on mac with one-liner command</title><link href="http://localhost:4000/articles/install-blat-on-mac-with-one-liner-command/" rel="alternate" type="text/html" title="Install Blat on mac with one-liner command" /><published>2018-11-07T00:00:00+08:00</published><updated>2018-11-07T00:00:00+08:00</updated><id>http://localhost:4000/articles/install-blat-on-mac-with-one-liner-command</id><content type="html" xml:base="http://localhost:4000/articles/install-blat-on-mac-with-one-liner-command/">&lt;p&gt;Blat is a bioinformatics software tool for sequence alignment. When I googled &lt;code class=&quot;highlighter-rouge&quot;&gt;install blat on mac&lt;/code&gt;, what came to my screen are numerous troubleshooting posts. Here, I want to present a one-liner command solution:&lt;/p&gt;
+&lt;p class=&quot;notice&quot;&gt;&lt;strong&gt;a&lt;/strong&gt;: disease-causing allele&lt;/p&gt;</content><author><name>Corey</name></author><category term="Bioinformatics" /><summary type="html">Explore cffDNA in maternal blood</summary></entry><entry><title type="html">Install Blat on mac with one-liner command</title><link href="http://localhost:4000/articles/install-blat-on-mac-with-one-liner-command/" rel="alternate" type="text/html" title="Install Blat on mac with one-liner command" /><published>2018-11-07T00:00:00+08:00</published><updated>2018-11-07T00:00:00+08:00</updated><id>http://localhost:4000/articles/install-blat-on-mac-with-one-liner-command</id><content type="html" xml:base="http://localhost:4000/articles/install-blat-on-mac-with-one-liner-command/">&lt;p&gt;Blat is a bioinformatics software tool for sequence alignment. When I googled &lt;code class=&quot;highlighter-rouge&quot;&gt;install blat on mac&lt;/code&gt;, what came to my screen are numerous troubleshooting posts. Here, I want to present a one-liner command solution:&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;conda &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-c&lt;/span&gt; bioconda blat  &lt;span class=&quot;c&quot;&gt;# Imagine you already have conda installed&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
@@ -147,7 +175,7 @@ sh Miniconda2-latest-MacOSX-x86_64.sh&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;</c
       &lt;p&gt;Jennings L J, Arcila M E, Corless C, et al. Guidelines for validation of next-generation sequencing–based oncology panels: a joint consensus recommendation of the Association for Molecular Pathology and College of American Pathologists[J]. The Journal of Molecular Diagnostics, 2017, 19(3): 341-365. &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
-&lt;/div&gt;</content><author><name>Corey</name></author><category term="Bioinformatics" /><summary type="html">IVD approval is the key to next round NGS competition</summary></entry><entry><title type="html">How to report</title><link href="http://localhost:4000/articles/how-to-report/" rel="alternate" type="text/html" title="How to report" /><published>2018-09-17T00:00:00+08:00</published><updated>2018-09-17T00:00:00+08:00</updated><id>http://localhost:4000/articles/how-to-report</id><content type="html" xml:base="http://localhost:4000/articles/how-to-report/">&lt;p&gt;In our daily life, we inevitably need to report to others, maybe your boss or a client, even your wife. Reporting is not such a type of work that just grabs what you have and throw it to the receiver. To be honest, 70% reports I received are coming to me in this way and it is very rude. Here, I want to present some practical skills to present a “not-too-rude” report. Even though the report described here will be restricted to sending information to others, not giving a presentation, I think they share the same core value: respect.&lt;/p&gt;
+&lt;/div&gt;</content><author><name>Corey</name></author><category term="Bioinformatics" /><summary type="html">IVD approval is the key to next round NGS competition</summary></entry><entry><title type="html">How to report</title><link href="http://localhost:4000/articles/how-to-report/" rel="alternate" type="text/html" title="How to report" /><published>2018-09-17T00:00:00+08:00</published><updated>2018-09-17T00:00:00+08:00</updated><id>http://localhost:4000/articles/how-to-report</id><content type="html" xml:base="http://localhost:4000/articles/how-to-report/">&lt;p&gt;In our daily life, we inevitably need to report to others, maybe your boss or a client, even your wife. Reporting is not such a type of work that grabs what you have and throws it to the receiver. To be honest, 70% reports I received are coming to me in this way, and it is very rude. Here, I want to present some practical skills to present a “not-too-rude” report. Even though the report described here will be restricted to sending information to others, not giving a presentation, I think they share the same core value: respect.&lt;/p&gt;
 
 &lt;p&gt;I have been not only reported to my boss but also got reported by my subordinates. According to what I have received, I insist that a good report should follow a “principle of altruism”. In other words, imagine you are the report-receiver, what exactly do you want?&lt;/p&gt;
 
@@ -159,13 +187,13 @@ sh Miniconda2-latest-MacOSX-x86_64.sh&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;</c
   &lt;li&gt;Make the evidence traceable.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;In fact, I agree that the project manager can trade between the constraints of &lt;a href=&quot;https://en.wikipedia.org/wiki/Project_management_triangle&quot;&gt;project management triangle&lt;/a&gt;. If deadline/budget decreases, we can sacrifice our product quality to some extent to complete our task. But if there is any opportunity to improve the task, including delivering a better report, we should keep it.&lt;/p&gt;
+&lt;p&gt;In fact, I agree that the project manager can trade between the constraints of &lt;a href=&quot;https://en.wikipedia.org/wiki/Project_management_triangle&quot;&gt;project management triangle&lt;/a&gt;. If the deadline/budget decreases, we can sacrifice our product quality to some extent to complete our task. But if there is an opportunity to improve the task, including delivering a better report, we should keep it.&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;The quality of work is constrained by the project’s budget, deadlines and scope (features).&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;Delivering a report resembles serving cakes. Somebody just throws them at your desk, regardless of whether you have proper tools to eat them. Somebody slices them up and put the slices in a dish. The better way is to slice them up as well as to tell the gourmet what is the chef recommendation and why it is the best choice.&lt;/p&gt;
+&lt;p&gt;Delivering a report resembles serving cakes. Somebody throws them at your desk, regardless of whether you have proper tools to eat them. Somebody slices them up and put the slices in a dish. The better way is to slice them up as well as to tell the gourmet what is the chef recommendation and why it is the best choice.&lt;/p&gt;
 
 &lt;p&gt;Everyone is busy, hope we can think more before we send our report.&lt;/p&gt;</content><author><name>Corey</name></author><category term="Life" /><summary type="html">It is a virtue to save others time</summary></entry><entry><title type="html">Merge columns by shared string</title><link href="http://localhost:4000/articles/merge-columns-by-shared-string/" rel="alternate" type="text/html" title="Merge columns by shared string" /><published>2018-08-31T00:00:00+08:00</published><updated>2018-08-31T00:00:00+08:00</updated><id>http://localhost:4000/articles/merge-columns-by-shared-string</id><content type="html" xml:base="http://localhost:4000/articles/merge-columns-by-shared-string/">&lt;p&gt;Imagine there is a data frame demo as follows and we need to combine columns which hold the same tag. What should we do?&lt;/p&gt;
 
@@ -238,17 +266,17 @@ Here is my solution:&lt;/p&gt;
   &lt;li&gt;
     &lt;p&gt;Evolution&lt;/p&gt;
 
-    &lt;p&gt;Like buying software, I will not buy a software if it does not keep updating. A good software should keep evolving with the environment, and function well.&lt;/p&gt;
+    &lt;p&gt;Like buying software, I will not purchase software if it does not keep updating. Good software should keep evolving with the environment, and function well.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;Regeneration&lt;/p&gt;
 
-    &lt;p&gt;A good software should easy to transplant, in regardless of platform or operating system.&lt;/p&gt;
+    &lt;p&gt;Good software should easy to transplant, regardless of platform or operating system.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;Versatile&lt;/p&gt;
 
-    &lt;p&gt;A good software should take the future application scenarios into consideration and developed suitable interfaces.&lt;/p&gt;
+    &lt;p&gt;Good software should consider future application scenarios and developed suitable interfaces.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;Redundancy&lt;/p&gt;
@@ -260,14 +288,13 @@ Here is my solution:&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;Let me count the importance of those factors to the consequences without them and it reminds me that the redundancy is the most important part among them. Life is the typical redundancy system, organs such as the liver and kidney are highly redundant: there is vastly more capacity than is necessary to do the job, so a person with a missing kidney suffers no obvious incapacity. If a finger is damaged, there are ways that the other fingers may be configured to pick up an object. I think only God can create this kind of robust system. We should learn from this design philosophy when building our own systems.&lt;/p&gt;
+&lt;p&gt;Let me count the importance of those factors to the consequences without them, and it reminds me that the redundancy is the most crucial part among them. Life is the typical redundancy system, organs such as the liver and kidney are highly redundant: there is vastly more capacity than is necessary to do the job, so a person with a missing kidney suffers no apparent incapacity. If a finger is damaged, there are ways that the other fingers may be configured to pick up an object. I think only God can create this kind of robust system. We should learn from this design philosophy when building our systems.&lt;/p&gt;
 
 &lt;p&gt;It occurs to me that when I design the MSI algorithm, the pipeline is only allowed the &lt;a href=&quot;https://genome.sph.umich.edu/wiki/BAM&quot;&gt;bam&lt;/a&gt; file with a chromosome tag “Chr”. When the pipeline is deployed in the production environment, many errors emerged, including that someone using bam without a chromosome tag “Chr”. As the &lt;a href=&quot;https://en.wikipedia.org/wiki/Murphy%27s_law&quot;&gt;murphy’s law&lt;/a&gt; indicated: Anything that can go wrong, will go wrong. As long as the time is long enough and the sample size is sufficiently large.&lt;/p&gt;
 
-&lt;p&gt;In order to tackle this problem, what I have done is only making this system a little redundancy and got it solved. Now, the 
-system is allowed to accept a bam in regardless of have or have not a chromosome tag “Chr” and the error rate is almost dropping down from 20% to 5%.&lt;/p&gt;
+&lt;p&gt;To tackle this problem, what I have done is only making this system a little redundancy and got it solved. Now, the system is allowed to accept a bam regardless of have or have not a chromosome tag “Chr” and the error rate is almost dropping down from 20% to 5%.&lt;/p&gt;
 
-&lt;p&gt;What I would like to emphasis on here is to build a concept that to consider more on redundancy when developing a robust system. Even though creating a system with extremely robustness is hard to achieve due to program budget and deadline, but we still need to do it as a kind of pursuit of life, just like the real life tells us.&lt;/p&gt;</content><author><name>Corey</name></author><category term="Bioinformatics" /><summary type="html">Embrace redundancy, embrace robust</summary></entry><entry><title type="html">Transfer files in the background between servers</title><link href="http://localhost:4000/articles/transfer-files-between-servers/" rel="alternate" type="text/html" title="Transfer files in the background between servers" /><published>2018-07-06T00:00:00+08:00</published><updated>2018-07-06T00:00:00+08:00</updated><id>http://localhost:4000/articles/transfer-files-between-servers</id><content type="html" xml:base="http://localhost:4000/articles/transfer-files-between-servers/">&lt;p&gt;Sometimes, We need to transfer files between servers in the background and it is imperative to have a password. The solution is to use screen command to emulate a screen and make it running in the background.&lt;/p&gt;
+&lt;p&gt;What I would like to emphasis on here is to build a concept that to consider more on redundancy when developing a robust system. Even though creating a system with extremely robustness is hard to achieve due to program budget and deadline, but we still need to do it as a kind of pursuit of life, just like the real life tells us.&lt;/p&gt;</content><author><name>Corey</name></author><category term="Bioinformatics" /><summary type="html">Embrace redundancy, embrace robust</summary></entry><entry><title type="html">Transfer files in the background between servers</title><link href="http://localhost:4000/articles/transfer-files-between-servers/" rel="alternate" type="text/html" title="Transfer files in the background between servers" /><published>2018-07-06T00:00:00+08:00</published><updated>2018-07-06T00:00:00+08:00</updated><id>http://localhost:4000/articles/transfer-files-between-servers</id><content type="html" xml:base="http://localhost:4000/articles/transfer-files-between-servers/">&lt;p&gt;Sometimes, We need to transfer files between servers in the background, and it is imperative to have a password. The solution is to use screen command to emulate a screen and make it running in the background.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;screen   &lt;span class=&quot;c&quot;&gt;# [1]&lt;/span&gt;
 &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;rsync &lt;span class=&quot;nt&quot;&gt;-avz&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;hostname&lt;/span&gt;@XXX.XXX.XX.X:/data/path ./   &lt;span class=&quot;c&quot;&gt;# [2]&lt;/span&gt;
@@ -295,22 +322,4 @@ Press &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;D&lt;span class=&quot;sb&qu
 
 &lt;p&gt;Well, back to the previous question. If we adopt UTC standard, we can make sure that the receiver got to know the exact time we refer to. For example, I live in Beijing, and my time zone is UTC+0800.&lt;/p&gt;
 
-&lt;p&gt;After all, using the proper medium to convey precisely what you really mean is the most important task in our life.&lt;/p&gt;</content><author><name>Corey</name></author><category term="Life" /><summary type="html">Use UTC standard to denote time zone</summary></entry><entry><title type="html">Solved-SSL connect error</title><link href="http://localhost:4000/articles/solved-SSL-connect-error/" rel="alternate" type="text/html" title="Solved-SSL connect error" /><published>2018-04-16T00:00:00+08:00</published><updated>2018-04-16T00:00:00+08:00</updated><id>http://localhost:4000/articles/solved-SSL-connect-error</id><content type="html" xml:base="http://localhost:4000/articles/solved-SSL-connect-error/">&lt;p&gt;Today, I tried to install an R package: &lt;a href=&quot;https://github.com/mskcc/facets&quot;&gt;facets&lt;/a&gt;. During installation, I got stuck by SSL connect error and the error code is as follows. So I tried to install this package locally and got it done.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;c&quot;&gt;# Error code&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; library&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;devtools&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; devtools::install_github&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;mskcc/facets&quot;&lt;/span&gt;, build_vignettes &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; TRUE&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-Downloading GitHub repo mskcc/facets@master
-from URL https://api.github.com/repos/mskcc/facets/zipball/master
-Installation failed: SSL connect error
-
-&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; devtools::install_github&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;mskcc/pctGCdata&quot;&lt;/span&gt;, build_vignettes &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; TRUE&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-Downloading GitHub repo mskcc/pctGCdata@master
-from URL https://api.github.com/repos/mskcc/pctGCdata/zipball/master
-Installation failed: SSL connect error&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;To address this issue, I turned to download the zipball from GitHub, unzip the zipball and install the package locally. Soon after this move, everything goes well.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;library&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;devtools&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;devtools::install_local&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;../../pctGCdata&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;devtools::install_local&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;../../facets&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;</content><author><name>Corey</name></author><category term="Bioinformatics" /><summary type="html">R package installation</summary></entry></feed>
+&lt;p&gt;After all, using the proper medium to convey precisely what you really mean is the most important task in our life.&lt;/p&gt;</content><author><name>Corey</name></author><category term="Life" /><summary type="html">Use UTC standard to denote time zone</summary></entry></feed>

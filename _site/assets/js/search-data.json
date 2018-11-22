@@ -130,7 +130,7 @@ var store = [{
         "url": "http://localhost:4000/articles/comparison-of-sanger-NGS-and-SMS/"
       },{
         "title": "After master's dissertation",
-        "excerpt":"Just as what presented in the title, I finally finished my master dissertation last day. When I look back upon my whole three-year master career, I realized how much of my progress and deficiency. Technically, I have practiced myself into a Swiss Army Knife. I am absolutely a bioinformatics novice...","categories": ["articles"],
+        "excerpt":"Just as what presented in the title, I finally finished my master dissertation last day. When I look back upon my whole three-year master career, I realized how much of my progress and deficiency. Technically, I have practiced myself into a Swiss Army Knife. I am a bioinformatics novice when...","categories": ["articles"],
         "tags": ["Life"],
         "url": "http://localhost:4000/articles/finished-master-dissertation/"
       },{
@@ -150,7 +150,7 @@ var store = [{
         "url": "http://localhost:4000/articles/with-vs-with-open-in-python/"
       },{
         "title": "Two basic skills for bioinformatician",
-        "excerpt":"I’ve been studied bioinformatics for more than 3 years, but still not a bioinformatician yet. To be a bioinformatician is my dream since I stepped into this mystery world. In my opinion, there are two basic skills for a mature bioinformatician: coding and scientific writing. Coding holds a crucial role...","categories": ["articles"],
+        "excerpt":"I’ve been studied bioinformatics for more than three years, but still not a bioinformatician yet. To be a bioinformatician is my dream since I stepped into this mysterious world. In my opinion, there are two essential skills for a seasoned bioinformatician: coding and scientific writing. Coding holds a crucial role...","categories": ["articles"],
         "tags": ["Bioinformatics"],
         "url": "http://localhost:4000/articles/two-basic-skills-for-bioinformatician/"
       },{
@@ -165,12 +165,12 @@ var store = [{
         "url": "http://localhost:4000/articles/linux-redirection/"
       },{
         "title": "Depressed << Manchester by the Sea >>",
-        "excerpt":"There is a long time I haven’t watch a whole movie until this one — Manchester by the sea. Lee is shuttled back and forth around the house, repair the water pipe, dredge the toilet, sweeping the porch of the snow. Some people think he is lovely, some people despise...","categories": ["articles"],
+        "excerpt":"There is a long time I haven’t watch a whole movie until this one — Manchester by the sea. Lee is shuttled back and forth around the house, repair the water pipe, dredge the toilet, sweeping the porch of the snow. Some people think he is lovely, and some people...","categories": ["articles"],
         "tags": ["Life"],
         "url": "http://localhost:4000/articles/feedback-of-manchester-by-the-sea/"
       },{
         "title": "A genius CNV calling strategy",
-        "excerpt":"Several days ago, we found that one specific gene of Copy Number Variation(CNV) in Life sequencing platform is not so accurate as we expect. We are used to construct a baseline from several negative samples (CN=2; N&gt;10), which is employed to call CNV of every new samples in a long...","categories": ["articles"],
+        "excerpt":"Several days ago, we found that one specific gene of Copy Number Variation(CNV) in Life sequencing platform is not so accurate as we expect. We used to construct a baseline from several negative samples (CN=2; N&gt;10), which is employed to call CNV of every new samples in a long time....","categories": ["articles"],
         "tags": ["Bioinformatics"],
         "url": "http://localhost:4000/articles/A-genius-CNV-calling-strategy/"
       },{
@@ -190,7 +190,7 @@ var store = [{
         "url": "http://localhost:4000/articles/setup-sftp-plugin-for-sublime/"
       },{
         "title": "Basic folder structure for bioinformatics",
-        "excerpt":"Yesterday, a friend of mine asked me if there was a good way to organize folders for a bioinformatics project. That is also a good question to me. As for me, when dealing with a relatively light-weight project such as testing a script for GC content counting or performing simple...","categories": ["articles"],
+        "excerpt":"Yesterday, a friend of mine asked me if there was an excellent way to organize folders for a bioinformatics project. That is also an excellent question to me. As for me, when dealing with a relatively light-weight project such as testing a script for GC content counting or performing pure...","categories": ["articles"],
         "tags": ["Bioinformatics"],
         "url": "http://localhost:4000/articles/basic-folder-structure-for-bioinformatics/"
       },{
@@ -225,7 +225,7 @@ var store = [{
         "url": "http://localhost:4000/articles/do-not-use-CST-to-denote-time-zone/"
       },{
         "title": "Transfer files in the background between servers",
-        "excerpt":"Sometimes, We need to transfer files between servers in the background and it is imperative to have a password. The solution is to use screen command to emulate a screen and make it running in the background. $ screen # [1]$ rsync -avz hostname@XXX.XXX.XX.X:/data/path ./ # [2]Enter your password: #...","categories": ["articles"],
+        "excerpt":"Sometimes, We need to transfer files between servers in the background, and it is imperative to have a password. The solution is to use screen command to emulate a screen and make it running in the background. $ screen # [1]$ rsync -avz hostname@XXX.XXX.XX.X:/data/path ./ # [2]Enter your password: #...","categories": ["articles"],
         "tags": ["Bioinformatics"],
         "url": "http://localhost:4000/articles/transfer-files-between-servers/"
       },{
@@ -240,7 +240,7 @@ var store = [{
         "url": "http://localhost:4000/articles/merge-columns-by-shared-string/"
       },{
         "title": "How to report",
-        "excerpt":"In our daily life, we inevitably need to report to others, maybe your boss or a client, even your wife. Reporting is not such a type of work that just grabs what you have and throw it to the receiver. To be honest, 70% reports I received are coming to...","categories": ["articles"],
+        "excerpt":"In our daily life, we inevitably need to report to others, maybe your boss or a client, even your wife. Reporting is not such a type of work that grabs what you have and throws it to the receiver. To be honest, 70% reports I received are coming to me...","categories": ["articles"],
         "tags": ["Life"],
         "url": "http://localhost:4000/articles/how-to-report/"
       },{
@@ -260,7 +260,12 @@ var store = [{
         "url": "http://localhost:4000/articles/install-blat-on-mac-with-one-liner-command/"
       },{
         "title": "Deduce fetus genotype in NIPD",
-        "excerpt":"Non-invasive prenatal diagnosis (NIPD) is based on the analysis of cell-free fetal DNA (cffDNA) in maternal plasma is now available in clinical practice for a small number of single gene disorders. A key challenge for the development of NIPD is the low level of cffDNA present alongside the high background...","categories": ["articles"],
+        "excerpt":"Non-invasive prenatal diagnosis (NIPD) based on the analysis of cell-free fetal DNA (cffDNA) in maternal plasma is now available in clinical practice for a small number of single gene disorders. A key challenge for the development of NIPD is the low level of cffDNA present alongside the high background of...","categories": ["articles"],
         "tags": ["Bioinformatics"],
         "url": "http://localhost:4000/articles/deduce-fetus-genotype-in-NIPD/"
+      },{
+        "title": "Why remove driver mutation while calculating TMB",
+        "excerpt":"Tumor mutational burden (TMB) is a measurement of mutations carried by tumor cells and is a predictive biomarker being studied to evaluate its association with response to Immuno-Oncology (I-O) therapy, such as nivolumab, pembrolizumab, and atezolizumab. We should know that TMB is a measurement of the numbers of mutations carried...","categories": ["articles"],
+        "tags": ["Bioinformatics"],
+        "url": "http://localhost:4000/articles/why-remove-driver-mutation-while-calculating-TMB/"
       }]

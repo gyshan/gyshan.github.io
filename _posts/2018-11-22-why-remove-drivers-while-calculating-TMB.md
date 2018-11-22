@@ -1,5 +1,5 @@
 ---
-title: "Why remove driver mutation while calculating TMB"
+title: "Why remove drivers while calculating TMB"
 excerpt: "Secret in TMB algorithm"
 categories:
   - articles
