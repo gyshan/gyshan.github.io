@@ -17,7 +17,7 @@
     
     <!-- Begin Jekyll SEO tag v2.4.0 -->
 <title>Why should you lowercase your filename | Guangyu Corey Shan’s Blog</title>
-<meta name="generator" content="Jekyll v3.8.2" />
+<meta name="generator" content="Jekyll v3.8.5" />
 <meta property="og:title" content="Why should you lowercase your filename" />
 <meta name="author" content="Corey" />
 <meta property="og:locale" content="en_US" />
@@ -156,7 +156,7 @@
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>git <span class="nb">mv </span>readme Readme
 fatal: destination exists, <span class="nb">source</span><span class="o">=</span>readme, <span class="nv">destination</span><span class="o">=</span>Readme</code></pre></figure>
 
-<p>It seems like my Mac OS X cannot recognize <code class="highlighter-rouge">Readme</code> file as same as <code class="highlighter-rouge">readme</code> file. So I had to convert <code class="highlighter-rouge">readme</code> file to <code class="highlighter-rouge">tmp_file</code> and then <code class="highlighter-rouge">tmp_file</code> to <code class="highlighter-rouge">Readme</code> file. In Linux, this command can work very well, but in Mac OS X, failed. This is the first time that I realized case-sensitive is so important. Except for this situation, I believe it is very dangerous if keep confusing the case.</p>
+<p>It seems like my Mac OS X cannot recognize <code class="highlighter-rouge">Readme</code> file as same as <code class="highlighter-rouge">readme</code> file. So I had to convert <code class="highlighter-rouge">readme</code> file to <code class="highlighter-rouge">tmp_file</code> and then <code class="highlighter-rouge">tmp_file</code> to <code class="highlighter-rouge">Readme</code> file. In Linux, this command can work very well, but in Mac OS X, failed. This is the first time that I realized case-sensitive is so important. Except for this situation, I believe it is hazardous when keep confusing the case.</p>
 
 <p>Different operating systems (OS) have different case-sensitive level, that is why the same command upon can work well on Linux but fail on Mac OS X.</p>
 
@@ -168,12 +168,11 @@ fatal: destination exists, <span class="nb">source</span><span class="o">=</span
 <p>In my working pipeline, my file often transfers between Linux and Mac OS X, so I decided to convert all my filename under <strong>lowercase_with_underscore</strong> principle. The reasons behind this principle are:</p>
 
 <ul>
-  <li>Easy to read, UPPERCASE_WITH_UNDERSCORE is hard to read</li>
+  <li>Easy to read, UPPERCASE_WITH_UNDERSCORE is hard to understand</li>
   <li>Easy to distinguish a private file from system folder/file such as <code class="highlighter-rouge">Documents</code>, <code class="highlighter-rouge">Downloads</code> and so on</li>
   <li>Transfer file with lower risk (Every OSs can recognize your file correctly)</li>
-  <li>I love underscore sign</li>
+  <li>I love the underscore sign</li>
 </ul>
-
 
           <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- ad-below-post -->

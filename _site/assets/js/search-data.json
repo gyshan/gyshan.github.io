@@ -195,7 +195,7 @@ var store = [{
         "url": "http://localhost:4000/articles/basic-folder-structure-for-bioinformatics/"
       },{
         "title": "My 2017",
-        "excerpt":"Well, it is my first time to write annual self-appraisal on my blog. Here is what I have got and what I am going to do. Work I have contributed three projects to Novogene: MSI algorithm, TMB algorithm and ACMG auto-interpretation pipeline. The first half year is for MSI and...","categories": ["articles"],
+        "excerpt":"Well, it is my first time to write annual self-appraisal on my blog. Here is what I have got and what I am going to do. Work I have contributed three projects to Novogene: MSI algorithm, TMB algorithm, and ACMG auto-interpretation pipeline. The first half year is for MSI and...","categories": ["articles"],
         "tags": ["Life"],
         "url": "http://localhost:4000/articles/my-2017/"
       },{
@@ -264,8 +264,8 @@ var store = [{
         "tags": ["Bioinformatics"],
         "url": "http://localhost:4000/articles/deduce-fetus-genotype-in-NIPD/"
       },{
-        "title": "Why remove driver mutation while calculating TMB",
+        "title": "Why remove drivers while calculating TMB",
         "excerpt":"Tumor mutational burden (TMB) is a measurement of mutations carried by tumor cells and is a predictive biomarker being studied to evaluate its association with response to Immuno-Oncology (I-O) therapy, such as nivolumab, pembrolizumab, and atezolizumab. We should know that TMB is a measurement of the numbers of mutations carried...","categories": ["articles"],
         "tags": ["Bioinformatics"],
-        "url": "http://localhost:4000/articles/why-remove-driver-mutation-while-calculating-TMB/"
+        "url": "http://localhost:4000/articles/why-remove-drivers-while-calculating-TMB/"
       }]
