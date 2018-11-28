@@ -15,4 +15,4 @@ To what I have learned, this experiment is of dangerous, and we have no idea wha
 
 Even in the programming environment, programmers cannot easily modify code without fully comprehend the codebase because bugs are always waiting for us somewhere. Modify before understand will bring the unknown risk for a project, not to mention for human beings.
 
-Therefore, maybe we need to suspend this kind of experiments until we collect enough information for human genome comprehension.
+Therefore, maybe we need to suspend similar experiments until we have collected enough information to support a deeper comprehension of the human genome.
