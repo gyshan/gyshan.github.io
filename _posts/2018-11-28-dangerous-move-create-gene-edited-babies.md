@@ -13,6 +13,6 @@ As first reported by [Antonio Regalado at MIT Technology Review](https://www.te
 
 To what I have learned, this experiment is of dangerous, and we have no idea what has been taken to the world. Our body is full of protein, which has been coded by 3.2 billion bases. The bases and permutation type determined human phenotype, like hair color, weight, and height, etc. Let me explain gene editing with a computer programming project. There is no one in the world can fully comprehend the 3.2 billion codebase line by line. At the same time, our human achieved codebase (Human genome reference sequence), and code editor (CRISPR), someone (Jiankui He) begun to delete two lines of code and initiate the program (give birth of two babies). 
 
-Even in the programming environment, programmers cannot easily modify code without fully comprehend the codebase because bugs are always waiting for us somewhere. Modify before understand will bring the unknown risk for a project, not to mention for human beings.
+Even in the programming environment, programmers cannot easily modify code without full comprehension of the codebase because bugs are always waiting for us somewhere. Modify before understand will bring the unknown risk for a project, not to mention for human beings.
 
 Therefore, maybe we need to suspend similar experiments until we have collected enough information to support a deeper comprehension of the human genome.
