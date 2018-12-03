@@ -7,7 +7,7 @@ tags:
   - Bioinformatics
 ---
 
-big era for sequencing. About forty years ago, [Frederick Sanger](https://en.wikipedia.org/wiki/Frederick_Sanger) and colleagues brought Sanger sequencing technique to the world. During the past four decades, tremendous progress has been made regarding speed, read length and throughput, along with a sharp reduction of per-base cost. Many sequencing techniques appeared in this megatrend as well as multiple outstanding companies. No matter what exciting techniques have been developed, these three main generations will not be ignored in this revolution: Sanger, NGS, and SMS. Here I will present some knowledge about the difference between them.
+It is a big era for sequencing. About forty years ago, [Frederick Sanger](https://en.wikipedia.org/wiki/Frederick_Sanger) and colleagues brought Sanger sequencing technique to the world. During the past four decades, tremendous progress has been made regarding speed, read length and throughput, along with a sharp reduction of per-base cost. Many sequencing techniques appeared in this megatrend as well as multiple outstanding companies. No matter what exciting techniques have been developed, these three main generations will not be ignored in this revolution: Sanger, NGS, and SMS. Here I will present some knowledge about the difference between them.
 
 ### Sanger Sequencing
 Sanger sequencing, which is used by the Human Genome Project (HGP), has finished its sequencing phase in 2003 from 1984. This project took hundreds of labs working together, and cost of around $100 million.
