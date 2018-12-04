@@ -49,5 +49,7 @@ awk -v OFS="\t" '$1=$1'
 #10. Get lines from file
 sed -n 2,4p somefile.txt
 sed '2,4!d' somefile.txt
+#11. Get 10 columns from csv file
+head -10 concordance_2826_232.csv |cut -d "," -f1-10
 {% endhighlight %}
 
