@@ -43,8 +43,8 @@ Deducing:
 WBC: a=47 units, A=53 units
 Plasma: 
 1. Maternal: a=47 units, WBC-frq=47/100=47%
-2. If fetus-AA: plasma-a=47*0.9, plasma-frq=42.3/100=42.3%
-3. If fetus-Aa: plasma-a=47*0.9+50*0.1, plasma-frq=47.3/100=47.3%
+2. If fetus-AA: plasma-a=47*0.9+0*0.1, plasma-frq=42.3/100=42.3%
+3. If fetus-Aa: plasma-a=47*0.9+53*0.1, plasma-frq=47.6/100=47.6%
 4. If fetus-aa: plasma-a=47*0.9+100*0.1, plasma-frq=52.3/100=52.3%
 {% endhighlight %}
 
