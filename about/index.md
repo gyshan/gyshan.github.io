@@ -30,6 +30,7 @@ The views expressed in this blog are mine and mine alone, not my clients, not my
 2. [牛牛龙](http://yulongniu.bionutshell.org/)
 3. [Wei Shen](http://blog.shenwei.me/)
 4. [生物日志\|鸣一道](http://www.zilhua.com)
+5. [Dave Tang](https://davetang.org/muse/)
 
 # License
 All articles in this blog are under [(CC) BY-NC-SA](https://creativecommons.org/licenses/by-nc-sa/4.0/) license. 
