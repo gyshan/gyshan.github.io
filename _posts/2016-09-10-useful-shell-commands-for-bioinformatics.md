@@ -30,6 +30,7 @@ samtools mpileup -d 1000000 -q 30 -Q 30 -A -B -l [in.bed] -f [ref.fasta] [in.bam
 {% highlight bash %}
 #1. Sort file according to column three.
 sort -n -k3 [in.file]
+sort -V -k1,1 -k2,2 [test.bed] #sort bed
 #2. Remove empty line from file
 sed -i '/^$/d' [in.file] > [out.file]
 #3. Extract row that have str 'S' in  column six.
