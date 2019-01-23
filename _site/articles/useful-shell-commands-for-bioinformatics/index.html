@@ -173,6 +173,7 @@ samtools mpileup <span class="nt">-d</span> 1000000 <span class="nt">-q</span> 3
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c">#1. Sort file according to column three.</span>
 <span class="nb">sort</span> <span class="nt">-n</span> <span class="nt">-k3</span> <span class="o">[</span><span class="k">in</span>.file]
+<span class="nb">sort</span> <span class="nt">-V</span> <span class="nt">-k1</span>,1 <span class="nt">-k2</span>,2 <span class="o">[</span>test.bed] <span class="c">#sort bed</span>
 <span class="c">#2. Remove empty line from file</span>
 <span class="nb">sed</span> <span class="nt">-i</span> <span class="s1">'/^$/d'</span> <span class="o">[</span><span class="k">in</span>.file] <span class="o">&gt;</span> <span class="o">[</span>out.file]
 <span class="c">#3. Extract row that have str 'S' in  column six.</span>
@@ -191,16 +192,11 @@ samtools view <span class="nt">-h</span> demo.bam | <span class="nb">sed</span> 
 <span class="nb">awk</span> <span class="nt">-v</span> <span class="nv">OFS</span><span class="o">=</span><span class="s2">"</span><span class="se">\t</span><span class="s2">"</span> <span class="s1">'$1=$1'</span>
 <span class="c">#10. Get lines from file</span>
 <span class="nb">sed</span> <span class="nt">-n</span> 2,4p somefile.txt
-<span class="nb">sed</span> <span class="s1">'2,4!d'</span> somefile.txt</code></pre></figure>
+<span class="nb">sed</span> <span class="s1">'2,4!d'</span> somefile.txt
+<span class="c">#11. Get 10 columns from csv file</span>
+<span class="nb">head</span> <span class="nt">-10</span> concordance_2826_232.csv |cut <span class="nt">-d</span> <span class="s2">","</span> <span class="nt">-f1-10</span></code></pre></figure>
 
 
-          <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-4773938002540893",
-    enable_page_level_ads: true
-  });
-</script>
         </div>
 
         
@@ -252,8 +248,8 @@ samtools view <span class="nt">-h</span> demo.bam | <span class="nb">sed</span> 
 <!-- end custom footer snippets -->
 <div class="social-icons"><a class="social-icon" href="https://www.linkedin.com/in/guangyu-corey-shan-6a6111a4/"><i class="fab fa-linkedin fa-2x" title="LinkedIn"></i></a><a class="social-icon" href="https://github.com/gyshan"><i class="fab fa-github-square fa-2x" title="GitHub"></i></a><a class="social-icon" href="/atom.xml"><i class="fas fa-rss-square fa-2x" title="Feed"></i></a></div><div class="copyright">
     
-      <!-- <p>&copy; 2018 Guangyu Corey Shan's Blog. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://github.com/mmistakes/so-simple-theme" rel="nofollow">So Simple</a>.</p> -->
-      <span>&copy; 2015-2018 Corey. 
+      <!-- <p>&copy; 2019 Guangyu Corey Shan's Blog. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://github.com/mmistakes/so-simple-theme" rel="nofollow">So Simple</a>.</p> -->
+      <span>&copy; 2015-2019 Corey. 
       	Powered by <a href="https://jekyllrb.com/">Jekyll</a> using the <a href="https://github.com/mmistakes/so-simple-theme">So Simple Theme</a>. 
       	<!-- <br> -->
       	<!-- <a href='https://creativecommons.org/licenses/by-nc-sa/3.0/' target='_blank' rel="license" alt="Creative Commons License"><img src='/images/by-nc-sa.svg'></a> -->

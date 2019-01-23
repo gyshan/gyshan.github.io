@@ -125,7 +125,7 @@ var store = [{
         "url": "http://localhost:4000/articles/parallel-r/"
       },{
         "title": "Comparison of sanger, NGS and SMS",
-        "excerpt":"It’s a big era for sequencing. About forty years ago, Frederick Sanger and colleagues brought Sanger sequencing technique to the world. During the past four decades, tremendous progress has been made in terms of speed, read length and throughput, along with a sharp reduction of per-base cost. Many sequencing techniques...","categories": ["articles"],
+        "excerpt":"It is a big era for sequencing. About forty years ago, Frederick Sanger and colleagues brought Sanger sequencing technique to the world. During the past four decades, tremendous progress has been made regarding speed, read length and throughput, along with a sharp reduction of per-base cost. Many sequencing techniques appeared...","categories": ["articles"],
         "tags": ["Bioinformatics"],
         "url": "http://localhost:4000/articles/comparison-of-sanger-NGS-and-SMS/"
       },{
@@ -172,12 +172,12 @@ var store = [{
         "title": "A genius CNV calling strategy",
         "excerpt":"Several days ago, we found that one specific gene of Copy Number Variation(CNV) in Life sequencing platform is not so accurate as we expect. We used to construct a baseline from several negative samples (CN=2; N&gt;10), which is employed to call CNV of every new samples in a long time....","categories": ["articles"],
         "tags": ["Bioinformatics"],
-        "url": "http://localhost:4000/articles/A-genius-CNV-calling-strategy/"
+        "url": "http://localhost:4000/articles/a-genius-CNV-calling-strategy/"
       },{
         "title": "How to check IGV",
         "excerpt":"Integrative Genomics Viewer (IGV) is a high-performance visualization tool for interactive exploration of large, integrated genomic datasets. When I check my bam file by IGV tool, what should I focus on? Mostly, when I found that a variant is quite uncertain, there are three important steps that I need to...","categories": ["articles"],
         "tags": ["Bioinformatics"],
-        "url": "http://localhost:4000/articles/How-to-check-IGV/"
+        "url": "http://localhost:4000/articles/how-to-check-IGV/"
       },{
         "title": "Why should you lowercase your filename",
         "excerpt":"Yesterday, I began to transfer my git configuration from my old machine to my new MacBook Pro. When I renamed my file by doing this, an error has occurred to me: $ git mv readme Readmefatal: destination exists, source=readme, destination=ReadmeIt seems like my Mac OS X cannot recognize Readme file...","categories": ["articles"],
@@ -220,7 +220,7 @@ var store = [{
         "url": "http://localhost:4000/articles/solved-SSL-connect-error/"
       },{
         "title": "Please do not use CST to denote time zone",
-        "excerpt":"Sometimes, I got emails from friends across the world. They usually kindly attach a timestamp at the end of the mail. One day, I got an email with CST in the timestamp from a guy I did not know before. This small tag confused me a lot because there are...","categories": ["articles"],
+        "excerpt":"Sometimes, I got emails from friends across the world. They usually kindly attach a timestamp at the end of the mail. One day, I got an email with CST in the timestamp from a guy I did not know before. This small tag confused me a lot because at least...","categories": ["articles"],
         "tags": ["Life"],
         "url": "http://localhost:4000/articles/do-not-use-CST-to-denote-time-zone/"
       },{
@@ -245,7 +245,7 @@ var store = [{
         "url": "http://localhost:4000/articles/how-to-report/"
       },{
         "title": "Levels of precision medicine product",
-        "excerpt":"After more than five years working in precision medicine field, I would like to categorize PM (precision medicine) products into the following five levels. It should be noted that the categorization criteria is based on the most important part of every PM products: validation. Level 0 is only propaganda without...","categories": ["articles"],
+        "excerpt":"After more than five years working in precision medicine field, I would like to categorize PM (precision medicine) products into the following five levels. It should be noted that the categorization criteria is based on the most crucial part of every PM products: validation. Level 0 is only propaganda without...","categories": ["articles"],
         "tags": ["Bioinformatics"],
         "url": "http://localhost:4000/articles/levels-of-precision-medicine-product/"
       },{
@@ -268,4 +268,19 @@ var store = [{
         "excerpt":"Tumor mutational burden (TMB) is a measurement of mutations carried by tumor cells and is a predictive biomarker being studied to evaluate its association with response to Immuno-Oncology (I-O) therapy, such as nivolumab, pembrolizumab, and atezolizumab. We should know that TMB is a measurement of the numbers of mutations carried...","categories": ["articles"],
         "tags": ["Bioinformatics"],
         "url": "http://localhost:4000/articles/why-remove-drivers-while-calculating-TMB/"
+      },{
+        "title": "Dangerous move: create gene-edited babies",
+        "excerpt":"Since CRISPR technology has come into the world, the community began to worry about the mako sharks will jump out of the science fiction into the real world someday. It is not a very difficult experiment, and many labs have experimental conditions and talents to perform it. No one kicks...","categories": ["articles"],
+        "tags": ["Science"],
+        "url": "http://localhost:4000/articles/dangerous-move-create-gene-edited-babies/"
+      },{
+        "title": "Why are we looking forward to the new year",
+        "excerpt":"Today is the last statutory working day, and I feel somewhat happy because the new year is waving hands to me. But I did not think about why I love the new year. After several seconds thought, I guess the choice opportunity is the main reason that I like the...","categories": ["articles"],
+        "tags": ["Life"],
+        "url": "http://localhost:4000/articles/why-are-we-looking-forward-to-the-new-year/"
+      },{
+        "title": "SELL【igenel.com】",
+        "excerpt":"igenel.com is a website domain in my account. Since it is suitable for opening up biology business, if there is a predestined guy is willing to buy this domain, please do not hesitate to contact me. Corey @ 2019-01-23 13:49:17 UTC+0800 ","categories": ["articles"],
+        "tags": ["Business"],
+        "url": "http://localhost:4000/articles/sell-domain-igenel.com/"
       }]
