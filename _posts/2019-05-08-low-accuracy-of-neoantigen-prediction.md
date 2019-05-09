@@ -1,6 +1,6 @@
 ---
 title: "Only 28% accuracy for neoantigen prediction"
-excerpt: "poor accuracy brings us TNB"
+excerpt: "Poor accuracy brings us TNB"
 categories:
   - articles
 tags:
@@ -8,9 +8,9 @@ tags:
   - Neoantigen
 ---
 
-Cancer immunotherapy field is all the rage; Neoantigen is the pearl while the prediction method is the grey silk covered the pearl. Even though neoantigen is a promising target for immunotherapy, but its prediction method remains a daunting problem.
+Cancer immunotherapy field is all the rage. Neoantigen is the pearl while the prediction method is the grey silk covered the pearl. Even though neoantigen is a promising target for immunotherapy, but its prediction method remains a daunting problem.
 
-Several days ago, I searched the prediction accuracy information by chance and found some companies claim their neoantigen prediction accuracy surpassed 60%, which is far higher than the current 28% affinity-based theoretical boundary, which is presented by Catherine J. Wu, MD[^1]. 
+Several days ago, I searched the prediction accuracy information by chance and found some companies claim their neoantigen prediction accuracy surpassed 60%, which is far higher than the current 28% affinity-based theoretical boundary, presented by Catherine J. Wu, MD[^1]. 
 
 <img src="https://shangyblog-1256840873.cos.ap-beijing.myqcloud.com/neo-accuracy.png" alt="image">
 
