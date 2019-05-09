@@ -280,7 +280,12 @@ var store = [{
         "url": "http://localhost:4000/articles/why-are-we-looking-forward-to-the-new-year/"
       },{
         "title": "SELL【igenel.com】",
-        "excerpt":"igenel.com is a website domain in my account. Since it is suitable for opening up biology business, if there is a predestined guy is willing to buy this domain, please do not hesitate to contact me. Corey @ 2019-01-23 13:49:17 UTC+0800 ","categories": ["articles"],
+        "excerpt":"igenel.com is a website domain which is suitable for opening up biology business. If there is a predestined guy willing to buy this domain, please do not hesitate to contact me. Corey @ 2019-01-23 17:53:42 UTC+0800 ","categories": ["articles"],
         "tags": ["Business"],
         "url": "http://localhost:4000/articles/sell-domain-igenel.com/"
+      },{
+        "title": "28% prediction accuracy for neoantigens",
+        "excerpt":"Cancer immunotherapy field is all the rage and neoantigen is the pearl of this field, but in silico neoantigen prediction remains a daunting probe Cancer immunotherapy field Several days ago, I searched the prediction accuracy information by chance and found some companies claim their neoantigen prediction accuracy has already surpassed...","categories": ["articles"],
+        "tags": ["Bioinformatics","Neoantigens"],
+        "url": "http://localhost:4000/articles/low-accuracy-of-neoantigen-prediction.tmp/"
       }]

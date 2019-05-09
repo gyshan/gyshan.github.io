@@ -1,6 +1,33 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-01-23T13:49:20+08:00</updated><id>http://localhost:4000/</id><title type="html">Guangyu Corey Shan’s Blog</title><subtitle>Notes on bioinformatics and data mining by G. Corey Shan</subtitle><author><name>Corey</name></author><entry><title type="html">SELL【igenel.com】</title><link href="http://localhost:4000/articles/sell-domain-igenel.com/" rel="alternate" type="text/html" title="SELL【igenel.com】" /><published>2019-01-23T00:00:00+08:00</published><updated>2019-01-23T00:00:00+08:00</updated><id>http://localhost:4000/articles/sell-domain-igenel.com</id><content type="html" xml:base="http://localhost:4000/articles/sell-domain-igenel.com/">&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;igenel.com&lt;/code&gt; is a website domain in my account. Since it is suitable for opening up biology business, if there is a predestined guy is willing to buy this domain, please do not hesitate to contact &lt;a href=&quot;mailto:me@shanguangyu.com&quot;&gt;me&lt;/a&gt;.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-05-09T11:35:35+08:00</updated><id>http://localhost:4000/</id><title type="html">Guangyu Corey Shan’s Blog</title><subtitle>Notes on bioinformatics and data mining by G. Corey Shan</subtitle><author><name>Corey</name></author><entry><title type="html">28% prediction accuracy for neoantigens</title><link href="http://localhost:4000/articles/low-accuracy-of-neoantigen-prediction.tmp/" rel="alternate" type="text/html" title="28% prediction accuracy for neoantigens" /><published>2019-05-08T00:00:00+08:00</published><updated>2019-05-08T00:00:00+08:00</updated><id>http://localhost:4000/articles/low-accuracy-of-neoantigen-prediction.tmp</id><content type="html" xml:base="http://localhost:4000/articles/low-accuracy-of-neoantigen-prediction.tmp/">&lt;p&gt;Cancer immunotherapy field is all the rage and neoantigen is the pearl of this field, but &lt;em&gt;in silico&lt;/em&gt; neoantigen prediction remains a daunting probe&lt;/p&gt;
 
-&lt;p&gt;Corey @ 2019-01-23 13:49:17 UTC+0800&lt;/p&gt;</content><author><name>Corey</name></author><category term="Business" /><summary type="html">Domain for genomics business</summary></entry><entry><title type="html">Why are we looking forward to the new year</title><link href="http://localhost:4000/articles/why-are-we-looking-forward-to-the-new-year/" rel="alternate" type="text/html" title="Why are we looking forward to the new year" /><published>2018-12-29T00:00:00+08:00</published><updated>2018-12-29T00:00:00+08:00</updated><id>http://localhost:4000/articles/why-are-we-looking-forward-to-the-new-year</id><content type="html" xml:base="http://localhost:4000/articles/why-are-we-looking-forward-to-the-new-year/">&lt;p&gt;Today is the last statutory working day, and I feel somewhat happy because the new year is waving hands to me. But I did not think about why I love the new year. After several seconds thought, I guess the choice opportunity is the main reason that I like the new year.&lt;/p&gt;
+&lt;p&gt;Cancer immunotherapy field&lt;/p&gt;
+
+&lt;p&gt;Several days ago, I searched the prediction accuracy information by chance and found some companies claim their neoantigen prediction accuracy has already surpassed 60%, which is far more greater than the current 28% affinity-based theoretical boundary, which is presented by Catherine J. Wu, MD&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://shangyblog-1256840873.cos.ap-beijing.myqcloud.com/neo-accuracy.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Targeting an individual’ tumor-specific mutations is attractive because these peptides are new to the immune system and are not found in normal tissues. The key question for neoepitope discovery is which mutated proteins are processed into 8 to 11 residue peptides by the proteasome, shuttled into endoplasmic reticulum by the transporter associated with antigen processing (TAP) and loaded onto newly synthesized major histocompatibility complex class I (MHC-I) for recognition by CD8&lt;sup&gt;+&lt;/sup&gt; T cells. Although Current &lt;em&gt;in silico&lt;/em&gt; methods for identifying neoantigen are focused on different areas like anrtigen processing (NetChop) and peptide transport (NetCTL), most efforts focus on modeling which peptides bind to the MHC-I molecule (NetMHC). And to what I have known, most mainstream NGS companies in China are place NetMHC on the top of their priority list.&lt;/p&gt;
+
+&lt;p&gt;NetMHC is based on infinity and the theoretical accuracy boundary is 28%. In other word, for now, computational prediction of neoantigens capable of eliciting efficacious antitumor responses in patients remains a hit-or-miss affair.&lt;/p&gt;
+
+&lt;p&gt;It is exactly of this problem, the companies which do not want to .&lt;/p&gt;
+
+&lt;p&gt;To improve the prediction accuracy:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;High quality mass spectrometry data&lt;/li&gt;
+  &lt;li&gt;ok&lt;/li&gt;
+  &lt;li&gt;man&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot;&gt;
+      &lt;p&gt;Abelin J G, Keskin D B, Sarkizova S, et al. Mass spectrometry profiling of HLA-associated peptidomes in mono-allelic cells enables more accurate epitope prediction[J]. Immunity, 2017, 46(2): 315-326. &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;</content><author><name>Corey</name></author><category term="Bioinformatics" /><category term="Neoantigens" /><summary type="html">poor accuracy brings us TNB</summary></entry><entry><title type="html">SELL【igenel.com】</title><link href="http://localhost:4000/articles/sell-domain-igenel.com/" rel="alternate" type="text/html" title="SELL【igenel.com】" /><published>2019-01-23T00:00:00+08:00</published><updated>2019-01-23T00:00:00+08:00</updated><id>http://localhost:4000/articles/sell-domain-igenel.com</id><content type="html" xml:base="http://localhost:4000/articles/sell-domain-igenel.com/">&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;igenel.com&lt;/code&gt; is a website domain which is suitable for opening up biology business. If there is a predestined guy willing to buy this domain, please do not hesitate to contact &lt;a href=&quot;mailto:me@shanguangyu.com&quot;&gt;me&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Corey @ 2019-01-23 17:53:42 UTC+0800&lt;/p&gt;</content><author><name>Corey</name></author><category term="Business" /><summary type="html">Domain for genomics business</summary></entry><entry><title type="html">Why are we looking forward to the new year</title><link href="http://localhost:4000/articles/why-are-we-looking-forward-to-the-new-year/" rel="alternate" type="text/html" title="Why are we looking forward to the new year" /><published>2018-12-29T00:00:00+08:00</published><updated>2018-12-29T00:00:00+08:00</updated><id>http://localhost:4000/articles/why-are-we-looking-forward-to-the-new-year</id><content type="html" xml:base="http://localhost:4000/articles/why-are-we-looking-forward-to-the-new-year/">&lt;p&gt;Today is the last statutory working day, and I feel somewhat happy because the new year is waving hands to me. But I did not think about why I love the new year. After several seconds thought, I guess the choice opportunity is the main reason that I like the new year.&lt;/p&gt;
 
 &lt;p&gt;The so-called new year is always connected with the past year. In the past year, we may get achievements in some aspects, like learned new skills and get a better body. No matter what we have got in our pocket, our mind will never be satisfied with the current situation. However, the new year is a brand new, fresh page in our life, and the most critical part is the precious opportunity for us to make up for the regrets.&lt;/p&gt;
 
@@ -209,67 +236,4 @@ sh Miniconda2-latest-MacOSX-x86_64.sh&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;</c
 
 &lt;p&gt;Delivering a report resembles serving cakes. Somebody throws them at your desk, regardless of whether you have proper tools to eat them. Somebody slices them up and put the slices in a dish. The better way is to slice them up as well as to tell the gourmet what is the chef recommendation and why it is the best choice.&lt;/p&gt;
 
-&lt;p&gt;Everyone is busy, hope we can think more before we send our report.&lt;/p&gt;</content><author><name>Corey</name></author><category term="Life" /><summary type="html">It is a virtue to save others time</summary></entry><entry><title type="html">Merge columns by shared string</title><link href="http://localhost:4000/articles/merge-columns-by-shared-string/" rel="alternate" type="text/html" title="Merge columns by shared string" /><published>2018-08-31T00:00:00+08:00</published><updated>2018-08-31T00:00:00+08:00</updated><id>http://localhost:4000/articles/merge-columns-by-shared-string</id><content type="html" xml:base="http://localhost:4000/articles/merge-columns-by-shared-string/">&lt;p&gt;Imagine there is a data frame demo as follows and we need to combine columns which hold the same tag. What should we do?&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;### binary_var_dat
-          EGFR_T790M KRAS_K201S BRAF_K220Q NOTCH_N22K EGFR_V600E EGFR_Q333S EGFR_F222Q KRAS_F22X
-S1                 0          0          1          0          1          0          0         1
-S1_xxxxxx          0          0          0          0          1          0          1         1
-S2                 0          0          1          0          0          0          0         0
-S2_xxxxxx          1          0          1          0          1          0          1         0
-S3                 0          1          1          0          0          0          0         1
-S3_xxxxxx          0          0          1          0          1          0          1         0
-S4                 0          0          0          1          1          0          0         1
-S4_xxxxxx          0          1          1          0          0          0          1         1
-S5                 0          0          1          0          1          0          0         0
-S5_xxxxxx          1          0          0          0          1          1          1         1
-S6                 0          0          1          0          0          0          0         1
-S6_xxxxxx          0          0          1          0          1          0          1         1&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;### pre_gene_mat
-          EGFR KRAS BRAF NOTCH EGFR EGFR EGFR KRAS
-S1           0    0    1     0    1    0    0    1
-S1_xxxxxx    0    0    0     0    1    0    1    1
-S2           0    0    1     0    0    0    0    0
-S2_xxxxxx    1    0    1     0    1    0    1    0
-S3           0    1    1     0    0    0    0    1
-S3_xxxxxx    0    0    1     0    1    0    1    0
-S4           0    0    0     1    1    0    0    1
-S4_xxxxxx    0    1    1     0    0    0    1    1
-S5           0    0    1     0    1    0    0    0
-S5_xxxxxx    1    0    0     0    1    1    1    1
-S6           0    0    1     0    0    0    0    1
-S6_xxxxxx    0    0    1     0    1    0    1    1&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;### gene_mat
-          EGFR KRAS BRAF NOTCH
-S1           1    1    1     0
-S1_xxxxxx    2    1    0     0
-S2           0    0    1     0
-S2_xxxxxx    3    0    1     0
-S3           0    2    1     0
-S3_xxxxxx    2    0    1     0
-S4           1    1    0     1
-S4_xxxxxx    1    2    1     0
-S5           1    0    1     0
-S5_xxxxxx    4    1    0     0
-S6           0    1    1     0
-S6_xxxxxx    2    1    1     0&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;More specifically, if we want to convert &lt;code class=&quot;highlighter-rouge&quot;&gt;binary_var_dat&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;gene_mat&lt;/code&gt;, what procedures can we take?
-Here is my solution:&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;Split each column name by its delimiter;&lt;/li&gt;
-  &lt;li&gt;Replace column names with their splited string;&lt;/li&gt;
-  &lt;li&gt;Merge columns with the same column name.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;n&quot;&gt;pre_gene_mat&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;binary_var_dat&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;colnames&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pre_gene_mat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sapply&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strsplit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;colnames&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pre_gene_mat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;_&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'['&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pre_gene_mat&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;as.matrix&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pre_gene_mat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;coln&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;colnames&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pre_gene_mat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;gene_mat&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pre_gene_mat&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%*%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sapply&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;unique&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;coln&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;==&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;coln&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;To be honest, it almost cost me half an hour on this problem. The reason I spent so much time is that I have been suspecting that &lt;code class=&quot;highlighter-rouge&quot;&gt;data frame&lt;/code&gt; in R should only possess unique row names and column names. Surprisingly, the &lt;code class=&quot;highlighter-rouge&quot;&gt;data frame&lt;/code&gt; naming criterion is very flexible — unique row names and flexible column names.&lt;/p&gt;
-
-&lt;p&gt;In specific circumstances, if you want duplicated row names, just transpose the data frame and do whatever you want. I like this design philosophy.&lt;/p&gt;</content><author><name>Corey</name></author><category term="Bioinformatics" /><category term="R" /><summary type="html">Flexibility is a design philosophy</summary></entry></feed>
+&lt;p&gt;Everyone is busy, hope we can think more before we send our report.&lt;/p&gt;</content><author><name>Corey</name></author><category term="Life" /><summary type="html">It is a virtue to save others time</summary></entry></feed>
