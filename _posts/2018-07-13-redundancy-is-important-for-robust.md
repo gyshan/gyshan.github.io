@@ -13,7 +13,7 @@ Of course, we can not deny that there are too many factors are correlated with b
 
 1. Evolution
    
-   Like buying software, I will not purchase software if it does not keep updating. Good software should keep evolving with the environment, and function well.
+   Like buying software, I will not purchase the software if it does not keep updating. Good software should keep evolving with the environment, and function well.
 
 2. Regeneration
 
@@ -25,11 +25,11 @@ Of course, we can not deny that there are too many factors are correlated with b
 
 4. Redundancy
 
-   Redundancy can save the world when the disaster happens.
+   Redundancy can save the world when a disaster happens.
 
 5. ...
 
-Let me count the importance of those factors to the consequences without them, and it reminds me that the redundancy is the most crucial part among them. Life is the typical redundancy system, organs such as the liver and kidney are highly redundant: there is vastly more capacity than is necessary to do the job, so a person with a missing kidney suffers no apparent incapacity. If a finger is damaged, there are ways that the other fingers may be configured to pick up an object. I think only God can create this kind of robust system. We should learn from this design philosophy when building our systems. 
+Let me count the importance of those factors to the consequences without them, and it reminds me that redundancy is the most crucial part among them. Life is the typical redundancy system, organs such as the liver and kidney are highly redundant: there is vastly more capacity than is necessary to do the job, so a person with a missing kidney suffers no apparent incapacity. If a finger is damaged, there are ways that the other fingers may be configured to pick up an object. I think only God can create this kind of robust system. We should learn from this design philosophy when building our systems. 
 
 It occurs to me that when I design the MSI algorithm, the pipeline is only allowed the [bam](https://genome.sph.umich.edu/wiki/BAM) file with a chromosome tag "Chr". When the pipeline is deployed in the production environment, many errors emerged, including that someone using bam without a chromosome tag "Chr". As the [murphy's law](https://en.wikipedia.org/wiki/Murphy%27s_law) indicated: Anything that can go wrong, will go wrong. As long as the time is long enough and the sample size is sufficiently large. 
 
