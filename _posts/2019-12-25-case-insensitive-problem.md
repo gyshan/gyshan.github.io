@@ -8,7 +8,7 @@ tags:
   - Linux
 ---
 
-Recently, we start to transfer a project （comprised code files in multiple folders) from Linux to Windows platform. After compressed the project at the Windows platform, then pull back this project to the Linux platform again.
+Recently, we start to transfer a project (comprised code files in multiple folders) from Linux to Windows platform. After compressed the project at the Windows platform, then pull back this project to the Linux platform again.
 
 The mysterious thing happens - the project goes well on Linux, but after compression on Windows and decompression on Linux, the project is down. 
 
