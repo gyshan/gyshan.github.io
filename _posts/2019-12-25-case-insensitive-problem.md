@@ -1,4 +1,3 @@
-
 ---
 title: "Case insensitive problem"
 excerpt: "Be careful when transfer files between Win and Linux platform"
