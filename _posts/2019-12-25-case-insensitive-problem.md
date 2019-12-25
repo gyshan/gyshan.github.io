@@ -18,5 +18,5 @@ There are two folders in our project: `pod` and `Pod`. When transferring the pro
 
 The key to this problem is because of case discordant. The Linux platform supports the case-sensitive naming system, while the Windows platform does not. The good news is [Windows 10 now offers an optional case-sensitive file system](https://www.howtogeek.com/354220/how-to-enable-case-sensitive-folders-on-windows-10/).
 
-Even though I have described the same problem in my [previous post](https://shanguangyu.com/articles/why-should-you-lowercase-your-filename/), but when a similar error occurs, I still forgot it. Here, I would like to remind myself that when dealing with a project between Linux and Windows platforms, we should consider this kind of case discordant problem.
+Even though I have described the same problem in my [previous post](https://shanguangyu.com/articles/why-should-you-lowercase-your-filename/), but when a similar error occurs, I still forgot it. Here, I would like to remind myself again that when dealing with a project between Linux and Windows platforms, we should consider this kind of case discordant problem.
 

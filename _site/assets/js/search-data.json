@@ -275,7 +275,7 @@ var store = [{
         "url": "http://localhost:4000/articles/dangerous-move-create-gene-edited-babies/"
       },{
         "title": "Why are we looking forward to the new year",
-        "excerpt":"Today is the last statutory working day, and I feel somewhat happy because the new year is waving hands to me. But I did not think about why I love the new year. After several seconds thought, I guess the choice opportunity is the main reason that I like the...","categories": ["articles"],
+        "excerpt":"Today is the last statutory working day, and I feel somewhat happy because the new year is waving hands to me. But I did not think about why I love the new year. After several seconds of thought, I guess the choice opportunity is the main reason that I like...","categories": ["articles"],
         "tags": ["Life"],
         "url": "http://localhost:4000/articles/why-are-we-looking-forward-to-the-new-year/"
       },{
@@ -284,8 +284,13 @@ var store = [{
         "tags": ["Business"],
         "url": "http://localhost:4000/articles/sell-domain-igenel.com/"
       },{
-        "title": "28% prediction accuracy for neoantigens",
-        "excerpt":"Cancer immunotherapy field is all the rage and neoantigen is the pearl of this field, but in silico neoantigen prediction remains a daunting probe Cancer immunotherapy field Several days ago, I searched the prediction accuracy information by chance and found some companies claim their neoantigen prediction accuracy has already surpassed...","categories": ["articles"],
-        "tags": ["Bioinformatics","Neoantigens"],
-        "url": "http://localhost:4000/articles/low-accuracy-of-neoantigen-prediction.tmp/"
+        "title": "Only 28% accuracy for neoantigen prediction",
+        "excerpt":"Cancer immunotherapy field is all the rage. Neoantigen is the pearl while the prediction method is the grey silk covered the pearl. Even though neoantigen is a promising target for immunotherapy, but its prediction method remains a daunting problem. Several days ago, I searched the prediction accuracy information by chance...","categories": ["articles"],
+        "tags": ["Bioinformatics","Neoantigen"],
+        "url": "http://localhost:4000/articles/low-accuracy-of-neoantigen-prediction/"
+      },{
+        "title": "Case insensitive problem",
+        "excerpt":"Recently, we start to transfer a project （comprised code files in multiple folders) from Linux to Windows platform. After compressed the project at the Windows platform, then pull back this project to the Linux platform again. The mysterious thing happens - the project goes well on Linux, but after compression...","categories": ["articles"],
+        "tags": ["Bioinformatics","Linux"],
+        "url": "http://localhost:4000/articles/case-insensitive-problem/"
       }]
