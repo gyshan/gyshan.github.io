@@ -23,7 +23,7 @@ All levels of PM products I have mentioned above exist in the world, especially 
 
 Even though today is not good enough, the future is better than today. Hope every cancer patient could obtain good treatments in the future.
 
-[^1]: Jennings L J, Arcila M E, Corless C, et al. Guidelines for validation of next-generation sequencing–based oncology panels: a joint consensus recommendation of the Association for Molecular Pathology and College of American Pathologists[J]. The Journal of Molecular Diagnostics, 2017, 19(3): 341-365.
+[^1]: Jennings L J, Arcila M E, Corless C, et al. Guidelines for validation of next-generation sequencing-based oncology panels: a joint consensus recommendation of the Association for Molecular Pathology and College of American Pathologists[J]. The Journal of Molecular Diagnostics, 2017, 19(3): 341-365.
 
 
 
