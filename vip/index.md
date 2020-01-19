@@ -6,6 +6,10 @@ modified:
 
 ---
 
+
+![center-aligned-image](https://shangyblog-1256840873.cos.ap-beijing.myqcloud.com/20200119changdao.jpeg){: .align-center}
+
+
 <html>
 <head>
 <script>
@@ -27,10 +31,16 @@ function startTime() {
   delta -= minutes * 60;
 
   var seconds = delta % 60;  // in theory the modulus is not required
-
+  
   var update_days = days+30
 
-  document.getElementById('time').innerHTML = "I have fallen in love with Xin for " + update_days + " days " + hours + " hours " + minutes + " minutes " + seconds + " seconds."
+
+  var info = "I have fallen in love with Xin for " + update_days + " days " + hours + " hours " + minutes + " minutes " + seconds + " seconds."
+
+  info = info.fontsize("16")
+  info = info.fontcolor("#FF69B4")
+  info = info.bold()
+  document.getElementById('time').innerHTML = info
 
   t = setTimeout(function() {
     startTime()
