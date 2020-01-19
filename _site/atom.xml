@@ -1,4 +1,83 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-12-25T14:37:48+08:00</updated><id>http://localhost:4000/</id><title type="html">Guangyu Corey Shan’s Blog</title><subtitle>Notes on bioinformatics and data mining by G. Corey Shan</subtitle><author><name>Corey</name></author><entry><title type="html">Case insensitive problem</title><link href="http://localhost:4000/articles/case-insensitive-problem/" rel="alternate" type="text/html" title="Case insensitive problem" /><published>2019-12-25T00:00:00+08:00</published><updated>2019-12-25T00:00:00+08:00</updated><id>http://localhost:4000/articles/case-insensitive-problem</id><content type="html" xml:base="http://localhost:4000/articles/case-insensitive-problem/">&lt;p&gt;Recently, we start to transfer a project （comprised code files in multiple folders) from Linux to Windows platform. After compressed the project at the Windows platform, then pull back this project to the Linux platform again.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-01-19T13:12:51+08:00</updated><id>http://localhost:4000/</id><title type="html">Guangyu Corey Shan’s Blog</title><subtitle>Notes on bioinformatics and data mining by G. Corey Shan</subtitle><author><name>Corey</name></author><entry><title type="html">Chi-Squared Test with R</title><link href="http://localhost:4000/articles/chi-square-test-with-R/" rel="alternate" type="text/html" title="Chi-Squared Test with R" /><published>2020-01-19T00:00:00+08:00</published><updated>2020-01-19T00:00:00+08:00</updated><id>http://localhost:4000/articles/chi-square-test-with-R</id><content type="html" xml:base="http://localhost:4000/articles/chi-square-test-with-R/">&lt;p&gt;The medical statistical data can be divided into numerical and categorical types. When there is a need to find out the association between numerical variables (age, weight), the t-test is fine. When we need to determine the association between categorical variables, like whether the gender is correlated with smoking status (example data in the contingency table below), we could use Chi-Squared test if the data is fit in with the prerequisite. Otherwise, we should use Fisher’s Exact Test.&lt;/p&gt;
+
+&lt;table class=&quot;table&quot;&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Gender&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Smoker&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Non-Smoker&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Male&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;20&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Female&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;8&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;22&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;The test statistic for the Chi-Square Test of independence is denoted as &lt;script type=&quot;math/tex&quot;&gt;\chi^{2}&lt;/script&gt;, and is computed as:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\chi^{2} = \sum_{i=1}^{R}{\sum_{j=1}^{C}{\frac{(o_{ij} - e_{ij})^{2}}{e_{ij}}}}&lt;/script&gt;
+
+&lt;p&gt;where
+&lt;script type=&quot;math/tex&quot;&gt;o_{ij}&lt;/script&gt; is the observed cell count in the &lt;script type=&quot;math/tex&quot;&gt;i^{th}&lt;/script&gt; row and &lt;script type=&quot;math/tex&quot;&gt;j^{th}&lt;/script&gt; column of the table
+&lt;script type=&quot;math/tex&quot;&gt;e_{ij}&lt;/script&gt; is the expected cell count in the &lt;script type=&quot;math/tex&quot;&gt;i^{th}&lt;/script&gt; row and &lt;script type=&quot;math/tex&quot;&gt;j^{th}&lt;/script&gt; column of the table, computed as&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;e_{ij} = \frac{(row\_i\_total)(col\_j\_total)}{grand\_total}&lt;/script&gt;
+
+&lt;p&gt;The condition is based on the N and &lt;script type=&quot;math/tex&quot;&gt;e_{ij}&lt;/script&gt;:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;N ≥ 40 and &lt;script type=&quot;math/tex&quot;&gt;e_{ij}&lt;/script&gt; ≥ 5. Use the Chi-Squared Test.&lt;/li&gt;
+  &lt;li&gt;N ≥ 40 and 1 ≤ &lt;script type=&quot;math/tex&quot;&gt;e_{ij}&lt;/script&gt; ≤ 5. Use the Chi-Squared Test with correction (chisq.test with parameter correct=TRUE).&lt;/li&gt;
+  &lt;li&gt;N &amp;lt; 40 or &lt;script type=&quot;math/tex&quot;&gt;e_{ij}&lt;/script&gt; &amp;lt; 1 or p-value close to 0.05. Can not use the Chi-Squared Test, should use the Fisher’s Exact Test.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;To our smoking problem, we first check the total sample size N, N = 20 + 3 + 8 + 22 = 53 &amp;gt; 40. Second, we check each &lt;script type=&quot;math/tex&quot;&gt;e_{ij}&lt;/script&gt;, each cell of &lt;script type=&quot;math/tex&quot;&gt;e_{ij}&lt;/script&gt; is described in the table and &lt;script type=&quot;math/tex&quot;&gt;e_{ij}&lt;/script&gt; &amp;gt; 5. Therefore, we could use Chi-Squared Test and find out the gender is correlated with the smoking status based on our data (p-value = 4.501e-05 « 0.05).&lt;/p&gt;
+
+&lt;table class=&quot;table&quot;&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt;e_{ij}&lt;/script&gt;&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Smoker&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Non-Smoker&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Male&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;12.15&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;10.85&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Female&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;15.85&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;14.15&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;c1&quot;&gt;############input############&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dat&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;22&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;chisq.test&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matrix&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nrow&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ncol&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+
+&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;############output############&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+	&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Pearson&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'s Chi-squared test with Yates'&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;continuity&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;correction&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matrix&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nrow&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ncol&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;X&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;squared&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;16.647&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;4.501e-05&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;https://libguides.library.kent.edu/SPSS/ChiSquare&quot;&gt;CHI-SQUARE TEST OF INDEPENDENCE&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</content><author><name>Corey</name></author><category term="Bioinformatics" /><category term="R" /><summary type="html">The prerequiste of chi-squared test</summary></entry><entry><title type="html">Case insensitive problem</title><link href="http://localhost:4000/articles/case-insensitive-problem/" rel="alternate" type="text/html" title="Case insensitive problem" /><published>2019-12-25T00:00:00+08:00</published><updated>2019-12-25T00:00:00+08:00</updated><id>http://localhost:4000/articles/case-insensitive-problem</id><content type="html" xml:base="http://localhost:4000/articles/case-insensitive-problem/">&lt;p&gt;Recently, we start to transfer a project (comprised code files in multiple folders) from Linux to Windows platform. After compressed the project at the Windows platform, then pull back this project to the Linux platform again.&lt;/p&gt;
 
 &lt;p&gt;The mysterious thing happens - the project goes well on Linux, but after compression on Windows and decompression on Linux, the project is down.&lt;/p&gt;
 
@@ -8,7 +87,7 @@
 
 &lt;p&gt;The key to this problem is because of case discordant. The Linux platform supports the case-sensitive naming system, while the Windows platform does not. The good news is &lt;a href=&quot;https://www.howtogeek.com/354220/how-to-enable-case-sensitive-folders-on-windows-10/&quot;&gt;Windows 10 now offers an optional case-sensitive file system&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;Even though I have described the same problem in my &lt;a href=&quot;https://shanguangyu.com/articles/why-should-you-lowercase-your-filename/&quot;&gt;previous post&lt;/a&gt;, but when a similar error occurs, I still forgot it. Here, I would like to remind myself that when dealing with a project between Linux and Windows platforms, we should consider this kind of case discordant problem.&lt;/p&gt;</content><author><name>Corey</name></author><category term="Bioinformatics" /><category term="Linux" /><summary type="html">Be careful when transfer files between Win and Linux platform</summary></entry><entry><title type="html">Only 28% accuracy for neoantigen prediction</title><link href="http://localhost:4000/articles/low-accuracy-of-neoantigen-prediction/" rel="alternate" type="text/html" title="Only 28% accuracy for neoantigen prediction" /><published>2019-05-08T00:00:00+08:00</published><updated>2019-05-08T00:00:00+08:00</updated><id>http://localhost:4000/articles/low-accuracy-of-neoantigen-prediction</id><content type="html" xml:base="http://localhost:4000/articles/low-accuracy-of-neoantigen-prediction/">&lt;p&gt;Cancer immunotherapy field is all the rage. Neoantigen is the pearl while the prediction method is the grey silk covered the pearl. Even though neoantigen is a promising target for immunotherapy, but its prediction method remains a daunting problem.&lt;/p&gt;
+&lt;p&gt;Even though I have described the same problem in my &lt;a href=&quot;https://shanguangyu.com/articles/why-should-you-lowercase-your-filename/&quot;&gt;previous post&lt;/a&gt;, but when a similar error occurs, I still forgot it. Here, I would like to remind myself again that when dealing with a project between Linux and Windows platforms, we should consider this kind of case discordant problem.&lt;/p&gt;</content><author><name>Corey</name></author><category term="Bioinformatics" /><category term="Linux" /><summary type="html">Be careful when transfer files between Win and Linux platform</summary></entry><entry><title type="html">Only 28% accuracy for neoantigen prediction</title><link href="http://localhost:4000/articles/low-accuracy-of-neoantigen-prediction/" rel="alternate" type="text/html" title="Only 28% accuracy for neoantigen prediction" /><published>2019-05-08T00:00:00+08:00</published><updated>2019-05-08T00:00:00+08:00</updated><id>http://localhost:4000/articles/low-accuracy-of-neoantigen-prediction</id><content type="html" xml:base="http://localhost:4000/articles/low-accuracy-of-neoantigen-prediction/">&lt;p&gt;Cancer immunotherapy field is all the rage. Neoantigen is the pearl while the prediction method is the grey silk covered the pearl. Even though neoantigen is a promising target for immunotherapy, but its prediction method remains a daunting problem.&lt;/p&gt;
 
 &lt;p&gt;Several days ago, I searched the prediction accuracy information by chance and found some companies claim their neoantigen prediction accuracy surpassed 60%, which is far higher than the current 28% affinity-based theoretical boundary, presented by Catherine J. Wu, MD&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
 
@@ -204,26 +283,4 @@ sh Miniconda2-latest-MacOSX-x86_64.sh&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;</c
       &lt;p&gt;Ahsana S, Hussain R, Fareed M, et al. Prevalence of red-green color vision defects among Muslim males and females of Manipur, India[J]. Iranian journal of public health, 2013, 42(1): 16. &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
-&lt;/div&gt;</content><author><name>Corey</name></author><category term="Bioinformatics" /><category term="R" /><summary type="html">R snippets</summary></entry><entry><title type="html">Levels of precision medicine product</title><link href="http://localhost:4000/articles/levels-of-precision-medicine-product/" rel="alternate" type="text/html" title="Levels of precision medicine product" /><published>2018-10-01T00:00:00+08:00</published><updated>2018-10-01T00:00:00+08:00</updated><id>http://localhost:4000/articles/levels-of-precision-medicine-product</id><content type="html" xml:base="http://localhost:4000/articles/levels-of-precision-medicine-product/">&lt;p&gt;After more than five years working in precision medicine field, I would like to categorize PM (precision medicine) products into the following five levels. It should be noted that the categorization criteria is based on the most crucial part of every PM products: validation.&lt;/p&gt;
-
-&lt;p&gt;Level 0 is only propaganda without any product yet, not to mention any validation. If an organization releases the flyer pages before the real product comes out, this can be classified into Level 0, and customers can never do a real test with Level 0 PM product.&lt;/p&gt;
-
-&lt;p&gt;Level 1 is in-house simple validation. For Level 1 PM product, it has been tested by simple validation, like simulated-data validation and public-data validation. The difference between Level 0 and Level 1 is that the latter has a real product.&lt;/p&gt;
-
-&lt;p&gt;Level 2 is in-house industry-based standard validation. For Level 2 PM product, it has been validated through consensus standard validation, like Guidelines for Validation of Next-Generation Sequencing-Based Oncology Panels&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;. For Level 2 PM product, it has been under thorough validation, the validation process is good, if the performance (e.g., sensitivity and specificity) is also good, this product can be reliable.&lt;/p&gt;
-
-&lt;p&gt;Level 3 is peer-reviewed validation with a paper published. Unlike Level 1 and 2, Level 3 has been scrutinized by the domain experts rather than just in-house validation. The PM product reach Level 3 is highly recommended, most people would buy it.&lt;/p&gt;
-
-&lt;p&gt;Level X is IVD approval through FDA/CFDA. At this level, the PM product is endorsed by FDA/CFDA, which means the official health system is agreed with the whole validation process. &lt;a href=&quot;https://www.accessdata.fda.gov/cdrh_docs/reviews/DEN170058.pdf&quot;&gt;MSK-IMPACT&lt;/a&gt; and &lt;a href=&quot;https://www.fda.gov/medicaldevices/productsandmedicalprocedures/deviceapprovalsandclearances/recently-approveddevices/ucm590331.htm&quot;&gt;F1CDx&lt;/a&gt; can be categorized into Level X PM product.&lt;/p&gt;
-
-&lt;p&gt;All levels of PM products I have mentioned above exist in the world, especially in China. The reason is that precision medicine is an extremely new field and every company wants to pitch in it. Jack Ma has said that &lt;a href=&quot;http://www.ejinsight.com/20151113-the-new-investment-theme-of-health-and-happiness/&quot;&gt;health and happiness&lt;/a&gt; are promising investing themes. As a typical representation of health, lots of money swarmed into precision medicine, created a large amount of NGS (next-generation sequencing) companies and therefore PM products from Level 0 to Level X co-exist in the market. Even though it is a chaotic situation today, I believe that with FDA/CFDA continuously studying the cutting-edge knowledge, keeping pace with the whole industry, PM products will become increasingly standard and robust. At that day, the organizations which did not hold Level X PM products will soon become incompetent.&lt;/p&gt;
-
-&lt;p&gt;Even though today is not good enough, the future is better than today. Hope every cancer patient could obtain good treatments in the future.&lt;/p&gt;
-
-&lt;div class=&quot;footnotes&quot;&gt;
-  &lt;ol&gt;
-    &lt;li id=&quot;fn:1&quot;&gt;
-      &lt;p&gt;Jennings L J, Arcila M E, Corless C, et al. Guidelines for validation of next-generation sequencing-based oncology panels: a joint consensus recommendation of the Association for Molecular Pathology and College of American Pathologists[J]. The Journal of Molecular Diagnostics, 2017, 19(3): 341-365. &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/div&gt;</content><author><name>Corey</name></author><category term="Bioinformatics" /><summary type="html">IVD approval is the key to next round NGS competition</summary></entry></feed>
+&lt;/div&gt;</content><author><name>Corey</name></author><category term="Bioinformatics" /><category term="R" /><summary type="html">R snippets</summary></entry></feed>

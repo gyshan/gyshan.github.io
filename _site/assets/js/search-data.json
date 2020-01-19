@@ -290,7 +290,12 @@ var store = [{
         "url": "http://localhost:4000/articles/low-accuracy-of-neoantigen-prediction/"
       },{
         "title": "Case insensitive problem",
-        "excerpt":"Recently, we start to transfer a project （comprised code files in multiple folders) from Linux to Windows platform. After compressed the project at the Windows platform, then pull back this project to the Linux platform again. The mysterious thing happens - the project goes well on Linux, but after compression...","categories": ["articles"],
+        "excerpt":"Recently, we start to transfer a project (comprised code files in multiple folders) from Linux to Windows platform. After compressed the project at the Windows platform, then pull back this project to the Linux platform again. The mysterious thing happens - the project goes well on Linux, but after compression...","categories": ["articles"],
         "tags": ["Bioinformatics","Linux"],
         "url": "http://localhost:4000/articles/case-insensitive-problem/"
+      },{
+        "title": "Chi-Squared Test with R",
+        "excerpt":"The medical statistical data can be divided into numerical and categorical types. When there is a need to find out the association between numerical variables (age, weight), the t-test is fine. When we need to determine the association between categorical variables, like whether the gender is correlated with smoking status...","categories": ["articles"],
+        "tags": ["Bioinformatics","R"],
+        "url": "http://localhost:4000/articles/chi-square-test-with-R/"
       }]
