@@ -9,7 +9,6 @@ modified:
 
 ![center-aligned-image](https://shangyblog-1256840873.cos.ap-beijing.myqcloud.com/20200119changdao.jpeg){: .align-center}
 
-
 <html>
 <head>
 <script>
@@ -38,8 +37,10 @@ function startTime() {
   var info = "I have fallen in love with Xin for " + update_days + " days " + hours + " hours " + minutes + " minutes " + seconds + " seconds."
 
   info = info.fontsize("16")
-  info = info.fontcolor("#FF69B4")
+  info = info.fontcolor("#FF0090")
   info = info.bold()
+  info = info.italics()
+
   document.getElementById('time').innerHTML = info
 
   t = setTimeout(function() {

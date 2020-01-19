@@ -23,14 +23,14 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Notes on bioinformatics and data mining by G. Corey Shan" />
 <meta property="og:description" content="Notes on bioinformatics and data mining by G. Corey Shan" />
-<link rel="canonical" href="http://localhost:4000/vip/" />
-<meta property="og:url" content="http://localhost:4000/vip/" />
+<link rel="canonical" href="http://localhost:4000/wife/" />
+<meta property="og:url" content="http://localhost:4000/wife/" />
 <meta property="og:site_name" content="Guangyu Corey Shan’s Blog" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:site" content="@GuangyuShan" />
 <meta name="twitter:creator" content="@Corey" />
 <script type="application/ld+json">
-{"description":"Notes on bioinformatics and data mining by G. Corey Shan","author":{"@type":"Person","name":"Corey"},"@type":"WebPage","url":"http://localhost:4000/vip/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://shangyblog-1256840873.cos.ap-beijing.myqcloud.com/logo.svg"},"name":"Corey"},"headline":"Guangyu Corey Shan’s Blog","@context":"http://schema.org"}</script>
+{"description":"Notes on bioinformatics and data mining by G. Corey Shan","author":{"@type":"Person","name":"Corey"},"@type":"WebPage","url":"http://localhost:4000/wife/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://shangyblog-1256840873.cos.ap-beijing.myqcloud.com/logo.svg"},"name":"Corey"},"headline":"Guangyu Corey Shan’s Blog","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -145,8 +145,10 @@ function startTime() {
   var info = "I have fallen in love with Xin for " + update_days + " days " + hours + " hours " + minutes + " minutes " + seconds + " seconds."
 
   info = info.fontsize("16")
-  info = info.fontcolor("#FF69B4")
+  info = info.fontcolor("#FF0090")
   info = info.bold()
+  info = info.italics()
+
   document.getElementById('time').innerHTML = info
 
   t = setTimeout(function() {
