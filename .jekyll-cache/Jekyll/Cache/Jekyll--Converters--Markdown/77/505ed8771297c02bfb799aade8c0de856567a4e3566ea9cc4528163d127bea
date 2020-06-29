@@ -1,0 +1,26 @@
+I"Ç<h2 id="why">Why</h2>
+<p>If moving files between Mac and other OS such as Windows or Linux, some files such as <code class="language-plaintext highlighter-rouge">.DS_Store</code> can cause unexpected problems.</p>
+
+<h2 id="what">What</h2>
+
+<p><code class="language-plaintext highlighter-rouge">.DS_Store</code>: Store Finder-specific preferences concerning the display of each of your folders.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Thumbs.db</code>: Small cache file that holds thumbnail preview data for folders in Windows.</p>
+
+<h2 id="how">How</h2>
+<p>Remove files recursively</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">sudo </span>find <span class="nb">.</span> <span class="nt">-name</span> <span class="s1">'*.DS_Store'</span> <span class="nt">-type</span> f <span class="nt">-delete</span>
+<span class="nb">sudo </span>find <span class="nb">.</span> <span class="nt">-name</span> <span class="s1">'Thumbs.db'</span> <span class="nt">-type</span> f <span class="nt">-delete</span></code></pre></figure>
+
+<p>Prevent produce new files</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">defaults write com.apple.desktopservices DSDontWriteNetworkStores <span class="nb">true</span></code></pre></figure>
+
+<h2 id="reference">Reference</h2>
+
+<ol>
+  <li><a href="https://helpx.adobe.com/dreamweaver/kb/remove-ds-store-files-mac.html">Remove .DS_Store files</a></li>
+</ol>
+
+:ET

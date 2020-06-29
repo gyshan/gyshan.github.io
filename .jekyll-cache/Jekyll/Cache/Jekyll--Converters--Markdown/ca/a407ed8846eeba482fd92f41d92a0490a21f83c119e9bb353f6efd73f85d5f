@@ -1,0 +1,16 @@
+I"<p>Sometimes, We need to transfer files between servers in the background, and it is imperative to have a password. The solution is to use screen command to emulate a screen and make it running in the background.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>screen   <span class="c"># [1]</span>
+<span class="nv">$ </span>rsync <span class="nt">-avz</span> <span class="nb">hostname</span>@XXX.XXX.XX.X:/data/path ./   <span class="c"># [2]</span>
+Enter your password:   <span class="c"># [3]</span>
+
+Press <span class="sb">`</span>control<span class="sb">`</span>+<span class="sb">`</span>A<span class="sb">`</span>   <span class="c"># [4]</span>
+Press <span class="sb">`</span>D<span class="sb">`</span>   <span class="c"># [5] </span></code></pre></figure>
+
+<p>Here, your job is running in the background. If you want to check the running job, type the commands below:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>screen <span class="nt">-ls</span>   <span class="c"># Show screen sessions</span>
+<span class="nv">$ </span>screen <span class="nt">-r</span> <span class="o">[</span>session you want to enter]   <span class="c"># Enter specific screen session</span>
+<span class="nv">$ </span>screen <span class="nt">-X</span> <span class="nt">-S</span> <span class="o">[</span>session you want to <span class="nb">kill</span><span class="o">]</span> quit   <span class="c"># Kill specific screen session</span></code></pre></figure>
+
+:ET

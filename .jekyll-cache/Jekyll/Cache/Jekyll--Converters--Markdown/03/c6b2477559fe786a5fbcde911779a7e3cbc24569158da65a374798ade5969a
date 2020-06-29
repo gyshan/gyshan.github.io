@@ -1,0 +1,124 @@
+I"�<div id="entry-table-of-contents" class="toc-wrapper">
+  <h2 id="toc-toggle" class="no_toc">
+  Table of Contents <i class="toc-toggle-icon fas fa-chevron-down"></i>
+</h2>
+<ol id="markdown-toc">
+  <li><a href="#函数" id="markdown-toc-函数">函数</a></li>
+  <li><a href="#装饰器" id="markdown-toc-装饰器">装饰器</a></li>
+  <li><a href="#references" id="markdown-toc-references">References</a></li>
+</ol>
+
+</div>
+
+<h2 id="函数">函数</h2>
+<p>在Python中，一切函数皆对象。函数作为Python中的一等公民，可以进行很多有用的操作：</p>
+
+<ul>
+  <li>将函数赋给变量</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="k">return</span> <span class="s">"hello "</span><span class="o">+</span><span class="n">name</span>
+
+<span class="n">greet_someone</span> <span class="o">=</span> <span class="n">greet</span>
+<span class="k">print</span> <span class="n">greet_someone</span><span class="p">(</span><span class="s">"John"</span><span class="p">)</span>
+
+<span class="c1"># Outputs: hello John</span></code></pre></figure>
+
+<ul>
+  <li>在函数里定义其他函数</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">get_message</span><span class="p">():</span>
+        <span class="k">return</span> <span class="s">"Hello "</span>
+
+    <span class="n">result</span> <span class="o">=</span> <span class="n">get_message</span><span class="p">()</span><span class="o">+</span><span class="n">name</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+<span class="k">print</span> <span class="n">greet</span><span class="p">(</span><span class="s">"John"</span><span class="p">)</span>
+
+<span class="c1"># Outputs: Hello John</span></code></pre></figure>
+
+<ul>
+  <li>函数可以作为参数传递给其他函数</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+   <span class="k">return</span> <span class="s">"Hello "</span> <span class="o">+</span> <span class="n">name</span> 
+
+<span class="k">def</span> <span class="nf">call_func</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="n">other_name</span> <span class="o">=</span> <span class="s">"John"</span>
+    <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">other_name</span><span class="p">)</span>  
+
+<span class="k">print</span> <span class="n">call_func</span><span class="p">(</span><span class="n">greet</span><span class="p">)</span>
+
+<span class="c1"># Outputs: Hello John</span></code></pre></figure>
+
+<ul>
+  <li>函数可以返回其他函数</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">compose_greet_func</span><span class="p">():</span>
+    <span class="k">def</span> <span class="nf">get_message</span><span class="p">():</span>
+        <span class="k">return</span> <span class="s">"Hello there!"</span>
+
+    <span class="k">return</span> <span class="n">get_message</span>
+
+<span class="n">greet</span> <span class="o">=</span> <span class="n">compose_greet_func</span><span class="p">()</span>
+<span class="k">print</span> <span class="n">greet</span><span class="p">()</span>
+
+<span class="c1"># Outputs: Hello there!</span></code></pre></figure>
+
+<ul>
+  <li>内部函数可读取外参</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">compose_greet_func</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">get_message</span><span class="p">():</span>
+        <span class="k">return</span> <span class="s">"Hello there "</span><span class="o">+</span><span class="n">name</span><span class="o">+</span><span class="s">"!"</span>
+
+    <span class="k">return</span> <span class="n">get_message</span>
+
+<span class="n">greet</span> <span class="o">=</span> <span class="n">compose_greet_func</span><span class="p">(</span><span class="s">"John"</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">greet</span><span class="p">()</span>
+
+<span class="c1"># Outputs: Hello there John!</span></code></pre></figure>
+
+<h2 id="装饰器">装饰器</h2>
+<p>先看一个形象的例子</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">entryExit</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">):</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">f</span> <span class="o">=</span> <span class="n">f</span>
+
+    <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">print</span> <span class="s">"Entering"</span><span class="p">,</span> <span class="bp">self</span><span class="p">.</span><span class="n">f</span><span class="p">.</span><span class="n">__name__</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">f</span><span class="p">()</span>
+        <span class="k">print</span> <span class="s">"Exited"</span><span class="p">,</span> <span class="bp">self</span><span class="p">.</span><span class="n">f</span><span class="p">.</span><span class="n">__name__</span>
+
+<span class="o">@</span><span class="n">entryExit</span>
+<span class="k">def</span> <span class="nf">func</span><span class="p">():</span>
+    <span class="k">print</span> <span class="s">"inside func()"</span>
+
+<span class="n">func</span><span class="p">()</span>
+
+<span class="c1"># Outputs: 
+# Entering func
+# inside func()
+# Exited func</span></code></pre></figure>
+
+<p>装饰器作为一种语法糖可以使用函数作为参数并且返回函数。在这个例子里，Python提供语法糖来连接<code class="language-plaintext highlighter-rouge">entryExit</code>和<code class="language-plaintext highlighter-rouge">func</code>函数，省却了<code class="language-plaintext highlighter-rouge">func = entryExit(func)</code>这样的繁复表达。一方面提供更加简洁的代码，另一方面不用改变原函数的函数名。</p>
+
+<p>总的来说，装饰器能让你的程序更加优雅。当你需要扩展某个函数，却又不想修改它，尝试下装饰器吧。</p>
+
+<h2 id="references">References</h2>
+
+<ol>
+  <li><a href="http://thecodeship.com/patterns/guide-to-python-function-decorators/">A guide to Python’s function decorators</a></li>
+  <li><a href="https://www.python.org/dev/peps/pep-0318/">Decorators for Functions and Methods</a></li>
+  <li><a href="http://simeonfranklin.com/blog/2012/jul/1/python-decorators-in-12-steps/">Understanding Python Decorators in 12 Easy Steps!</a></li>
+</ol>
+
+:ET

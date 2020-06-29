@@ -1,0 +1,46 @@
+I"�<p>A large portion of biological data are raw files, such as fasta、fastq、bam（binary)、sam、vcf and so on.
+Mostly, trying to deal with those files with shell commands towards small tasks are way much better than using stardard programming language(python and perl).
+Here, I want to record some of those tricks.</p>
+
+<h1 id="samtools">samtools</h1>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c">##1. Pre-process bam for certain software</span>
+<span class="c"># cut bam to target region, bear in mind that chr1 is in [in.bam] </span>
+samtools view <span class="nt">-b</span> <span class="o">[</span><span class="k">in</span>.bam] <span class="o">[</span>chr1:XXXXXXX-YYYYYYY] <span class="o">&gt;</span> <span class="o">[</span>out.bam]
+<span class="c"># sort bam</span>
+samtools <span class="nb">sort</span> <span class="o">[</span>out.bam] <span class="o">[</span>out.sorted.bam]
+<span class="c"># index bam</span>
+samtools index <span class="o">[</span>out.sorted.bam]
+<span class="c">##2. Extract certain region from ref.fasta</span>
+samtools faidx <span class="o">[</span>ref.fasta] chr1:XXXXXXX-YYYYYYY
+<span class="c">##3. mpileup</span>
+samtools mpileup <span class="nt">-d</span> 1000000 <span class="nt">-q</span> 30 <span class="nt">-Q</span> 30 <span class="nt">-A</span> <span class="nt">-B</span> <span class="nt">-l</span> <span class="o">[</span><span class="k">in</span>.bed] <span class="nt">-f</span> <span class="o">[</span>ref.fasta] <span class="o">[</span><span class="k">in</span>.bam] <span class="o">&gt;</span> <span class="o">[</span>out.mpileup]</code></pre></figure>
+
+<h1 id="shell">shell</h1>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c">#1. Sort file according to column three.</span>
+<span class="nb">sort</span> <span class="nt">-n</span> <span class="nt">-k3</span> <span class="o">[</span><span class="k">in</span>.file]
+<span class="nb">sort</span> <span class="nt">-V</span> <span class="nt">-k1</span>,1 <span class="nt">-k2</span>,2 <span class="o">[</span>test.bed] <span class="c">#sort bed</span>
+<span class="c">#2. Remove empty line from file</span>
+<span class="nb">sed</span> <span class="nt">-i</span> <span class="s1">'/^$/d'</span> <span class="o">[</span><span class="k">in</span>.file] <span class="o">&gt;</span> <span class="o">[</span>out.file]
+<span class="c">#3. Extract row that have str 'S' in  column six.</span>
+<span class="nb">awk</span> <span class="s1">'$6 ~ /S/ {print}'</span> <span class="o">[</span><span class="k">in</span>.sam]
+<span class="c">#4. Search bam file from certain directory</span>
+find <span class="nb">.</span> <span class="nt">-name</span> <span class="s2">"</span><span class="se">\*</span><span class="s2">.bam"</span>
+<span class="c">#5. Sum the fourth column from mpileup file.</span>
+<span class="nb">awk</span> <span class="s1">'{ sum += $4 }; END { print sum }'</span> <span class="o">[</span>mpileup] <span class="o">&gt;</span> <span class="o">[</span>out.file]
+<span class="c">#6. Sum the coverage of bed file</span>
+<span class="nb">awk</span> <span class="nt">-F</span><span class="s1">'\t'</span> <span class="s1">'BEGIN{SUM=0}{ SUM+=$3-$2 }END{print SUM}'</span>
+<span class="c">#7. Remove chr from bed file</span>
+<span class="nb">sed</span> <span class="s1">'s/^chr//'</span>
+<span class="c">#8. Remove chr from bam file</span>
+samtools view <span class="nt">-h</span> demo.bam | <span class="nb">sed</span> <span class="s1">'s/chr//g'</span> | samtools view <span class="nt">-Shb</span> - <span class="nt">-o</span> demo_new.bam
+<span class="c">#9. Replace \s to \t in file</span>
+<span class="nb">awk</span> <span class="nt">-v</span> <span class="nv">OFS</span><span class="o">=</span><span class="s2">"</span><span class="se">\t</span><span class="s2">"</span> <span class="s1">'$1=$1'</span>
+<span class="c">#10. Get lines from file</span>
+<span class="nb">sed</span> <span class="nt">-n</span> 2,4p somefile.txt
+<span class="nb">sed</span> <span class="s1">'2,4!d'</span> somefile.txt
+<span class="c">#11. Get 10 columns from csv file</span>
+<span class="nb">head</span> <span class="nt">-10</span> concordance_2826_232.csv |cut <span class="nt">-d</span> <span class="s2">","</span> <span class="nt">-f1-10</span></code></pre></figure>
+
+:ET

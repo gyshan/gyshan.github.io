@@ -1,0 +1,18 @@
+I"<p>Sometimes, I got emails from friends across the world. They usually kindly attach a timestamp at the end of the mail. One day, I got an email with <code class="language-plaintext highlighter-rouge">CST</code> in the timestamp from a guy I did not know before. This small tag confused me a lot because at least four time zones are using CST as an abbreviation:</p>
+
+<ul>
+  <li>Central Standard Time (USA) UTC-6:00</li>
+  <li>Central Standard Time (Australia) UTC+9:30</li>
+  <li>China Standard Time UTC+8:00</li>
+  <li>Cuba Standard Time UTC-4:00</li>
+</ul>
+
+<p>To precisely indicate the time zone, I strongly recommend the UTC (Coordinated Universal Time) standard, which is the basis for local time today. UTC is the primary time standard by which the world regulates clocks and time. Here, Someone will doubt that whether we can use GMT (Greenwich Mean Time) to replace UTC. It is necessary to bear in mind that even though GMT and UTC share the same current time in practice, we still suggest using the UTC standard to denote time zone.</p>
+
+<p>GMT is a country based time standard, whereas UTC is an internet based time standard. UTC is the time standard used for Internet and World Wide Web standards. It is also the basis of the satellite global positioning system (GPS). UTC widely used by the Network Time Protocol, created to synchronize the clocks of many computers over the Internet. <em>If we communicate via Internet, UTC is the best choice</em>.</p>
+
+<p>Well, back to the previous question. If we adopt the UTC standard, we can make sure that the receiver got to know the exact time we are referring. For example, I live in Beijing, and my time zone is UTC+0800.</p>
+
+<p>After all, using the proper medium to convey precisely what you mean is the most crucial task in our life.</p>
+
+:ET

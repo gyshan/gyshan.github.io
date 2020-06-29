@@ -1,0 +1,35 @@
+I"�<p>刚开始学习<a href="https://pages.github.com/">GitHub Page</a> 以及 <a href="http://jekyllrb.com/">Jekyll</a>。</p>
+
+<h2 id="本地文件夹初始化创建新仓库初始化">本地文件夹初始化，创建新仓库（初始化）</h2>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>git init</code></pre></figure>
+
+<h2 id="检出仓库初始化">检出仓库（初始化）</h2>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>git clone username@host:/path/to/repository</code></pre></figure>
+
+<h2 id="工作流每日常规">工作流（每日常规）</h2>
+
+<p><strong>写文章</strong></p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">Writing blog</code></pre></figure>
+
+<p><strong>本地预览</strong></p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>bundle <span class="nb">exec </span>jekyll serve</code></pre></figure>
+
+<p><strong>提交工作目录到暂存区</strong></p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>git add <span class="nt">--all</span> .</code></pre></figure>
+
+<p><strong>生成暂存区快照并提交至HEAD</strong></p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>git commit <span class="nt">-m</span> <span class="s2">"代码提交信息"</span></code></pre></figure>
+
+<p><strong>HEAD push 到远端仓库</strong></p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>git push origin gh-pages</code></pre></figure>
+
+<h2 id="done">Done!</h2>
+
+:ET

@@ -1,0 +1,31 @@
+I"¦	<p>Today, I tried to install a bioinformatics software called <a href="https://github.com/genome/somatic-sniper">SomaticSniper</a> under its <a href="https://github.com/genome/somatic-sniper/blob/master/gmt/install.md">instructions</a> while got stuck at the fourth step.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">mkdir </span>somatic-sniper/build  <span class="c">#succeed</span>
+<span class="nb">cd </span>somatic-sniper/build <span class="c">#succeed</span>
+cmake ../ <span class="c">#succeed</span>
+make deps <span class="c">#failed</span>
+make <span class="nt">-j</span> 
+make <span class="nb">test</span> </code></pre></figure>
+
+<p>The errors are listed below, it seems that zlib is not working well in <code class="language-plaintext highlighter-rouge">bam_import.c</code> file. Therefore, I modified <code class="language-plaintext highlighter-rouge">bam_import.c</code> file by replacing the <code class="language-plaintext highlighter-rouge">zlib.h</code> statement to an absolute path.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">/NAME/src/somatic-sniper/1.0.5.0/build/vendor/samtools/bam_import.c:75: undefined reference to gzopen64
+./libbam.a<span class="o">(</span>bam_import.o<span class="o">)</span>: In <span class="k">function </span>sam_open:
+/NAME/src/somatic-sniper/1.0.5.0/build/vendor/samtools/bam_import.c:502: undefined reference to gzopen64
+./libbam.a<span class="o">(</span>bam_import.o<span class="o">)</span>: In <span class="k">function </span>sam_header_read2:
+/NAME/src/somatic-sniper/1.0.5.0/build/vendor/samtools/bam_import.c:125: undefined reference to gzopen64
+collect2: ld returned 1 <span class="nb">exit </span>status
+make[1]: <span class="k">***</span> <span class="o">[</span>samtools] Error 1
+make[1]: Leaving directory /NAME/src/somatic-sniper/1.0.5.0/build/vendor/samtools
+make: <span class="k">***</span> <span class="o">[</span>all-recur] Error 1</code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$locate</span> zlib.h |head <span class="nt">-1</span> 
+/usr/include/zlib.h
+
+<span class="nv">$vi</span> /NAME/src/somatic-sniper/1.0.5.0/build/vendor/samtools/bam_import.c
+replace <span class="c">#include &lt;zlib.h&gt; </span>
+to      <span class="c">#include &lt;/usr/include/zlib.h&gt;</span></code></pre></figure>
+
+<p>Then, remake deps and everything is ok.</p>
+
+:ET

@@ -1,0 +1,65 @@
+I"Ä<p>Imagine there is a data frame demo as follows and we need to combine columns which hold the same tag. What should we do?</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">### binary_var_dat
+          EGFR_T790M KRAS_K201S BRAF_K220Q NOTCH_N22K EGFR_V600E EGFR_Q333S EGFR_F222Q KRAS_F22X
+S1                 0          0          1          0          1          0          0         1
+S1_xxxxxx          0          0          0          0          1          0          1         1
+S2                 0          0          1          0          0          0          0         0
+S2_xxxxxx          1          0          1          0          1          0          1         0
+S3                 0          1          1          0          0          0          0         1
+S3_xxxxxx          0          0          1          0          1          0          1         0
+S4                 0          0          0          1          1          0          0         1
+S4_xxxxxx          0          1          1          0          0          0          1         1
+S5                 0          0          1          0          1          0          0         0
+S5_xxxxxx          1          0          0          0          1          1          1         1
+S6                 0          0          1          0          0          0          0         1
+S6_xxxxxx          0          0          1          0          1          0          1         1</code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">### pre_gene_mat
+          EGFR KRAS BRAF NOTCH EGFR EGFR EGFR KRAS
+S1           0    0    1     0    1    0    0    1
+S1_xxxxxx    0    0    0     0    1    0    1    1
+S2           0    0    1     0    0    0    0    0
+S2_xxxxxx    1    0    1     0    1    0    1    0
+S3           0    1    1     0    0    0    0    1
+S3_xxxxxx    0    0    1     0    1    0    1    0
+S4           0    0    0     1    1    0    0    1
+S4_xxxxxx    0    1    1     0    0    0    1    1
+S5           0    0    1     0    1    0    0    0
+S5_xxxxxx    1    0    0     0    1    1    1    1
+S6           0    0    1     0    0    0    0    1
+S6_xxxxxx    0    0    1     0    1    0    1    1</code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">### gene_mat
+          EGFR KRAS BRAF NOTCH
+S1           1    1    1     0
+S1_xxxxxx    2    1    0     0
+S2           0    0    1     0
+S2_xxxxxx    3    0    1     0
+S3           0    2    1     0
+S3_xxxxxx    2    0    1     0
+S4           1    1    0     1
+S4_xxxxxx    1    2    1     0
+S5           1    0    1     0
+S5_xxxxxx    4    1    0     0
+S6           0    1    1     0
+S6_xxxxxx    2    1    1     0</code></pre></figure>
+
+<p>More specifically, if we want to convert <code class="language-plaintext highlighter-rouge">binary_var_dat</code> to <code class="language-plaintext highlighter-rouge">gene_mat</code>, what procedures can we take?
+Here is my solution:</p>
+<ol>
+  <li>Split each column name by its delimiter;</li>
+  <li>Replace column names with their splited string;</li>
+  <li>Merge columns with the same column name.</li>
+</ol>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">pre_gene_mat</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">binary_var_dat</span><span class="w">
+</span><span class="n">colnames</span><span class="p">(</span><span class="n">pre_gene_mat</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">sapply</span><span class="p">(</span><span class="n">strsplit</span><span class="p">(</span><span class="n">colnames</span><span class="p">(</span><span class="n">pre_gene_mat</span><span class="p">),</span><span class="w"> </span><span class="n">split</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"_"</span><span class="p">),</span><span class="w"> </span><span class="s1">'['</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">)</span><span class="w">
+</span><span class="n">pre_gene_mat</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">as.matrix</span><span class="p">(</span><span class="n">pre_gene_mat</span><span class="p">)</span><span class="w">
+</span><span class="n">coln</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">colnames</span><span class="p">(</span><span class="n">pre_gene_mat</span><span class="p">)</span><span class="w">
+</span><span class="n">gene_mat</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">pre_gene_mat</span><span class="w"> </span><span class="o">%*%</span><span class="w"> </span><span class="n">sapply</span><span class="p">(</span><span class="n">unique</span><span class="p">(</span><span class="n">coln</span><span class="p">),</span><span class="s2">"=="</span><span class="p">,</span><span class="w"> </span><span class="n">coln</span><span class="p">)</span></code></pre></figure>
+
+<p>To be honest, it almost cost me half an hour on this problem. The reason I spent so much time is that I have been suspecting that <code class="language-plaintext highlighter-rouge">data frame</code> in R should only possess unique row names and column names. Surprisingly, the <code class="language-plaintext highlighter-rouge">data frame</code> naming criterion is very flexible â€” unique row names and flexible column names.</p>
+
+<p>In specific circumstances, if you want duplicated row names, just transpose the data frame and do whatever you want. I like this design philosophy.</p>
+:ET

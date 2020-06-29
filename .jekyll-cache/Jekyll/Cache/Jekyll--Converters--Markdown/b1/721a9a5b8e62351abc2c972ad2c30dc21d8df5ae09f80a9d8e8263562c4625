@@ -1,0 +1,180 @@
+I""(<p>最初微信公众平台是架设在SAE上，还是比较省心，后来增加了一个查文献的需求，对XML文档解析时无论怎样调试都报错，研究了很久之后发现并不是我的问题，其中一个很重要的解析包依赖C库，而SAE平台是不支持C语言的，于是我便选择自己搭建后台。</p>
+
+<div id="entry-table-of-contents" class="toc-wrapper">
+  <h2 id="toc-toggle" class="no_toc">
+  Table of Contents <i class="toc-toggle-icon fas fa-chevron-down"></i>
+</h2>
+<ol id="markdown-toc">
+  <li><a href="#购买服务器" id="markdown-toc-购买服务器">购买服务器</a></li>
+  <li><a href="#主要组件展示" id="markdown-toc-主要组件展示">主要组件展示</a></li>
+  <li><a href="#安装virtualenv及必要组件" id="markdown-toc-安装virtualenv及必要组件">安装Virtualenv及必要组件</a></li>
+  <li><a href="#安装flask--werobot-sdk" id="markdown-toc-安装flask--werobot-sdk">安装Flask &amp; WeRoBot SDK</a></li>
+  <li><a href="#文件树展示" id="markdown-toc-文件树展示">文件树展示</a></li>
+  <li><a href="#配置-nginx" id="markdown-toc-配置-nginx">配置 Nginx</a></li>
+  <li><a href="#配置-supervisor" id="markdown-toc-配置-supervisor">配置 Supervisor</a></li>
+  <li><a href="#启动supervisor" id="markdown-toc-启动supervisor">启动Supervisor</a></li>
+  <li><a href="#微信平台端设置" id="markdown-toc-微信平台端设置">微信平台端设置</a></li>
+  <li><a href="#参考" id="markdown-toc-参考">参考</a></li>
+</ol>
+
+</div>
+
+<h2 id="购买服务器">购买服务器</h2>
+
+<p>我是在阿里云上买的服务器，新用户可以申请6个月的免费试用，最大的缺点就是没有公网IP。我升级了1M的公网IP，花了100多块钱的银子，还算实在，升级后主要配置为：</p>
+
+<ol>
+  <li>OS Ubuntu 14.04 64位</li>
+  <li>CPU 1核</li>
+  <li>内存 1GB</li>
+  <li>带宽 1M</li>
+  <li>地域 北京</li>
+</ol>
+
+<p>如果后台暂时没有过多的访问人数，这个就足够了，用户增长后，可以弹性升级配置，下面我们需要部署一个适合开发的Python环境。</p>
+
+<h2 id="主要组件展示">主要组件展示</h2>
+
+<ol>
+  <li>Ubuntu</li>
+  <li><a href="http://docs.gunicorn.org/en/latest/deploy.html#nginx-configuration">Nginx</a></li>
+  <li><a href="http://docs.gunicorn.org/en/latest/">Gunicorn</a></li>
+  <li>Python</li>
+  <li>Pip</li>
+  <li>Virtualenv</li>
+  <li>Flask</li>
+  <li><a href="http://supervisord.org/configuration.html">Supervisor</a></li>
+  <li>WeRoBot SDK</li>
+</ol>
+
+<p>简单说下主要逻辑关系，我们用Nginx作为Web服务器，该服务器无法直接和Flask (or Python)交互，所以我们需要引入Gunicorn，它是一个独立的WSGI容器，可以容纳WSGI应用并且提供HTTP服务。而后，用Supervisor 管理服务器进程，当某个应用挂掉，可以自动重启。</p>
+
+<h2 id="安装virtualenv及必要组件">安装Virtualenv及必要组件</h2>
+
+<p>用来创建不同的Python隔离环境，可以保证一个干净的环境。</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>adduser newuser
+<span class="nv">$ </span><span class="nb">sudo </span>apt-get update 
+<span class="nv">$ </span><span class="nb">sudo </span>apt-get <span class="nb">install </span>zsh <span class="c"># 强烈推荐该shell</span>
+<span class="nv">$ </span><span class="nb">sudo </span>apt-get <span class="nb">install</span> <span class="nt">-y</span> python python-pip python-virtualenv nginx gunicorn <span class="c"># 安装各类组件</span>
+
+<span class="nv">$ </span><span class="nb">sudo mkdir</span> /home/mirror <span class="o">&amp;&amp;</span> <span class="nb">cd</span> /home/mirror 
+<span class="nv">$ </span><span class="nb">sudo </span>virtualenv <span class="nb">test</span> <span class="c"># 此时在mirror文件夹下创建一个虚拟环境</span>
+
+<span class="nv">$ </span><span class="nb">cd</span> /home/mirror/test 
+<span class="nv">$ </span><span class="nb">sudo source</span> ./bin/activate <span class="c"># 激活虚拟环境</span>
+
+<span class="c"># 取消激活命令为</span>
+deactivate</code></pre></figure>
+
+<h2 id="安装flask--werobot-sdk">安装Flask &amp; WeRoBot SDK</h2>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span><span class="nb">sudo </span>pip <span class="nb">install </span>flask
+<span class="nv">$ </span><span class="nb">sudo </span>pip <span class="nb">install </span>flask_werobot
+<span class="nv">$ </span><span class="nb">sudo </span>vim app.py </code></pre></figure>
+
+<p>Elementary code in app.py:</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
+<span class="kn">from</span> <span class="nn">flask.ext.werobot</span> <span class="kn">import</span> <span class="n">WeRoBot</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+<span class="n">robot</span> <span class="o">=</span> <span class="n">WeRoBot</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">token</span> <span class="o">=</span> <span class="s">"Yourtoken"</span><span class="p">,</span> <span class="n">rule</span> <span class="o">=</span> <span class="s">'/test'</span><span class="p">)</span>
+
+<span class="o">@</span><span class="n">robot</span><span class="p">.</span><span class="n">handler</span>
+<span class="k">def</span> <span class="nf">echo</span><span class="p">(</span><span class="n">message</span><span class="p">):</span>
+    <span class="k">return</span> <span class="s">'Hello World'</span></code></pre></figure>
+
+<p>然后去微信公众平台把Token改为你自己设置的Token。</p>
+
+<h2 id="文件树展示">文件树展示</h2>
+
+<p>上面配置好了以后，你的目录应该会长成这个样子。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">home/mirror //用户目录
+├── logs
+└── test //项目目录
+	├── bin
+	│   ├── activate
+	│   ├── easy_install
+	│   ├── gunicorn
+	│   ├── pip
+	│   └── python
+	├── include/
+	├── lib/  
+	├── local
+	│   ├── bin 
+	│   ├── include 
+	│   └── lib 
+	└── app.py //主程序</code></pre></figure>
+
+<h2 id="配置-nginx">配置 Nginx</h2>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span><span class="nb">sudo</span> /etc/init.d/nginx start	<span class="c">#启动nginx</span>
+
+<span class="nv">$ </span><span class="nb">sudo rm</span> /etc/nginx/sites-enabled/default	<span class="c">#删除默认配置</span>
+<span class="nv">$ </span><span class="nb">sudo touch</span> /etc/nginx/sites-available/test	<span class="c">#建立项目文件</span>
+<span class="nv">$ </span><span class="nb">sudo ln</span> <span class="nt">-s</span> /etc/nginx/sites-available/test /etc/nginx/sites-enabled/test	<span class="c">#设置软链接</span>
+
+<span class="nv">$ </span><span class="nb">sudo </span>vim /etc/nginx/sites-enabled/test	<span class="c">#编辑项目文件</span></code></pre></figure>
+
+<p>添加：</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">server {
+    location / {
+        proxy_pass http://127.0.0.1:8000;
+    }
+}</code></pre></figure>
+
+<p>当HTTP请求得到<code class="language-plaintext highlighter-rouge">/</code>，便会反向代理到<code class="language-plaintext highlighter-rouge">127.0.0.1</code>8000端口。
+重启 nginx:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span><span class="nb">sudo</span> /etc/init.d/nginx restart</code></pre></figure>
+
+<h2 id="配置-supervisor">配置 Supervisor</h2>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span><span class="nb">sudo </span>apt-get <span class="nb">install</span> <span class="nt">-y</span> supervisor	<span class="c">#安装</span>
+<span class="nv">$ </span><span class="nb">sudo </span>vim /etc/supervisor/conf.d/test.conf	<span class="c">#创建配置文件</span></code></pre></figure>
+
+<p>添加：</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">[program:test]
+
+command = /home/mirror/test/bin/gunicorn app:app -b localhost:8100
+directory = /home/mirror/test
+timeout = 60*60
+user = mirror
+autostart = true
+autorestart = true
+redirect_stderr = true
+stdout_logfile = /home/mirror/logs/supervisor.log</code></pre></figure>
+
+<h2 id="启动supervisor">启动Supervisor</h2>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span><span class="nb">sudo </span>supervisorctl reread
+<span class="nv">$ </span><span class="nb">sudo </span>supervisorctl update
+<span class="nv">$ </span><span class="nb">sudo </span>supervisorctl start <span class="nb">test</span>
+
+<span class="c">## 重启supervisor</span>
+<span class="nv">$ </span><span class="nb">sudo </span>supervisorctl restart <span class="nb">test</span></code></pre></figure>
+
+<h2 id="微信平台端设置">微信平台端设置</h2>
+
+<p>进入微信公众平台—&gt;开发者模式—&gt;设置URL和Token</p>
+<figure>
+<img src="https://shangyblog-1256840873.cos.ap-beijing.myqcloud.com/wechat.png" alt="image" />
+</figure>
+
+<p>如果配置没有问题，顺利通过，用微信给你的公众平台发消息应该能看到’hello world!’。</p>
+
+<p class="notice"><strong>Tips:</strong> 出现任何问题，重启supervisor，倘若仍不能够解决，请查看log文件。</p>
+
+<h2 id="参考">参考</h2>
+
+<ol>
+  <li><a href="https://flask-werobot.readthedocs.org/en/latest/">werobot</a></li>
+  <li><a href="http://beiyuu.com/vps-config-python-vitrualenv-flask-gunicorn-supervisor-nginx/">VPS环境搭建详解</a></li>
+  <li><a href="https://realpython.com/blog/python/kickstarting-flask-on-ubuntu-setup-and-deployment/#disqus_thread">Flask on Ubuntu</a></li>
+</ol>
+
+:ET

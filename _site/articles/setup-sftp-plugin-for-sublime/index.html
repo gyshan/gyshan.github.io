@@ -15,9 +15,9 @@
 
   
     
-    <!-- Begin Jekyll SEO tag v2.4.0 -->
+    <!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>Setup sftp plugin for sublime | Guangyu Corey Shan’s Blog</title>
-<meta name="generator" content="Jekyll v3.8.5" />
+<meta name="generator" content="Jekyll v4.1.1" />
 <meta property="og:title" content="Setup sftp plugin for sublime" />
 <meta name="author" content="Corey" />
 <meta property="og:locale" content="en_US" />
@@ -29,10 +29,11 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2017-09-26T00:00:00+08:00" />
 <meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Setup sftp plugin for sublime" />
 <meta name="twitter:site" content="@GuangyuShan" />
 <meta name="twitter:creator" content="@Corey" />
 <script type="application/ld+json">
-{"description":"SFTP setting protocol","author":{"@type":"Person","name":"Corey"},"@type":"BlogPosting","url":"http://localhost:4000/articles/setup-sftp-plugin-for-sublime/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://shangyblog-1256840873.cos.ap-beijing.myqcloud.com/logo.svg"},"name":"Corey"},"headline":"Setup sftp plugin for sublime","dateModified":"2017-09-26T00:00:00+08:00","datePublished":"2017-09-26T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/articles/setup-sftp-plugin-for-sublime/"},"@context":"http://schema.org"}</script>
+{"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://shangyblog-1256840873.cos.ap-beijing.myqcloud.com/logo.svg"},"name":"Corey"},"author":{"@type":"Person","name":"Corey"},"headline":"Setup sftp plugin for sublime","dateModified":"2017-09-26T00:00:00+08:00","description":"SFTP setting protocol","datePublished":"2017-09-26T00:00:00+08:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/articles/setup-sftp-plugin-for-sublime/"},"url":"http://localhost:4000/articles/setup-sftp-plugin-for-sublime/","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -171,8 +172,8 @@
 <h2 id="install-package-control-package">Install Package Control Package</h2>
 
 <ul>
-  <li>Open Sublime console by pressing <code class="highlighter-rouge">Ctrl</code> +<code class="highlighter-rouge">~</code></li>
-  <li>Copy the long command below and press <code class="highlighter-rouge">Enter</code></li>
+  <li>Open Sublime console by pressing <code class="language-plaintext highlighter-rouge">Ctrl</code> +<code class="language-plaintext highlighter-rouge">~</code></li>
+  <li>Copy the long command below and press <code class="language-plaintext highlighter-rouge">Enter</code></li>
 </ul>
 
 <p>Sublime Text 2</p>
@@ -190,77 +191,71 @@
 <h2 id="install-sftp">Install SFTP</h2>
 
 <ul>
-  <li>Press <code class="highlighter-rouge">Command</code>/<code class="highlighter-rouge">Control</code>  + <code class="highlighter-rouge">Shift</code> +<code class="highlighter-rouge">P</code></li>
-  <li>Type <code class="highlighter-rouge">SFTP</code> and install</li>
+  <li>Press <code class="language-plaintext highlighter-rouge">Command</code>/<code class="language-plaintext highlighter-rouge">Control</code>  + <code class="language-plaintext highlighter-rouge">Shift</code> +<code class="language-plaintext highlighter-rouge">P</code></li>
+  <li>Type <code class="language-plaintext highlighter-rouge">SFTP</code> and install</li>
 </ul>
 
 <h2 id="setup-config-file-in-json-format">Setup config file in json format</h2>
 
 <ul>
   <li>Drag a folder to sublime and this folder will show up in the sidebar</li>
-  <li>Right click on this folder and select <code class="highlighter-rouge">SFTP/FTP</code>  -&gt; <code class="highlighter-rouge">Map to Remote...</code></li>
-  <li>A file named <code class="highlighter-rouge">sftp-config.json</code> will show up in this folder</li>
-  <li>Change four field with your own customization: <code class="highlighter-rouge">host</code>, <code class="highlighter-rouge">user</code>, <code class="highlighter-rouge">password</code> and <code class="highlighter-rouge">remote_path</code> , save it.</li>
+  <li>Right click on this folder and select <code class="language-plaintext highlighter-rouge">SFTP/FTP</code>  -&gt; <code class="language-plaintext highlighter-rouge">Map to Remote...</code></li>
+  <li>A file named <code class="language-plaintext highlighter-rouge">sftp-config.json</code> will show up in this folder</li>
+  <li>Change four field with your own customization: <code class="language-plaintext highlighter-rouge">host</code>, <code class="language-plaintext highlighter-rouge">user</code>, <code class="language-plaintext highlighter-rouge">password</code> and <code class="language-plaintext highlighter-rouge">remote_path</code> , save it.</li>
 </ul>
 
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
 </span><span class="err">//</span><span class="w"> </span><span class="err">The</span><span class="w"> </span><span class="err">tab</span><span class="w"> </span><span class="err">key</span><span class="w"> </span><span class="err">will</span><span class="w"> </span><span class="err">cycle</span><span class="w"> </span><span class="err">through</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">settings</span><span class="w"> </span><span class="err">when</span><span class="w"> </span><span class="err">first</span><span class="w"> </span><span class="err">created</span><span class="w">
-</span><span class="err">//</span><span class="w"> </span><span class="err">Visit</span><span class="w"> </span><span class="err">http</span><span class="p">:</span><span class="err">//wbond.net/sublime_packages/sftp/settings</span><span class="w"> </span><span class="err">for</span><span class="w"> </span><span class="err">help</span><span class="w">
+</span><span class="err">//</span><span class="w"> </span><span class="err">Visit</span><span class="w"> </span><span class="err">http://wbond.net/sublime_packages/sftp/settings</span><span class="w"> </span><span class="err">for</span><span class="w"> </span><span class="err">help</span><span class="w">
 
 </span><span class="err">//</span><span class="w"> </span><span class="err">sftp</span><span class="p">,</span><span class="w"> </span><span class="err">ftp</span><span class="w"> </span><span class="err">or</span><span class="w"> </span><span class="err">ftps</span><span class="w">
-</span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sftp"</span><span class="p">,</span><span class="w">
+</span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sftp"</span><span class="p">,</span><span class="w">
 
-</span><span class="s2">"save_before_upload"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-</span><span class="s2">"upload_on_save"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-</span><span class="s2">"sync_down_on_open"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-</span><span class="s2">"sync_skip_deletes"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-</span><span class="s2">"sync_same_age"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-</span><span class="s2">"confirm_downloads"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-</span><span class="s2">"confirm_sync"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-</span><span class="s2">"confirm_overwrite_newer"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+</span><span class="nl">"save_before_upload"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+</span><span class="nl">"upload_on_save"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+</span><span class="nl">"sync_down_on_open"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+</span><span class="nl">"sync_skip_deletes"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+</span><span class="nl">"sync_same_age"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+</span><span class="nl">"confirm_downloads"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+</span><span class="nl">"confirm_sync"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+</span><span class="nl">"confirm_overwrite_newer"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
 
-</span><span class="s2">"host"</span><span class="p">:</span><span class="w"> </span><span class="s2">"yourip"</span><span class="p">,</span><span class="w">    </span><span class="err">&lt;-</span><span class="w"> </span><span class="err">Here</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">where</span><span class="w"> </span><span class="err">you</span><span class="w"> </span><span class="err">want</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">change</span><span class="w">
-</span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="s2">"yourname"</span><span class="p">,</span><span class="w">     </span><span class="err">&lt;-</span><span class="w"> </span><span class="err">Here</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">where</span><span class="w"> </span><span class="err">you</span><span class="w"> </span><span class="err">want</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">change</span><span class="w">
-</span><span class="s2">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"yourpassword"</span><span class="p">,</span><span class="w">    </span><span class="err">&lt;-</span><span class="w"> </span><span class="err">Here</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">where</span><span class="w"> </span><span class="err">you</span><span class="w"> </span><span class="err">want</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">change</span><span class="w">  
-</span><span class="err">//</span><span class="s2">"port"</span><span class="p">:</span><span class="w"> </span><span class="s2">"22"</span><span class="p">,</span><span class="w">
+</span><span class="nl">"host"</span><span class="p">:</span><span class="w"> </span><span class="s2">"yourip"</span><span class="p">,</span><span class="w">    </span><span class="err">&lt;-</span><span class="w"> </span><span class="err">Here</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">where</span><span class="w"> </span><span class="err">you</span><span class="w"> </span><span class="err">want</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">change</span><span class="w">
+</span><span class="nl">"user"</span><span class="p">:</span><span class="w"> </span><span class="s2">"yourname"</span><span class="p">,</span><span class="w">     </span><span class="err">&lt;-</span><span class="w"> </span><span class="err">Here</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">where</span><span class="w"> </span><span class="err">you</span><span class="w"> </span><span class="err">want</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">change</span><span class="w">
+</span><span class="nl">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"yourpassword"</span><span class="p">,</span><span class="w">    </span><span class="err">&lt;-</span><span class="w"> </span><span class="err">Here</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">where</span><span class="w"> </span><span class="err">you</span><span class="w"> </span><span class="err">want</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">change</span><span class="w">  
+</span><span class="err">//</span><span class="nl">"port"</span><span class="p">:</span><span class="w"> </span><span class="s2">"22"</span><span class="p">,</span><span class="w">
 
-</span><span class="s2">"remote_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"yourpath"</span><span class="p">,</span><span class="w">  </span><span class="err">&lt;-</span><span class="w"> </span><span class="err">Here</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">where</span><span class="w"> </span><span class="err">you</span><span class="w"> </span><span class="err">want</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">change</span><span class="w">
-</span><span class="s2">"ignore_regexes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+</span><span class="nl">"remote_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"yourpath"</span><span class="p">,</span><span class="w">  </span><span class="err">&lt;-</span><span class="w"> </span><span class="err">Here</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">where</span><span class="w"> </span><span class="err">you</span><span class="w"> </span><span class="err">want</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">change</span><span class="w">
+</span><span class="nl">"ignore_regexes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="s2">"</span><span class="se">\\</span><span class="s2">.sublime-(project|workspace)"</span><span class="p">,</span><span class="w"> </span><span class="s2">"sftp-config(-alt</span><span class="se">\\</span><span class="s2">d?)?</span><span class="se">\\</span><span class="s2">.json"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"sftp-settings</span><span class="se">\\</span><span class="s2">.json"</span><span class="p">,</span><span class="w"> </span><span class="s2">"/venv/"</span><span class="p">,</span><span class="w"> </span><span class="s2">"</span><span class="se">\\</span><span class="s2">.svn/"</span><span class="p">,</span><span class="w"> </span><span class="s2">"</span><span class="se">\\</span><span class="s2">.hg/"</span><span class="p">,</span><span class="w"> </span><span class="s2">"</span><span class="se">\\</span><span class="s2">.git/"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"</span><span class="se">\\</span><span class="s2">.bzr"</span><span class="p">,</span><span class="w"> </span><span class="s2">"_darcs"</span><span class="p">,</span><span class="w"> </span><span class="s2">"CVS"</span><span class="p">,</span><span class="w"> </span><span class="s2">"</span><span class="se">\\</span><span class="s2">.DS_Store"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Thumbs</span><span class="se">\\</span><span class="s2">.db"</span><span class="p">,</span><span class="w"> </span><span class="s2">"desktop</span><span class="se">\\</span><span class="s2">.ini"</span><span class="w">
 </span><span class="p">],</span><span class="w">
-</span><span class="err">//</span><span class="s2">"file_permissions"</span><span class="p">:</span><span class="w"> </span><span class="s2">"664"</span><span class="p">,</span><span class="w">
-</span><span class="err">//</span><span class="s2">"dir_permissions"</span><span class="p">:</span><span class="w"> </span><span class="s2">"775"</span><span class="p">,</span><span class="w">
-</span><span class="err">//</span><span class="s2">"extra_list_connections"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-</span><span class="s2">"connect_timeout"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
-</span><span class="err">//</span><span class="s2">"keepalive"</span><span class="p">:</span><span class="w"> </span><span class="mi">120</span><span class="p">,</span><span class="w">
-</span><span class="err">//</span><span class="s2">"ftp_passive_mode"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-</span><span class="err">//</span><span class="s2">"ftp_obey_passive_host"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-</span><span class="err">//</span><span class="s2">"ssh_key_file"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~/.ssh/id_rsa"</span><span class="p">,</span><span class="w">
-</span><span class="err">//</span><span class="s2">"sftp_flags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"-F"</span><span class="p">,</span><span class="w"> </span><span class="s2">"/path/to/ssh_config"</span><span class="p">],</span><span class="w">
-</span><span class="err">//</span><span class="s2">"preserve_modification_times"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-</span><span class="err">//</span><span class="s2">"remote_time_offset_in_hours"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-</span><span class="err">//</span><span class="s2">"remote_encoding"</span><span class="p">:</span><span class="w"> </span><span class="s2">"utf-8"</span><span class="p">,</span><span class="w">
-</span><span class="err">//</span><span class="s2">"remote_locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"C"</span><span class="p">,</span><span class="w">
-</span><span class="err">//</span><span class="s2">"allow_config_upload"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+</span><span class="err">//</span><span class="nl">"file_permissions"</span><span class="p">:</span><span class="w"> </span><span class="s2">"664"</span><span class="p">,</span><span class="w">
+</span><span class="err">//</span><span class="nl">"dir_permissions"</span><span class="p">:</span><span class="w"> </span><span class="s2">"775"</span><span class="p">,</span><span class="w">
+</span><span class="err">//</span><span class="nl">"extra_list_connections"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+</span><span class="nl">"connect_timeout"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
+</span><span class="err">//</span><span class="nl">"keepalive"</span><span class="p">:</span><span class="w"> </span><span class="mi">120</span><span class="p">,</span><span class="w">
+</span><span class="err">//</span><span class="nl">"ftp_passive_mode"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+</span><span class="err">//</span><span class="nl">"ftp_obey_passive_host"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+</span><span class="err">//</span><span class="nl">"ssh_key_file"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~/.ssh/id_rsa"</span><span class="p">,</span><span class="w">
+</span><span class="err">//</span><span class="nl">"sftp_flags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"-F"</span><span class="p">,</span><span class="w"> </span><span class="s2">"/path/to/ssh_config"</span><span class="p">],</span><span class="w">
+</span><span class="err">//</span><span class="nl">"preserve_modification_times"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+</span><span class="err">//</span><span class="nl">"remote_time_offset_in_hours"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+</span><span class="err">//</span><span class="nl">"remote_encoding"</span><span class="p">:</span><span class="w"> </span><span class="s2">"utf-8"</span><span class="p">,</span><span class="w">
+</span><span class="err">//</span><span class="nl">"remote_locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"C"</span><span class="p">,</span><span class="w">
+</span><span class="err">//</span><span class="nl">"allow_config_upload"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
 </span><span class="p">}</span></code></pre></figure>
 
 <h2 id="enjoy-coding">Enjoy coding</h2>
 
 <ul>
-  <li>Right click your code in this folder and choose <code class="highlighter-rouge">SFTP/FTP</code></li>
-  <li>Then you can do whatever you want to do, such as <code class="highlighter-rouge">Upload File</code>, <code class="highlighter-rouge">Download File</code> …</li>
+  <li>Right click your code in this folder and choose <code class="language-plaintext highlighter-rouge">SFTP/FTP</code></li>
+  <li>Then you can do whatever you want to do, such as <code class="language-plaintext highlighter-rouge">Upload File</code>, <code class="language-plaintext highlighter-rouge">Download File</code> …</li>
 </ul>
 
 
-          <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-5781531972792310",
-    enable_page_level_ads: true
-  });
-</script>
+          <script data-ad-client="ca-pub-8229890765678041" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         </div>
 
         

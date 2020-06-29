@@ -1,0 +1,11 @@
+I"+<p>SVM是一类典型的监督算法，那么也就属于分类的范畴。在如图的分类过程中，可以有无数条线分开空心圆和实心圆。</p>
+
+<p>但是，SVM能够找到一条最优界限使得其到两边的margin都最大。边缘几个点就叫做支持向量，也正是算法名字的来源。</p>
+
+<figure>
+<img src="https://shangyblog-1256840873.cos.ap-beijing.myqcloud.com/SVM.png" alt="image" />
+</figure>
+
+<p><a href="https://awwthor.wordpress.com/2009/12/31/a-thousand-foot-view-of-machine-learning/">Figure Source</a></p>
+
+:ET

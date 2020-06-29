@@ -1,0 +1,23 @@
+I"l<p>Yesterday, I began to transfer my git configuration from my old machine to my new MacBook Pro. When I renamed my file by doing this, an error has occurred to me:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>git <span class="nb">mv </span>readme Readme
+fatal: destination exists, <span class="nb">source</span><span class="o">=</span>readme, <span class="nv">destination</span><span class="o">=</span>Readme</code></pre></figure>
+
+<p>It seems like my Mac OS X cannot recognize <code class="language-plaintext highlighter-rouge">Readme</code> file as same as <code class="language-plaintext highlighter-rouge">readme</code> file. So I had to convert <code class="language-plaintext highlighter-rouge">readme</code> file to <code class="language-plaintext highlighter-rouge">tmp_file</code> and then <code class="language-plaintext highlighter-rouge">tmp_file</code> to <code class="language-plaintext highlighter-rouge">Readme</code> file. In Linux, this command can work very well, but in Mac OS X, failed. This is the first time that I realized case-sensitive is so important. Except for this situation, I believe it is hazardous when keep confusing the case.</p>
+
+<p>Different operating systems (OS) have different case-sensitive level, that is why the same command upon can work well on Linux but fail on Mac OS X.</p>
+
+<ul>
+  <li>case-sensitive OS: Linux, Solaris, BSD</li>
+  <li>case-insensitive OS: Windows, Mac OS X</li>
+</ul>
+
+<p>In my working pipeline, my file often transfers between Linux and Mac OS X, so I decided to convert all my filename under <strong>lowercase_with_underscore</strong> principle. The reasons behind this principle are:</p>
+
+<ul>
+  <li>Easy to read, UPPERCASE_WITH_UNDERSCORE is hard to understand</li>
+  <li>Easy to distinguish a private file from system folder/file such as <code class="language-plaintext highlighter-rouge">Documents</code>, <code class="language-plaintext highlighter-rouge">Downloads</code> and so on</li>
+  <li>Transfer file with lower risk (Every OSs can recognize your file correctly)</li>
+  <li>I love the underscore sign</li>
+</ul>
+:ET

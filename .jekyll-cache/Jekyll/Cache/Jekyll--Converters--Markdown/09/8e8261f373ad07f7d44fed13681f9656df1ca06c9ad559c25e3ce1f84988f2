@@ -1,0 +1,12 @@
+I"�<h2 id="问题描述">问题描述</h2>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">xcrun: error: invalid active developer path <span class="o">(</span>/Library/Developer/CommandLineTools<span class="o">)</span>, missing xcrun at: /Library/Developer/CommandLineTools/usr/bin/xcrun</code></pre></figure>
+
+<h2 id="解决方案">解决方案</h2>
+<p>重新下载安装<code class="language-plaintext highlighter-rouge">Xcode</code>，并且安装<code class="language-plaintext highlighter-rouge">Xcode Command Line Tools</code>。</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">xcode-select <span class="nt">--install</span></code></pre></figure>
+
+<p>完成后，git便可以重新使用了。</p>
+
+:ET

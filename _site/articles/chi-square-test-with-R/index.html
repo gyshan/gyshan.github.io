@@ -15,9 +15,9 @@
 
   
     
-    <!-- Begin Jekyll SEO tag v2.4.0 -->
+    <!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>Chi-Squared Test with R | Guangyu Corey Shan’s Blog</title>
-<meta name="generator" content="Jekyll v3.8.5" />
+<meta name="generator" content="Jekyll v4.1.1" />
 <meta property="og:title" content="Chi-Squared Test with R" />
 <meta name="author" content="Corey" />
 <meta property="og:locale" content="en_US" />
@@ -29,10 +29,11 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2020-01-19T00:00:00+08:00" />
 <meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Chi-Squared Test with R" />
 <meta name="twitter:site" content="@GuangyuShan" />
 <meta name="twitter:creator" content="@Corey" />
 <script type="application/ld+json">
-{"description":"The prerequiste of chi-squared test","author":{"@type":"Person","name":"Corey"},"@type":"BlogPosting","url":"http://localhost:4000/articles/chi-square-test-with-R/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://shangyblog-1256840873.cos.ap-beijing.myqcloud.com/logo.svg"},"name":"Corey"},"headline":"Chi-Squared Test with R","dateModified":"2020-01-19T00:00:00+08:00","datePublished":"2020-01-19T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/articles/chi-square-test-with-R/"},"@context":"http://schema.org"}</script>
+{"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://shangyblog-1256840873.cos.ap-beijing.myqcloud.com/logo.svg"},"name":"Corey"},"author":{"@type":"Person","name":"Corey"},"headline":"Chi-Squared Test with R","dateModified":"2020-01-19T00:00:00+08:00","description":"The prerequiste of chi-squared test","datePublished":"2020-01-19T00:00:00+08:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/articles/chi-square-test-with-R/"},"url":"http://localhost:4000/articles/chi-square-test-with-R/","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -175,29 +176,29 @@
   </tbody>
 </table>
 
-<p>The test statistic for the Chi-Square Test of independence is denoted as <script type="math/tex">\chi^{2}</script>, and is computed as:</p>
+<p>The test statistic for the Chi-Square Test of independence is denoted as \(\chi^{2}\), and is computed as:</p>
 
-<script type="math/tex; mode=display">\chi^{2} = \sum_{i=1}^{R}{\sum_{j=1}^{C}{\frac{(o_{ij} - e_{ij})^{2}}{e_{ij}}}}</script>
+\[\chi^{2} = \sum_{i=1}^{R}{\sum_{j=1}^{C}{\frac{(o_{ij} - e_{ij})^{2}}{e_{ij}}}}\]
 
 <p>where
-<script type="math/tex">o_{ij}</script> is the observed cell count in the <script type="math/tex">i^{th}</script> row and <script type="math/tex">j^{th}</script> column of the table
-<script type="math/tex">e_{ij}</script> is the expected cell count in the <script type="math/tex">i^{th}</script> row and <script type="math/tex">j^{th}</script> column of the table, computed as</p>
+\(o_{ij}\) is the observed cell count in the \(i^{th}\) row and \(j^{th}\) column of the table
+\(e_{ij}\) is the expected cell count in the \(i^{th}\) row and \(j^{th}\) column of the table, computed as</p>
 
-<script type="math/tex; mode=display">e_{ij} = \frac{(row\_i\_total)(col\_j\_total)}{grand\_total}</script>
+\[e_{ij} = \frac{(row\_i\_total)(col\_j\_total)}{grand\_total}\]
 
-<p>The condition is based on the N and <script type="math/tex">e_{ij}</script>:</p>
+<p>The condition is based on the N and \(e_{ij}\):</p>
 <ol>
-  <li>N ≥ 40 and <script type="math/tex">e_{ij}</script> ≥ 5. Use the Chi-Squared Test.</li>
-  <li>N ≥ 40 and 1 ≤ <script type="math/tex">e_{ij}</script> ≤ 5. Use the Chi-Squared Test with correction (chisq.test with parameter correct=TRUE).</li>
-  <li>N &lt; 40 or <script type="math/tex">e_{ij}</script> &lt; 1 or p-value close to 0.05. Can not use the Chi-Squared Test, should use the Fisher’s Exact Test.</li>
+  <li>N ≥ 40 and \(e_{ij}\) ≥ 5. Use the Chi-Squared Test.</li>
+  <li>N ≥ 40 and 1 ≤ \(e_{ij}\) ≤ 5. Use the Chi-Squared Test with correction (chisq.test with parameter correct=TRUE).</li>
+  <li>N &lt; 40 or \(e_{ij}\) &lt; 1 or p-value close to 0.05. Can not use the Chi-Squared Test, should use the Fisher’s Exact Test.</li>
 </ol>
 
-<p>To our smoking problem, we first check the total sample size N, N = 20 + 3 + 8 + 22 = 53 &gt; 40. Second, we check each <script type="math/tex">e_{ij}</script>, each cell of <script type="math/tex">e_{ij}</script> is described in the table and <script type="math/tex">e_{ij}</script> &gt; 5. Therefore, we could use Chi-Squared Test and find out the gender is correlated with the smoking status based on our data (p-value = 4.501e-05 « 0.05).</p>
+<p>To our smoking problem, we first check the total sample size N, N = 20 + 3 + 8 + 22 = 53 &gt; 40. Second, we check each \(e_{ij}\), each cell of \(e_{ij}\) is described in the table and \(e_{ij}\) &gt; 5. Therefore, we could use Chi-Squared Test and find out the gender is correlated with the smoking status based on our data (p-value = 4.501e-05 « 0.05).</p>
 
 <table class="table">
   <thead>
     <tr>
-      <th style="text-align: left"><script type="math/tex">e_{ij}</script></th>
+      <th style="text-align: left">\(e_{ij}\)</th>
       <th style="text-align: center">Smoker</th>
       <th style="text-align: center">Non-Smoker</th>
     </tr>
@@ -232,13 +233,7 @@
   <li><a href="https://libguides.library.kent.edu/SPSS/ChiSquare">CHI-SQUARE TEST OF INDEPENDENCE</a></li>
 </ol>
 
-          <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-5781531972792310",
-    enable_page_level_ads: true
-  });
-</script>
+          <script data-ad-client="ca-pub-8229890765678041" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         </div>
 
         

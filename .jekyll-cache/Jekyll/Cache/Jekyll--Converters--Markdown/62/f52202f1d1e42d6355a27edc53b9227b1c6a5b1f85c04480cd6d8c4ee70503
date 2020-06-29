@@ -1,0 +1,13 @@
+I"<p>Recently, we start to transfer a project (comprised code files in multiple folders) from Linux to Windows platform. After compressed the project at the Windows platform, then pull back this project to the Linux platform again.</p>
+
+<p>The mysterious thing happens - the project goes well on Linux, but after compression on Windows and decompression on Linux, the project is down.</p>
+
+<p>At first, we attribute the problem to the compression software and dig it in multiple aspects. After quite a long time debugging, we realized that we are in the wrong way. After that, we change the target and finally locate the problem: case-insensitive problem.</p>
+
+<p>There are two folders in our project: <code class="language-plaintext highlighter-rouge">pod</code> and <code class="language-plaintext highlighter-rouge">Pod</code>. When transferring the project from Linux to Win, all files from <code class="language-plaintext highlighter-rouge">pod</code> and <code class="language-plaintext highlighter-rouge">Pod</code> folders were dumped into the <code class="language-plaintext highlighter-rouge">pod</code> folder. After pulling back to the Linux platform, the necessary <code class="language-plaintext highlighter-rouge">Pod</code> folder is missing, and the error occurs. After dealing with the naming problem, the project goes well again.</p>
+
+<p>The key to this problem is because of case discordant. The Linux platform supports the case-sensitive naming system, while the Windows platform does not. The good news is <a href="https://www.howtogeek.com/354220/how-to-enable-case-sensitive-folders-on-windows-10/">Windows 10 now offers an optional case-sensitive file system</a>.</p>
+
+<p>Even though I have described the same problem in my <a href="https://shanguangyu.com/articles/why-should-you-lowercase-your-filename/">previous post</a>, but when a similar error occurs, I still forgot it. Here, I would like to remind myself again that when dealing with a project between Linux and Windows platforms, we should consider this kind of case discordant problem.</p>
+
+:ET

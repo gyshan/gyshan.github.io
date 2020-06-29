@@ -1,0 +1,10 @@
+I"8<p>Blat is a bioinformatics software tool for sequence alignment. When I googled <code class="language-plaintext highlighter-rouge">install blat on mac</code>, what came to my screen are numerous troubleshooting posts. Here, I want to present a one-liner command solution:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">conda <span class="nb">install</span> <span class="nt">-c</span> bioconda blat  <span class="c"># Imagine you already have conda installed</span></code></pre></figure>
+
+<p>If do not have conda installed on your Mac, install it with following commands:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">wget https://repo.continuum.io/miniconda/Miniconda2-latest-MacOSX-x86_64.sh
+sh Miniconda2-latest-MacOSX-x86_64.sh</code></pre></figure>
+
+:ET

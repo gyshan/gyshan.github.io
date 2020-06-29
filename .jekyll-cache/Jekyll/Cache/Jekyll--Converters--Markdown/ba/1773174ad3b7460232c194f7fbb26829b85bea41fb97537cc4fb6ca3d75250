@@ -1,0 +1,37 @@
+I"8<p><a href="https://en.wikipedia.org/wiki/Indel">InDel</a> is a common concept in molecular biology, while the representation for InDels are non-unique. There are at least two representations: left-alignment and right-alignment. Actually, it does not really matter, but it good to have a convention. I would like to suggest using left-alignment for these reasons:</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">ref            : CGTATGATCTA [GCGCGC] TAGCTAGCTAGC
+left-alignment : CGTATGATCTA [--GCGC] TAGCTAGCTAGC
+right-alignment: CGTATGATCTA [GCGC--] TAGCTAGCTAGC</code></pre></figure>
+
+<ol>
+  <li>
+    <p>Standard
+Statistical genetics center of the university of Michigan denotes that <a href="https://genome.sph.umich.edu/wiki/Variant_Normalization#Left_alignment">left-alignment</a> is necessary.</p>
+  </li>
+  <li>
+    <p>Community
+Most famous tools are stick to left-alignment, such as <a href="https://software.broadinstitute.org/gatk/documentation/tooldocs/3.8-0/org_broadinstitute_gatk_tools_walkers_indels_LeftAlignIndels.php">GATK</a>, <a href="http://annovar.openbioinformatics.org/en/latest/articles/VCF/">ANNOVAR</a> and related databases:</p>
+  </li>
+</ol>
+
+<ul>
+  <li>avsnp138</li>
+  <li>avsnp142</li>
+  <li>clinvar_20150330</li>
+  <li>1000g2014oct</li>
+  <li>exac03</li>
+  <li>esp6500siv2</li>
+</ul>
+
+<blockquote>
+  <p>The standard convention is to place an indel at the left-most position possible.   —GATK</p>
+</blockquote>
+
+<blockquote>
+  <p>Since left-normalization is gaining more and more popularity, my suggestion is to just use left-normalization, and that database curators as well as users both use this practice, so that we can compare apples to apples.   —ANNOVAR</p>
+</blockquote>
+
+<p>In the end, I would prefer to stick to the convention — <strong>left-alignment</strong>.</p>
+
+:ET

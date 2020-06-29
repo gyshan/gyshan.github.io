@@ -1,0 +1,40 @@
+I"�<p>Python 遵循一套<code class="language-plaintext highlighter-rouge">PEP8</code>代码规范，今天发现了一个 Sublime 下格式纠正的插件，甚是好用，记录如下。</p>
+
+<h2 id="安装插件">安装插件</h2>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">cmd+shift+P</code>»<code class="language-plaintext highlighter-rouge">Package Control: Install Package</code></li>
+  <li>找到<code class="language-plaintext highlighter-rouge">Python PEP8 Autoformat</code>这个包并安装</li>
+</ul>
+
+<h2 id="配置-user-settings">配置 User settings</h2>
+
+<p>找到User settings编辑如下内容，保存并退出。
+<code class="language-plaintext highlighter-rouge">Preferences</code>»<code class="language-plaintext highlighter-rouge">Package Settings</code>»<code class="language-plaintext highlighter-rouge">Python PEP8 Autoformat</code>»<code class="language-plaintext highlighter-rouge">Settings - User</code></p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">{
+    // autoformat code on save ?
+    "autoformat_on_save": false,
+
+    // enable possibly unsafe changes (E226, E24, W6)
+    // aggressive level, 0 to disable:
+    "aggressive": 0,
+
+    // list codes for fixes; used by --ignore and --select
+    "list-fixes": false,
+
+    // do not fix these errors / warnings (e.g. ["E501", E4", "W"])
+    "ignore": [],
+
+    // select errors / warnings (e.g. ["E4", "W"])
+    "select": [],
+
+    // Maximum line length
+    "max-line-length": 79
+}</code></pre></figure>
+
+<h2 id="启用">启用</h2>
+
+<p>找到写好的代码，用<code class="language-plaintext highlighter-rouge">ctrl+shift+r</code>纠正一下吧。</p>
+
+:ET

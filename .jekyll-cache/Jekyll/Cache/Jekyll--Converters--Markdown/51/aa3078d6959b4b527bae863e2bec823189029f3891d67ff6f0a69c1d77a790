@@ -1,0 +1,40 @@
+I"�<h2 id="问题描述">问题描述</h2>
+<p>最近一直在开发一个微信公众号，由于后台计算量较大，nginx常出现<code class="language-plaintext highlighter-rouge">timeout</code>问题，经过排查，已经解决。错误代码形如：</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">14:12:16 web.1  | 2014-07-17 14:12:16 [30747] [INFO] Using worker: sync
+14:12:16 web.1  | 2014-07-17 14:12:16 [30752] [INFO] Booting worker with pid: 30752
+14:13:21 web.1  | 2014-07-17 14:13:21 [30747] [CRITICAL] WORKER TIMEOUT (pid:30752)
+14:13:21 web.1  | 2014-07-17 03:43:21 [30752] [INFO] Worker exiting (pid: 30752)
+14:13:21 web.1  | 2014-07-17 14:13:21 [30841] [INFO] Booting worker with pid: 30</code></pre></figure>
+
+<h2 id="解决方案">解决方案</h2>
+
+<p>更改<code class="language-plaintext highlighter-rouge">gunicorn</code>配置文件，我用的是supervisor，故<code class="language-plaintext highlighter-rouge">vi /etc/supervisor/con.f/name.conf</code>添加一行<code class="language-plaintext highlighter-rouge">timeout = 60*60</code>，配置完成的name.conf文件如下：</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">[program:test]
+		
+command = /home/mirror/test/bin/gunicorn app:app -b localhost:8100
+directory = /home/mirror/test
+timeout = 60*60
+user = mirror
+autostart = true
+autorestart = true
+redirect_stderr = true
+stdout_logfile = /home/mirror/logs/supervisor.log</code></pre></figure>
+
+<p>更改<code class="language-plaintext highlighter-rouge">nginx</code>配置，补充一行<code class="language-plaintext highlighter-rouge">proxy_read_timeout 1200</code>，nginx默认为60秒。故<code class="language-plaintext highlighter-rouge">vi /etc/nginx/sites-enabled/test</code>，配置完成的test文件如下：</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">server {
+    listen 80;
+    root /home/mirror/test;
+    location / {
+		proxy_pass http://127.0.0.1:8100;
+		proxy_read_timeout 1200;
+		}
+    }</code></pre></figure>
+
+<p>Done!</p>
+
+<p class="notice"><strong>温馨提示</strong>: 若配置多个站点，需单独配置gunicorn.conf，然后被supervisor调用.</p>
+
+:ET

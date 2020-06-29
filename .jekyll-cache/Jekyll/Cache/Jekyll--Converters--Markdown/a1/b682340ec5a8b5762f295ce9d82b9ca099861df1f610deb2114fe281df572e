@@ -1,0 +1,30 @@
+I"�<p>Install software from source on Linux platform is an extremely common task. I’ve typed those commands a lot, but I did not understand it very well before. After reading this article<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup> wrote by George, I gradually understand those magic incantation.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">./configure
+make
+make <span class="nb">install</span></code></pre></figure>
+
+<p>In short, <code class="language-plaintext highlighter-rouge">configure</code> makes sure that the system environment is ready to build the software, such as standard libraries and components are in the right place, <code class="language-plaintext highlighter-rouge">make</code> read commands from <em>Makefile</em> and compile the software, <code class="language-plaintext highlighter-rouge">make install</code> also read commands from <em>Makefile</em> and install the software to specified directory.</p>
+
+<p>1.configure</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">configure</code> step is aimed to produce <em>Makefile</em> from <em>Makefile.in</em>. At this step, user can define installation directory by <code class="language-plaintext highlighter-rouge">./configure --prefix=/mypath</code>, especially when the user did not have root privilege. For more information, use <code class="language-plaintext highlighter-rouge">./configure --help</code>.</p>
+
+<p>2.make</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">make</code> step is aimed to use <em>Makefile</em> to build the software.</p>
+
+<p>3.make install</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">make install</code> step is aimed to use <em>Makefile</em> to install the software.</p>
+
+<p>Hope everyone goes well with software installation!</p>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p><a href="https://robots.thoughtbot.com/the-magic-behind-configure-make-make-install">The magic behind configure, make and make install</a> <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+:ET

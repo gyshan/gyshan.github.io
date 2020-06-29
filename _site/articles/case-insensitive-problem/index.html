@@ -15,9 +15,9 @@
 
   
     
-    <!-- Begin Jekyll SEO tag v2.4.0 -->
+    <!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>Case insensitive problem | Guangyu Corey Shan’s Blog</title>
-<meta name="generator" content="Jekyll v3.8.5" />
+<meta name="generator" content="Jekyll v4.1.1" />
 <meta property="og:title" content="Case insensitive problem" />
 <meta name="author" content="Corey" />
 <meta property="og:locale" content="en_US" />
@@ -29,10 +29,11 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2019-12-25T00:00:00+08:00" />
 <meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Case insensitive problem" />
 <meta name="twitter:site" content="@GuangyuShan" />
 <meta name="twitter:creator" content="@Corey" />
 <script type="application/ld+json">
-{"description":"Be careful when transfer files between Win and Linux platform","author":{"@type":"Person","name":"Corey"},"@type":"BlogPosting","url":"http://localhost:4000/articles/case-insensitive-problem/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://shangyblog-1256840873.cos.ap-beijing.myqcloud.com/logo.svg"},"name":"Corey"},"headline":"Case insensitive problem","dateModified":"2019-12-25T00:00:00+08:00","datePublished":"2019-12-25T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/articles/case-insensitive-problem/"},"@context":"http://schema.org"}</script>
+{"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://shangyblog-1256840873.cos.ap-beijing.myqcloud.com/logo.svg"},"name":"Corey"},"author":{"@type":"Person","name":"Corey"},"headline":"Case insensitive problem","dateModified":"2019-12-25T00:00:00+08:00","description":"Be careful when transfer files between Win and Linux platform","datePublished":"2019-12-25T00:00:00+08:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/articles/case-insensitive-problem/"},"url":"http://localhost:4000/articles/case-insensitive-problem/","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -157,20 +158,14 @@
 
 <p>At first, we attribute the problem to the compression software and dig it in multiple aspects. After quite a long time debugging, we realized that we are in the wrong way. After that, we change the target and finally locate the problem: case-insensitive problem.</p>
 
-<p>There are two folders in our project: <code class="highlighter-rouge">pod</code> and <code class="highlighter-rouge">Pod</code>. When transferring the project from Linux to Win, all files from <code class="highlighter-rouge">pod</code> and <code class="highlighter-rouge">Pod</code> folders were dumped into the <code class="highlighter-rouge">pod</code> folder. After pulling back to the Linux platform, the necessary <code class="highlighter-rouge">Pod</code> folder is missing, and the error occurs. After dealing with the naming problem, the project goes well again.</p>
+<p>There are two folders in our project: <code class="language-plaintext highlighter-rouge">pod</code> and <code class="language-plaintext highlighter-rouge">Pod</code>. When transferring the project from Linux to Win, all files from <code class="language-plaintext highlighter-rouge">pod</code> and <code class="language-plaintext highlighter-rouge">Pod</code> folders were dumped into the <code class="language-plaintext highlighter-rouge">pod</code> folder. After pulling back to the Linux platform, the necessary <code class="language-plaintext highlighter-rouge">Pod</code> folder is missing, and the error occurs. After dealing with the naming problem, the project goes well again.</p>
 
 <p>The key to this problem is because of case discordant. The Linux platform supports the case-sensitive naming system, while the Windows platform does not. The good news is <a href="https://www.howtogeek.com/354220/how-to-enable-case-sensitive-folders-on-windows-10/">Windows 10 now offers an optional case-sensitive file system</a>.</p>
 
 <p>Even though I have described the same problem in my <a href="https://shanguangyu.com/articles/why-should-you-lowercase-your-filename/">previous post</a>, but when a similar error occurs, I still forgot it. Here, I would like to remind myself again that when dealing with a project between Linux and Windows platforms, we should consider this kind of case discordant problem.</p>
 
 
-          <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-5781531972792310",
-    enable_page_level_ads: true
-  });
-</script>
+          <script data-ad-client="ca-pub-8229890765678041" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         </div>
 
         

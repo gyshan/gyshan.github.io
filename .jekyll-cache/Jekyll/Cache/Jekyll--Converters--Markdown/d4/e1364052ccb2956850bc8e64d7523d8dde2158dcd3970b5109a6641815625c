@@ -1,0 +1,26 @@
+I"�<p>在Linux下一直使用htop进行进程查看，今日在Mac上也装了一个。htop是一款Linux系统监控与进程管理软件，与top只提供最消耗资源的进程列表不同，htop提供所有进程的列表，并且使用彩色标识出处理器、swap和内存状态，可以实现更方便、更加人性化的进程管理。</p>
+
+<p>top:</p>
+
+<figure>
+<img src="https://shangyblog-1256840873.cos.ap-beijing.myqcloud.com/top.png" alt="image" />
+</figure>
+
+<p>htop:</p>
+<figure>
+<img src="https://shangyblog-1256840873.cos.ap-beijing.myqcloud.com/htop.png" alt="image" />
+</figure>
+
+<hr />
+<p>在Linux下可以直接<code class="language-plaintext highlighter-rouge">apt-get install htop</code>安装，但在Mac下需要改变一点点内容。</p>
+
+<p>Command：</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>curl <span class="nt">-O</span> http://themainframe.ca/wp-content/uploads/2011/06/htop.zip
+<span class="nv">$ </span>unzip htop.zip
+<span class="nv">$ </span><span class="nb">sudo mv </span>htop /bin
+<span class="nv">$ </span><span class="nb">rm </span>htop.zip</code></pre></figure>
+
+<p>Done!</p>
+
+:ET

@@ -1,0 +1,125 @@
+I"�><div id="entry-table-of-contents" class="toc-wrapper">
+  <h2 id="toc-toggle" class="no_toc">
+  Table of Contents <i class="toc-toggle-icon fas fa-chevron-down"></i>
+</h2>
+<ol id="markdown-toc">
+  <li><a href="#1-字典操作" id="markdown-toc-1-字典操作">1. 字典操作</a></li>
+  <li><a href="#2-随机产生20个字符" id="markdown-toc-2-随机产生20个字符">2. 随机产生20个字符</a></li>
+  <li><a href="#3-冒泡排序" id="markdown-toc-3-冒泡排序">3. 冒泡排序</a></li>
+  <li><a href="#4-有序列表合并" id="markdown-toc-4-有序列表合并">4. 有序列表合并</a></li>
+  <li><a href="#5-快速排序" id="markdown-toc-5-快速排序">5. 快速排序</a></li>
+  <li><a href="#6-fibonacci" id="markdown-toc-6-fibonacci">6. Fibonacci</a></li>
+  <li><a href="#6-字符串反转" id="markdown-toc-6-字符串反转">6. 字符串反转</a></li>
+  <li><a href="#7-两数组相同元素计数" id="markdown-toc-7-两数组相同元素计数">7. 两数组相同元素计数</a></li>
+  <li><a href="#8-元音替换" id="markdown-toc-8-元音替换">8. 元音替换</a></li>
+  <li><a href="#9-检测两字符串是否有共同子串" id="markdown-toc-9-检测两字符串是否有共同子串">9. 检测两字符串是否有共同子串</a></li>
+  <li><a href="#10-两奇数间插破折号" id="markdown-toc-10-两奇数间插破折号">10. 两奇数间插破折号</a></li>
+  <li><a href="#11-fibonacci快速负区间" id="markdown-toc-11-fibonacci快速负区间">11. Fibonacci（快速+负区间）</a></li>
+</ol>
+
+</div>
+
+<h2 id="1-字典操作">1. 字典操作</h2>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c1"># Question: get two dict d1 and d2, yield d3.
+</span><span class="n">d1</span> <span class="o">=</span> <span class="p">{</span><span class="s">"a1"</span><span class="p">:</span><span class="s">"b1"</span><span class="p">,</span> <span class="s">"a2"</span><span class="p">:</span><span class="s">"b2"</span><span class="p">,</span> <span class="s">"a3"</span><span class="p">:</span><span class="s">"b3"</span><span class="p">}</span>
+<span class="n">d2</span> <span class="o">=</span> <span class="p">{</span><span class="s">"b1"</span><span class="p">:</span><span class="s">"c1"</span><span class="p">,</span> <span class="s">"b3"</span><span class="p">:</span><span class="s">"c3"</span><span class="p">}</span>
+<span class="n">d3</span> <span class="o">=</span> <span class="p">{</span><span class="s">"a1"</span><span class="p">:</span><span class="s">"c1"</span><span class="p">,</span> <span class="s">"a3"</span><span class="p">:</span><span class="s">"c3"</span><span class="p">}</span>
+
+<span class="c1"># Answer
+</span><span class="n">d3</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">d1</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">d1</span><span class="p">.</span><span class="n">values</span><span class="p">(),</span><span class="n">d1</span><span class="p">.</span><span class="n">keys</span><span class="p">()))</span>
+<span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">d2</span><span class="p">.</span><span class="n">iteritems</span><span class="p">():</span>
+	<span class="n">d3</span><span class="p">[</span><span class="n">d1</span><span class="p">[</span><span class="n">k</span><span class="p">]]</span> <span class="o">=</span> <span class="n">v</span>
+<span class="k">print</span> <span class="n">d3</span></code></pre></figure>
+
+<h2 id="2-随机产生20个字符">2. 随机产生20个字符</h2>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">string</span>
+<span class="kn">import</span> <span class="nn">random</span>
+
+<span class="s">''</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="n">random</span><span class="p">.</span><span class="n">choice</span><span class="p">(</span><span class="n">string</span><span class="p">.</span><span class="n">ascii_lowercase</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">))</span></code></pre></figure>
+
+<h2 id="3-冒泡排序">3. 冒泡排序</h2>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">bubbleSort</span><span class="p">(</span><span class="nb">list</span><span class="p">):</span>
+	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+		<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+			<span class="k">if</span> <span class="nb">list</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]:</span>
+				<span class="nb">list</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="nb">list</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nb">list</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span> <span class="nb">list</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+	<span class="k">return</span> <span class="nb">list</span></code></pre></figure>
+
+<h2 id="4-有序列表合并">4. 有序列表合并</h2>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">mergeSortedLists</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="n">l</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">while</span> <span class="n">a</span> <span class="ow">and</span> <span class="n">b</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+            <span class="n">l</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">l</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">l</span> <span class="o">+</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span></code></pre></figure>
+
+<h2 id="5-快速排序">5. 快速排序</h2>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">qsort</span><span class="p">(</span><span class="n">ary</span><span class="p">):</span>
+	<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">ary</span><span class="p">)</span><span class="o">&lt;=</span><span class="mi">1</span><span class="p">:</span>
+		<span class="k">return</span> <span class="n">ary</span>
+	<span class="k">else</span><span class="p">:</span>
+		<span class="k">return</span> <span class="n">qsort</span><span class="p">([</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">ary</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="k">if</span> <span class="n">x</span><span class="o">&lt;</span><span class="n">ary</span><span class="p">[</span><span class="mi">0</span><span class="p">]])</span> <span class="o">+</span> <span class="p">[</span><span class="n">ary</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">+</span> <span class="n">qsort</span><span class="p">([</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">ary</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="k">if</span> <span class="n">x</span><span class="o">&gt;=</span><span class="n">ary</span><span class="p">[</span><span class="mi">0</span><span class="p">]])</span>
+	</code></pre></figure>
+
+<h2 id="6-fibonacci">6. Fibonacci</h2>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">fib</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+	<span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span>
+	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+		<span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span>
+	<span class="k">return</span> <span class="n">a</span></code></pre></figure>
+
+<h2 id="6-字符串反转">6. 字符串反转</h2>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c1"># s[start:end:step]
+</span>
+<span class="n">a</span> <span class="o">=</span> <span class="s">'abcde'</span>
+<span class="n">ra</span> <span class="o">=</span> <span class="n">a</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span></code></pre></figure>
+
+<h2 id="7-两数组相同元素计数">7. 两数组相同元素计数</h2>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">match_arrays</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">r</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="mi">1</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">v</span> <span class="k">if</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">r</span><span class="p">)</span></code></pre></figure>
+
+<h2 id="8-元音替换">8. 元音替换</h2>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c1"># 'this is my string' -&gt; 'th3s 6s mt str15ng'
+</span><span class="k">def</span> <span class="nf">vowel_2_index</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>
+    <span class="n">vowels</span> <span class="o">=</span> <span class="s">'aeiouAEIOU'</span>
+    <span class="k">return</span> <span class="s">''</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="n">x</span> <span class="k">if</span> <span class="n">x</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">vowels</span> <span class="k">else</span> <span class="nb">str</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span><span class="p">,</span><span class="n">x</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">string</span><span class="p">))</span></code></pre></figure>
+
+<h2 id="9-检测两字符串是否有共同子串">9. 检测两字符串是否有共同子串</h2>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c1">#("Something", "Home") -&gt; True
+</span><span class="k">def</span> <span class="nf">substring_test</span><span class="p">(</span><span class="n">str1</span><span class="p">,</span> <span class="n">str2</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">str2</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">str2</span><span class="p">[</span><span class="n">n</span><span class="p">:</span><span class="n">n</span><span class="o">+</span><span class="mi">2</span><span class="p">].</span><span class="n">lower</span><span class="p">()</span> <span class="ow">in</span> <span class="n">str1</span><span class="p">.</span><span class="n">lower</span><span class="p">():</span>
+            <span class="k">return</span> <span class="bp">True</span>
+    <span class="k">return</span> <span class="bp">False</span></code></pre></figure>
+
+<h2 id="10-两奇数间插破折号">10. 两奇数间插破折号</h2>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c1"># '1003567' -&gt; '1003-567'
+</span><span class="kn">import</span> <span class="nn">re</span>
+
+<span class="k">def</span> <span class="nf">insert_dash</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">re</span><span class="p">.</span><span class="n">sub</span><span class="p">(</span><span class="s">r'([13579])(?=[13579])'</span><span class="p">,</span> <span class="s">r'\1-'</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">num</span><span class="p">))</span></code></pre></figure>
+
+<h2 id="11-fibonacci快速负区间">11. Fibonacci（快速+负区间）</h2>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">matrix</span>
+
+<span class="k">def</span> <span class="nf">fib</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">matrix</span><span class="p">(</span>
+        <span class="s">'0 1; 1 1'</span> <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="k">else</span> <span class="s">'-1 1; 1 0'</span><span class="p">,</span> <span class="nb">object</span>
+        <span class="p">)</span> <span class="o">**</span> <span class="nb">abs</span><span class="p">(</span><span class="n">n</span><span class="p">))[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span></code></pre></figure>
+
+:ET

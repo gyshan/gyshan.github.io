@@ -15,9 +15,9 @@
 
   
     
-    <!-- Begin Jekyll SEO tag v2.4.0 -->
+    <!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>解释随机森林模型 (译) | Guangyu Corey Shan’s Blog</title>
-<meta name="generator" content="Jekyll v3.8.5" />
+<meta name="generator" content="Jekyll v4.1.1" />
 <meta property="og:title" content="解释随机森林模型 (译)" />
 <meta name="author" content="Corey" />
 <meta property="og:locale" content="en_US" />
@@ -29,10 +29,11 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2015-12-11T00:00:00+08:00" />
 <meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="解释随机森林模型 (译)" />
 <meta name="twitter:site" content="@GuangyuShan" />
 <meta name="twitter:creator" content="@Corey" />
 <script type="application/ld+json">
-{"description":"Translate a blog regarding to Random Forest from English to Chinese","author":{"@type":"Person","name":"Corey"},"@type":"BlogPosting","url":"http://localhost:4000/articles/interpreting-rf/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://shangyblog-1256840873.cos.ap-beijing.myqcloud.com/logo.svg"},"name":"Corey"},"headline":"解释随机森林模型 (译)","dateModified":"2015-12-11T00:00:00+08:00","datePublished":"2015-12-11T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/articles/interpreting-rf/"},"@context":"http://schema.org"}</script>
+{"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://shangyblog-1256840873.cos.ap-beijing.myqcloud.com/logo.svg"},"name":"Corey"},"author":{"@type":"Person","name":"Corey"},"headline":"解释随机森林模型 (译)","dateModified":"2015-12-11T00:00:00+08:00","description":"Translate a blog regarding to Random Forest from English to Chinese","datePublished":"2015-12-11T00:00:00+08:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/articles/interpreting-rf/"},"url":"http://localhost:4000/articles/interpreting-rf/","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -167,7 +168,7 @@
 
 <p>当谈到一棵决策树时，森林中的每棵树都会产生一条『root-leaf』的路径，包含着一系列由特征做出的决策过程。</p>
 
-<p>假设一棵拥有 <em>M</em> 个叶子的决策树将特征空间分成 <em>M</em> 个区域 <script type="math/tex">R_m</script>, 1 ≤ m ≤ M。决策树的定义函数为<script type="math/tex">f(x) = \sum\limits_{m=1}^M c_m I(x, R_m)</script>, <em>M</em> 是叶子的数量（特征空间的若干区域），<script type="math/tex">R_m</script> 是特征空间的一个区域，<script type="math/tex">c_m</script> 是对应 <em>m</em> 空间的常数。<em>I</em> 是指示函数（如果<script type="math/tex">x \in R_m</script>，返回1，反之0）。为了让回归树与 <script type="math/tex">R_m</script> 的响应变量均值一致，训练树的时候产生 <script type="math/tex">c_m</script> 进行约束。定义虽然很精确,「决策函数返回正确叶子上的一个值」，却常常忽略顺着信息节点的决策路径这一动态属性。</p>
+<p>假设一棵拥有 <em>M</em> 个叶子的决策树将特征空间分成 <em>M</em> 个区域 \(R_m\), 1 ≤ m ≤ M。决策树的定义函数为\(f(x) = \sum\limits_{m=1}^M c_m I(x, R_m)\), <em>M</em> 是叶子的数量（特征空间的若干区域），\(R_m\) 是特征空间的一个区域，\(c_m\) 是对应 <em>m</em> 空间的常数。<em>I</em> 是指示函数（如果\(x \in R_m\)，返回1，反之0）。为了让回归树与 \(R_m\) 的响应变量均值一致，训练树的时候产生 \(c_m\) 进行约束。定义虽然很精确,「决策函数返回正确叶子上的一个值」，却常常忽略顺着信息节点的决策路径这一动态属性。</p>
 
 <h3 id="例子boston-住房数据">例子：Boston 住房数据</h3>
 
@@ -179,12 +180,12 @@
 
 <p>这里的亮点是把预测结果给分解开来，沿着预测路径写出了值的变化、特征名字（导致值变的罪魁祸首）。</p>
 
-<p>这个例子希望展示的是另一个方面—预测的运行方式，即与树中的每个节点/决策相关的区域序列。因为每一个决策都是由一个特征控制的，增减属性由母节点提供，预测结果于是可以转换为特征贡献的加和+偏移量（训练集中优势样本的均值）。除去推导，预测函数可以写作：<script type="math/tex">f(x) = c_{full} + \sum\limits_{k=1}^K contrib(x, k)</script>, <em>k</em> 是特征数量，
-<script type="math/tex">c_{full}</script>是根节点的值，<script type="math/tex">contrib(x, k)</script> 是第 <em>k</em> 个特征在特征向量 <em>x</em> 中的贡献。表面上看起来与线性回归一样简单明了（<script type="math/tex">f(x) = a + bx</script>）。对于线性回归来说，系数 <em>b</em> 是固定的，用一个常量约束每一个特征的贡献。对于决策树来说，每一个特征的贡献并不是一个能够被预先确定的值，还需要依靠那些确定决策路径的其他特征。</p>
+<p>这个例子希望展示的是另一个方面—预测的运行方式，即与树中的每个节点/决策相关的区域序列。因为每一个决策都是由一个特征控制的，增减属性由母节点提供，预测结果于是可以转换为特征贡献的加和+偏移量（训练集中优势样本的均值）。除去推导，预测函数可以写作：\(f(x) = c_{full} + \sum\limits_{k=1}^K contrib(x, k)\), <em>k</em> 是特征数量，
+\(c_{full}\)是根节点的值，\(contrib(x, k)\) 是第 <em>k</em> 个特征在特征向量 <em>x</em> 中的贡献。表面上看起来与线性回归一样简单明了（\(f(x) = a + bx\)）。对于线性回归来说，系数 <em>b</em> 是固定的，用一个常量约束每一个特征的贡献。对于决策树来说，每一个特征的贡献并不是一个能够被预先确定的值，还需要依靠那些确定决策路径的其他特征。</p>
 
 <h3 id="从决策树到森林">从决策树到森林</h3>
 
-<p>我们开始讨论随机森林，如何从决策树转移到随机森林呢？这非常直接，因为森林的预测实际上是所有树预测的均值：<script type="math/tex">F(x) = \frac{1}{J} \sum\limits_{j=1}^J f_j(x)</script>，<em>J</em>是森林中树的个数。显而易见，对于一个森林，预测结果是偏移的均值与每个特征贡献均值之和：<script type="math/tex">F(x) = \frac{1}{J}{\sum\limits_{j=1}^J {c_{j}}_{full}}  + \sum\limits_{k=1}^K (\frac{1}{J}\sum\limits_{j=1}^J contrib_j(x, k))</script>。</p>
+<p>我们开始讨论随机森林，如何从决策树转移到随机森林呢？这非常直接，因为森林的预测实际上是所有树预测的均值：\(F(x) = \frac{1}{J} \sum\limits_{j=1}^J f_j(x)\)，<em>J</em>是森林中树的个数。显而易见，对于一个森林，预测结果是偏移的均值与每个特征贡献均值之和：\(F(x) = \frac{1}{J}{\sum\limits_{j=1}^J {c_{j}}_{full}}  + \sum\limits_{k=1}^K (\frac{1}{J}\sum\limits_{j=1}^J contrib_j(x, k))\)。</p>
 
 <h3 id="运行解释器">运行解释器</h3>
 
@@ -209,13 +210,7 @@
 </ol>
 
 
-          <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-5781531972792310",
-    enable_page_level_ads: true
-  });
-</script>
+          <script data-ad-client="ca-pub-8229890765678041" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         </div>
 
         

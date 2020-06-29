@@ -1,0 +1,57 @@
+I"�#<p>R is a free, powerful programming language and software environment for statistical computing and graphics supported by the R Foundation.</p>
+
+<p>Recently, I’ve been dealing with parallel processing in R and have found the <a href="https://cran.r-project.org/web/packages/foreach/foreach.pdf">foreach</a> and <a href="https://cran.r-project.org/web/packages/doMC/doMC.pdf">doMC</a> packages to be useful approaches in increasing efficiency of loops.</p>
+
+<p>The doMC package is a “parallel backend” for the foreach package. It provides a mechanism needed to execute foreach loops in parallel. Usually, we’d better check the maximum number of threads(It’s 96 for me) first by using <code class="language-plaintext highlighter-rouge">detectCores</code>.</p>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">library</span><span class="p">(</span><span class="n">parallel</span><span class="p">)</span><span class="w">
+</span><span class="n">detectCores</span><span class="p">()</span></code></pre></figure>
+
+<p>Then configure a smaller number for subsequent parallel processing (I set 20, which means 20 threads will be reserved for my task).</p>
+
+<p><strong>In this task, I select and record good models that satisfying certain conditions (Sp &gt; 0.88, Se &gt; 0.7).</strong></p>
+
+<h3 id="without-parallel">Without parallel</h3>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">optSeeds</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="k">function</span><span class="p">(</span><span class="n">input.train</span><span class="p">){</span><span class="w">
+  </span><span class="n">seed_lst</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">list</span><span class="p">()</span><span class="w">
+  </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">0</span><span class="w">
+  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">seed</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">1000</span><span class="p">){</span><span class="w">
+    </span><span class="n">result</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">modelSelect</span><span class="p">(</span><span class="n">input.train</span><span class="p">,</span><span class="w"> </span><span class="n">seed</span><span class="p">)</span><span class="w">
+    </span><span class="n">Sens</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">result</span><span class="o">$</span><span class="n">byClass</span><span class="p">[</span><span class="s1">'Sensitivity'</span><span class="p">]</span><span class="w">
+    </span><span class="n">Spec</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">result</span><span class="o">$</span><span class="n">byClass</span><span class="p">[</span><span class="s1">'Specificity'</span><span class="p">]</span><span class="w">
+    </span><span class="n">Acc</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">result</span><span class="o">$</span><span class="n">byClass</span><span class="p">[</span><span class="s1">'Balanced Accuracy'</span><span class="p">]</span><span class="w">
+    </span><span class="n">output</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="n">seed</span><span class="p">,</span><span class="w"> </span><span class="n">Spec</span><span class="p">,</span><span class="w"> </span><span class="n">Sens</span><span class="p">,</span><span class="w"> </span><span class="n">Acc</span><span class="p">)</span><span class="w">
+    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Spec</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">0.88</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">Sens</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">0.7</span><span class="p">){</span><span class="w">
+    	</span><span class="n">i</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="m">1</span><span class="w">
+    	</span><span class="n">seed_lst</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">seed</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="n">seedLst</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">optSeeds</span><span class="p">(</span><span class="n">input.train</span><span class="p">)</span></code></pre></figure>
+
+<h3 id="with-parallel">With parallel</h3>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">library</span><span class="p">(</span><span class="n">foreach</span><span class="p">)</span><span class="w">
+</span><span class="n">library</span><span class="p">(</span><span class="n">doMC</span><span class="p">)</span><span class="w">
+</span><span class="n">registerDoMC</span><span class="p">(</span><span class="m">20</span><span class="p">)</span><span class="w">
+
+</span><span class="n">optSeeds</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="k">function</span><span class="p">(</span><span class="n">input.train</span><span class="p">){</span><span class="w">
+  </span><span class="n">foreach</span><span class="w"> </span><span class="p">(</span><span class="n">seed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">1000</span><span class="p">)</span><span class="w"> </span><span class="o">%dopar%</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">result</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">modelSelect</span><span class="p">(</span><span class="n">input.train</span><span class="p">,</span><span class="w"> </span><span class="n">seed</span><span class="p">)</span><span class="w">
+    </span><span class="n">Sens</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">result</span><span class="o">$</span><span class="n">byClass</span><span class="p">[</span><span class="s1">'Sensitivity'</span><span class="p">]</span><span class="w">
+    </span><span class="n">Spec</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">result</span><span class="o">$</span><span class="n">byClass</span><span class="p">[</span><span class="s1">'Specificity'</span><span class="p">]</span><span class="w">
+    </span><span class="n">Acc</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">result</span><span class="o">$</span><span class="n">byClass</span><span class="p">[</span><span class="s1">'Balanced Accuracy'</span><span class="p">]</span><span class="w">
+    </span><span class="n">output</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="n">seed</span><span class="p">,</span><span class="w"> </span><span class="n">Spec</span><span class="p">,</span><span class="w"> </span><span class="n">Sens</span><span class="p">,</span><span class="w"> </span><span class="n">Acc</span><span class="p">)</span><span class="w">
+    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Spec</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">0.88</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">Sens</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">0.7</span><span class="p">){</span><span class="w">
+	</span><span class="n">seed</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="n">seedLst</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">optSeeds</span><span class="p">(</span><span class="n">input.train</span><span class="p">)</span></code></pre></figure>
+
+<p>This small change shrunk my time from several hours to less than five minutes, what a lovely change.</p>
+
+:ET

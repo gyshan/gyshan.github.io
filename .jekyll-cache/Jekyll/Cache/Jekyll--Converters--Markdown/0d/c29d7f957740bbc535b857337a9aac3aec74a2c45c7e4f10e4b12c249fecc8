@@ -1,0 +1,3 @@
+I"(<p>Ever curious whether <code class="language-plaintext highlighter-rouge">open()</code> and <code class="language-plaintext highlighter-rouge">with open()</code> in python mean the same thing? Recently, I found the explanation at <a href="http://effbot.org/zone/python-with-statement.htm">Understanding Python’s “with” statement</a>. Basically, using <code class="language-plaintext highlighter-rouge">with</code> statement just ensures that you don’t forget to <code class="language-plaintext highlighter-rouge">close()</code> the file.</p>
+
+:ET

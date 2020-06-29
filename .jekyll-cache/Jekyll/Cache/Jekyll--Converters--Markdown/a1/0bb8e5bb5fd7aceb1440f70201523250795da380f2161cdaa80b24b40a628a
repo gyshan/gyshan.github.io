@@ -1,0 +1,103 @@
+I",<p>Non-invasive prenatal diagnosis (NIPD) based on the analysis of cell-free fetal DNA (cffDNA) in maternal plasma is now available in clinical practice for a small number of single gene disorders. A key challenge for the development of NIPD is the low level of cffDNA present alongside the high background of maternal cfDNA in maternal plasma. Determine fetus genotype accurately from cffDNA is of great importance for the family’s choice.</p>
+
+<p>Imagine we have determined the target variant (<strong>aa</strong>) from a proband patient with autosomal recessive conditions and his/her mother decide to have a second pregnancy. How can we deduce fetus genotype of this target variant from a maternal peripheral blood diagnosis? Here is the thing:</p>
+<ol>
+  <li>Draw maternal peripheral blood from pregnant mom</li>
+  <li>Isolate white blood cell (WBC) and plasma from maternal blood</li>
+  <li>Analysis two types of samples by NGS methods</li>
+  <li>Achieve target attributes: frequency in WBC, frequency in plasma and the concentration of cffDNA</li>
+</ol>
+
+<p>Now, start fetus genotype deducing. The reason behind our deducing method is to compare different plasma theoretical frequencies of three genotypes (AA, A<strong>a</strong>, <strong>aa</strong>) to the actual frequency and find the best match. Let’s do this:</p>
+
+<p>Theoretical scheme:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Maternal genotype</th>
+      <th>Fetus genotype</th>
+      <th>plasma frequency (fetus_conc: c)</th>
+      <th>plasma frequency (fetus_conc: 5%)</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>AA</td>
+      <td>AA</td>
+      <td>0</td>
+      <td>0</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>AA</td>
+      <td>Aa</td>
+      <td>c/2</td>
+      <td>2.5%</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Aa</td>
+      <td>AA</td>
+      <td>(1-c)/2</td>
+      <td>47.5%</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Aa</td>
+      <td>Aa</td>
+      <td>50%</td>
+      <td>50%</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Aa</td>
+      <td>aa</td>
+      <td>(1+c)/2</td>
+      <td>52.5%</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>aa</td>
+      <td>Aa</td>
+      <td>1-c/2</td>
+      <td>97.5%</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>aa</td>
+      <td>aa</td>
+      <td>1</td>
+      <td>1</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Assuming parameters:</p>
+
+<ol>
+  <li>Frequency in WBC: 47% (A<strong>a</strong>)</li>
+  <li>Concentration of cffDNA: 10%</li>
+  <li>Frequency in plasma: 41% (A<strong>a</strong>)</li>
+</ol>
+
+<p>Deducing:</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">WBC: a = 47 units, A = 53 units
+Plasma: 
+1. Maternal: a = 47 units, WBC-frq = 47/100 = 47%
+2. plasma-a = actual-a-alleles-in-maternal + theoretical-a-alleles-in-fetus
+3. If fetus-AA: plasma-a = 47*0.9+0*0.1, plasma-frq = 42.3/100 = 42.3%
+4. If fetus-Aa: plasma-a = 47*0.9+50*0.1, plasma-frq = 47.3/100 = 47.3%
+5. If fetus-aa: plasma-a = 47*0.9+100*0.1, plasma-frq = 52.3/100 = 52.3%</code></pre></figure>
+
+<p>Conclusion:</p>
+
+<p>Congratulations! The genotype of the fetus is AA, and the mother will yield a healthy baby.</p>
+
+<p>At the end of this small article, I would like to say that the accuracy of <code class="language-plaintext highlighter-rouge">fetal concentration</code> and <code class="language-plaintext highlighter-rouge">plasma frequency</code> is crucial for fetal genotype inference. Therefore, it can not be too hard to improve those two metrics.</p>
+
+<p class="notice"><strong>a</strong>: disease-causing allele</p>
+:ET

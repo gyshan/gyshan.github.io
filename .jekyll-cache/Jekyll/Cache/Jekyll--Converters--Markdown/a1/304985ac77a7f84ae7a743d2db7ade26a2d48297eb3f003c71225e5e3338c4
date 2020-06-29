@@ -1,0 +1,8 @@
+I"m
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">2&gt;/dev/null</code></pre></figure>
+
+<p>In linux, there are three main file descriptors <code class="language-plaintext highlighter-rouge">{0：stdin, 1: stdout, 2: stderr}</code> and a “black hole” <code class="language-plaintext highlighter-rouge">/dev/null</code>, everything you write in it will disappear permanently.</p>
+
+<p>In this case, <code class="language-plaintext highlighter-rouge">2&gt;/dev/null</code> is refers to redirect standard error message into null, if you want to ignore error message, you should have a try.</p>
+
+:ET

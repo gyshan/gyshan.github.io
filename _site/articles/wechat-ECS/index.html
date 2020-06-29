@@ -15,9 +15,9 @@
 
   
     
-    <!-- Begin Jekyll SEO tag v2.4.0 -->
+    <!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>阿里云ECS搭建微信公众平台 | Guangyu Corey Shan’s Blog</title>
-<meta name="generator" content="Jekyll v3.8.5" />
+<meta name="generator" content="Jekyll v4.1.1" />
 <meta property="og:title" content="阿里云ECS搭建微信公众平台" />
 <meta name="author" content="Corey" />
 <meta property="og:locale" content="en_US" />
@@ -29,10 +29,11 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2015-03-14T00:00:00+08:00" />
 <meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="阿里云ECS搭建微信公众平台" />
 <meta name="twitter:site" content="@GuangyuShan" />
 <meta name="twitter:creator" content="@Corey" />
 <script type="application/ld+json">
-{"description":"ECS+Gunicorn+Supervisor+WeRoBot","author":{"@type":"Person","name":"Corey"},"@type":"BlogPosting","url":"http://localhost:4000/articles/wechat-ECS/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://shangyblog-1256840873.cos.ap-beijing.myqcloud.com/logo.svg"},"name":"Corey"},"headline":"阿里云ECS搭建微信公众平台","dateModified":"2015-03-14T00:00:00+08:00","datePublished":"2015-03-14T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/articles/wechat-ECS/"},"@context":"http://schema.org"}</script>
+{"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://shangyblog-1256840873.cos.ap-beijing.myqcloud.com/logo.svg"},"name":"Corey"},"author":{"@type":"Person","name":"Corey"},"headline":"阿里云ECS搭建微信公众平台","dateModified":"2015-03-14T00:00:00+08:00","description":"ECS+Gunicorn+Supervisor+WeRoBot","datePublished":"2015-03-14T00:00:00+08:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/articles/wechat-ECS/"},"url":"http://localhost:4000/articles/wechat-ECS/","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -234,7 +235,7 @@ deactivate</code></pre></figure>
 <span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
 <span class="n">robot</span> <span class="o">=</span> <span class="n">WeRoBot</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">token</span> <span class="o">=</span> <span class="s">"Yourtoken"</span><span class="p">,</span> <span class="n">rule</span> <span class="o">=</span> <span class="s">'/test'</span><span class="p">)</span>
 
-<span class="nd">@robot.handler</span>
+<span class="o">@</span><span class="n">robot</span><span class="p">.</span><span class="n">handler</span>
 <span class="k">def</span> <span class="nf">echo</span><span class="p">(</span><span class="n">message</span><span class="p">):</span>
     <span class="k">return</span> <span class="s">'Hello World'</span></code></pre></figure>
 
@@ -279,7 +280,7 @@ deactivate</code></pre></figure>
     }
 }</code></pre></figure>
 
-<p>当HTTP请求得到<code class="highlighter-rouge">/</code>，便会反向代理到<code class="highlighter-rouge">127.0.0.1</code>8000端口。
+<p>当HTTP请求得到<code class="language-plaintext highlighter-rouge">/</code>，便会反向代理到<code class="language-plaintext highlighter-rouge">127.0.0.1</code>8000端口。
 重启 nginx:</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span><span class="nb">sudo</span> /etc/init.d/nginx restart</code></pre></figure>
@@ -331,13 +332,7 @@ stdout_logfile = /home/mirror/logs/supervisor.log</code></pre></figure>
 </ol>
 
 
-          <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-5781531972792310",
-    enable_page_level_ads: true
-  });
-</script>
+          <script data-ad-client="ca-pub-8229890765678041" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         </div>
 
         
