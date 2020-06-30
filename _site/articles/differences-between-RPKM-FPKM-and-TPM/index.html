@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<!--
+    So Simple Jekyll Theme 3.1.1
+    Copyright 2013-2018 Michael Rose - mademistakes.com | @mmistakes
+    Free for personal and commercial use under the MIT license
+    https://github.com/mmistakes/so-simple-theme/blob/master/LICENSE
+-->
+<html lang="en-US" class="no-js">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+
+  
+    
+    <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Differences between RPKM, FPKM and TPM | Guangyu Corey Shan’s Blog</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Differences between RPKM, FPKM and TPM" />
+<meta name="author" content="Corey" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Choose TPM" />
+<meta property="og:description" content="Choose TPM" />
+<link rel="canonical" href="http://localhost:4000/articles/differences-between-RPKM-FPKM-and-TPM/" />
+<meta property="og:url" content="http://localhost:4000/articles/differences-between-RPKM-FPKM-and-TPM/" />
+<meta property="og:site_name" content="Guangyu Corey Shan’s Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-06-30T00:00:00+08:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Differences between RPKM, FPKM and TPM" />
+<meta name="twitter:site" content="@GuangyuShan" />
+<meta name="twitter:creator" content="@Corey" />
+<script type="application/ld+json">
+{"author":{"@type":"Person","name":"Corey"},"description":"Choose TPM","headline":"Differences between RPKM, FPKM and TPM","dateModified":"2020-06-30T00:00:00+08:00","datePublished":"2020-06-30T00:00:00+08:00","@type":"BlogPosting","url":"http://localhost:4000/articles/differences-between-RPKM-FPKM-and-TPM/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/articles/differences-between-RPKM-FPKM-and-TPM/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://shangyblog-1256840873.cos.ap-beijing.myqcloud.com/logo.svg"},"name":"Corey"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+  <script>
+    /* Cut the mustard */
+    if ( 'querySelector' in document && 'addEventListener' in window ) {
+      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
+    }
+  </script>
+
+  <link rel="stylesheet" href="https://shangyblog-1256840873.cos.ap-beijing.myqcloud.com/main.css">
+  <link rel="alternate" type="application/atom+xml" title="Guangyu Corey Shan&#39;s Blog" href="/atom.xml">
+<!-- start custom head snippets -->
+
+<!-- insert favicons. use http://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="http://localhost:4000/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://localhost:4000/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://localhost:4000/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://localhost:4000/images/apple-touch-icon-144x144-precomposed.png">
+
+</head>
+
+
+  <body class="layout--post  differences-between-rpkm-fpkm-and-tpm">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#primary-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+  <div class="navigation-wrapper">
+    <a href="#menu-toggle" id="menu-toggle">Menu</a>
+    <nav id="primary-nav" class="site-nav animated drop">
+      <ul><li><a href="/about/">About</a></li><li><a href="/posts/">Posts</a></li><li><a href="/tags/">Tags</a></li><li><a href="/search/">Search</a></li></ul>
+    </nav>
+  </div><!-- /.navigation-wrapper -->
+
+
+    <header class="masthead">
+  <div class="wrap">
+    
+      <a href="/" class="site-logo" rel="home" title="Guangyu Corey Shan's Blog">
+        <img src="https://shangyblog-1256840873.cos.ap-beijing.myqcloud.com/logo.svg" class="site-logo-img animated fadeInDown" alt="Guangyu Corey Shan's Blog">
+      </a>
+    
+    
+      <h1 class="site-title animated fadeIn"><a href="/">Guangyu Corey Shan's Blog</a></h1>
+      <p class="site-description animated fadeIn" itemprop="description">Notes on bioinformatics and data mining by G. Corey Shan</p>
+    
+  </div>
+</header><!-- /.masthead -->
+
+
+    <main id="main" class="main-content" aria-label="Content">
+  <article class="h-entry">
+    
+
+    <div class="page-wrapper">
+      <header class="page-header">
+        
+        
+          <h1 id="page-title" class="page-title p-name">Differences between RPKM, FPKM and TPM
+</h1>
+        
+      </header>
+
+      <div class="page-sidebar">
+        <div class="page-author h-card p-author"><img src="/bio-photo.jpg" class="author-avatar u-photo" alt="Corey"><div class="author-info"><div class="author-name">
+        <em>by</em> <span class="p-name">Corey</span>
+      </div><ul class="author-links"><li class="author-link">
+            <a class="u-url" rel="me" href="https://www.linkedin.com/in/guangyu-corey-shan-6a6111a4/"><i class="fab fa-linkedin fa-lg" title="LinkedIn"></i></a>
+          </li><li class="author-link">
+            <a class="u-url" rel="me" href="https://github.com/gyshan"><i class="fab fa-github-square fa-lg" title="GitHub"></i></a>
+          </li></ul>
+
+<span class="read-time">1 min read</span>
+
+    <time class="page-date dt-published" datetime="2020-06-30T00:00:00+08:00"><a class="u-url" href="">June 30, 2020</a>
+</time>
+
+  </div>
+</div>
+
+        
+  <h3 class="page-taxonomies-title">Categories</h3>
+  <ul class="page-taxonomies"><li class="page-taxonomy">articles</li>
+  </ul>
+
+
+        
+  <h3 class="page-taxonomies-title">Tags</h3>
+  <ul class="page-taxonomies"><li class="page-taxonomy">Bioinformatics</li>
+  </ul>
+
+
+      </div>
+
+      <div class="page-content">
+        <div class="e-content">
+          <p>RNA-Seq is a developed approach to transcriptome profiling that uses deep-sequencing technologies. The raw data from RNA-Seq should perform normalization before analysis. The normalization step is aiming at removing bias from <code class="language-plaintext highlighter-rouge">sequencing depth</code> and <code class="language-plaintext highlighter-rouge">gene length</code> by using three common gene expression units: RPKM(Reads Per Kilobase Million), FPKM(Fragments Per Kilobase Million) and TPM(Transcripts Per Kilobase Million)<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup>. I want to explain those concepts in this article.</p>
+
+<blockquote>
+  <p>In one word, when comparing different samples, use TPM. Otherwise, RPKM for single-end RNA-Seq and FPKM for paired-end RNA-Seq.</p>
+</blockquote>
+
+<p>RPKM of a gene: \(\text{RPKM} = \frac{ \text{Number of reads mapped to gene}   \times 10^3  \times 10^6 }{\text{Total number of mapped reads} \times \text{Gene length in bp }}\)</p>
+
+<p>FPKM of a gene: \(\text{FPKM} = \frac{ \text{Number of fragments mapped to gene}   \times 10^3  \times 10^6 }{\text{Total number of mapped reads} \times \text{Gene length in bp }}\)</p>
+
+<p>TPM of a gene: \(\text{TPM} = A \times \frac{1}{\sum(A)} \times 10^6 {\text{ Where A}} =  \frac{\text{Total reads mapped to gene} \times 10^3}{\text{Gene length in bp}}\)</p>
+
+<figure>
+<img src="https://shangyblog-1256840873.cos.ap-beijing.myqcloud.com/expression_units.jpeg" alt="image" />
+</figure>
+
+<p>Here’s an example in the figure above. The RPKM for gene X in sample 1 is 2.0, and the RPKM in sample 2 is 2.0, I would not know if the same proportion of reads in sample 1 mapped to gene X as in sample 2. The reason is that the denominator required to calculate the proportion could be different for the two samples.</p>
+
+<p>TPM is suitable for this situation, the TPM for gene X in sample 2 is 268141, and the TPM in sample 3 is 268907, then I know that the almost same proportion of total reads mapped to gene X in both samples. In a real-world situation, the TPM value will smaller than what you see because the sample generally has over 20000 genes, not just three in the above schematic figure. Besides, TPM is the best performing normalization method based on its preservation of biological signals compared to the other tested methods<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup>.</p>
+
+<p>In summary, if you want to choose a normalization method, I would recommend TPM.</p>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p><a href="https://www.rna-seqblog.com/rpkm-fpkm-and-tpm-clearly-explained/">RPKM, FPKM and TPM, clearly explained</a> <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:2" role="doc-endnote">
+      <p><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6923842/">A protocol to evaluate RNA sequencing normalization methods</a> <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+          <script data-ad-client="ca-pub-8229890765678041" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        </div>
+
+        
+          <div class="page-share">
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Farticles%2Fdifferences-between-RPKM-FPKM-and-TPM%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--facebook btn--small"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i> <span>Share</span></a>
+  <a href="https://twitter.com/intent/tweet?text=Differences+between+RPKM%2C+FPKM+and+TPM%20http%3A%2F%2Flocalhost%3A4000%2Farticles%2Fdifferences-between-RPKM-FPKM-and-TPM%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--twitter btn--small"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i> <span>Tweet</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Farticles%2Fdifferences-between-RPKM-FPKM-and-TPM%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--linkedin btn--small"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> <span>LinkedIn</span></a>
+  <a href="https://reddit.com/submit?title=Differences+between+RPKM%2C+FPKM+and+TPM&url=http%3A%2F%2Flocalhost%3A4000%2Farticles%2Fdifferences-between-RPKM-FPKM-and-TPM%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--reddit btn--small"><i class="fab fa-fw fa-reddit" aria-hidden="true"></i> <span>Reddit</span></a>
+</div>
+
+        
+
+        
+          
+
+        
+
+        <nav class="page-pagination" role="navigation">
+  
+    <a class="page-previous" href="/articles/chi-square-test-with-R/">
+      <h4 class="page-pagination-label">Previous</h4>
+      <span class="page-pagination-title">
+        <i class="fas fa-arrow-left"></i> Chi-Squared Test with R
+
+      </span>
+    </a>
+  
+
+  
+</nav>
+
+      </div>
+    </div>
+  </article>
+</main>
+
+
+    <footer id="footer" class="site-footer">
+  <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+<div class="social-icons"><a class="social-icon" href="https://www.linkedin.com/in/guangyu-corey-shan-6a6111a4/"><i class="fab fa-linkedin fa-2x" title="LinkedIn"></i></a><a class="social-icon" href="https://github.com/gyshan"><i class="fab fa-github-square fa-2x" title="GitHub"></i></a><a class="social-icon" href="/atom.xml"><i class="fas fa-rss-square fa-2x" title="Feed"></i></a></div><div class="copyright">
+    
+      <!-- <p>&copy; 2020 Guangyu Corey Shan's Blog. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://github.com/mmistakes/so-simple-theme" rel="nofollow">So Simple</a>.</p> -->
+      <span>&copy; 2015-2020 Corey. 
+      	Powered by <a href="https://jekyllrb.com/">Jekyll</a> using the <a href="https://github.com/mmistakes/so-simple-theme">So Simple Theme</a>. 
+      	<!-- <br> -->
+      	<!-- <a href='https://creativecommons.org/licenses/by-nc-sa/3.0/' target='_blank' rel="license" alt="Creative Commons License"><img src='/images/by-nc-sa.svg'></a> -->
+      </span>
+
+    
+  </div>
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="https://shangyblog-1256840873.cos.ap-beijing.myqcloud.com/main.min.js"></script>
+  <script src="https://shangyblog-1256840873.cos.ap-beijing.myqcloud.com/all.js"></script>
+
+
+<!-- MathJax -->
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+  </body>
+
+</html>

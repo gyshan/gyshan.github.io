@@ -1,0 +1,44 @@
+---
+title: "Differences between RPKM, FPKM and TPM"
+excerpt: "Choose TPM"
+categories:
+  - articles
+tags:
+  - Bioinformatics
+---
+
+
+RNA-Seq is a developed approach to transcriptome profiling that uses deep-sequencing technologies. The raw data from RNA-Seq should perform normalization before analysis. The normalization step is aiming at removing bias from `sequencing depth` and `gene length` by using three common gene expression units: RPKM(Reads Per Kilobase Million), FPKM(Fragments Per Kilobase Million) and TPM(Transcripts Per Kilobase Million)[^1]. I want to explain those concepts in this article.
+
+
+> In one word, when comparing different samples, use TPM. Otherwise, RPKM for single-end RNA-Seq and FPKM for paired-end RNA-Seq.
+
+
+RPKM of a gene: $$\text{RPKM} = \frac{ \text{Number of reads mapped to gene}   \times 10^3  \times 10^6 }{\text{Total number of mapped reads} \times \text{Gene length in bp }}$$
+
+FPKM of a gene: $$\text{FPKM} = \frac{ \text{Number of fragments mapped to gene}   \times 10^3  \times 10^6 }{\text{Total number of mapped reads} \times \text{Gene length in bp }}$$
+
+TPM of a gene: $$\text{TPM} = A \times \frac{1}{\sum(A)} \times 10^6 {\text{ Where A}} =  \frac{\text{Total reads mapped to gene} \times 10^3}{\text{Gene length in bp}}$$
+
+<figure>
+<img src="https://shangyblog-1256840873.cos.ap-beijing.myqcloud.com/expression_units.jpeg" alt="image">
+</figure>
+
+
+Here's an example in the figure above. The RPKM for gene X in sample 1 is 2.0, and the RPKM in sample 2 is 2.0, I would not know if the same proportion of reads in sample 1 mapped to gene X as in sample 2. The reason is that the denominator required to calculate the proportion could be different for the two samples. 
+
+TPM is suitable for this situation, the TPM for gene X in sample 2 is 268141, and the TPM in sample 3 is 268907, then I know that the almost same proportion of total reads mapped to gene X in both samples. In a real-world situation, the TPM value will smaller than what you see because the sample generally has over 20000 genes, not just three in the above schematic figure. Besides, TPM is the best performing normalization method based on its preservation of biological signals compared to the other tested methods[^2].
+
+
+
+In summary, if you want to choose a normalization method, I would recommend TPM.
+
+
+
+[^1]: [RPKM, FPKM and TPM, clearly explained](https://www.rna-seqblog.com/rpkm-fpkm-and-tpm-clearly-explained/)
+[^2]: [A protocol to evaluate RNA sequencing normalization methods](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6923842/)
+
+
+
+
+

@@ -298,4 +298,9 @@ var store = [{
         "excerpt":"The medical statistical data can be divided into numerical and categorical types. When there is a need to find out the association between numerical variables (age, weight), the t-test is fine. When we need to determine the association between categorical variables, like whether the gender is correlated with smoking status...","categories": ["articles"],
         "tags": ["Bioinformatics","R"],
         "url": "http://localhost:4000/articles/chi-square-test-with-R/"
+      },{
+        "title": "Differences between RPKM, FPKM and TPM",
+        "excerpt":"RNA-Seq is a developed approach to transcriptome profiling that uses deep-sequencing technologies. The raw data from RNA-Seq should perform normalization before analysis. The normalization step is aiming at removing bias from sequencing depth and gene length by using three common gene expression units: RPKM(Reads Per Kilobase Million), FPKM(Fragments Per Kilobase...","categories": ["articles"],
+        "tags": ["Bioinformatics"],
+        "url": "http://localhost:4000/articles/differences-between-RPKM-FPKM-and-TPM/"
       }]

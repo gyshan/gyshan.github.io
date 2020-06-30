@@ -1,0 +1,81 @@
+I"<p>The medical statistical data can be divided into numerical and categorical types. When there is a need to find out the association between numerical variables (age, weight), the t-test is fine. When we need to determine the association between categorical variables, like whether the gender is correlated with smoking status (example data in the contingency table below), we could use Chi-Squared test if the data is fit in with the prerequisite. Otherwise, we should use Fisher’s Exact Test.</p>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th style="text-align: left">Gender</th>
+      <th style="text-align: center">Smoker</th>
+      <th style="text-align: center">Non-Smoker</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">Male</td>
+      <td style="text-align: center">20</td>
+      <td style="text-align: center">3</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Female</td>
+      <td style="text-align: center">8</td>
+      <td style="text-align: center">22</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The test statistic for the Chi-Square Test of independence is denoted as \(\chi^{2}\), and is computed as:</p>
+
+\[\chi^{2} = \sum_{i=1}^{R}{\sum_{j=1}^{C}{\frac{(o_{ij} - e_{ij})^{2}}{e_{ij}}}}\]
+
+<p>where
+\(o_{ij}\) is the observed cell count in the \(i^{th}\) row and \(j^{th}\) column of the table
+\(e_{ij}\) is the expected cell count in the \(i^{th}\) row and \(j^{th}\) column of the table, computed as</p>
+
+\[e_{ij} = \frac{(\text{Row i Total})\times(\text{Col j Total})}{\text{Grand Total}}\]
+
+<p>The condition is based on the N and \(e_{ij}\):</p>
+<ol>
+  <li>N ≥ 40 and \(e_{ij}\) ≥ 5. Use the Chi-Squared Test.</li>
+  <li>N ≥ 40 and 1 ≤ \(e_{ij}\) ≤ 5. Use the Chi-Squared Test with correction (chisq.test with parameter correct=TRUE).</li>
+  <li>N &lt; 40 or \(e_{ij}\) &lt; 1 or p-value close to 0.05. Can not use the Chi-Squared Test, should use the Fisher’s Exact Test.</li>
+</ol>
+
+<p>To our smoking problem, we first check the total sample size N, N = 20 + 3 + 8 + 22 = 53 &gt; 40. Second, we check each \(e_{ij}\), each cell of \(e_{ij}\) is described in the table and \(e_{ij}\) &gt; 5. Therefore, we could use Chi-Squared Test and find out the gender is correlated with the smoking status based on our data (p-value = 4.501e-05 « 0.05).</p>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th style="text-align: left">\(e_{ij}\)</th>
+      <th style="text-align: center">Smoker</th>
+      <th style="text-align: center">Non-Smoker</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">Male</td>
+      <td style="text-align: center">12.15</td>
+      <td style="text-align: center">10.85</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Female</td>
+      <td style="text-align: center">15.85</td>
+      <td style="text-align: center">14.15</td>
+    </tr>
+  </tbody>
+</table>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1">############input############</span><span class="w">
+</span><span class="n">dat</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">20</span><span class="p">,</span><span class="m">8</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">22</span><span class="p">)</span><span class="w">
+</span><span class="n">chisq.test</span><span class="p">(</span><span class="n">matrix</span><span class="p">(</span><span class="n">dat</span><span class="p">,</span><span class="n">nrow</span><span class="o">=</span><span class="m">2</span><span class="p">,</span><span class="n">ncol</span><span class="o">=</span><span class="m">2</span><span class="p">))</span><span class="w">
+
+</span><span class="c1">############output############</span><span class="w">
+	</span><span class="n">Pearson</span><span class="s1">'s Chi-squared test with Yates'</span><span class="w"> </span><span class="n">continuity</span><span class="w"> </span><span class="n">correction</span><span class="w">
+
+</span><span class="n">data</span><span class="o">:</span><span class="w">  </span><span class="n">matrix</span><span class="p">(</span><span class="n">dat</span><span class="p">,</span><span class="w"> </span><span class="n">nrow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="n">ncol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span><span class="p">)</span><span class="w">
+</span><span class="n">X</span><span class="o">-</span><span class="n">squared</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">16.647</span><span class="p">,</span><span class="w"> </span><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="o">-</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">4.501e-05</span></code></pre></figure>
+
+<h2 id="references">References</h2>
+
+<ol>
+  <li><a href="https://libguides.library.kent.edu/SPSS/ChiSquare">CHI-SQUARE TEST OF INDEPENDENCE</a></li>
+</ol>
+:ET

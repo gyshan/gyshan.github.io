@@ -25,7 +25,7 @@ where
 $$o_{ij}$$ is the observed cell count in the $$i^{th}$$ row and $$j^{th}$$ column of the table
 $$e_{ij}$$ is the expected cell count in the $$i^{th}$$ row and $$j^{th}$$ column of the table, computed as
 
-$$e_{ij} = \frac{(row\_i\_total)(col\_j\_total)}{grand\_total}$$
+$$e_{ij} = \frac{(\text{Row i Total})\times(\text{Col j Total})}{\text{Grand Total}}$$
 
 The condition is based on the N and $$e_{ij}$$:
 1. N ≥ 40 and $$e_{ij}$$ ≥ 5. Use the Chi-Squared Test.
