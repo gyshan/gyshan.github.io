@@ -89,7 +89,7 @@ defaults:
 author:
   name: Corey
   comments: true
-  picture: bio-photo.jpg
+  picture: https://shangyblog-1256840873.cos.ap-beijing.myqcloud.com/bio-photo.jpg
   links:
     - title: LinkedIn
       url: https://www.linkedin.com/in/guangyu-corey-shan-6a6111a4/
