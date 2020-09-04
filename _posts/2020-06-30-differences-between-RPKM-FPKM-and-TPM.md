@@ -31,7 +31,7 @@ TPM is suitable for this situation, the TPM for gene X in sample 2 is 268141, an
 
 
 
-In summary, if you want to choose a normalization method, I would recommend TPM.
+In summary, if you would like to choose a normalization method, The TPM could be your choice.
 
 
 

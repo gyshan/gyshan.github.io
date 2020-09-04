@@ -1,4 +1,4 @@
-I"8<p>RNA-Seq is a developed approach to transcriptome profiling that uses deep-sequencing technologies. The raw data from RNA-Seq should perform normalization before analysis. The normalization step is aiming at removing bias from <code class="language-plaintext highlighter-rouge">sequencing depth</code> and <code class="language-plaintext highlighter-rouge">gene length</code> by using three common gene expression units: RPKM(Reads Per Kilobase Million), FPKM(Fragments Per Kilobase Million) and TPM(Transcripts Per Kilobase Million)<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup>. I want to explain those concepts in this article.</p>
+I"E<p>RNA-Seq is a developed approach to transcriptome profiling that uses deep-sequencing technologies. The raw data from RNA-Seq should perform normalization before analysis. The normalization step is aiming at removing bias from <code class="language-plaintext highlighter-rouge">sequencing depth</code> and <code class="language-plaintext highlighter-rouge">gene length</code> by using three common gene expression units: RPKM(Reads Per Kilobase Million), FPKM(Fragments Per Kilobase Million) and TPM(Transcripts Per Kilobase Million)<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup>. I want to explain those concepts in this article.</p>
 
 <blockquote>
   <p>In one word, when comparing different samples, use TPM. Otherwise, RPKM for single-end RNA-Seq and FPKM for paired-end RNA-Seq.</p>
@@ -18,7 +18,7 @@
 
 <p>TPM is suitable for this situation, the TPM for gene X in sample 2 is 268141, and the TPM in sample 3 is 268907, then I know that the almost same proportion of total reads mapped to gene X in both samples. In a real-world situation, the TPM value will smaller than what you see because the sample generally has over 20000 genes, not just three in the above schematic figure. Besides, TPM is the best performing normalization method based on its preservation of biological signals compared to the other tested methods<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup>.</p>
 
-<p>In summary, if you want to choose a normalization method, I would recommend TPM.</p>
+<p>In summary, if you would like to choose a normalization method, The TPM could be your choice.</p>
 
 <div class="footnotes" role="doc-endnotes">
   <ol>
