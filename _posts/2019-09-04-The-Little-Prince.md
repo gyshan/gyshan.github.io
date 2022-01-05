@@ -8,7 +8,7 @@ tags:
 ---
 
 
-“I am looking for friends. What does that mean -- tame?"
+"I am looking for friends. What does that mean -- tame?"
 
 "It is an act too often neglected," said the fox. "It means to establish ties."
 
