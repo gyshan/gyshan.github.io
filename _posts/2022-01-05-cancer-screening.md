@@ -39,6 +39,6 @@ tags:
 
 
 [^1]: [Global Cancer Statistics 2020: GLOBOCAN Estimates of Incidence and Mortality Worldwide for 36 Cancers in 185 Countries](https://acsjournals.onlinelibrary.wiley.com/doi/10.3322/caac.21660)
-[^2]: [中国结直肠癌诊疗规范(2020年版)]（http://medi-guide.meditool.cn/ymtpdf/196506AF-B298-8BEB-DE6C-B10233F0E075.pdf)
-[^3]:[八成结直肠癌患者确诊时已是中晚期](http://www.xinhuanet.com/2020-10/07/c_1126579813.htm)
+[^2]: [中国结直肠癌诊疗规范(2020年版)](http://medi-guide.meditool.cn/ymtpdf/196506AF-B298-8BEB-DE6C-B10233F0E075.pdf)
+[^3]: [八成结直肠癌患者确诊时已是中晚期](http://www.xinhuanet.com/2020-10/07/c_1126579813.htm)
 
