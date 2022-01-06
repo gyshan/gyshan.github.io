@@ -17,7 +17,7 @@ The views expressed in this blog are mine and mine alone, not my clients, not my
   |  | 
 -----------:|:------------:|:------------
  Name|<i class="fa fa-male"></i>|G. Corey Shan 单光宇
- Email|<i class="fa fa-envelope"></i>|g.corey.shan [at] gmail.com
+ Email|<i class="fa fa-envelope"></i>|me[at]shanguangyu.com
  WeChat|<i class="fab fa-weixin"></i> |[Personal]({{ site.url }}/images/Wechat.jpg)
  GPG|<i class="fa fa-key"></i> |[GPG Public Key]({{ site.url }}/download/gpg_public_key.txt)
  CV|<i class="fa fa-file"></i>|<i class="far fa-file-pdf"></i> [EN]({{ site.url }}/download/shangy_cv.pdf) <i class="fas fa-file-alt"></i> [CN]({{ site.url }}/download/resume.html)
